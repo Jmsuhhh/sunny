@@ -59,11 +59,11 @@
                   팔로우
                 </button>
               </div>
-              <a href="">
+              <a href="#">
                 <div class="img-container">
-                  <div class="coverimg"></div>
+                  <div class="coverimg">${storyFile.getUserFileOriginName()}</div>
                 </div>
-                <p class="imgtilte">제목제목</p>
+                <p class="imgtilte">${story.getStoryTitle()}</p>
               </a>
             </li>
 			</c:forEach>

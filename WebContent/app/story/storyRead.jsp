@@ -76,8 +76,8 @@
         <form id="comment-form">
           <input
             type="hidden"
-            name="boardNumber"
-            value="${board.getBoardNumber()}"
+            name="storyNumber"
+            value="${story.getStoryNumber()}"
           />
           <div class="form-group">
             <textarea
