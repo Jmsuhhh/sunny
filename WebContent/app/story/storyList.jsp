@@ -88,7 +88,6 @@
           </ul>
         </div>
       </article>
-    </div>
 
     <!-- main -->
     <script src="${pageContext.request.contextPath}/assets/js/storyList.js"></script>
