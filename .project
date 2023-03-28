@@ -28,11 +28,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>WebContent/assets/img/20230324_093612.png</name>
-			<type>1</type>
-			<location>C:/Users/LG/Desktop/20230324_093612.png</location>
-		</link>
-	</linkedResources>
 </projectDescription>
