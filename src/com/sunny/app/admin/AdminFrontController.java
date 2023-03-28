@@ -21,9 +21,22 @@ public class AdminFrontController extends HttpServlet {
 
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
+		System.out.println(target);
 	
 			switch(target) {
+			
+			 case "/app/admin/loginOk.ad":
+//				 req.getRequestDispatcher("/app/admin/select.jsp").forward(req, resp);
+		         new AdminLoginController().execute(req, resp);
+				 break;
+//		      case "/admin/select.ad":
+//		    	  req.getRequestDispatcher("/app/admin/select.jsp").forward(req, resp);
+//		          break;
+//		      case "/admin/userManage.ad":
+//		    	  new AdminUserManageController().execute(req, resp);
+//		    	  break;
+		      }
 		
 		}
 	}
-}
+

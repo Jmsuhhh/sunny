@@ -4,6 +4,11 @@
 
 <mapper namespace="admin">
 
+ 	<select id="select" resultType="AdminDTO" parameterType="AdminDTO">
+ 		select admin_number , admin_id, admin_password, admin_name, admin_team from tbl_admin 
+		where admin_id = #{adminId} and admin_password = #{adminPassword}
+ 	</select>
+
 
 
 
