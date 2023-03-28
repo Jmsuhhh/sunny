@@ -23,40 +23,46 @@
   </head>
   <body>
     <div class="container">
-        <h1 class="sub-title">
-          <span class="story-ico"></span>
-          스토리 글쓰기
-          <span class="story-txt">나만의 볕 들 스토리</span>
-        </h1>
-        <div class="form-group">
-          <input type="text" id="title" name="boardTitle" required placeholder="* 스토리 제목을 입력해주세요!"/>
-        </div>
+		<form
+			action="${pageContext.request.contextPath}/story/storyWriteOk.st"
+			id="write-form" method="post" enctype="multipart/form-data">
+			<h1 class="sub-title">
+				<span class="story-ico"></span> 스토리 글쓰기 <span class="story-txt">나만의
+					볕 들 스토리</span>
+			</h1>
+			<div class="form-group">
+				<input type="text" id="title" name="storyTitle" required
+					placeholder="* 스토리 제목을 입력해주세요!" />
+			</div>
 
-        <div class="form-group">
-          <div class="image-upload-wrap">
-            <input type="file" id="file" name="boardFile" accept=".jpg, .jpeg, .png" multiple />
-            <div class="image-upload-box">
-              <div class="upload-text">
-                <div class="upload-icon">
-                  <img src="https://www.shouse.garden/images/ico/photo_g.png" class="upload-icon" />
-                </div>
-                <div class="upload-count">
-                  커버사진 업로드
-                </div>
-              </div>
-              <div class="upload-text">커버사진 1개만 업로드 가능(<span class="cnt">0</span>/1)</div>
-              <div class="upload-text">파일 형식 : jpg, png, jpeg</div>
-              <div class="upload-text">※ 이미지를 등록하면 즉시 반영됩니다.</div>
-            </div>
-            <div class="img-controller-box">
-              <ul class="file-list"></ul>
-            </div>
-          </div>
-        </div>
 
-      <h1 class="mini-title">상세 내용 입력</h1>
-<textarea id="summernote" name="boardContent"></textarea>
-<script>
+			<div class="form-group">
+				<div class="image-upload-wrap">
+					<input type="file" id="file" name="storyFile"
+						accept=".jpg, .jpeg, .png" multiple />
+					<div class="image-upload-box">
+						<div class="upload-text">
+							<div class="upload-icon">
+								<img src="https://www.shouse.garden/images/ico/photo_g.png"
+									class="upload-icon" />
+							</div>
+							<div class="upload-count">커버사진 업로드</div>
+						</div>
+						<div class="upload-text">
+							커버사진 1개만 업로드 가능(<span class="cnt">0</span>/1)
+						</div>
+						<div class="upload-text">파일 형식 : jpg, png, jpeg</div>
+						<div class="upload-text">※ 이미지를 등록하면 즉시 반영됩니다.</div>
+					</div>
+					<div class="img-controller-box">
+						<ul class="file-list"></ul>
+					</div>
+				</div>
+			</div>
+
+			<h1 class="mini-title">상세 내용 입력</h1>
+			<textarea id="summernote" name="boardContent"></textarea>
+			<script>
   $(document).ready(function () {
     $("#summernote").summernote({
       height: 400,
@@ -75,14 +81,13 @@
     });
   });
 </script>
- <form action="${pageContext.request.contextPath}/app/story/storyList.jsp" method="post">
-    <!-- 폼 내용 -->
-    <div class="btn-groups">
-      <button type="submit" class="submit-btn">등록 하기</button>
-      <button type="button" class="cancel-btn">취소</button>
-    </div>
-  </form>
-    </div>
+			<!-- 폼 내용 -->
+			<div class="btn-groups">
+				<button type="submit" class="submit-btn">등록 하기</button>
+				<button type="button" class="cancel-btn">취소</button>
+			</div>
+		</form>
+	</div>
 
        <script src="${pageContext.request.contextPath}/assets/js/storyWrite.js"></script>
   </body>

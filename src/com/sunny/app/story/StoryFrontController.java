@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class StroyFrontController extends HttpServlet {
+public class StoryFrontController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,6 +25,14 @@ public class StroyFrontController extends HttpServlet {
 			switch(target) {
 			case "/story/storyListOk.st" :
 				new StoryListOkController().execute(req, resp);
+				break;
+			case "/story/storyReadOk.st" :
+				break;
+			case "/story/storyWrite.st" :
+				new StoryWriteController().execute(req, resp);
+				break;
+			case "/story/storyWriteOk.st" :
+				new StoryWriteOkController().execute(req,resp);
 				break;
 		}
 	}
