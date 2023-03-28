@@ -23,6 +23,9 @@ public class FollowFrontController extends HttpServlet{
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 	
 			switch(target) {
+			case "/follow/followList.fo" :
+				req.getRequestDispatcher("/app/follow/follow.jsp").forward(req, resp);
+				break;
 		}
 	}
 }
