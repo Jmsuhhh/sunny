@@ -1,0 +1,314 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
+  
+  header {
+    font-family: "Noto Sans KR", sans-serif;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+  a:visited {
+    color: black;
+  }
+  
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  /* 헤더1 로그인,회원가입 / 로고 */
+  .header1 {
+    display: flex;
+    flex-direction: column;
+  }
+  /* 로그인, 회원가입 */
+  .header1--top {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    background-color: #f2f2f2;
+    line-height: 30px;
+  }
+  .header1--top a {
+    color: #808080;
+    font-size: 14px;
+    margin-right: 18px;
+  }
+  /* 로고 */
+  .header1--bottom {
+    height: 87px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header1--bottom a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header1--bottom h1 {
+    color: #009a3e;
+    font-weight: 700;
+    font-family: "Dongle", sans-serif;
+    font-size: 35px;
+  }
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+  .logo svg {
+    height: 35px;
+    fill: #009a3e;
+  }
+  
+  /* 헤더2 메뉴바, 버튼2개 */
+  .header2 {
+    height: 28px;
+    padding: 9px 0;
+    border-bottom: 1px solid #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* 헤더2 메뉴바 */
+  .menu-list-ul {
+    display: flex;
+  }
+  
+  .menu-list {
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 18px;
+    list-style-type: none;
+    flex: none;
+  }
+  
+  /* 헤더2 오른쪽 버튼2개 */
+  .btn-list-ul {
+    display: flex;
+  }
+  
+  .btn-list a {
+    height: 28px;
+    margin-right: 18px;
+    line-height: 28px;
+    font-size: 14px;
+    flex: none;
+  }
+  
+  .btn-list a > img {
+    height: 15px;
+    width: 15px;
+  }
+  
+  
+   .pcontainer {
+      width: 1200px;
+      height: 1300px;
+  }
+
+    .search {
+        width: 672px;
+        height: 280px;
+        margin: 28px 264px 10px 380px;
+        background-color: #f2f2f2;
+        display: flex;
+        border-radius: 4px;
+        padding: 47px 504px 32px 66px;
+        justify-content: center;
+    }
+
+    .ex-search > h3 {
+      font-size: 25px;
+      font-weight: 700;
+      color: #222624;
+      margin: 28px 380px 0 380px;
+    }
+
+    .ex-search {
+      display: flex;
+      width: 1200px;
+      height: 57px;
+    }
+
+    .searchtext {
+      width: 164px;
+      height: 27px;
+      background-color: #f2f2f2;
+      border: none;
+      font-size: 13px;
+      border-radius: 4px;
+      margin-top: 28px;
+      padding: 0 0 0 5px;
+      position: relative;
+    }
+    
+    .expertsearch > input {
+      color:#4d4d4d;
+    }
+
+    .expertsearch > button {
+      position: absolute;
+      right: -80px;
+      top: 13px;
+    }
+    
+    .headsearch {
+      position: relative;
+    }
+    
+    .headsearch > img {
+      cursor: pointer;
+      position: absolute;
+    }
+
+    /* 프로필 */
+    .mypage {
+        position: relative;
+        width: 291px;
+        height: 179px;
+    }
+    
+    svg {
+        width: 55px;
+        height: 55px;
+    }
+
+    .profile {
+        position: absolute;
+        top: 20%;
+        left: 40%;
+        width: 65px;
+        height: 65px;
+        border: 1px solid black;
+        border-radius: 100%;
+        text-align: center;
+        background-color: #fff;
+    }
+
+   .expertname {
+        margin: 15px 0 0 0;
+        font-size: 14px;
+        color: #4d4d4d;
+    }
+
+    .f-btn {
+        color: #fff;
+        background-color: #009a3e;
+        width: 52px;
+        height: 23px;
+        border-radius: 4px;
+        border: none;
+        margin: 7px 0 0 0;
+        cursor: pointer;
+    }
+
+    .f-btn :hover{
+      background-color: black;
+    }
+
+    .container {
+        width: 372px;
+        height: 179px;
+        background-color: rgb(255, 255, 255);
+        position: relative;
+        left: 90%;
+        text-align: center;
+        padding-top: 30px;
+        margin-top: 7px;
+        border-radius: 6px;
+    }
+
+    img {
+        width: 11px;
+        height: 11px;
+        position: absolute;
+        top: 22px;
+        right: 85px;
+        cursor: pointer;
+    }
+
+    .container > .info {
+        position: relative;
+        top : 10px;
+        font-size: 13px;
+        color: #808080;
+    }
+
+    .inffo {
+        color:#009a3e;
+        font-weight: 700;
+        font-size: 13px;
+    }
+
+    .major > .inffo {
+      position: relative;
+    }
+
+    .majorname {
+      color:#808080 ; 
+    }
+
+    .container > button {
+        background-color: #009a3e;
+        color: #fff;
+        width: 65px;
+        height: 23px;
+        border-radius: 4px;
+        border: none;
+        margin: 28px 0 0 0;
+        cursor: pointer;
+    }
+
+    .plus-btn:hover,
+  .question-btn:hover {
+    background-color: rgb(15, 15, 14);
+    color: #fff;
+  }
+
+ .f-btn-active{
+  background-color: black;
+}
+
+ /* 더보기 */
+ .write-btn-wrap {
+  margin-top: 20px ;
+}
+
+.write-btn-wrap > a {
+  color: #fff;
+  font-size: 13px;
+}
+
+.plus-btn, .question-btn {
+  background-color: #009a3e;
+  border-radius: 4px;
+  border: none;
+}
