@@ -23,6 +23,9 @@ public class StroyFrontController extends HttpServlet {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 	
 			switch(target) {
+			case "/story/storyListOk.st" :
+				new StoryListOkController().execute(req, resp);
+				break;
 		}
 	}
 }
