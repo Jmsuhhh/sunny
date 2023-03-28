@@ -21,8 +21,12 @@ public class QuestionFrontController extends HttpServlet{
 
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
+		System.out.println(target);
 	
 			switch(target) {
+			case "/app/question/questionWrite.qs":
+				req.getRequestDispatcher("/app/question/questionWrite.jsp").forward(req, resp);
+				break;
 		}
 	}
 }
