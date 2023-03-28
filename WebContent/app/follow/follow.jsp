@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/follow.css" />
   </head>
   <body>
+  <jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
     <div class="container">
       <section class="top">
         <div class="button">

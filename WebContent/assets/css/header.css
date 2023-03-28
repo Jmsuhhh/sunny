@@ -15,7 +15,7 @@ header {
   align-content: flex-end;
 }
 
-a {
+header a {
   text-decoration: none;
   cursor: pointer;
 }
@@ -43,7 +43,7 @@ a {
   line-height: 30px;
 }
 .header1-a {
-  color: #808080;
+  color:#808080;
   font-size: 14px;
   margin-right: 18px;
 }
@@ -107,7 +107,12 @@ a {
   flex: none;
   list-style: none;
 }
-
+.header2-menu-list>a{
+  color: #4d4d4d;
+}
+.header2-menu-list>a:visited{
+  color: #4d4d4d;
+}
 /* 헤더2 오른쪽 버튼2개 */
 .header2-btn-list-ul {
   display: flex;
@@ -131,7 +136,7 @@ a {
 }
 /* 페이지 선택한 경우  */
 .header-active {
-  color: #009a3e;
+  color: #009a3e !important;
 }
 .header-active:visited {
   color: #009a3e;

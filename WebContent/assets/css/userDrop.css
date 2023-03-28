@@ -18,6 +18,9 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+a:visited {
+  color: black;
+}
 
 button {
   cursor: pointer;

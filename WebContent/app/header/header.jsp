@@ -48,11 +48,11 @@
           <ul class="header2-btn-list-ul">
             <!-- 마이페이지로 -->
             <li class="header2-btn-list">
-              <a href="#"><img src="../resource/icon_user.png" alt="" /></a>
+              <a href="#"><img src="${pageContext.request.contextPath}/assets/img/header/icon_user.png" alt="" /></a>
             </li>
             <!-- 스토리 글쓰기 페이지로 -->
             <li class="header2-btn-list">
-              <a href="#"><img src="../resource/icon_pen.png" alt="" /></a>
+              <a href="#"><img src="${pageContext.request.contextPath}/assets/img/header/icon_pen.png" alt="" /></a>
             </li>
           </ul>
         </div>

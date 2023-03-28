@@ -26,7 +26,7 @@ public class UserFrontController extends HttpServlet{
 		String target = req.getRequestURI().substring(req.getContextPath().length()); 
 
 		switch(target) {
-		case "/user/myPage.us" :
+		case "/user/myPageOk.us" :
 			req.getRequestDispatcher("/app/user/myPage.jsp").forward(req, resp);
 			break;
 		}
