@@ -23,6 +23,9 @@ public class GosuFrontController extends HttpServlet{
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 	
 			switch(target) {
+			case "/gosu/search.gu" :
+				req.getRequestDispatcher("/app/gosu/search.jsp").forward(req, resp);		
+				break;
 		}
 	}
 }
