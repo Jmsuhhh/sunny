@@ -24,9 +24,11 @@ public class UserFrontController extends HttpServlet{
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String target = req.getRequestURI().substring(req.getContextPath().length()); 
+		System.out.println(target);
 
 		switch(target) {
 		case "/user/myPageOk.us" :
+			System.out.println("!!!");
 			req.getRequestDispatcher("/app/user/myPage.jsp").forward(req, resp);
 			break;
 		}
