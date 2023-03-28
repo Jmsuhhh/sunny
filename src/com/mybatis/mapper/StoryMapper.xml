@@ -2,5 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="story">
-
+ <select id="selectAll" resultType="StoryVO">
+ 	select story_number, story_title, story_content, story_viewcnt, story_date, 
+	last_update, u.user_number, u.user_nickname 
+	from tbl_user u join tbl_story s 
+	on u.user_number  = s.user_number
+ </select>
 </mapper>

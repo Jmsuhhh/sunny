@@ -1,15 +1,6 @@
-package com.sunny.app.story.dto;
+package com.sunny.app.story.vo;
 
-//story_number int unsigned auto_increment primary key,
-//story_title varchar(300) not null,
-//story_content varchar(3000) not null,
-//story_viewcnt int unsigned,
-//story_date datetime,
-//last_update datetime,
-//user_number int unsigned not null,
-
-
-public class StoryDTO {
+public class StoryVO {
 	private int storyNumber;
 	private String storyTitle;
 	private String storyContent;
@@ -17,8 +8,9 @@ public class StoryDTO {
 	private String storyDate;
 	private String lastUpdate;
 	private int userNumber;
+	private String userNickname;
 	
-	public StoryDTO() {}
+	public StoryVO() {}
 
 	public int getStoryNumber() {
 		return storyNumber;
@@ -76,10 +68,18 @@ public class StoryDTO {
 		this.userNumber = userNumber;
 	}
 
+	public String getUserNickname() {
+		return userNickname;
+	}
+
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
+	}
+
 	@Override
 	public String toString() {
-		return "StoryDTO [storyNumber=" + storyNumber + ", storyTitle=" + storyTitle + ", storyContent=" + storyContent
+		return "StoryVO [storyNumber=" + storyNumber + ", storyTitle=" + storyTitle + ", storyContent=" + storyContent
 				+ ", stotyViewcnt=" + stotyViewcnt + ", storyDate=" + storyDate + ", lastUpdate=" + lastUpdate
-				+ ", userNumber=" + userNumber + "]";
-	}	
+				+ ", userNumber=" + userNumber + ", userNickname=" + userNickname + "]";
+	}
 }
