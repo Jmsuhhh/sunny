@@ -18,9 +18,9 @@
 		where user_id = #{userId}
 	</select>
 	
-	<select id="getMemberId" parameterType="_int" resultType="string">
-		select member_id from tbl_member
-		where member_number = #{memberNumber}
+	<select id="getUserId" parameterType="_int" resultType="string">
+		select user_id from tbl_user
+		where user_number = #{userNumber}
 	</select>
 
 </mapper>
