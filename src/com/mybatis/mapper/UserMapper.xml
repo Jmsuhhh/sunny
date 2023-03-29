@@ -22,5 +22,9 @@
 		select user_id from tbl_user
 		where user_number = #{userNumber}
 	</select>
+	
+	<delete id="userDrop" parameterType="_int">
+		delete from tbl_user where user_number=#{userNumber}	
+	</delete>
 
 </mapper>

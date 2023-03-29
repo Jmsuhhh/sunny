@@ -30,4 +30,7 @@ public class UserDAO {
 		return sqlSession.selectOne("user.getUserId", userNumber);
 	}
 	
+	public void userDrop(int userNumber) {
+		sqlSession.delete("user.userDrop", userNumber);
+	}
 }
