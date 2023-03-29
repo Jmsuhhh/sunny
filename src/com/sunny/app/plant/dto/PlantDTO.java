@@ -8,10 +8,10 @@ package com.sunny.app.plant.dto;
 
 public class PlantDTO {
 
-	private int plantNumber;
-	private String plantName;
-	private String plantContent;
-	private String plantAlgorithm;
+	int plantNumber;
+	String plantName;
+	String plantContent;
+	String algorithmResult;
 	
 	public PlantDTO() {}
 
@@ -39,18 +39,18 @@ public class PlantDTO {
 		this.plantContent = plantContent;
 	}
 
-	public String getPlantAlgorithm() {
-		return plantAlgorithm;
+	public String getAlgorithmResult() {
+		return algorithmResult;
 	}
 
-	public void setPlantAlgorithm(String plantAlgorithm) {
-		this.plantAlgorithm = plantAlgorithm;
+	public void setAlgorithmResult(String algorithmResult) {
+		this.algorithmResult = algorithmResult;
 	}
 
 	@Override
 	public String toString() {
 		return "PlantDTO [plantNumber=" + plantNumber + ", plantName=" + plantName + ", plantContent=" + plantContent
-				+ ", plantAlgorithm=" + plantAlgorithm + "]";
+				+ ", algorithmResult=" + algorithmResult + "]";
 	}
 	
 	
