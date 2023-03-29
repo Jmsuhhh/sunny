@@ -38,7 +38,7 @@
           <div class="manage-manu">
             <div class="user-manage">
               <div class="user-manage-headline">
-                <img src="../img/user.png" alt="" />
+                <img src="../../assets/img/admin/img/user.png" alt="" />
                 <h2>관리하기</h2>
               </div>
               <div class="hr"><hr /></div>
