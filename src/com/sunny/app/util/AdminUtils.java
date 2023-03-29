@@ -5,6 +5,7 @@ import java.security.MessageDigest;
 import javax.servlet.http.HttpServletRequest;
 
 public class AdminUtils {
+//	비밀번호 암호화
     public static String pwSha256(String adminPW) {
     	String encrypted = "";
     	try {
@@ -16,10 +17,11 @@ public class AdminUtils {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-    	System.out.println(encrypted);
     	return encrypted;
 	}
 
+    
+//    비밀번호 암호화
 	private static String bytesToHex(byte[] bytes) {
         StringBuilder hex = new StringBuilder();
         for (byte b : bytes) {
@@ -28,6 +30,8 @@ public class AdminUtils {
         return hex.toString();
     }
 
+	
+//	세션체크
 	public static boolean sessionCheck(HttpServletRequest req) {
 		
 		return req.getSession().getAttribute("adminNumber") == null ? false : true;
