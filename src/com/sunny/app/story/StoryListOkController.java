@@ -1,7 +1,9 @@
 package com.sunny.app.story;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -16,11 +18,45 @@ public class StoryListOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		StoryDAO storyDAO = new StoryDAO();
-		List<StoryVO> storys = storyDAO.selectAll();
+		int total = storyDAO.getTotal();
 		
-		req.setAttribute("storyList", storys);
+		String temp = req.getParameter("page");
 		
-		req.getRequestDispatcher("/app/story/storyList.jsp").forward(req, resp);
+		int page = temp == null?1 : Integer.valueOf(temp);
+		
+		int rowCount = 6;
+		int pageCount = 5;
+
+		int startRow = (page-1) * rowCount;
+		
+		int endPage = (int)(Math.ceil(page/(double)pageCount)*pageCount);
+		
+		int startPage = endPage - (pageCount-1);
+		
+		int realEndPage = (int)Math.ceil(total/(double)rowCount);
+		
+		endPage = endPage > realEndPage ? realEndPage : endPage;
+		
+		boolean prev = startPage > 1;
+		boolean next = endPage != realEndPage;
+		
+		
+		
+		
+		Map<String, Integer> pageMap = new HashMap<>();
+		pageMap.put("startRow", startRow);
+		pageMap.put("rowCount", rowCount);
+		
+		List<StoryVO> boards = storyDAO.selectAll(pageMap);
+		
+		req.setAttribute("boardList", boards);
+		req.setAttribute("page", page);
+		req.setAttribute("startPage", startPage);
+		req.setAttribute("endPage", endPage);
+		req.setAttribute("prev", prev);
+		req.setAttribute("next", next);
+		
+		req.getRequestDispatcher("/app/story/storyList.jsp").forward(req,resp);
 	}
 
 }
