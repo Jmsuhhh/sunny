@@ -20,7 +20,7 @@
         <div class="user-info">
           <!-- 회원정보 수정 form 경로처리 -->
           <!-- 정보 받아와서 모두 꽂아넣는다 비밀번호 빼고 -->
-          <form action="">
+          <form action="${pageContext.request.contextPath}/user/userModifyOk.us" method="POST">
             <!-- 받아올 아이디 수정불가 -->
             <div class="title user-id">
               <p>아이디</p>

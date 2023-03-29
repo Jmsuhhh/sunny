@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link rel="stylesheet" href="../../assets/css/adminHeader2.css" />
 
 <header>
@@ -5,7 +8,7 @@
     <div class="header-top">
       <div class="header-top-size">
         <div class="top-btn-group">
-          <a href="logoutOk.me" class="logout-btn">로그아웃</a>
+          <a href="logoutOk.ad" class="logout-btn">로그아웃</a>
         </div>
       </div>
     </div>

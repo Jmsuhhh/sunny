@@ -27,6 +27,7 @@ public class UserFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
+		
 		case "/user/myPageOk.us" :
 			System.out.println("!!!");
 			req.getRequestDispatcher("/app/user/myPage.jsp").forward(req, resp);
@@ -34,8 +35,15 @@ public class UserFrontController extends HttpServlet{
 		case "/user/userDrop.us":
 			req.getRequestDispatcher("/app/user/userDrop.jsp").forward(req, resp);
 			break;
+		case "/user/userDropOk.us" : 
+//			req.getRequestDispatcher("/app/main/main.jsp").forward(req, resp);
+			break;
 		case "/user/userModify.us":
 			req.getRequestDispatcher("/app/user/userModify.jsp").forward(req, resp);
+			break;
+		case "/user/userModifyOk.us" :
+//			req.getRequestDispatcher("/app/user/myPage.jsp").forward(req, resp);
+			break;
 		}
 	}
 }

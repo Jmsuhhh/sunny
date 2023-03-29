@@ -25,16 +25,21 @@ public class AdminFrontController extends HttpServlet {
 	
 			switch(target) {
 			
+			 case "/app/admin/login.ad":
+		         req.getRequestDispatcher("/app/admin/adminLogin.jsp").forward(req, resp);;
+				 break;
 			 case "/app/admin/loginOk.ad":
-//				 req.getRequestDispatcher("/app/admin/select.jsp").forward(req, resp);
 		         new AdminLoginController().execute(req, resp);
 				 break;
-//		      case "/admin/select.ad":
+//		     case "app/admin/select.ad":
 //		    	  req.getRequestDispatcher("/app/admin/select.jsp").forward(req, resp);
 //		          break;
-//		      case "/admin/userManage.ad":
+//		     case "app/admin/userManage.ad":
 //		    	  new AdminUserManageController().execute(req, resp);
 //		    	  break;
+		     case "/app/admin/logoutOk.ad":
+		    	  new LogoutOkController().execute(req, resp);
+		    	  break;
 		      }
 		
 		}
