@@ -3,8 +3,10 @@
 
 <mapper namespace="algorithm">
 	
-	<select id="plant">
-
+	<select id="select" parameterType="String" resultType="AlgorithmDTO">
+		select plant_number, plant_name, plant_content 
+		from tbl_plant 
+		where algorithm_result = #{algorithmResult}
 	</select>
 	
 </mapper>
