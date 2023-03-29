@@ -15,3 +15,7 @@ if(login == 'fail'){
 if(login == 'noInfo'){
 	alert('로그인 정보가 없습니다.');
 	}
+	
+if(login == 'logout'){
+	alert('로그아웃되셨습니다.');
+	}	
