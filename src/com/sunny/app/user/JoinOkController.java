@@ -23,13 +23,13 @@ public class JoinOkController implements Execute {
 //		values(#{userId}, #{userPassword}, #{userName}, #{userNickname}, #{userPhone}, #{userEmail}, now())
 //		</insert>
 		
-		userDTO.setUserId(req.getParameter("userId"));
-		userDTO.setUserPassword(req.getParameter("userPassword"));
-		userDTO.setUserName(req.getParameter("userName"));
-		userDTO.setUserNickname(req.getParameter("userNickname"));
-		userDTO.setUserPhone(req.getParameter("userPhone"));
-		userDTO.setUserEmail(req.getParameter("userEmail"));
-		userDTO.setUserDate(req.getParameter("userDate"));
+//		userDTO.setUserId(req.getParameter("userId"));
+//		userDTO.setUserPassword(req.getParameter("userPassword"));
+//		userDTO.setUserName(req.getParameter("userName"));
+//		userDTO.setUserNickname(req.getParameter("userNickname"));
+//		userDTO.setUserPhone(req.getParameter("userPhone"));
+//		userDTO.setUserEmail(req.getParameter("userEmail"));
+//		userDTO.setUserDate(req.getParameter("userDate"));
 
 		userDAO.join(userDTO);
 		
