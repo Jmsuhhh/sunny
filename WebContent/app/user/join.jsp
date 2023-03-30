@@ -119,7 +119,7 @@
           </div>
           <div class="join-logo"> 회원가입</div>
         </div>
-        <form action="">
+        <form action="${pageContext.request.contextPath}/user/joinOk.us" method="POST">
           <div class="input-tag">
             <div class="input-text">아이디</div>
             <br>

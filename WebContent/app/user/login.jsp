@@ -62,7 +62,7 @@
             볕 들 무렵
           </div>
         </div>
-        <form action="">
+        <form action="${pageContext.request.contextPath}/user/loginOk.us" method="POST">
         <div class="input">
           <input type="text" id="id" placeholder="아이디" minlength="5" maxlength="10" required/>
           <br>

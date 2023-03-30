@@ -23,6 +23,7 @@ public class JoinOkController implements Execute {
 //		values(#{userId}, #{userPassword}, #{userName}, #{userNickname}, #{userPhone}, #{userEmail}, now())
 //		</insert>
 		
+		
 		userDTO.setUserId(req.getParameter("userId"));
 		userDTO.setUserPassword(req.getParameter("userPassword"));
 		userDTO.setUserName(req.getParameter("userName"));
@@ -33,7 +34,7 @@ public class JoinOkController implements Execute {
 
 		userDAO.join(userDTO);
 		
-		resp.sendRedirect("/user/login.me");
+		resp.sendRedirect("/user/login.us");
 		
 	}
 }

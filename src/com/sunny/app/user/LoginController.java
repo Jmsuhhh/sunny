@@ -17,7 +17,7 @@ public class LoginController implements Execute {
 		if(cookies != null) {
 			for(Cookie cookie : cookies) {
 				if(cookie.getName().equals("userId")) {
-					req.setAttribute("memberId", cookie.getValue());
+					req.setAttribute("userId", cookie.getValue());
 				}
 			}
 		}
