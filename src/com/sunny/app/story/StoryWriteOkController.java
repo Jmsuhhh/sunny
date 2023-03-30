@@ -20,12 +20,19 @@ public class StoryWriteOkController implements Execute {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	StoryDAO storyDAO = new StoryDAO();
 	StoryDTO storyDTO = new StoryDTO();
+	StoryFileDAO storyFileDAO = new StoryFileDAO();
+	StoryFileDTO storyFileDTO = new StoryFileDTO();
 	
 	String uploadPath = req.getSession().getServletContext().getRealPath("/") + "storyUpload/";
 	int fileSize = 1024*1024*5;
 	System.out.println(uploadPath);
 	
-	MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, new DefaultFileRenamePolicy());
+	MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize,"utf-8",new DefaultFileRenamePolicy());
 	
+	storyDTO.setStoryTitle(multipartRequest.getParameter("storyTitle"));
+	storyDTO.setStoryContent(multipartRequest.getParameter("storyContent"));
+//	storyDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));
+	
+	storyDAO.insert(storyDTO);
 	}
 }
