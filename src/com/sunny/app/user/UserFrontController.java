@@ -32,6 +32,9 @@ public class UserFrontController extends HttpServlet{
 //			new MyPageOkController().execute(req, resp);
 			req.getRequestDispatcher("/app/user/myPage.jsp").forward(req, resp);
 			break;
+		case "/user/userCommentOk.us":
+			new UserCommentController().execute(req, resp);
+			break;
 		case "/user/userDrop.us":
 			req.getRequestDispatcher("/app/user/userDrop.jsp").forward(req, resp);
 			break;
