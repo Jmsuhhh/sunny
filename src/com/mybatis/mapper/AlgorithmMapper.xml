@@ -3,5 +3,8 @@
 
 <mapper namespace="algorithm">
 
+	<select id="plant">
+	
+	</select>
 	
 </mapper>
