@@ -2,11 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="algorithm">
-	
-	<select id="select" parameterType="String" resultType="AlgorithmDTO">
-		select plant_number, plant_name, plant_content 
-		from tbl_plant 
-		where algorithm_result = #{algorithmResult}
-	</select>
+
 	
 </mapper>
