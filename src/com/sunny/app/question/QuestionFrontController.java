@@ -24,9 +24,22 @@ public class QuestionFrontController extends HttpServlet{
 		System.out.println(target);
 	
 			switch(target) {
-			case "/app/question/questionWrite.qs":
+			case "/question/questionWrite.qs":
 				req.getRequestDispatcher("/app/question/questionWrite.jsp").forward(req, resp);
 				break;
+			case "/question/questionWriteOk.qs":
+				new QuestionWriteOkController().execute(req, resp);
+				break;
+			case "/question/questionList.qs":
+				req.getRequestDispatcher("/app/question/questionList.jsp").forward(req, resp);
+				break;
+			case "/question/questionListOk.qs":
+				req.getRequestDispatcher("/app/question/questionList.jsp").forward(req, resp);
+				break;
+			case "/question/questionRead.qs":
+				req.getRequestDispatcher("/app/question/questionRead.jsp").forward(req, resp);
+				break;
+		
 		}
 	}
 }

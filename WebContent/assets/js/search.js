@@ -20,10 +20,10 @@
 
 //질문목록
 function questionList(e){
-    window.location.href="#";
+    window.location.href="/question/questionList.qs";
 }
 
  // 질문하기 버튼 (누르면 질문쓰는 곳으로 이동)
 function goQuestion(e) {
-    window.location.href="#";
+    window.location.href="question/questionWrite.qs";
 }
