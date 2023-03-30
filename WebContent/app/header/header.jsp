@@ -10,15 +10,15 @@
         <div class="header1--top">
           <div class="header1-btn-group">
             <!-- 로그인경로처리 -->
-            <a href="#" class="header1-a header-login-btn">로그인</a>
+            <a href="${pageContext.request.contextPath}/app/user/login.jsp" class="header1-a header-login-btn">로그인</a>
             <!-- 회원가입경로처리 -->
-            <a href="#" class="header1-a header-join-btn">회원가입</a>
+            <a href="${pageContext.request.contextPath}/app/user/join.jsp" class="header1-a header-join-btn">회원가입</a>
             <a href="#" class="header1-a header-logout-btn">로그아웃</a>
           </div>
         </div>
         <div class="header1--bottom">
           <!-- 로고 누르면 홈으로 경로처리 -->
-          <a href="#">
+          <a href="">
             <div class="header1-logo">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                 <path
@@ -35,11 +35,11 @@
         <div class="header2--left">
           <ul class="header2-menu-list-ul">
             <!-- 메뉴바 경로처리 -->
-            <li class="header2-menu-list"><a href="#" class="header-active">홈</a></li>
-            <li class="header2-menu-list"><a href="#"> 스토리</a></li>
-            <li class="header2-menu-list"><a href="#"> 식고수에게 물어보기</a></li>
-            <li class="header2-menu-list"><a href="#"> 반려식물 찾기</a></li>
-            <li class="header2-menu-list"><a href="#"> 마이페이지</a></li>
+            <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/app/main/main.jsp" class="header-active">홈</a></li>
+            <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/app/story/storyList.jsp"> 스토리</a></li>
+            <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/app/question/questionList.jsp"> 식고수에게 물어보기</a></li>
+            <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/app/algorithm/index.jsp"> 반려식물 찾기</a></li>
+            <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/user/myPageOk.us"> 마이페이지</a></li>
           </ul>
         </div>
         <!-- 아이콘경로처리 -->
@@ -48,11 +48,11 @@
           <ul class="header2-btn-list-ul">
             <!-- 마이페이지로 -->
             <li class="header2-btn-list">
-              <a href="#"><img src="${pageContext.request.contextPath}/assets/img/header/icon_user.png" alt="" /></a>
+              <a href="${pageContext.request.contextPath}/user/myPageOk.us"><img src="${pageContext.request.contextPath}/assets/img/header/icon_user.png" alt="" /></a>
             </li>
             <!-- 스토리 글쓰기 페이지로 -->
             <li class="header2-btn-list">
-              <a href="#"><img src="${pageContext.request.contextPath}/assets/img/header/icon_pen.png" alt="" /></a>
+              <a href="${pageContext.request.contextPath}/app/story/storyWrite.jsp"><img src="${pageContext.request.contextPath}/assets/img/header/icon_pen.png" alt="" /></a>
             </li>
           </ul>
         </div>

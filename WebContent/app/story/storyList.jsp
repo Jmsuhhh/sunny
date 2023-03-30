@@ -98,16 +98,16 @@
 								<li class="listLi">
 									<div class="top tBox">
 										<a href="${pageContext.request.contextPath}"><div
-												class="p1 proimg"></div>
+												class="p1 proimg">#</div>
 											<p class="p1 profile">${story.getUserNickname()}</p></a>
 										<button type="button" id="follow-button"
 											onclick="toggleFollow(this)" class="p1 follow dir">
 											팔로우</button>
 									</div> <a href="#">
 										<div class="img-container">
-											<div class="coverimg">#</div>
+											<div class="coverimg">${storyFile.getStoryFileOriginalName()}</div>
 										</div>
-										<p class="imgtilte">#</p>
+										<p class="imgtilte">${story.getStoryTitle()}</p>
 								</a>
 								</li>
 							</c:forEach>

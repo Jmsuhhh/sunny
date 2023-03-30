@@ -2,6 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="storyFile">
-
-
+	<insert id="insert" parameterType="StoryFileDTO">
+		insert into tbl_story_file(file_system_name, file_original_name, story_number)
+		values(#{fileSystemName},#{fileOriginalName},#{storyNumber})
+	</insert>
 </mapper>
