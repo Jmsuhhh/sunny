@@ -148,7 +148,7 @@ ul {
 .top .follow.dir {
   position: relative;
   height: 56px;
-  line-height: 56px;
+  line-height: 60px;
   font-size: 13px;
   color: #009a3e;
 }
@@ -156,7 +156,7 @@ ul {
 .following {
   position: relative;
   height: 56px;
-  line-height: 56px;
+  line-height: 60px;
   font-size: 13px;
   color: #4d4d4d;
 }

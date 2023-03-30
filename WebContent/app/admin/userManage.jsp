@@ -16,6 +16,7 @@
       crossorigin="anonymous"
     />
   </head>
+  <jsp:include page="${pageContext.request.contextPath}/app/admin/adminHeader2.jsp"/>
   <body>
     <header id="headers"></header>
     <div class="sidebar-read-all">
@@ -44,7 +45,7 @@
           <div class="manage-manu">
             <div class="user-manage">
               <div class="user-manage-headline">
-                <img src="../img/user.png" alt="" />
+                <img src="../../assets/img/admin/user.png" alt="" />
                 <h2>관리하기</h2>
               </div>
               <div class="hr"><hr /></div>
@@ -137,7 +138,6 @@
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
-        $("#headers").load("../../assets/html/adminHeader2.html");
         $("#footers").load("../../assets/html/footer.html");
       });
     </script>

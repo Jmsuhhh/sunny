@@ -215,6 +215,7 @@
       <div class="photo-modal">
         <h1>프로필사진</h1>
         <div class="photo-x-box">X</div>
+        <!-- 사진등록경로처리-->
         <form action="#">
           <label for="profile-file">
             <input type="file" id="profile-file" />
