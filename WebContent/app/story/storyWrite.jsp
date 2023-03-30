@@ -61,7 +61,7 @@
 			</div>
 
 			<h1 class="mini-title">상세 내용 입력</h1>
-			<textarea id="summernote" name="boardContent"></textarea>
+			<textarea id="summernote" name="storyContent"></textarea>
 			<script>
   $(document).ready(function () {
     $("#summernote").summernote({
@@ -74,7 +74,7 @@
         ["color", ["color"]],
         ["para", ["ul", "ol", "paragraph"]],
         ["table", ["table"]],
-        ["insert", ["link", "picture", "video"]],
+        ["insert", ["link", "picture"]],
         ["view", ["codeview"]],
       ],
       placeholder: "*스토리 내용을 입력해주세요!",
