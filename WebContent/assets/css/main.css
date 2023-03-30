@@ -3,7 +3,11 @@
 
 
 
+<<<<<<< HEAD
 /* ------------------------------------------------------------Hedaer-----------------------------------------------------------------------*/
+=======
+
+>>>>>>> working/mainpage
 
 * {
   margin: 0;
@@ -20,6 +24,7 @@ body {
   padding: 0;
 }
 
+<<<<<<< HEAD
 
 header {
   font-family: "Noto Sans KR", sans-serif;
@@ -155,6 +160,8 @@ li {
 /* ------------------------------------------------------------Main-------------------------------------------------------------------------- */
 
 
+=======
+>>>>>>> working/mainpage
 .container {
   margin: 0 auto;
   max-width: 1200px;
@@ -469,7 +476,11 @@ section > .question{
   border-radius: 50%;
 }
 .inner-area img{
+<<<<<<< HEAD
   background-image: url('../../assets/img/main/전문가 아이콘.png');
+=======
+  background-image: url('../../assets/img/전문가 아이콘.png');
+>>>>>>> working/mainpage
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -741,6 +752,7 @@ label.right {
 
 .img4{
   width:285px; height:370px;
+<<<<<<< HEAD
 }
 
 /* --------------------------------------------------------------------Footer------------------------------------------------------------- */
@@ -827,4 +839,6 @@ footer a:hover {
 .icon-ul li {
   float: left;
   margin-left: 20px;
+=======
+>>>>>>> working/mainpage
 }

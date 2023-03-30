@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+=======
+>>>>>>> working/mainpage
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>메인페이지</title>
+<<<<<<< HEAD
 </head>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/header.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css">
@@ -67,6 +71,12 @@
     </header>
    <!-----------------------------------------------------------------------Header------------------------------------------------------------------ -->
     <main>
+=======
+<link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+   <main>
+>>>>>>> working/mainpage
 <section id="slide-bar" style="text-align: center;">
 <div class="outer"style="width: 1200px; height: 600px; margin-top:50px;">
   <div class="slidebox">
@@ -80,21 +90,33 @@
                 <label for="slide04" class="left"></label>
                 <label for="slide02" class="right">
                 </label>
+<<<<<<< HEAD
                 <a><img src="../../assets/img/main/메인페이지 디자인 배너.png"></a>
+=======
+                <a><img src="../../assets/img/메인페이지 디자인 배너.png"></a>
+>>>>>>> working/mainpage
             </div>
         </li>
         <li class="slideitem">
             <div>
                 <label for="slide01" class="left"></label>
                 <label for="slide03" class="right"></label>
+<<<<<<< HEAD
                 <a><img src="../../assets/img/main/반려식물 찾기 테스트 배너.png"></a>
+=======
+                <a><img src="../../assets/img/반려식물 찾기 테스트 배너.png"></a>
+>>>>>>> working/mainpage
             </div>
         </li>
         <li class="slideitem">
             <div>
                 <label for="slide02" class="left"></label>
                 <label for="slide04" class="right"></label>
+<<<<<<< HEAD
                 <a><img src="../../assets/img/main/임시.jpg" style="width:1200px;" ></a>
+=======
+                <a><img src="../../assets/img/임시.png" style="width:1200px;" ></a>
+>>>>>>> working/mainpage
             </div>
         </li>
         <li class="slideitem">
@@ -271,11 +293,16 @@
                   <div class="about">야생화/허브/씨앗</div>
                   <div class="social-icons">                    
                     <a href="#" class="fb">
+<<<<<<< HEAD
                       <img src="../../assets/img/main/facebook.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
+=======
+                      <img src="../../assets/img/facebook.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
+>>>>>>> working/mainpage
                       style="border-radius: 120%;" />
                       <i class="fab fa-facebook-f">    
                       </i></a>
                     <a href="#" class="twitter">
+<<<<<<< HEAD
                       <img src="../../assets/img/main/twitter.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
                       style="border-radius: 120%;" /><i class="fab fa-twitter"></i></a>
                     <a href="#" class="insta">
@@ -283,6 +310,15 @@
                       style="border-radius: 120%;" /><i class="fab fa-instagram"></i></a>
                     <a href="#" class="yt">
                       <img src="../../assets/img/main/youtube.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
+=======
+                      <img src="../../assets/img/twitter.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
+                      style="border-radius: 120%;" /><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="insta">
+                      <img src="../../assets/img/instagram.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
+                      style="border-radius: 120%;" /><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="yt">
+                      <img src="../../assets/img/youtube.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
+>>>>>>> working/mainpage
                       style="border-radius: 120%;" /><i class="fab fa-youtube"></i></a>
                   </div>
                   <div class="buttons">
@@ -304,6 +340,7 @@
                   <div class="name">식고수 2</div>
                   <div class="about">공기정화/관엽식물</div>
                   <div class="social-icons">
+<<<<<<< HEAD
                     <a href="#" class="fb">  <img src="../../assets/img/main/facebook.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
                       style="border-radius: 120%;" /><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="twitter"><img src="../../assets/img/main/twitter.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
@@ -311,6 +348,15 @@
                     <a href="#" class="insta"> <img src="../../assets/img/main/instagram.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
                       style="border-radius: 120%;" /><i class="fab fa-instagram"></i></a>
                     <a href="#" class="yt"><img src="../../assets/img/main/youtube.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
+=======
+                    <a href="#" class="fb">  <img src="../../assets/img/facebook.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
+                      style="border-radius: 120%;" /><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="twitter"><img src="../../assets/img/twitter.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
+                      style="border-radius: 120%;" /><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="insta"> <img src="../../assets/img/instagram.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
+                      style="border-radius: 120%;" /><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="yt"><img src="../../assets/img/youtube.png"  onMouseOver="this.style.opacity='.6'; this.style.filter='alpha(opacity=60)'"onMouseOut="this.style.opacity='1.0'; this.style.filter='alpha(opacity=100)'" 
+>>>>>>> working/mainpage
                       style="border-radius: 120%;" /><i class="fab fa-youtube"></i></a>
                   </div>
                   <div class="buttons">
@@ -347,6 +393,7 @@
                 </div>
           </section>
     </main>
+<<<<<<< HEAD
     <!-----------------------------------------------------------------------Footer------------------------------------------------------------------ -->
     <footer>
       <div class="footer-all">
@@ -418,5 +465,7 @@
       </div>
     </footer>
     <script src="/html/teamProject-main/teamProject-main.js"></script>
+=======
+>>>>>>> working/mainpage
 </body>
 </html>
