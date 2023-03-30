@@ -18,4 +18,8 @@
  	insert into tbl_story(story_title, story_content, user_number)
  	values(#{storyTitle},#{storyContent},#{userNumber})
  </insert>
+ 
+ <select id="getSequence" resultType="_int">
+ 	select last_insert_id()
+ </select>
 </mapper>
