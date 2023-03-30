@@ -12,5 +12,8 @@ public class AlgorithmDAO {
 	public AlgorithmDAO() {
 		
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
+		
+		
+		
 	}
 }
