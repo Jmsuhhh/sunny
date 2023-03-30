@@ -31,7 +31,7 @@
           <!-- form태그 처리 -->
           <form action="${pageContext.request.contextPath}/user/userDropOk.us" method="POST">
             <!-- 다시 마이페이지로 이동 -->
-            <a href="">서비스 계속 이용하기</a>
+            <a href="#">서비스 계속 이용하기</a>
             <!-- 탈퇴처리 -->
             <button type="submit">탈퇴하기</button>
           </form>

@@ -89,8 +89,8 @@
             </div>
             <div class="btn">
               <!-- 마이페이지로 이동 -->
-              <button type="button">취소</button>
-              <button type="submit">저장</button>
+              <button type="button" class="modify-cancel-btn">취소</button>
+              <button type="submit" class="modify-submit-btn">저장</button>
             </div>
           </form>
         </div>

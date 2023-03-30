@@ -30,4 +30,11 @@ public class UserDAO {
 		return sqlSession.selectOne("user.getUserId", userNumber);
 	}
 	
+	public void userComment(UserDTO userDTO) {
+		sqlSession.update("user.userComment", userDTO);
+	}
+	
+	public void userDrop(int userNumber) {
+		sqlSession.delete("user.userDrop", userNumber);
+	}
 }
