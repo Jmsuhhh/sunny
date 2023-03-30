@@ -2,7 +2,7 @@
  * 
  */
  
- let $fileInput = $('#file');
+let $fileInput = $('#file');
 let $fileList = $('.file-list');
 let $cnt = $('.cnt');
 
@@ -58,13 +58,9 @@ $fileInput.on('change', function(){
    });
 });
 
-// 등록하기 
-$('.submit-btn').on('click', () => {
-    window.location.href = '#';
- });
 
-//취소 버튼 처리
-$('.cancel-btn').on('click', () => {
-   window.location.href = '#';
+//취소하기
+$(".cancel-btn").on("click", () => {
+  window.location.href = "/question/questionListOk.qs";
 });
 

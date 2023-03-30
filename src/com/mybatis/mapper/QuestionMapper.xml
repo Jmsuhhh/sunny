@@ -3,5 +3,8 @@
 
 <mapper namespace="question">
 
-
+	<insert id="insert" parameterType="QuestionDTO">
+		insert into tbl_question(question_title,question_content,user_number)
+		values(#{questionTitle},#{questionContent},#{userNumber})
+	</insert>
 </mapper>

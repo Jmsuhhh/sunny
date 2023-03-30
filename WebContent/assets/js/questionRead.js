@@ -1,25 +1,24 @@
 /**
  * 
  */
- 
- let $modifyBtn = $('.modify-btn');
-let $deleteBtn = $('.delete-btn');
 
 // 목록
-function listBtn(e){
-   window.location.href="#";
-};
+function questionList(e){
+    window.location.href="/question/questionList.qs";
+}
 
 // 수정
-$modifyBtn.on('click', () => {
+$(".modify-btn").on('click', () => {
    window.location.href = '#' + boardNumber;
 });
 
 // 삭제
-$deleteBtn.on('click', () => {
+$(".delete-btn").on('click', () => {
    window.location.href = '#' + boardNumber;
 });
 
+
+// 댓글 
 replyAjax();
 
 function replyAjax(){
