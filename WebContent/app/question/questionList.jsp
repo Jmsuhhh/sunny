@@ -7,13 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>식고수페이지</title>
-    <link rel="stylesheet" href="${pageContent.request.contextPath}/question/question.css">
+     <link rel="stylesheet" href="${pageContent.request.contextPath}/assets/css/questionList.css">
 </head>
-
-
 <body>
+	<jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
     <div class="pcontainer">
-      
       <div class="info">
         <h3> <strong>
           9지인
@@ -36,28 +34,29 @@
                    <button type="button">미답변</button>
 
                   <!-- ========== 게시글 목록 =========== -->
-                  <div class="postingList">
-                    <div class="p">
-                      <!-- 이미지 클릭하면 그 게시물로 이동 -->
-                      <a href="#">
-                        <img src="../20230321_104528.png" alt="" class="imgz">
-                      </a>
-                      <!-- 스토리 제목  -->
-                      <div class="title">이거 어떻게 키우나요</div>
+                  <c:choose>
+                  	<c:when test="${not empty questionList}">
+                  		<c:forEach var="question" items="${questionList}">
+                  			    <div class="postingList">
+                   				 <div class="p">
+                      			<!-- 이미지 클릭하면 그 게시물로 이동 -->
+                     			 <a href="#">
+                      				  <img src="../20230321_104528.png" alt="" class="imgz">
+                      			</a>
+                     			 <!-- 스토리 제목  -->
+                     			 <div class="title">이거 어떻게 키우나요</div>
                     </div>
-                    <div class="p">
-                      <a href="#">
-                        <img src="../2.png" alt="" class="imgz">
-                      </a>
-                      <div class="title">이 식물은 뭐죠?</div>
-                    </div>
-                    <div class="p">
-                      <a href="">
-                        <img src="../3.png" alt="" class="imgz">
-                      </a>
-                      <div class="title">궁금한게 있습니다!</div>
-                    </div>
-                  </div>
+                  		</c:forEach>
+                  	</c:when>
+                  	<c:otherwise>
+                  		<tr>
+                  			<td colspan="3" align="center"></td>
+                  		</tr>
+                  	</c:otherwise>
+                  </c:choose>
+                  
+              
+                    
                 </div>
                     <!-- ========== 게시글 목록 =========== -->
                  
@@ -122,7 +121,7 @@
                 </div>
 
     </div>
-    <script src="${pageContent.request.contextPath}/assets/questionList.js"></script>
+    <script src="${pageContent.request.contextPath}/assets/js/questionList.js"></script>
 </body>
 </html>
 

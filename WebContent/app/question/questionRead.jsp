@@ -7,12 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>질문</title>
-    <link rel="stylesheet" href="${pageContent.request.contextPath}/question/question.css">
+   <link rel="stylesheet" href="${pageContent.request.contextPath}/assets/css/questionRead.css">
 </head>
-  
 <body>
-    
-
+    <jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
     <div class="container">
         <article class="view-top">
           <div class="infomation">
@@ -21,7 +19,7 @@
                 <div class="profile-img"></div>
                 <p class="profile">홍길동</p>
               </a>
-              <button type="button" class="follow dir">팔로우</button>
+              <button type="button" class="follow dir" onclick="toggleFollow()">팔로우</button>
               <p class="txt"></p>
             </div>
           </div>
@@ -54,7 +52,7 @@
             
                   <div class="btn-group">
                     <!-- 각 버튼 처리 경로 js로 수정하기 -->
-                    <button type="button" class="list-btn" data-boardnumber="#">목록</button>
+                    <button type="button" class="list-btn" onclick="questionList()">목록</button>
                     
                     <c:if test="#">
                        <button type="button" class="modify-btn">수정</button>
@@ -113,6 +111,6 @@
       
               </div>
               
-    <script src="${pageContent.request.contextPath}/assets/questionRead.js"></script>
+    <script src="${pageContent.request.contextPath}/assets/js/questionRead.js"></script>
 </body>
 </html>
