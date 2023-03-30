@@ -20,8 +20,29 @@
     <!-- include summernote css/js -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+  $(document).ready(function () {
+    $("#summernote").summernote({
+      height: 400,
+      lang: "ko-KR",
+      toolbar: [
+        ["style", ["style"]],
+        ["font", ["bold", "italic", "underline", "clear"]],
+        ["fontname", ["fontname"]],
+        ["color", ["color"]],
+        ["para", ["ul", "ol", "paragraph"]],
+        ["table", ["table"]],
+        ["insert", ["link", "picture"]],
+        ["view", ["codeview"]],
+      ],
+      placeholder: "*스토리 내용을 입력해주세요!",
+    });
+  });
+</script>
   </head>
   <body>
+<%--   <jsp:include
+   page="${pageContext.request.contextPath}/app/header/header.jsp"/> --%>
     <div class="container">
 		<form
 			action="${pageContext.request.contextPath}/story/storyWriteOk.st"
@@ -34,7 +55,6 @@
 				<input type="text" id="title" name="storyTitle" required
 					placeholder="* 스토리 제목을 입력해주세요!" />
 			</div>
-
 
 			<div class="form-group">
 				<div class="image-upload-wrap">
@@ -62,33 +82,16 @@
 
 			<h1 class="mini-title">상세 내용 입력</h1>
 			<textarea id="summernote" name="storyContent"></textarea>
-			<script>
-  $(document).ready(function () {
-    $("#summernote").summernote({
-      height: 400,
-      lang: "ko-KR",
-      toolbar: [
-        ["style", ["style"]],
-        ["font", ["bold", "italic", "underline", "clear"]],
-        ["fontname", ["fontname"]],
-        ["color", ["color"]],
-        ["para", ["ul", "ol", "paragraph"]],
-        ["table", ["table"]],
-        ["insert", ["link", "picture"]],
-        ["view", ["codeview"]],
-      ],
-      placeholder: "*스토리 내용을 입력해주세요!",
-    });
-  });
-</script>
+
 			<!-- 폼 내용 -->
 			<div class="btn-groups">
-				<button type="submit" class="submit-btn">등록 하기</button>
-				<button type="button" class="cancel-btn">취소</button>
+    			<button type="submit" name="action" value="write" class="submit-btn">등록 하기</button>
+    			<button type="button" class="cancel-btn">취소</button>
 			</div>
 		</form>
 	</div>
-
        <script src="${pageContext.request.contextPath}/assets/js/storyWrite.js"></script>
-  </body>
+<%-- 	<jsp:include
+   page="${pageContext.request.contextPath}/app/admin/footer.jsp"/>--%>  
+   </body>
 </html>

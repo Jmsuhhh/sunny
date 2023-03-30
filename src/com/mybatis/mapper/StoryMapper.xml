@@ -2,22 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="story">
- <select id="selectAll" resultType="StoryVO">
- 	select story_number, story_title, story_content, story_viewcnt, story_date, 
-	last_update, u.user_number, u.user_nickname 
-	from tbl_user u join tbl_story s 
-	on u.user_number  = s.user_number
- </select>
+ <select id="selectAll" resultType="storyListVO" parameterType="map">
+    select s.story_number, s.story_title, u.user_nickname, uf.file_system_name AS user_profile_image, sf.file_system_name AS story_cover_image
+    from tbl_story s
+    join tbl_user u ON s.user_number = u.user_number
+    left outer join tbl_user_file uf ON u.user_number = uf.user_number
+    left outer join tbl_story_file sf ON s.story_number = sf.story_number
+    order by story_number desc
+    limit #{startRow}, #{rowCount}
+</select>
  
- 	<select id="getTotal" resultType="_int">
-		select count(user_number) from
-		tbl_user
-	</select>
+<select id="getTotal" resultType="_int">
+	select count(story_number) from tbl_story
+</select>
+
  
- <insert id="insert" parameterType="StoryDTO">
- 	insert into tbl_story(story_title, story_content, user_number)
- 	values(#{storyTitle},#{storyContent},#{userNumber})
- </insert>
+<insert id="insertStory" parameterType="StoryDTO">
+  insert into tbl_story (story_title, story_content, user_number) 
+  values (#{storyTitle}, #{storyContent}, #{userNumber})
+</insert>
+
  
  <select id="getSequence" resultType="_int">
  	select last_insert_id()

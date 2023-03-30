@@ -27,12 +27,13 @@ public class StoryFrontController extends HttpServlet {
 				new StoryListOkController().execute(req, resp);
 				break;
 			case "/story/storyReadOk.st" :
+				new StoryWriteOkController().execute(req,resp);
 				break;
 			case "/story/storyWrite.st" :
 				new StoryWriteController().execute(req, resp);
 				break;
 			case "/story/storyWriteOk.st" :
-				new StoryWriteOkController().execute(req,resp);
+				req.getRequestDispatcher("/app/story/storyList.jsp").forward(req, resp);
 				break;
 		}
 	}

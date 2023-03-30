@@ -15,7 +15,8 @@
     />
   </head>
   <body>
-   
+   <jsp:include
+   page="${pageContext.request.contextPath}/app/header/header.jsp"/>
     <div class="container">
       <article class="view-top">
         <div class="infomation">
@@ -114,9 +115,9 @@
         </ul>
         <!-- /리스트 예시 -->
       </div>
-
-      <!-- 댓글 수정중 -->
     </div>
+    <jsp:include
+   page="${pageContext.request.contextPath}/app/admin/footer.jsp"/>
     <script src="${pageContext.request.contextPath}/assets/js/storyRead.js"></script>
   </body>
 </html>
