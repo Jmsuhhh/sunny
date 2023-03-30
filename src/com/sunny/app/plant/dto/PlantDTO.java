@@ -8,10 +8,10 @@ package com.sunny.app.plant.dto;
 
 public class PlantDTO {
 
-	int plantNumber;
-	String plantName;
-	String plantContent;
-	String algorithmResult;
+	private int plantNumber;
+	private String plantName;
+	private String plantContent;
+	private String algorithmResult;
 	
 	public PlantDTO() {}
 
