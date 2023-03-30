@@ -22,5 +22,15 @@
 		select user_id from tbl_user
 		where user_number = #{userNumber}
 	</select>
+	
+	<update id="userComment" parameterType="UserDTO">
+		update tbl_user set user_comment = #{userComment}
+		where user_number = #{userNumber};
+	</update>
+
+	
+	<delete id="userDrop" parameterType="_int">
+		delete from tbl_user where user_number=#{userNumber}	
+	</delete>
 
 </mapper>

@@ -22,7 +22,7 @@
         <div class="main1--bottom">
           <div class="main1--modify">
             <!-- 회원정보수정페이지로 이동 -->
-            <a href="#">회원정보수정 ></a>
+            <a href="${pageContext.request.contextPath}/user/userModify.us">회원정보수정 ></a>
             <!-- 모달창 필요함-->
             <button class="grade-info">등급보기 ></button>
           </div>
@@ -115,7 +115,7 @@
           <h1>내 스토리</h1>
           <div class="write-story">
             <!-- 스토리쓰기 페이지로 이동 -->
-            <a href="#">글쓰기</a>
+            <a href="${pageContext.request.contextPath}/app/story/storyWrite.jsp">글쓰기</a>
           </div>
         </div>
         <!-- 스토리읽기 페이지로 이동 -->
@@ -206,7 +206,7 @@
       <!-- 회원탈퇴 페이지로 이동 -->
       <section class="main2">
         <div class="withdraw">
-          <a href="#">회원 탈퇴</a>
+          <a href="${pageContext.request.contextPath}/user/userDrop.us">회원 탈퇴</a>
         </div>
       </section>
     </div>
@@ -216,7 +216,7 @@
         <h1>프로필사진</h1>
         <div class="photo-x-box">X</div>
         <!-- 사진등록경로처리-->
-        <form action="#">
+        <form action="${pageContext.request.contextPath}/userfile/userFileOk.uf">
           <label for="profile-file">
             <input type="file" id="profile-file" />
             <span>이미지 등록 및 수정하기</span>
