@@ -16,66 +16,15 @@
 	rel="stylesheet" />
 </head>
 <body>
-
-<<<<<<< HEAD
-      <article class="holder2">
-        <div class="stroyList sl">
-          <ul class="listUl">
-	<c:choose>
-		<c:when test="${not empty storyList}">
-			<c:forEach var="story" items="${storyList}">
-				<li class="listLi">
-              <div class="top tBox">
-                <a href="${pageContext.request.contextPath}"
-                  ><div class="p1 proimg"></div>
-                  <p class="p1 profile">${story.getUserNickname()}</p></a
-                >
-                <button
-                  type="button"
-                  id="follow-button"
-                  onclick="toggleFollow(this)"
-                  class="p1 follow dir"
-                >
-                  팔로우
-                </button>
-              </div>
-              <a href="#">
-                <div class="img-container">
-                  <div class="coverimg">${storyFile.getUserFileOriginName()}</div>
-                </div>
-                <p class="imgtilte">${story.getStoryTitle()}</p>
-              </a>
-            </li>
-			</c:forEach>
-		</c:when>
-		<c:otherwise>
-			<tr>
-				<td colspan="5" align="center">등록된 스토리가 없습니다.</td>
-			</tr>
-		</c:otherwise>
-	</c:choose>
-          </ul>
-        </div>
-        <div class="pagination">
-          <ul>
-            <li><a href="#" class="prev">&laquo;</a></li>
-            <li><a href="#" class="active">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#" class="next">&raquo;</a></li>
-          </ul>
-        </div>
-      </article>
-=======
+<jsp:include
+   page="${pageContext.request.contextPath}/app/header/header.jsp"/>
 	<div class="container">
 		<article class="bntslide">
 			<div class="holder">
 				<div class="loopslider" data-pagertype="bullets">
 					<ul class="swiper-wrapper">
 						<li class="swiper-slide"><a
-							href="${pageContext.request.contextPath}">
+							href="${pageContext.request.contextPath}/app/main/main.jsp">
 								<div class="wraphover">
 									<img
 										src="https://www.shouse.garden/data/banner/220729_024730_734200p.jpg"
@@ -87,39 +36,44 @@
 			</div>
 		</article>
 		<h3 class="subtit">볕 들 스토리들</h3>
->>>>>>> work/story2
+
 
 		<article class="holder2">
 			<div class="stroyList sl">
-				<ul class="listUl">
-					<c:choose>
-						<c:when test="${not empty storyList}">
-							<c:forEach var="story" items="${storyList}">
-								<li class="listLi">
-									<div class="top tBox">
-										<a href="${pageContext.request.contextPath}"><div
-												class="p1 proimg">#</div>
-											<p class="p1 profile">${story.getUserNickname()}</p></a>
-										<button type="button" id="follow-button"
-											onclick="toggleFollow(this)" class="p1 follow dir">
-											팔로우</button>
-									</div> <a href="#">
-										<div class="img-container">
-											<div class="coverimg">${storyFile.getStoryFileOriginalName()}</div>
-										</div>
-										<p class="imgtilte">${story.getStoryTitle()}</p>
-								</a>
-								</li>
-							</c:forEach>
-						</c:when>
-						<c:otherwise>
-							<tr>
-								<td colspan="5" align="center">등록된 스토리가 없습니다.</td>
-							</tr>
-						</c:otherwise>
-					</c:choose>
-				</ul>
-			</div>
+    <ul class="listUl">
+        <c:choose>
+            <c:when test="${not empty storyList}">
+                <c:forEach var="story" items="${storyList}">
+                    <li class="listLi">
+                        <div class="top tBox">
+                            <a href="${pageContext.request.contextPath}/app/user/myPage.jsp">
+                                <div class="p1 proimg">
+                                    <img src="${story.getUserProfileImage()}" alt="프로필 이미지">
+                                </div>
+                                <p class="p1 profile">${story.getUserNickname()}</p>
+                            </a>
+                            <button type="button" id="follow-button" onclick="toggleFollow(this)" class="p1 follow dir">팔로우</button>
+                        </div>
+                        <a href="${pageContext.request.contextPath}/app/story/storyRead.jsp">
+                            <div class="img-container">
+                                <div class="coverimg">
+                                    <img src="${story.getStoryCoverImage()}" alt="커버 이미지">
+                                </div>
+                            </div>
+                            <p class="imgtilte">${story.getStoryTitle()}</p>
+                        </a>
+                    </li>
+                </c:forEach>
+            </c:when>
+            <c:otherwise>
+                <tr>
+                    <td colspan="5" align="center">등록된 스토리가 없습니다.</td>
+                </tr>
+            </c:otherwise>
+        </c:choose>
+    </ul>
+</div>
+
 			<div class="pagination">
 				<ul>
 					<c:if test="${prev}">
@@ -152,8 +106,9 @@
 			</div>
 		</article>
 
-		<!-- main -->
 		<script
 			src="${pageContext.request.contextPath}/assets/js/storyList.js"></script>
+<%-- 		<jsp:include
+   page="${pageContext.request.contextPath}/app/admin/footer.jsp"/> --%>
 </body>
 </html>
