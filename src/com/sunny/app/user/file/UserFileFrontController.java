@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class UserFileController extends HttpServlet{
+public class UserFileFrontController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,6 +24,9 @@ public class UserFileController extends HttpServlet{
 		System.out.println(target);
 		
 			switch(target) {
+			case "userfile/userFileOk.uf":
+				
+				break;
 		}
 	}
 }
