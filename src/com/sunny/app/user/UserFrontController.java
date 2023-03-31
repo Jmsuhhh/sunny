@@ -27,10 +27,14 @@ public class UserFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
+
+		case "/user/myPage.us" :
+			new MyPageController().execute(req, resp);
+			break;
 		case "/user/myPageOk.us" :
 			System.out.println("!!!");
-//			new MyPageOkController().execute(req, resp);
-			req.getRequestDispatcher("/app/user/myPage.jsp").forward(req, resp);
+			new MyPageOkController().execute(req, resp);
+			
 			break;
 		case "/user/userCommentOk.us":
 			new UserCommentController().execute(req, resp);
