@@ -23,7 +23,8 @@ public class UserCommentController implements Execute {
 		req.setCharacterEncoding("utf-8");
 		
 		userDTO.setUserComment(req.getParameter("userComment"));
-		userDTO.setUserNumber(2);
+//		userNumber임의로 지정해서 넘겨줌
+		userDTO.setUserNumber(14);
 //		userDTO.setUserNumber((Integer)session.getAttribute("userNumber"));
 		
 		userDAO.userComment(userDTO);
