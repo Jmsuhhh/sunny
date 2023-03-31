@@ -22,13 +22,13 @@ public class JoinOkController implements Execute {
 //		insert into tbl_user(user_id, user_password, user_name, user_nickname, user_phone, user_email, user_date)
 //		values(#{userId}, #{userPassword}, #{userName}, #{userNickname}, #{userPhone}, #{userEmail}, now())
 //		</insert>
-		
+//		System.out.println(req.getParameter("userPhone"));
 		
 		userDTO.setUserId(req.getParameter("userId"));
 		userDTO.setUserPassword(req.getParameter("userPassword"));
 		userDTO.setUserName(req.getParameter("userName"));
 		userDTO.setUserNickname(req.getParameter("userNickname"));
-		userDTO.setUserPhone(Integer.valueOf(req.getParameter("userPhone")));
+		userDTO.setUserPhone(req.getParameter("userPhone"));
 		userDTO.setUserEmail(req.getParameter("userEmail"));
 		userDTO.setUserDate(req.getParameter("userDate"));
 

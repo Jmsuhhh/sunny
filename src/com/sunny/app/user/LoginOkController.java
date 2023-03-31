@@ -26,15 +26,18 @@ public class LoginOkController implements Execute {
 		
 		userDTO.setUserId(userId);
 		userDTO.setUserPassword(userPassword);
-		
+		System.out.println("=============");
 		try {
 			userNumber = userDAO.login(userDTO);
+			System.out.println(userNumber);
 			path = "/story/storyListOk.st";
 			session.setAttribute("userNumber", userNumber);
 		} catch (NullPointerException e) {
+			System.out.println("null!!");
 			path = "/user/login.us?login=fail";
 //			e.printStackTrace();
 		} catch (Exception e) {
+			System.out.println("AAAA");
 			e.printStackTrace();
 		}
 		
@@ -49,6 +52,9 @@ public class LoginOkController implements Execute {
 //		} else {
 //			path = "/story/storyListOk.st";
 //		}
+		
+		
+
 		
 		resp.sendRedirect(path);
 		

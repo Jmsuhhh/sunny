@@ -123,29 +123,29 @@
           <div class="input-tag">
             <div class="input-text">아이디</div>
             <br>
-            <input type="text" placeholder="아이디" minlength="5" maxlength="10" required>
+            <input type="text" name="userId" placeholder="아이디" minlength="5" maxlength="10" required>
             <br><br><br>
             <div class="input-text">비밀번호</div>
             <br>
-            <input type="password" placeholder="비밀번호" minlength="8" maxlength="15" required>
+            <input type="password" name="userPassword" placeholder="비밀번호" minlength="8" maxlength="15" required>
             <br><br>
-            <input type="password" placeholder="비밀번호 확인" minlength="8" maxlength="15" required>
+            <input type="password" name="userPassword" placeholder="비밀번호 확인" minlength="8" maxlength="15" required>
             <br><br><br>
             <div class="input-text">이름</div> <br>
-            <input type="text" placeholder="이름" maxlength="10" required>
+            <input type="text" placeholder="이름" name="userName" maxlength="10" required>
             <br><br><br>
             <div class="input-text3">
               <div class="input-text">닉네임</div>
               <div class="input-text2">(변경 불가)</div>
             </div> <br>
-            <input type="text" placeholder="닉네임(2~10자)" minlength="2" maxlength="10" required>
+            <input type="text" placeholder="닉네임(2~10자)" name="userNickname" minlength="2" maxlength="10" required>
             <br><br><br>
             <div class="input-text">
               연락처</div> <br>
-            <input type="tel" placeholder="01012345678" maxlength="11" required>
+            <input type="tel" placeholder="010-1234-5678" name="userPhone" maxlength="13" required>
             <br><br><br>
             <div class="input-text">이메일</div> <br>
-            <input type="email" placeholder="aa123@naver.com" required>
+            <input type="email" name="userEmail" placeholder="aa123@naver.com" required>
             <br><br><br>
             <div class="input-text">
               <label for="select">비밀번호 찾기 질문</label>
@@ -158,7 +158,7 @@
             </select>
             <br><br><br>
             <div class="input-text">비밀번호 찾기 답변</div> <br>
-            <input type="text" placeholder="선택한 비밀번호 질문의 답을 입력하세요" required>
+            <input type="text" placeholder="선택한 비밀번호 질문의 답을 입력하세요" name="findPasswordAnswer" required>
             <br><br><br><br>
             <div class="input-text">약관동의</div><br>
             <div class="agree">
