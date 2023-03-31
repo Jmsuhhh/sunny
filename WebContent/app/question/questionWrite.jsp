@@ -6,26 +6,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>질문하기</title>
-    <link rel="stylesheet" href="${pageContent.request.contextPath}/question/questionWrite.css" />
+    <link rel="stylesheet" href="${pageContent.request.contextPath}/assets/css/questionWrite.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <!-- include libraries(jQuery, bootstrap) -->
+    
+	 <!-- include libraries(jQuery, bootstrap) -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- include summernote css/js -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-
-    <link rel="stylesheet" href="./questionWrite.css">
+	
+    <link rel="stylesheet" href="${pageContent.request.contextPath}/assets/css/questionWrite.css">
   </head>
  
-  <body>
-
+<body>
+	<jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
     <div class="container">
+    <form id="write-form" action="${PageContext.request.contextPath}/question/questionWriteOk.qs" method="post" enctype="multipart/form-data">
       <h1 class="sub-title">
         <span class="story-ico"></span>
         질문하기
@@ -66,8 +65,9 @@
 
       <h1 class="mini-title">상세 내용 입력</h1>
       <div class="textEditor">
-           <textarea class="summernote" name="editordata"></textarea>    
+           <textarea id="summernote" name="editordata"></textarea>    
       </div>
+       
 
         <div class="btn-group">
           <button type="submit" class="submit-btn">등록 하기</button>
@@ -76,18 +76,20 @@
         </div>
       </form>
     </form>
-  </form>
     </div>
-    
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+	<script src="${pageContent.request.contextPath}/assets/js/questionWrite.js"></script>
     <script>
     $(document).ready(function(){
-      $('.summernote').summernote({
+      $('#summernote').summernote({
           height: 450,
           lang: "ko-KR"
         });
     });
     
       </script>
-<script src="${pageContent.request.contextPath}/assets/questionWrite.js"></script>
   </body>
 </html>
