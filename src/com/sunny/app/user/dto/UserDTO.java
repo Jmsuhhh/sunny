@@ -4,7 +4,7 @@ package com.sunny.app.user.dto;
 //user_password varchar(50) not null,
 //user_name varchar(20) not null,
 //user_nickname varchar(16) not null,
-//user_phone int not null,
+//user_phone varchar(20) not null,
 //user_email varchar(100) not null,
 //user_date datetime not null,
 //user_comment varchar(100) default '한 줄 소개를 입력하세요',
@@ -15,7 +15,7 @@ public class UserDTO {
 	private String userPassword;
 	private String userName;
 	private String userNickname;
-	private int userPhone;
+	private String userPhone;
 	private String userEmail;
 	private String userDate;
 	private String userComment;
@@ -63,11 +63,11 @@ public class UserDTO {
 		this.userNickname = userNickname;
 	}
 
-	public int getUserPhone() {
+	public String getUserPhone() {
 		return userPhone;
 	}
 
-	public void setUserPhone(int userPhone) {
+	public void setUserPhone(String userPhone) {
 		this.userPhone = userPhone;
 	}
 
