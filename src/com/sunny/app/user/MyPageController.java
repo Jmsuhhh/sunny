@@ -18,11 +18,12 @@ public class MyPageController implements Execute {
 	      String path = null;
 	      
 	      if(userNumber == null) {
-	         path = "/app/user/login.jsp";
+	         path = "/user/login.us";
 	      }else {
 	         path ="/user/myPageOk.us";
 	      }
-
+	      req.getRequestDispatcher(path).forward(req, resp);
+	     
 	}
 
 }

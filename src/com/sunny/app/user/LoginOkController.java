@@ -30,7 +30,7 @@ public class LoginOkController implements Execute {
 		try {
 			userNumber = userDAO.login(userDTO);
 			System.out.println(userNumber);
-			path = "/story/storyListOk.st";
+			path = "/app/header/header.jsp";
 			session.setAttribute("userNumber", userNumber);
 		} catch (NullPointerException e) {
 			System.out.println("null!!");

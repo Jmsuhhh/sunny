@@ -18,14 +18,12 @@ public class UserCommentController implements Execute {
 		System.out.println("들어왔다!!!");
 		UserDAO userDAO = new UserDAO();
 		UserDTO userDTO = new UserDTO();
-//		HttpSession session = req.getSession();
+		HttpSession session = req.getSession();
 		
 		req.setCharacterEncoding("utf-8");
 		
 		userDTO.setUserComment(req.getParameter("userComment"));
-//		userNumber임의로 지정해서 넘겨줌
-		userDTO.setUserNumber(14);
-//		userDTO.setUserNumber((Integer)session.getAttribute("userNumber"));
+		userDTO.setUserNumber((Integer)session.getAttribute("userNumber"));
 		
 		userDAO.userComment(userDTO);
 		

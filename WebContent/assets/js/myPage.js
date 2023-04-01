@@ -36,7 +36,49 @@ $(".photo-x-box").on("click", function() {
 	$(".photo-modal-box").toggleClass("none");
 });
 
+let $fileInput = $('#profile-file');
+let $profilePhoto = $('.profile-photo>img');
+let $profileForm = $('.profile-photo-form');
+$fileInput.on('change', function() {
+	console.log(this);
+	let userFile = this.files[0];
+	console.log(userFile);
 
+	let src = URL.createObjectURL(userFile);
+	console.log($profilePhoto);
+
+	$profilePhoto.attr("src", src);
+	$(".photo-modal-box").toggleClass("none");
+	// 비동기로 사진 넣는거 끝남 이제 DB에 저장해야함
+	$profileForm.submit();
+	$profileForm.on('submit', function(e){
+		console.log("제출한다");
+	})
+
+
+	/*$('.profile-photo-form').submit(function(e) {
+		console.log("제출한다!");
+		e.preventDefault();
+		userFile.serialize();
+
+		$.ajax({
+			url: '/userFile/userFileOk.uf',
+			type: 'post',
+			data: { userFile: userFile },
+			success: function() {
+				console.log("저장성공");
+
+			},
+			error: function(a, b, c) {
+				console.log(c);
+			}
+		})
+	});*/
+
+
+
+
+});
 
 
 // 기본사진으로 변경->원래사진DB에서도지움
@@ -58,8 +100,6 @@ $(".modify-btn-ready").on("click", function() {
 });
 
 
-
-
 // 한줄소개 저장
 $(".profile-introduce").on("click", ".modify-btn-done", function() {
 	let $parent = $(this).closest(".profile-introduce");
@@ -76,10 +116,10 @@ $(".profile-introduce").on("click", ".modify-btn-done", function() {
 		$.ajax({
 			url: '/user/userCommentOk.us',
 			type: 'get',
-			data: { userComment: modifyContent},
+			data: { userComment: modifyContent },
 			success: function() {
 				console.log("저장성공");
-				
+
 			},
 			error: function(a, b, c) {
 				console.log(c);
@@ -91,18 +131,18 @@ $(".profile-introduce").on("click", ".modify-btn-done", function() {
 		$.ajax({
 			url: '/user/userCommentOk.us',
 			type: 'get',
-			data: { userComment: modifyContent},
+			data: { userComment: modifyContent },
 			success: function() {
 				console.log("저장성공");
-				
+
 			},
 			error: function(a, b, c) {
 				console.log(c);
 			}
 		})
 	}
-		$(".modify-box-wrap").hide();
-		$(".profile-content-wrap").show();
+	$(".modify-box-wrap").hide();
+	$(".profile-content-wrap").show();
 });
 
 // ***식고수의마이페이지
@@ -113,3 +153,4 @@ $(".profile-introduce").on("click", ".modify-btn-done", function() {
   // console.log(this);
   $(".answer-btn").removeClass("active");
   $(this).toggleClass("active");*/
+

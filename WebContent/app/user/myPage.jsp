@@ -216,9 +216,10 @@
         <h1>프로필사진</h1>
         <div class="photo-x-box">X</div>
         <!-- 사진등록경로처리-->
-        <form action="${pageContext.request.contextPath}/userfile/userFileOk.uf">
+        <form action="${pageContext.request.contextPath}/userFile/userFileOk.uf" method="post" enctype="multipart/form-data" class="profile-photo-form">
           <label for="profile-file">
-            <input type="file" id="profile-file" />
+            <input type="file" id="profile-file" name="userFile"
+						accept=".jpg, .jpeg, .png" />
             <span>이미지 등록 및 수정하기</span>
           </label>
         </form>
@@ -241,6 +242,7 @@
         <div class="grade-x-box">X</div>
       </div>
     </article>
+    <jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="${pageContext.request.contextPath}/assets/js/myPage.js"></script>
   </body>

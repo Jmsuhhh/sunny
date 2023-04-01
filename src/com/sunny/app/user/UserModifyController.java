@@ -9,25 +9,22 @@ import javax.servlet.http.HttpSession;
 
 import com.sunny.app.Execute;
 import com.sunny.app.user.dao.UserDAO;
+import com.sunny.app.user.dto.UserDTO;
+import com.sunny.app.user.vo.UserVO;
 
 public class UserModifyController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	      UserDAO userDAO = new UserDAO();
+	     System.out.println("UsermodifyController진입");
+		  UserDAO userDAO = new UserDAO();
 	      HttpSession session = req.getSession();
 	      Integer userNumber = (Integer)session.getAttribute("userNumber");
-//	      String path = null;
+	    
+	      req.setAttribute("userInfo", userDAO.getUserInfo(userNumber));
 	      
-//	      if(userNumber == null) {
-//	         path = "/app/member/login.jsp";
-//	      }else {
-//	         path ="/app/board/boardWrite.jsp";
-//	         req.setAttribute("memberId", userDAO.getMemberId(userNumber));
-//	      }
-	      req.setAttribute("userId", userDAO.getUserId(userNumber));
-//	      
-//	      req.getRequestDispatcher(path).forward(req, resp);
+	      req.getRequestDispatcher("/app/user/userModify.jsp").forward(req, resp);
+
 	   }
 	}
 
