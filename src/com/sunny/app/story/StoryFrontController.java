@@ -1,4 +1,4 @@
-package com.sunny.app.user.file;
+package com.sunny.app.story;
 
 import java.io.IOException;
 
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class UserFileController extends HttpServlet{
+public class StoryFrontController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -23,6 +23,17 @@ public class UserFileController extends HttpServlet{
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 	
 			switch(target) {
+			case "/story/storyListOk.st" :
+				new StoryListOkController().execute(req, resp);
+				break;
+			case "/story/storyReadOk.st" :
+				break;
+			case "/story/storyWrite.st" :
+				new StoryWriteController().execute(req, resp);
+				break;
+			case "/story/storyWriteOk.st" :
+				new StoryWriteOkController().execute(req,resp);
+				break;
 		}
 	}
 }

@@ -1,4 +1,4 @@
-package com.sunny.app.story;
+package com.sunny.app.user.file;
 
 import java.io.IOException;
 
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class StroyFrontController extends HttpServlet {
+public class UserFileFrontController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -21,8 +21,12 @@ public class StroyFrontController extends HttpServlet {
 
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
-	
+		System.out.println(target);
+		
 			switch(target) {
+			case "userfile/userFileOk.uf":
+				
+				break;
 		}
 	}
 }

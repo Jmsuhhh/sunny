@@ -2,5 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="story">
-
+ <select id="selectAll" resultType="StoryVO">
+ 	select story_number, story_title, story_content, story_viewcnt, story_date, 
+	last_update, u.user_number, u.user_nickname 
+	from tbl_user u join tbl_story s 
+	on u.user_number  = s.user_number
+ </select>
+ 
+ 	<select id="getTotal" resultType="_int">
+		select count(user_number) from
+		tbl_user
+	</select>
+ 
+ <insert id="insert" parameterType="StoryDTO">
+ 	insert into tbl_story(story_title, story_content, user_number)
+ 	values(#{storyTitle},#{storyContent},#{userNumber})
+ </insert>
+ 
+ <select id="getSequence" resultType="_int">
+ 	select last_insert_id()
+ </select>
 </mapper>
