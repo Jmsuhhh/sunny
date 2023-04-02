@@ -3,10 +3,12 @@
 
 <mapper namespace="algorithm">
 
-	<select id="algorithmResult" parameterType="PlantDTO" resultType="_int">
-		select algorithm_result, select_one, select_two, select_three, select_four,
-		select_five from tbl_algorithm
-		where algorithm_result=#{algorithm_result}
+	<select id="algorithmResult" parameterType="int" resultType="PlantDTO">
+		select plant_name, plant_content 
+		from tbl_plant
+		where algorithm_result = #{algorithmResult}
 	</select>
+	
+	
 	
 </mapper>

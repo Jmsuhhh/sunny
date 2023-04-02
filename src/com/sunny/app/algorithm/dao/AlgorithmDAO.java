@@ -3,12 +3,14 @@ package com.sunny.app.algorithm.dao;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
-import com.sunny.app.algorithm.dto.AlgorithmDTO;
+import com.sunny.app.plant.dto.PlantDTO;
+
 
 public class AlgorithmDAO {
 
 	
 	public SqlSession sqlSession;
+	
 	
 	public AlgorithmDAO() {
 		
@@ -16,8 +18,9 @@ public class AlgorithmDAO {
 		
 	}
 	
-	public int algorithmResult(AlgorithmDTO algorithmDTO) {
+	public PlantDTO algorithmResult(int algorithmResult){
 		
-		return sqlSession.selectOne("algorithm" , algorithmDTO );
+		
+		return sqlSession.selectOne("algorithm.algorithmResult" , algorithmResult );
 	}
 }
