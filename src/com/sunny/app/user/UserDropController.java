@@ -20,8 +20,6 @@ public void execute(HttpServletRequest req, HttpServletResponse resp) throws Ser
 	userDAO.userDrop(userNumber);
 	
 	req.getSession().invalidate();
-//	메인화면으로 이동
-//	resp.sendRedirect("/main/main.");
-	
+
 	}
 }

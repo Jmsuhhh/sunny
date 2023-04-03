@@ -34,7 +34,7 @@ public class JoinOkController implements Execute {
 
 		userDAO.join(userDTO);
 		
-		resp.sendRedirect("/user/login.us");
+		resp.sendRedirect("/user/joinOk.us");
 		
 	}
 }
