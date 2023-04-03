@@ -57,7 +57,7 @@
                         <a href="${pageContext.request.contextPath}/app/story/storyRead.jsp">
                             <div class="img-container">
                                 <div class="coverimg">
-                                    <img src="${story.getStoryCoverImage()}" alt="">
+                                    <img src="${storyUpload.getStoryCoverImage()}" alt="">
                                 </div>
                             </div>
                             <p class="imgtilte">${story.getStoryTitle()}</p>

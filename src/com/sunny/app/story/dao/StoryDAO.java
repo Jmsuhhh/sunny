@@ -8,7 +8,6 @@ import org.apache.ibatis.session.SqlSession;
 import com.mybatis.config.MyBatisConfig;
 import com.sunny.app.story.dto.StoryDTO;
 import com.sunny.app.story.vo.StoryListVO;
-import com.sunny.app.story.vo.StoryVO;
 
 public class StoryDAO {
 
@@ -28,7 +27,12 @@ public class StoryDAO {
 	}
 	
 	public void insert(StoryDTO storyDTO) {
-		sqlSession.insert("story.insert", storyDTO);
+	    int result = sqlSession.insert("story.insert", storyDTO);
+	    if (result > 0) {
+	        sqlSession.commit();
+	    } else {
+	        System.out.println("Insert failed");
+	    }
 	}
 
 
