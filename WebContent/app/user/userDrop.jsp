@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/userDrop.css" />
   </head>
   <body>
-  <jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
-    <div class="container">
+  <%-- <jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
+    <div class="container"> --%>
       <section class="top">
         <h1>회원탈퇴</h1>
         <p>볕 들 무렵 서비스를 이용해 주셔서 감사합니다.</p>

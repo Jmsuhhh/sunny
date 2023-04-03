@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage.css" />
   </head>
   <body>
-	<jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
+	<%-- <jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/> --%>
     <div class="container">
       <!-- 프로필구역 -->
       <section class="main1">

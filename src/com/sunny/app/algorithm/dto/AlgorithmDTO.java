@@ -73,6 +73,8 @@ public class AlgorithmDTO {
 				+ selectTwo + ", selectThree=" + selectThree + ", selectFour=" + selectFour + ", selectFive="
 				+ selectFive + "]";
 	}
+
+
 	
 	
 	

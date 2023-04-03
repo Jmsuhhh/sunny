@@ -8,4 +8,18 @@
 	from tbl_user u join tbl_story s 
 	on u.user_number  = s.user_number
  </select>
+ 
+ 	<select id="getTotal" resultType="_int">
+		select count(user_number) from
+		tbl_user
+	</select>
+ 
+ <insert id="insert" parameterType="StoryDTO">
+ 	insert into tbl_story(story_title, story_content, user_number)
+ 	values(#{storyTitle},#{storyContent},#{userNumber})
+ </insert>
+ 
+ <select id="getSequence" resultType="_int">
+ 	select last_insert_id()
+ </select>
 </mapper>

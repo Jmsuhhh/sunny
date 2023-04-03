@@ -3,4 +3,34 @@
 
 <mapper namespace="user">
 
+	<insert id="join" parameterType="UserDTO">
+	insert into tbl_user(user_id, user_password, user_name, user_nickname, user_phone, user_email, user_date)
+	values(#{userId}, #{userPassword}, #{userName}, #{userNickname}, #{userPhone}, #{userEmail}, now())
+	</insert>
+	
+	<select id="login" parameterType="UserDTO" resultType="_int">
+		select user_number from tbl_user
+		where user_id = #{userId} and user_password = #{userPassword}
+	</select>
+	
+	<select id="checkId" parameterType="string" resultType="_int">
+		select count(user_number) from tbl_user
+		where user_id = #{userId}
+	</select>
+	
+	<select id="getUserId" parameterType="_int" resultType="string">
+		select user_id from tbl_user
+		where user_number = #{userNumber}
+	</select>
+	
+	<update id="userComment" parameterType="UserDTO">
+		update tbl_user set user_comment = #{userComment}
+		where user_number = #{userNumber};
+	</update>
+
+	
+	<delete id="userDrop" parameterType="_int">
+		delete from tbl_user where user_number=#{userNumber}	
+	</delete>
+
 </mapper>

@@ -22,7 +22,7 @@
   </head>
  
 <body>
-	<jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
+	<%-- <jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/> --%>
     <div class="container">
     <form id="write-form" action="${PageContext.request.contextPath}/question/questionWriteOk.qs" method="post" enctype="multipart/form-data">
       <h1 class="sub-title">

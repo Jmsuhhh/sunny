@@ -12,7 +12,7 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../../assets/css/algorithm/testTwo.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/algorithm/testTwo.css" />
 </head>
 <body>
     <section id="qna" class="mx-auto my-5 py-5 px-3">

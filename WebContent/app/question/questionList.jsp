@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>식고수페이지</title>
-     <link rel="stylesheet" href="${pageContent.request.contextPath}/assets/css/questionList.css">
+     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/questionList.css">
 </head>
 <body>
-	<jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
+	<%-- <jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/> --%>
     <div class="pcontainer">
       <div class="info">
         <h3> <strong>

@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>식고수찾기</title>
-    <link rel="stylesheet" href="${pageContent.request.contextPath}/assets/css/search.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/search.css">
 </head>
 <body>
-  <jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
+<%--   <jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/> --%>
   <div class="ex-search">
     <h3>식고수 찾기</h3>
     <div class="headsearch">

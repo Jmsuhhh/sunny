@@ -13,7 +13,7 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../../assets/css/algorithm/loading.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/algorithm/loading.css" />
 </head>
 <body>
     <div class="loading">
