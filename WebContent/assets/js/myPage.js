@@ -74,6 +74,7 @@ $fileInput.on('change', function() {
 
 
 // 기본사진으로 변경->원래사진DB에서도지움
+// 이거 아직 안했음
 $(".basic-photo").on("click", function() {
 	$(".profile-photo>img").remove();
 	/*url로 배경이미지 넣고 경로 잡는 방법은?????????????*/
