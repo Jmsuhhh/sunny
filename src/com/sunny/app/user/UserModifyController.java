@@ -20,7 +20,7 @@ public class UserModifyController implements Execute {
 		  UserDAO userDAO = new UserDAO();
 	      HttpSession session = req.getSession();
 	      Integer userNumber = (Integer)session.getAttribute("userNumber");
-	    
+	     
 	      req.setAttribute("userInfo", userDAO.getUserInfo(userNumber));
 	      
 	      req.getRequestDispatcher("/app/user/userModify.jsp").forward(req, resp);

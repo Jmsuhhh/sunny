@@ -17,7 +17,7 @@ public class UserFileDAO {
 		sqlSession.insert("userFile.insert", userFileDTO);
 	}
 	
-	public UserFileDTO select (int userNumber) {
+	public int select (int userNumber) {
 		return sqlSession.selectOne("userFile.select", userNumber);
 	}
 	

@@ -216,7 +216,7 @@
         <h1>프로필사진</h1>
         <div class="photo-x-box">X</div>
         <!-- 사진등록경로처리-->
-        <form action="${pageContext.request.contextPath}/userFile/userFileOk.uf" method="post" enctype="multipart/form-data" class="profile-photo-form">
+        <form method="post" enctype="multipart/form-data" class="profile-photo-form">
           <label for="profile-file">
             <input type="file" id="profile-file" name="userFile"
 						accept=".jpg, .jpeg, .png" />

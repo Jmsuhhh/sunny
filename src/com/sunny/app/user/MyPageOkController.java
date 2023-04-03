@@ -17,6 +17,7 @@ public class MyPageOkController implements Execute {
 	     UserDAO userDAO = new UserDAO();
 	      HttpSession session = req.getSession();
 	      Integer userNumber = (Integer)session.getAttribute("userNumber");
+	      
 	      if(userNumber == null) {  req.getRequestDispatcher("/user/login.us").forward(req, resp);}
 	      
 //			 userNumber로 받아와야 할 것은 무엇이지?
