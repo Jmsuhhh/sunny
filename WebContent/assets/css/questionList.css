@@ -171,38 +171,6 @@ strong {
 }
 
 
-/* 포스팅 */
- .pcontainer > .posting{
-    margin: 28px 23px 0 23px;
-    width: 1200px;
-}
-
- .pcontainer > .posting > h3{
-    font-weight: 700;
-    color : #222624;
-    font-size: 23px;
-}
-
-.postingList {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 28px;
-    width: 1170px;
-}
-
-.postingList > .p > a > img {
-    width: 375px;
-    height: 250px;
-    border-radius: 3px;
-}
-
-.postingList > .p > .title {
-    font-size: 13px;
-    color: #808080;
-    margin: 15px;
-}
-
-
 /* 질문하기 */
 .question {
     margin: 50px 23px 0 165px;
@@ -237,7 +205,7 @@ strong {
     position: absolute;
 }
 
-.answercom > button {
+	.answercom > button {
     background-color: #009a3e;
     color: #fff;
     width: 65px;
@@ -255,6 +223,43 @@ p {
   transform: scale(1,1.1);
   transition: 0.5s ease-in-out;
 }
+
+ .imgz {
+ 	width:360px;
+ 	height:240px;
+	background-color : black; 	
+ }
+ 
+ .noreply-table,
+ .answercom-table{
+ 	margin : 10px 0 0 0;
+ 	width:1200px;
+ 	display: flex;
+ 	position: relative;
+ 	justify-content: space-between;
+ }
+ 
+ .answercom {
+ 	margin : 0 0 0 160px;
+ }
+ 
+ .imti{
+ 	position:relative;
+ 	display:flex;
+ }
+ 
+ tbody {
+ 	width:1170px;
+ 	display:flex;
+ 	justify-content: space-between;
+ }
+ 
+ .title {
+ 	color : #808080;
+ 	position : absolute;
+ }
+ 
+ 
 
 /* 123 이동 */
 .pagination {
@@ -286,3 +291,43 @@ p {
   .pagination .active {
     color: #009a3e;
   }
+  
+/* 질문리스트 */
+.question-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.question-table th,
+.question-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.question-table th {
+  text-align: left;
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+.question-table td {
+  vertical-align: middle;
+}
+
+.question-table tr:last-child td {
+  border-bottom: none;
+}
+
+.question-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.question-table .no {
+  width: 5%;
+}
+
+.question-table .title {
+  width: 50%;
+}
+

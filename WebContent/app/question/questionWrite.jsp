@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -24,13 +25,12 @@
 <body>
 	<jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
     <div class="container">
-    <form id="write-form" action="${PageContext.request.contextPath}/question/questionWriteOk.qs" method="post" enctype="multipart/form-data">
+    <form id="write-form" action="${PageContext.request.contextPath}/question/questiondWriteOk.qs" method="post" enctype="multipart/form-data">
       <h1 class="sub-title">
         <span class="story-ico"></span>
         질문하기
         <span class="story-txt">나만의 볕 들 스토리</span>
       </h1>
-      <form action="">
       <div class="form-group">
         <input type="text" id="title" name="boardTitle" required placeholder="* 스토리 제목을 입력해주세요!" required/>
       </div>
@@ -72,10 +72,9 @@
         <div class="btn-group">
           <button type="submit" class="submit-btn">등록 하기</button>
           <!-- 취소버튼 js로 처리하기 -->
-          <button type="button" class="cancel-btn">취소</button>
+          <button type="button" class="cancel-btn" onclick="writeCancel()">취소</button>
         </div>
       </form>
-    </form>
     </div>
    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -91,5 +90,7 @@
     });
     
       </script>
+      <jsp:include
+   page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
   </body>
 </html>

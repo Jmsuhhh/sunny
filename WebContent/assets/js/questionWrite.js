@@ -60,7 +60,8 @@ $fileInput.on('change', function(){
 
 
 //취소하기
-$(".cancel-btn").on("click", () => {
-  window.location.href = "/question/questionListOk.qs";
-});
+function writeCancel(e){
+    window.location.href="/question/questionList.qs";
+}
+
 

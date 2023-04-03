@@ -26,6 +26,9 @@ public class GosuFrontController extends HttpServlet{
 			case "/gosu/search.gu" :
 				req.getRequestDispatcher("/app/gosu/search.jsp").forward(req, resp);		
 				break;
+			case "/gosu/searchOk.gu" :
+				new SearchOkController().execute(req, resp);
+				break;
 			
 		}
 	}

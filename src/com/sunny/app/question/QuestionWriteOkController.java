@@ -16,15 +16,18 @@ public class QuestionWriteOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-	QuestionDTO questionDTO = new QuestionDTO();
-	QuestionDAO questionDAO = new QuestionDAO();
-	
-	System.out.println("write 들어왔다!!!");
-	
-//	String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/";
-//	int fileSize = 1024 * 1024 * 5; // 5MB
-//	
-//	MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, new DefaultFileRenamePolicy());
+		
+		QuestionDAO questionDAO = new QuestionDAO();
+		QuestionDTO questionDTO = new QuestionDTO();
+		
+		System.out.println("writeOk컨트롤러 들어왔다");
+		System.out.println(req.getParameter("boardTitle"));
+		
+		String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/";
+		int fileSize = 1024 * 1024 * 5; 
+		
+		MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, new DefaultFileRenamePolicy());
+		
+		
 	}
 }

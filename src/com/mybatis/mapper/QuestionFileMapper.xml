@@ -3,4 +3,9 @@
 
 <mapper namespace="questionFile">
 
+	<insert id="insert" parameterType="QuestionFileDTO">
+		insert into tbl_question_file(file_system_name, file_original_name, question_number, gosu_number)
+		values(#{fileSystemName}, #{fileOriginalName}, #{questionNumber}, #{gosuNumber})
+	</insert>
+	
 </mapper>

@@ -4,5 +4,11 @@
 
 <mapper namespace="gosu">
 
+	<select id="selectAll" resultType="UserDTO">
+		select user_nickname, user_comment , tf.field_name 
+		from tbl_user tu join tbl_gosu tg join tbl_gosu_field tgf join tbl_field tf 
+		on tu.user_number = tg.user_number and tg.gosu_number = tgf.gosu_number and tgf.field_number = tf.field_number 
+		where grade_number = "500" 
+	</select>
 
 </mapper>

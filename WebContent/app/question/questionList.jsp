@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,6 @@
         <h3> <strong>
           9지인
           <!-- 회원닉네임 가져오기 -->
-          <c:out value="#"/>
         </strong> 
         님의 질문목록</h3>
         <div class="infozone">
@@ -27,100 +27,151 @@
         </div>
       </div>
   
-        <div class="question">
+        <div class="question"> 
             <h3 class="qq">질문</h3>
             <div class="q1">
                 <div class="noanswer">
                    <button type="button">미답변</button>
+                   <table class="noreply-table">
+        			 <tbody>
 
                   <!-- ========== 게시글 목록 =========== -->
-                  <c:choose>
-                  	<c:when test="${not empty questionList}">
-                  		<c:forEach var="question" items="${questionList}">
-                  			    <div class="postingList">
-                   				 <div class="p">
-                      			<!-- 이미지 클릭하면 그 게시물로 이동 -->
-                     			 <a href="#">
-                      				  <img src="../20230321_104528.png" alt="" class="imgz">
-                      			</a>
-                     			 <!-- 스토리 제목  -->
-                     			 <div class="title">이거 어떻게 키우나요</div>
-                    </div>
-                  		</c:forEach>
-                  	</c:when>
-                  	<c:otherwise>
-                  		<tr>
-                  			<td colspan="3" align="center"></td>
-                  		</tr>
-                  	</c:otherwise>
-                  </c:choose>
+                 <c:choose>
+               <c:when test="${not empty questionList}">
+                  <c:forEach var="question" items="${questionList}">
                   
-              
-                    
-                </div>
+                     <tr>
+                     <td class="imgz">
+                     <%-- 	<a href="">
+ 							<img alt="" src="${questionFile}">                    	
+                     	</a> --%>
+                     </td>
+                        <td class="title">
+                              ${question.getQuestionTitle()}
+                        </td>
+                     </tr>
+                     
+                  </c:forEach>
+               </c:when>
+               <c:otherwise>
+                  <tr>
+                     <td colspan="5" align="center">등록된 질문이 없습니다.</td>
+                  </tr>
+               </c:otherwise>
+            </c:choose>
+
+
+
+         </tbody>
+      </table>
+          </div>
+          </div>
                     <!-- ========== 게시글 목록 =========== -->
                  
                   
                    <!-- ========== 페이징 처리 ============ -->
                    <div class="pagination">
                     <ul>
-                       <li><a href="#" class="prev">&lt;</a></li>
-                       <li><a href="#" class="active">1</a></li>
-                       <li><a href="#">2</a></li>
-                       <li><a href="#">3</a></li>
-                       <li><a href="#" class="next">&gt;</a></li>
-                       <!-- ========== 페이징 처리 ============ -->
+                      <c:if test="${prev}">
+               <li><a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${startPage - 1}" class="prev">&lt;</a></li>
+            </c:if>
+            
+            <c:forEach var="i" begin="${startPage}" end="${endPage}">
+               <c:choose>
+                  <c:when test="${!(i == page) }">
+                     <li>
+                        <a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${i}">
+                           <c:out value="${i}"/>
+                        </a>
+                     </li>
+                  </c:when>
+                  <c:otherwise>
+                     <li>
+                        <a href="#" class="active">
+                           <c:out value="${i}"/>
+                        </a>
+                     </li>
+                  </c:otherwise>
+               </c:choose>
+            </c:forEach>
+            
+            <c:if test="${next}">
+               <li><a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${endPage + 1}" class="next">&gt;</a></li>
+            </c:if>
                      </ul>
                    </div>
-                      <!-- ========== 페이징 처리============ -->
+                
                   
                     </div>
                   <div class="answercom">
                      <button type="button">답변완료</button>
-  
-                     <!-- ========== 게시글 목록 =========== -->
-                     <div class="postingList">
-                      <div class="p">
-                        <!-- 이미지 클릭하면 그 게시물로 이동 -->
-                        <a href="#">
-                          <img src="../20230321_104528.png" alt="" class="imgz">
-                        </a>
-                        <!-- 스토리 제목 js -->
-                        <div class="title">23.03.21 궁금한게 있습니다</div>
-                      </div>
-                      <div class="p">
-                        <a href="#">
-                          <img src="../2.png" alt="" class="imgz">
-                        </a>
-                        <div class="title">이거 어떻게 키우나요?</div>
-                      </div>
-                      <div class="p">
-                        <a href="#">
-                          <img src="../3.png" alt=""class="imgz">
-                        </a>
-                        <div class="title">궁금해요</div>
-                      </div>
-                    </div>
-                      <!-- ========== 게시글 목록 =========== -->
-                  </table>
+   				<table class="answercom-table">
+         <tbody>
+            <!-- ========== 게시글 목록 예시 =========== -->
+
+            <c:choose>
+               <c:when test="${not empty questionList}">
+                  <c:forEach var="question" items="${questionList}">
+                  
+                     <tr>
+                     <td class="imgz">
+                     <%-- 	<a href="">
+ 							<img alt="" src="${questionFile}">                    	
+                     	</a> --%>
+                     </td>
+                        <td class="title">
+                              ${question.getQuestionTitle()}
+                        </td>
+                     </tr>
+                     
+                  </c:forEach>
+               </c:when>
+               <c:otherwise>
+                  <tr>
+                     <td colspan="5" align="center">답변완료된 질문이 없습니다.</td>
+                  </tr>
+               </c:otherwise>
+            </c:choose>
+
+
+
+         </tbody>
+      </table>
+            <!-- ========== /게시글 목록 예시 === ======== -->
                     
                      <!-- ========== 페이징 처리 ============ -->
                      <div class="pagination">
-                     <ul>
-                        <li><a href="#" class="prev">&lt;</a></li>
-                        <li><a href="#" class="active">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#" class="next">&gt;</a></li>
-                        <!-- ========== 페이징 처리 ============ -->
-                      </ul>
-                    </div>
-                    </div>
-                  </div>
-               </div>
+                    <ul>
+                      <c:if test="${prev}">
+               <li><a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${startPage - 1}" class="prev">&lt;</a></li>
+            </c:if>
+            
+            <c:forEach var="i" begin="${startPage}" end="${endPage}">
+               <c:choose>
+                  <c:when test="${!(i == page) }">
+                     <li>
+                        <a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${i}">
+                           <c:out value="${i}"/>
+                        </a>
+                     </li>
+                  </c:when>
+                  <c:otherwise>
+                     <li>
+                        <a href="#" class="active">
+                           <c:out value="${i}"/>
+                        </a>
+                     </li>
+                  </c:otherwise>
+               </c:choose>
+            </c:forEach>
+            
+            <c:if test="${next}">
+               <li><a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${endPage + 1}" class="next">&gt;</a></li>
+            </c:if>
+                     </ul>
+                   </div>
                 </div>
-
-    </div>
+    <jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp"/>
     <script src="${pageContent.request.contextPath}/assets/js/questionList.js"></script>
 </body>
 </html>
