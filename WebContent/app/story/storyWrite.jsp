@@ -64,7 +64,6 @@
 					<c:out value="${userNickname" />
 				</div>
 
-
 			<div class="form-group">
 				<div class="image-upload-wrap">
 					<input type="file" id="file" name="storyFile"

@@ -39,7 +39,11 @@
 
 
 		<article class="holder2">
+<<<<<<< HEAD
 			<div class="stroyList sl">
+=======
+			<div class="storyList sl">
+>>>>>>> work/story4
     <ul class="listUl">
         <c:choose>
             <c:when test="${not empty storyList}">
@@ -73,6 +77,11 @@
         </c:choose>
     </ul>
 </div>
+<<<<<<< HEAD
+=======
+</article>
+</div>
+>>>>>>> work/story4
 
 			<div class="pagination">
 				<ul>

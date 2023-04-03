@@ -6,8 +6,13 @@
     select s.story_number, s.story_title, u.user_nickname, uf.file_system_name AS user_profile_image, sf.file_system_name AS story_cover_image
     from tbl_story s
     join tbl_user u ON s.user_number = u.user_number
+<<<<<<< HEAD
     left join tbl_user_file uf ON u.user_number = uf.user_number
     left join tbl_story_file sf ON s.story_number = sf.story_number
+=======
+    left outer join tbl_user_file uf ON u.user_number = uf.user_number
+    left outer join tbl_story_file sf ON s.story_number = sf.story_number
+>>>>>>> work/story4
     order by story_number desc
     limit #{startRow}, #{rowCount}
 </select>
@@ -16,15 +21,19 @@
 	select count(story_number) from tbl_story
 </select>
 
+<<<<<<< HEAD
 <select id="getUserNick" parameterType="_int" resultType="string">
 	select user_nickname from tbl_user
 	where user_number = #{userNumber}
 </select>
+=======
+>>>>>>> work/story4
  
- <insert id="insert" parameterType="StoryDTO">
- 	insert into tbl_story(story_title, story_content, user_number)
- 	values(#{storyTitle},#{storyContent},#{userNumber})
- </insert>
+<insert id="insertStory" parameterType="StoryDTO">
+  insert into tbl_story (story_title, story_content, user_number) 
+  values (#{storyTitle}, #{storyContent}, #{userNumber})
+</insert>
+
  
  <select id="getSequence" resultType="_int">
  	select last_insert_id()

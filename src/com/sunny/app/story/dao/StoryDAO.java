@@ -27,9 +27,12 @@ public class StoryDAO {
 		return sqlSession.selectOne("story.getTotal");
 	}
 	
+<<<<<<< HEAD
 	public String getUserNick(int userNumber) {
 		return sqlSession.selectOne("user.getUserNick",userNumber);
 	}
+=======
+>>>>>>> work/story4
 	
 	public void insert(StoryDTO storyDTO) {
 		sqlSession.insert("story.insert", storyDTO);

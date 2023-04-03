@@ -22,6 +22,9 @@ public class StoryWriteOkController implements Execute {
 	StoryDTO storyDTO = new StoryDTO();
 	StoryFileDAO storyFileDAO = new StoryFileDAO();
 	StoryFileDTO storyFileDTO = new StoryFileDTO();
+	int storyNumber = 0;
+	
+	System.out.println("storyOk");
 	
 	String uploadPath = req.getSession().getServletContext().getRealPath("/") + "storyUpload/";
 	int fileSize = 1024*1024*5;
@@ -31,8 +34,11 @@ public class StoryWriteOkController implements Execute {
 	
 	storyDTO.setStoryTitle(multipartRequest.getParameter("storyTitle"));
 	storyDTO.setStoryContent(multipartRequest.getParameter("storyContent"));
-//	storyDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));
+	storyDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));
 	
 	storyDAO.insert(storyDTO);
+	storyNumber = storyDAO.getSequence();
+	
+	System.out.println(storyNumber);
 	}
 }
