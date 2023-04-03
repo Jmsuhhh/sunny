@@ -17,9 +17,9 @@
 </select>
 
  
-<insert id="insertStory" parameterType="StoryDTO">
+<insert id="insert" parameterType="StoryDTO">
   insert into tbl_story (story_title, story_content, user_number) 
-  values (#{storyTitle}, #{storyContent}, #{userNumber})
+  values (#{storyTitle},#{storyContent},#{userNumber})
 </insert>
 
  

@@ -35,7 +35,7 @@
 				</div>
 			</div>
 		</article>
-		<h3 class="subtit">볕 들 스토리들</h3>
+		<h3 class="subtit">볕 들 스토리들!</h3>
 
 
 		<article class="holder2">
@@ -57,7 +57,7 @@
                         <a href="${pageContext.request.contextPath}/app/story/storyRead.jsp">
                             <div class="img-container">
                                 <div class="coverimg">
-                                    <img src="${story.getStoryCoverImage()}" alt="">
+                                    <img src="${storyUpload.getStoryCoverImage()}" alt="">
                                 </div>
                             </div>
                             <p class="imgtilte">${story.getStoryTitle()}</p>
