@@ -23,6 +23,15 @@ public class FindPasswordFrontController extends HttpServlet{
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 	
 			switch(target) {
+			case "/find/findPw.fp" :
+				req.getRequestDispatcher("/app/user/RePw.jsp").forward(req, resp);
+				break;
+			case "/find/findPwOk.fp" :
+				new FindPasswordOkController().execute(req, resp);
+				break;
+			case "/find/resetPwOk.fp" :
+				new ResetPasswordOkController().execute(req, resp);
+				break;
 		}
 	}
 }
