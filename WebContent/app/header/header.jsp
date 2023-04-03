@@ -39,7 +39,7 @@
             <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/app/story/storyList.jsp"> 스토리</a></li>
             <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/app/question/questionList.jsp"> 식고수에게 물어보기</a></li>
             <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/app/algorithm/index.jsp"> 반려식물 찾기</a></li>
-            <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/user/myPageOk.us"> 마이페이지</a></li>
+            <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/user/myPage.us"> 마이페이지</a></li>
           </ul>
         </div>
         <!-- 아이콘경로처리 -->
@@ -48,7 +48,7 @@
           <ul class="header2-btn-list-ul">
             <!-- 마이페이지로 -->
             <li class="header2-btn-list">
-              <a href="${pageContext.request.contextPath}/user/myPageOk.us"><img src="${pageContext.request.contextPath}/assets/img/header/icon_user.png" alt="" /></a>
+              <a href="${pageContext.request.contextPath}/user/myPage.us"><img src="${pageContext.request.contextPath}/assets/img/header/icon_user.png" alt="" /></a>
             </li>
             <!-- 스토리 글쓰기 페이지로 -->
             <li class="header2-btn-list">
