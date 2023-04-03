@@ -90,7 +90,7 @@
 		</form>
 	</div>
        <script src="${pageContext.request.contextPath}/assets/js/storyWrite.js"></script>
-<%-- 	<jsp:include
-   page="${pageContext.request.contextPath}/app/admin/footer.jsp"/>--%>  
+	<jsp:include
+   page="${pageContext.request.contextPath}/app/admin/footer.jsp"/>  
    </body>
 </html>

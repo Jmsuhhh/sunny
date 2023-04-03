@@ -176,7 +176,6 @@ button {
 .coverimg > img {
   width: 100%;
   height: 255px;
-  background-image: url("https://www.shouse.garden/data/photo_list/s230321_21511410615.jpeg");
   background-position: center center;
   background-size: cover;
   border-radius: 4px;
