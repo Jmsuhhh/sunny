@@ -56,15 +56,6 @@
 					placeholder="* 스토리 제목을 입력해주세요!" />
 			</div>
 			<div class="form-group">
-				<label for="author">작성자</label>
-
-
-				<!-- 작성자 서버 연결시 로그인한 회원 아이디로 수정하기 -->
-				<div class="writer">
-					<c:out value="${userNickname" />
-				</div>
-
-			<div class="form-group">
 				<div class="image-upload-wrap">
 					<input type="file" id="file" name="storyFile"
 						accept=".jpg, .jpeg, .png" multiple />
