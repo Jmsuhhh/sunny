@@ -32,6 +32,12 @@
 		<typeAlias type="com.sunny.app.plant.file.dto.PlantFileDTO" alias ="PlantFileDTO"/>
 		<typeAlias type="com.sunny.app.admin.dto.AdminDTO" alias ="AdminDTO"/>
 		<typeAlias type="com.sunny.app.user.vo.UserVO" alias="UserVO"/>
+		<typeAlias type="com.sunny.app.admin.dto.UserManageDTO" alias ="UserManageDTO"/>
+		<typeAlias type="com.sunny.app.admin.vo.UserManageVO" alias ="UserManageVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.UserDetailVO" alias ="UserDetailVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.GosuManageVO" alias ="GosuManageVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.GosuDetailVO" alias ="GosuDetailVO"/>
+
 
 
 
