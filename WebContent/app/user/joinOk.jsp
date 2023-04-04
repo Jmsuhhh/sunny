@@ -43,7 +43,7 @@
             볕 들 무렵
           </div> 
           </div>
-          <div class="joinOk-logo"> 회원가입 완료</div>
+          <div class="joinOk-logo"> 회원가입 완료!!!!</div>
         </div>
 
         <h2>볕 들 무렵에 오신것을 환영합니다.</h2>
