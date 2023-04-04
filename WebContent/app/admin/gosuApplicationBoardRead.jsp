@@ -10,7 +10,8 @@
     <title>고수신청글</title>
     <link rel="stylesheet" href="../../assets/css/gosuApplicationBoardRead.css" />
   </head>
-  <header id="headers"></header>
+  <jsp:include
+	page="${pageContext.request.contextPath}/app/admin/adminHeader.jsp" />
   <body>
     <div class="sidebar-read-all">
       <div class="sidevar">
@@ -43,9 +44,9 @@
               </div>
               <div class="hr"><hr /></div>
               <div class="user-manage-list">
-                <div class="all-user-manage"><a href="">전체회원관리</a></div>
+                <div class="all-user-manage"><a href="userManage.ad">전체회원관리</a></div>
                 <div class="gosu-user-manage">
-                  <a href="">식고수회원관리</a>
+                  <a href="gosuManage.ad">식고수회원관리</a>
                 </div>
                 <div class="gosu-application-user-manage">
                   <a href="">식고수신청관리</a>
