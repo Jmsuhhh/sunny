@@ -11,21 +11,21 @@
     <link rel="stylesheet" href="../../assets/css/select.css" />
   </head>
   <body>
-    <a href="../../app/admin/userManage.jsp">
+    <a href="userManage.ad">
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       전체회원관리
     </a>
-    <a href="../../app/admin/gosuManage.jsp">
+    <a href="gosuManage.ad">
       <span></span>
       <span></span>
       <span></span>
       <span></span>
       식고수회원관리
     </a>
-    <a href="../../app/admin/gosuApplicationBoardList.jsp">
+    <a href="gosuApplicationBoardList.ad">
       <span></span>
       <span></span>
       <span></span>
