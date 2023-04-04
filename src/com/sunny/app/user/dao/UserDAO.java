@@ -3,7 +3,9 @@ package com.sunny.app.user.dao;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
+import com.sunny.app.find.password.dto.FindPasswordDTO;
 import com.sunny.app.user.dto.UserDTO;
+import com.sunny.app.user.vo.UserVO;
 
 public class UserDAO {
 
@@ -18,6 +20,10 @@ public class UserDAO {
 		sqlSession.insert("user.join", userDTO);
 	}
 	
+	public void insertFindPassword(UserVO userVO) {
+		sqlSession.insert("findPassword.insertFindPassword", userVO);
+	}
+	
 	public int login(UserDTO userDTO) {
 		return sqlSession.selectOne("user.login", userDTO);
 	}
@@ -28,6 +34,14 @@ public class UserDAO {
 	
 	public String getUserId(int userNumber) {
 		return sqlSession.selectOne("user.getUserId", userNumber);
+	}
+	
+	public UserVO getUserInfo(int userNumber) {
+		return sqlSession.selectOne("user.getUserInfo", userNumber);
+	}
+	
+	public void userModify(UserVO userVO) {
+		sqlSession.update("user.userModify", userVO);
 	}
 	
 	public void userComment(UserDTO userDTO) {
