@@ -39,6 +39,7 @@ $(".photo-x-box").on("click", function() {
 let $fileInput = $('#profile-file');
 let $profilePhoto = $('.profile-photo>img');
 let $profileForm = $('.profile-photo-form');
+
 $fileInput.on('change', function() {
 	console.log(this);
 	let userFile = this.files[0];
@@ -73,12 +74,23 @@ $fileInput.on('change', function() {
 });
 
 
-// 기본사진으로 변경->원래사진DB에서도지움
+// 프로필을 기본사진으로 변경 
 $(".basic-photo").on("click", function() {
-	$(".profile-photo>img").remove();
-	/*url로 배경이미지 넣고 경로 잡는 방법은?????????????*/
-	$(".profile-photo").css("background-image", "url(../img/myPage/logo.png)");
+	let srcB = '/assets/img/myPage/logo.png';
+	$profilePhoto.attr("src", srcB);
 	$(".photo-modal-box").toggleClass("none");
+	
+	//원래있던프로필사진 지우기
+	$.ajax({
+		url: '/userFile/userFileDelete.uf',
+			type: 'get',
+			success: function() {
+				console.log("삭제성공");
+			},
+			error: function(a, b, c) {
+				console.log(c);
+			}
+	});
 });
 
 
@@ -108,7 +120,6 @@ $(".profile-introduce").on("click", ".modify-btn-done", function() {
 			data: { userComment: modifyContent },
 			success: function() {
 				console.log("저장성공");
-
 			},
 			error: function(a, b, c) {
 				console.log(c);

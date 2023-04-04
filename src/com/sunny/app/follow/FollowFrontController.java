@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sunny.app.user.file.UserFileOkController;
+
 public class FollowFrontController extends HttpServlet{
 
 	@Override
@@ -21,10 +23,14 @@ public class FollowFrontController extends HttpServlet{
 
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
-	
+		System.out.println(target);
+		
 			switch(target) {
-			case "/follow/followList.fo" :
-				req.getRequestDispatcher("/app/follow/follow.jsp").forward(req, resp);
+			case "/follow/followerList.fo" :
+				new FollowerListOkController().execute(req, resp);
+				break;
+			case "/follow/followingList.fo" :
+				new FollowingListOkController().execute(req, resp);
 				break;
 		}
 	}
