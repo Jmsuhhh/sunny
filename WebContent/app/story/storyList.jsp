@@ -48,7 +48,7 @@
                         <div class="top tBox">
                             <a href="${pageContext.request.contextPath}/app/user/myPage.jsp">
                                 <div class="p1 proimg">
-                                    <img src="${story.getUserProfileImage()}" alt="프로필 이미지">
+                                    <img src="${story.getUserProfileImage()}" alt="">
                                 </div>
                                 <p class="p1 profile">${story.getUserNickname()}</p>
                             </a>
@@ -57,7 +57,7 @@
                         <a href="${pageContext.request.contextPath}/app/story/storyRead.jsp">
                             <div class="img-container">
                                 <div class="coverimg">
-                                    <img src="${story.getStoryCoverImage()}" alt="커버 이미지">
+                                    <img src="${storyUpload.getStoryCoverImage()}" alt="">
                                 </div>
                             </div>
                             <p class="imgtilte">${story.getStoryTitle()}</p>
@@ -110,7 +110,7 @@
 
 		<script
 			src="${pageContext.request.contextPath}/assets/js/storyList.js"></script>
-<%-- 		<jsp:include
-   page="${pageContext.request.contextPath}/app/admin/footer.jsp"/> --%>
+		<jsp:include
+   page="${pageContext.request.contextPath}/app/admin/footer.jsp"/>
 </body>
 </html>
