@@ -36,30 +36,30 @@
         			 <tbody>
 
                   <!-- ========== 게시글 목록 =========== -->
+                 
                  <c:choose>
                <c:when test="${not empty questionList}">
                   <c:forEach var="question" items="${questionList}">
-                  
-                     <tr>
+                  <c:if test="${question.getQuestionStatus() == '0'}">
+                     <tr class="imti">
                      <td class="imgz">
-                     <%-- 	<a href="">
- 							<img alt="" src="${questionFile}">                    	
-                     	</a> --%>
+                     	<a href="">
+ 							<%-- <img alt="" src="${question.getCoverImg()}">	 --%>
+                     	</a> 
                      </td>
                         <td class="title">
                               ${question.getQuestionTitle()}
                         </td>
                      </tr>
-                     
+               </c:if>
                   </c:forEach>
                </c:when>
-               <c:otherwise>
+            <c:otherwise>
                   <tr>
-                     <td colspan="5" align="center">등록된 질문이 없습니다.</td>
+                     <td colspan="5" align="center">답변완료된 질문이 없습니다.</td>
                   </tr>
                </c:otherwise>
             </c:choose>
-
 
 
          </tbody>
@@ -108,25 +108,25 @@
    				<table class="answercom-table">
          <tbody>
             <!-- ========== 게시글 목록 예시 =========== -->
-
+	
             <c:choose>
                <c:when test="${not empty questionList}">
                   <c:forEach var="question" items="${questionList}">
-                  
-                     <tr>
+                  <c:if test="${question.getQuestionStatus() == '1'}">
+                    <tr class="imti">
                      <td class="imgz">
-                     <%-- 	<a href="">
+                     	<a href="">
  							<img alt="" src="${questionFile}">                    	
-                     	</a> --%>
+                     	</a> 
                      </td>
                         <td class="title">
                               ${question.getQuestionTitle()}
                         </td>
                      </tr>
-                     
+               </c:if>
                   </c:forEach>
                </c:when>
-               <c:otherwise>
+            <c:otherwise>
                   <tr>
                      <td colspan="5" align="center">답변완료된 질문이 없습니다.</td>
                   </tr>
@@ -140,7 +140,7 @@
             <!-- ========== /게시글 목록 예시 === ======== -->
                     
                      <!-- ========== 페이징 처리 ============ -->
-                     <div class="pagination">
+                    <div class="pagination">
                     <ul>
                       <c:if test="${prev}">
                <li><a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${startPage - 1}" class="prev">&lt;</a></li>
@@ -170,7 +170,8 @@
             </c:if>
                      </ul>
                    </div>
-                </div>
+                    </div>
+        </div>
     <jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp"/>
     <script src="${pageContent.request.contextPath}/assets/js/questionList.js"></script>
 </body>

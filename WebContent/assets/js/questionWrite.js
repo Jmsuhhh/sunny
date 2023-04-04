@@ -1,22 +1,19 @@
-/**
- * 
- */
- 
 let $fileInput = $('#file');
 let $fileList = $('.file-list');
 let $cnt = $('.cnt');
 
+console.log($fileInput); 
+
 $fileInput.on('change', function(){
    let files = this.files;
+	console.log(files);
    
-   // 파일을 변경하면 원래 선택된 파일은 미리보기를 제거한다.
    $fileList.html('');   
 
-   //5개를 넘기면 초기화 처리
    if(files.length > 1){
       let dt = new DataTransfer();
       files = dt.files;
-      //console.log(files);
+      
       alert("커버사진은 1개만 첨부 가능합니다.")
       $cnt.text(files.length);
       return;

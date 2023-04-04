@@ -26,6 +26,10 @@ public class QuestionDAO {
 		return sqlSession.selectOne("question.getTotal");
 	}
 	
+	public int getTotal2() {
+		return sqlSession.selectOne("question.getTotal2");
+	}
+	
 	public void insert(QuestionDTO questionDTO) {
 		sqlSession.insert("question.insert", questionDTO);
 	}

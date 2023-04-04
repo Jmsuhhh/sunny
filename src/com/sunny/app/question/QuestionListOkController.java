@@ -54,6 +54,7 @@ public class QuestionListOkController implements Execute {
 	      req.setAttribute("endPage", endPage);
 	      req.setAttribute("prev", prev);
 	      req.setAttribute("next", next);
+	      
 	    
 	      req.getRequestDispatcher("/app/question/questionList.jsp").forward(req, resp);
 	   }

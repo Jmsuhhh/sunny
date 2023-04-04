@@ -227,16 +227,19 @@ p {
  .imgz {
  	width:360px;
  	height:240px;
-	background-color : black; 	
+	background-color : black; 
+	margin : 0 40px 0 0;	
+ }
+ 
+ .noanswer{
+ 	position:relative;
  }
  
  .noreply-table,
  .answercom-table{
- 	margin : 10px 0 0 0;
  	width:1200px;
+ 	height : 350px;
  	display: flex;
- 	position: relative;
- 	justify-content: space-between;
  }
  
  .answercom {
@@ -244,14 +247,15 @@ p {
  }
  
  .imti{
- 	position:relative;
- 	display:flex;
+ 	margin : 0 40px 0 0;
  }
  
  tbody {
  	width:1170px;
  	display:flex;
- 	justify-content: space-between;
+ 	align-items: center;
+ 	white-space: nowrap;
+ 	padding : 0;
  }
  
  .title {

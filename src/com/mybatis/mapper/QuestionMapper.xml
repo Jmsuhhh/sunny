@@ -8,8 +8,11 @@
 		FROM tbl_question tq 
 		join tbl_user tu 
 		on tq.user_number = tu.user_number
-		order by question_number desc
 		limit #{startRow}, #{rowCount} 
+	</select>
+	
+	<select id="getTotal2" resultType="_int">
+		select count(question_number) from tbl_question 
 	</select>
 	
 	<select id="getTotal" resultType="_int">
@@ -17,8 +20,9 @@
 	</select>
 	
 	<insert id="insert" parameterType="QuestionDTO">
-		insert into tbl_question(question_title, question_content, user_number)
-		values(#{questionTitle}, #{questionContent}, #{userNumber})
+		insert into tbl_question
+		(user_number, question_title, question_content)
+		values(#{userNumber}, #{questionTitle}, #{questionContent});
 	</insert>
 	
 </mapper>

@@ -15,23 +15,21 @@ public class QuestionWriteController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		
-//			UserDAO userDAO = new UserDAO();
-//			QuestionDAO questionDAO = new QuestionDAO();
-//			
-//			HttpSession session = req.getSession();
-//			Integer userNumber = (Integer)session.getAttribute("userNumber");
-//			String path = null;
-//			
-//			if(userNumber == null) {
-//				path = "/app/user/login.jsp";
-//			} else {
-//				path = "/app/question/questionWrite.jsp";
-//				req.setAttribute("userId", userDAO.getUserId(userNumber));
-//			}
-//			
-//			req.getRequestDispatcher(path).forward(req,resp);
-
+		
+		UserDAO userDAO = new UserDAO();
+		
+		HttpSession session = req.getSession();
+		Integer userNumber = (Integer)session.getAttribute("userNumber");
+		String path = null;
+		
+		if(userNumber == null) {
+			path = "/app/user/login.jsp";
+		} else {
+			path = "/app/question/questionWrite.jsp";
+			req.setAttribute("userId", userDAO.getUserId(userNumber));
+		}
+		
+		req.getRequestDispatcher(path).forward(req,resp);
 	}
 
 }

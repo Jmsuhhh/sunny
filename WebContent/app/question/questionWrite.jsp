@@ -25,7 +25,7 @@
 <body>
 	<jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
     <div class="container">
-    <form id="write-form" action="${PageContext.request.contextPath}/question/questiondWriteOk.qs" method="post" enctype="multipart/form-data">
+    <form id="write-form" action="${PageContext.request.contextPath}/question/questionWriteOk.qs" method="post" enctype="multipart/form-data">
       <h1 class="sub-title">
         <span class="story-ico"></span>
         질문하기

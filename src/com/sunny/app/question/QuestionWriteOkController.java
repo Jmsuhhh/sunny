@@ -21,7 +21,7 @@ public class QuestionWriteOkController implements Execute {
 		QuestionDTO questionDTO = new QuestionDTO();
 		
 		System.out.println("writeOk컨트롤러 들어왔다");
-		System.out.println(req.getParameter("boardTitle"));
+		System.out.println(req.getParameter("questionTitle"));
 		
 		String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/";
 		int fileSize = 1024 * 1024 * 5; 

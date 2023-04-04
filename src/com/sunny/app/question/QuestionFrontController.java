@@ -24,23 +24,28 @@ public class QuestionFrontController extends HttpServlet{
 		System.out.println(target);
 	
 			switch(target) {
-			case "/question/questionWrite.qs":
-				req.getRequestDispatcher("/app/question/questionWrite.jsp").forward(req, resp);
-//				new QuestionWriteController().execute(req, resp);
-				break;
-			case "/question/questionWriteOk.qs":
-				new QuestionWriteOkController().execute(req, resp);
-				break;
-			case "/question/questionListOk.qs":
-				new QuestionListOkController().execute(req, resp);
-				break;
-			case "/question/questionRead.qs":
-				req.getRequestDispatcher("/app/question/questionRead.jsp").forward(req, resp);
-				break;
-			case "/question/questionReadOK.qs":
-				new QuestionReadOkController().execute(req, resp);
-				break;
-		
+			 case "/question/questionListOk.qs":
+		         new QuestionListOkController().execute(req, resp);
+		         break;
+		      case "/question/questionReadOk.qs":
+		    	  new QuestionReadOkController().execute(req, resp);
+		         break;
+		      case "/question/questionWrite.qs":
+//		    	 req.getRequestDispatcher("/app/question/questionWrite.jsp").forward(req, resp);
+		    	 new QuestionWriteController().execute(req, resp);
+		         break;
+		      case "/question/questionWriteOk.qs":
+		    	  new QuestionWriteOkController().execute(req, resp);
+		         break;
+//		      case "/question/questionDeleteOk.bo":
+//		    	  new QuestionDeleteOkController().execute(req, resp);
+//		    	  break;
+//		      case "/question/questionUpdate.bo":
+//		    	  new QuestionUpdateController().execute(req, resp);
+//		    	  break;
+//		      case "/question/questionUpdateOk.bo":
+//		    	  new QuestionUpdateOkController().execute(req, resp);
+//		    	  break;
 		}
 	}
 }
