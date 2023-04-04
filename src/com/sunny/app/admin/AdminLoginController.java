@@ -25,13 +25,8 @@ public class AdminLoginController implements Execute{
 		String adminId = (String)req.getParameter("adminId");
 		String adminPW = (String)req.getParameter("adminPassword");
 		
-		System.out.println(adminId);
-		System.out.println(adminPW);
-		
 		adminPW = AdminUtils.pwSha256(adminPW);
 		
-		System.out.println(adminId);
-		System.out.println(adminPW);
 		adminDTO.setAdminId(adminId);
 		adminDTO.setAdminPassword(adminPW);
         
@@ -40,15 +35,14 @@ public class AdminLoginController implements Execute{
 		
 		if(adminList.size() > 0) {
 			System.out.println("맞음");
-			path = "select.jsp";
+			path = "/admin/select.ad";
 			req.getSession().setAttribute("adminNumber", adminList.get(0).getAdminNumber());
 		}else {
 			System.out.println("아이디 or 비밀번호 틀림");
-			path = "adminLogin.jsp?login=fail";
+			path = "/admin/login.ad?login=fail";
 			
 		}
 		System.out.println("path = " + path);
-//		req.getRequestDispatcher(path).forward(req, resp);
 		resp.sendRedirect(path);
 	}
 }
