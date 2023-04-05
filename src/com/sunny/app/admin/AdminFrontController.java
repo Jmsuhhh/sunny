@@ -25,20 +25,35 @@ public class AdminFrontController extends HttpServlet {
 	
 			switch(target) {
 			
-			 case "/app/admin/login.ad":
-		         req.getRequestDispatcher("/app/admin/adminLogin.jsp").forward(req, resp);;
+			 case "/admin/login.ad":
+		         req.getRequestDispatcher("/app/admin/adminLogin.jsp").forward(req, resp);
 				 break;
-			 case "/app/admin/loginOk.ad":
+			 case "/admin/loginOk.ad":
 		         new AdminLoginController().execute(req, resp);
 				 break;
-//		     case "app/admin/select.ad":
-//		    	  req.getRequestDispatcher("/app/admin/select.jsp").forward(req, resp);
-//		          break;
-//		     case "app/admin/userManage.ad":
-//		    	  new AdminUserManageController().execute(req, resp);
-//		    	  break;
-		     case "/app/admin/logoutOk.ad":
-		    	  new LogoutOkController().execute(req, resp);
+			 case "/admin/logoutOk.ad":
+				 new LogoutOkController().execute(req, resp);
+				 break;
+		     case "/admin/select.ad":
+		    	  req.getRequestDispatcher("/app/admin/select.jsp").forward(req, resp);
+		          break;
+		     case "/admin/userManage.ad":
+		    	  new UserManageController().execute(req, resp);
+		    	  break;
+		     case "/admin/userDetail.ad":
+		    	  new UserDetailController().execute(req, resp);
+		    	  break;
+		     case "/admin/gosuManage.ad":
+		    	  new GosuManageController().execute(req, resp);
+		    	  break;
+		     case "/admin/gosuDetail.ad":
+		    	  new GosuDetailController().execute(req, resp);
+		    	  break;
+		     case "/admin/gosuApplicaitionBoardList.ad":
+		    	  new GosuApplicationBoardListController().execute(req, resp);
+		    	  break;
+		     case "/admin/gosuApplicationBoardRead.ad":
+		    	  new GosuApplicationBoardReadController().execute(req, resp);
 		    	  break;
 		      }
 		
