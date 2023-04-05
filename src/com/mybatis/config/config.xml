@@ -22,6 +22,7 @@
 		<typeAlias type="com.sunny.app.gosu.field.dto.GosuFieldDTO" alias ="GosuFieldDTO"/>
 		<typeAlias type="com.sunny.app.story.dto.StoryDTO" alias ="StoryDTO"/>
 		<typeAlias type="com.sunny.app.story.vo.StoryVO" alias ="StoryVO"/>
+		<typeAlias type="com.sunny.app.story.vo.StoryListVO" alias ="StoryListVO"/>
 		<typeAlias type="com.sunny.app.story.file.dto.StoryFileDTO" alias ="StoryFileDTO"/>
 		<typeAlias type="com.sunny.app.story.reply.dto.StoryReplyDTO" alias ="StoryReplyDTO"/>
 		<typeAlias type="com.sunny.app.question.dto.QuestionDTO" alias ="QuestionDTO"/>
