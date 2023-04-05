@@ -92,9 +92,9 @@
 		group by u.user_number, g.grade_name, u.user_nickname, u.user_name,
 		u.user_email, u.user_date, q.question_count, qr.answer_count
 	</select>
-
+	
 	<select id="Kill" parameterType="_int">
 		delete from tbl_user where user_number = #{userNumber};
 	</select>
-
+	
 </mapper>
