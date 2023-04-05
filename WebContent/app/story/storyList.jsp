@@ -35,7 +35,7 @@
 				</div>
 			</div>
 		</article>
-		<h3 class="subtit">볕 들 스토리들</h3>
+		<h3 class="subtit">볕 들 스토리들!</h3>
 
 
 		<article class="holder2">
