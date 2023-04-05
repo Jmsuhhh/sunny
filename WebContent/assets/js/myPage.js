@@ -4,10 +4,6 @@
 // 자신의 페이지인경우
 // 식고수에게 물어보기 버튼 숨김
 
-// 다른사람의 페이지인경우
-// 프로필사진편집숨김, 
-// 한줄소개편집숨김, 
-// 정보수정 버튼숨김, 
 // 내스토리 > 스토리
 // 나에게온질문 > 식고수에게 온 질문
 // 고수에게물어보기 버튼 활성화
@@ -25,9 +21,6 @@ $(".grade-x-box").on("click", function() {
 });
 
 
-
-
-
 // 프로필사진등록
 $(".profile-photo-btn").on("click", function() {
 	$(".photo-modal-box").toggleClass("none");
@@ -39,6 +32,7 @@ $(".photo-x-box").on("click", function() {
 let $fileInput = $('#profile-file');
 let $profilePhoto = $('.profile-photo>img');
 let $profileForm = $('.profile-photo-form');
+
 $fileInput.on('change', function() {
 	console.log(this);
 	let userFile = this.files[0];
@@ -75,11 +69,26 @@ $fileInput.on('change', function() {
 
 // 기본사진으로 변경->원래사진DB에서도지움
 // 이거 아직 안했음
+
+// 프로필을 기본사진으로 변경 
+
 $(".basic-photo").on("click", function() {
-	$(".profile-photo>img").remove();
-	/*url로 배경이미지 넣고 경로 잡는 방법은?????????????*/
-	$(".profile-photo").css("background-image", "url(../img/myPage/logo.png)");
+	let srcB = '/assets/img/myPage/logo.png';
+	$profilePhoto.attr("src", srcB);
 	$(".photo-modal-box").toggleClass("none");
+	
+	//원래있던프로필사진 지우기
+	$.ajax({
+		url: '/userFile/userFileDelete.uf',
+			type: 'get',
+			success: function() {
+				console.log("삭제성공");
+			},
+			error: function(a, b, c) {
+				console.log(c);
+			}
+	});
+	//실제 경로에서는 어떻게 지우져?
 });
 
 
@@ -109,7 +118,6 @@ $(".profile-introduce").on("click", ".modify-btn-done", function() {
 			data: { userComment: modifyContent },
 			success: function() {
 				console.log("저장성공");
-
 			},
 			error: function(a, b, c) {
 				console.log(c);
