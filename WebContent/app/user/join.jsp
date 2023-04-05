@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>회원가입 | 볕 들 무렵</title>
-  <link rel="stylesheet" href="/assets/css/join.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/join.css">
   <style>
     @font-face {
       font-family: SpoqaHanSans-Regular;
@@ -119,7 +119,7 @@
           </div>
           <div class="join-logo"> 회원가입</div>
         </div>
-        <form action="${pageContext.request.contextPath}/user/joinOk.us" method="POST">
+        <form action="${pageContext.request.contextPath}/user/joinOk.us" method="post">
           <div class="input-tag">
             <div class="input-text">아이디</div>
             <br>
@@ -150,7 +150,7 @@
             <div class="input-text">
               <label for="select">비밀번호 찾기 질문</label>
             </div> <br>
-            <select name="" id="select" required>
+            <select name="findQuestionNumber" id="select" required>
               <option value="-1" selected>--선택--</option>
               <option value="1">가장 좋아하는 색깔은?</option>
               <option value="2">가장 좋아하는 계절은?</option>
