@@ -34,7 +34,7 @@ public class QuestionListOkController implements Execute {
 	      
 	      int endPage = (int)(Math.ceil(page/(double)pageCount) * pageCount);
 	      
-	      int startPage = endPage - (pageCount - 1);
+	      int startPage = endPage - (pageCount-1);
 	      
 	      int realEndPage = (int)Math.ceil(total / (double)rowCount);
 	      
@@ -55,7 +55,8 @@ public class QuestionListOkController implements Execute {
 	      req.setAttribute("prev", prev);
 	      req.setAttribute("next", next);
 	      
-	    
+//	      ===================================
+	     
 	      req.getRequestDispatcher("/app/question/questionList.jsp").forward(req, resp);
 	   }
 

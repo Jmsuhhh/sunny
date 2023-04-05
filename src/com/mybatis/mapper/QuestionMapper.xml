@@ -2,27 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="question">
-	
+
 	<select id="selectAll" resultType="QuestionDTO" parameterType="map">
 		SELECT question_number, tu.user_number, question_title, question_content, question_date, question_viewcnt, question_status, last_update
 		FROM tbl_question tq 
 		join tbl_user tu 
 		on tq.user_number = tu.user_number
+		order by question_date asc 
 		limit #{startRow}, #{rowCount} 
 	</select>
-	
-	<select id="getTotal2" resultType="_int">
-		select count(question_number) from tbl_question 
-	</select>
-	
+
 	<select id="getTotal" resultType="_int">
 		select count(question_number) from tbl_question
 	</select>
 	
 	<insert id="insert" parameterType="QuestionDTO">
 		insert into tbl_question
-		(user_number, question_title, question_content)
-		values(#{userNumber}, #{questionTitle}, #{questionContent});
+		(question_title,question_content,user_number,gosu_number)
+		values(#{questionTitle}, #{questionContent}, #{userNumber}, #{gosuNumber});
 	</insert>
 	
 </mapper>

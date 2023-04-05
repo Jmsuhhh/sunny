@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sunny.app.Execute;
 import com.sunny.app.gosu.dao.GosuDAO;
-import com.sunny.app.question.dao.QuestionDAO;
-import com.sunny.app.question.dto.QuestionDTO;
-import com.sunny.app.user.dto.UserDTO;
+import com.sunny.app.user.vo.UserVO;
 
 public class SearchOkController implements Execute {
 
@@ -19,9 +17,10 @@ public class SearchOkController implements Execute {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		GosuDAO gosuDAO = new GosuDAO();
-		List<UserDTO> gosus = gosuDAO.selectAll();
+		List<UserVO> gosus = gosuDAO.selectAll();
 		
-		req.setAttribute("searchGosu", gosus);
+		req.setAttribute("gosus", gosus);
+		
 		req.getRequestDispatcher("/app/gosu/search.jsp").forward(req, resp);
 		
 		

@@ -31,21 +31,11 @@ public class QuestionFrontController extends HttpServlet{
 		    	  new QuestionReadOkController().execute(req, resp);
 		         break;
 		      case "/question/questionWrite.qs":
-//		    	 req.getRequestDispatcher("/app/question/questionWrite.jsp").forward(req, resp);
 		    	 new QuestionWriteController().execute(req, resp);
 		         break;
 		      case "/question/questionWriteOk.qs":
 		    	  new QuestionWriteOkController().execute(req, resp);
 		         break;
-//		      case "/question/questionDeleteOk.bo":
-//		    	  new QuestionDeleteOkController().execute(req, resp);
-//		    	  break;
-//		      case "/question/questionUpdate.bo":
-//		    	  new QuestionUpdateController().execute(req, resp);
-//		    	  break;
-//		      case "/question/questionUpdateOk.bo":
-//		    	  new QuestionUpdateOkController().execute(req, resp);
-//		    	  break;
 		}
 	}
 }

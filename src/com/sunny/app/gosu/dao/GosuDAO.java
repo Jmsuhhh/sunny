@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
-import com.sunny.app.user.dto.UserDTO;
+import com.sunny.app.user.vo.UserVO;
 
 public class GosuDAO {
 
@@ -16,7 +16,7 @@ public class GosuDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public List<UserDTO> selectAll() {
+	public List<UserVO> selectAll() {
 		return sqlSession.selectList("gosu.selectAll");
 	}
 

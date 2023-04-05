@@ -1,5 +1,7 @@
 package com.sunny.app.question.file.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
@@ -15,6 +17,10 @@ public class QuestionFileDAO {
 	}
 	
 	public void insert(QuestionFileDTO questionFileDTO) {
-		sqlSession.insert("questionfile.insert", questionFileDTO);
+		sqlSession.insert("questionFile.insert", questionFileDTO);
+	}
+	
+	public List<QuestionFileDTO> select(int questionNumber) {
+		return sqlSession.selectList("questionFile.select", questionNumber);
 	}
 }

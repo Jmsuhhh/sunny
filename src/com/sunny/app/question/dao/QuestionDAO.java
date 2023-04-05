@@ -18,7 +18,7 @@ public class QuestionDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public List<QuestionDTO> selectAll(Map<String, Integer> pageMap) {
+	public List<QuestionDTO> selectAll (Map<String, Integer> pageMap) {
 		return sqlSession.selectList("question.selectAll", pageMap);
 	}
 	
@@ -26,9 +26,6 @@ public class QuestionDAO {
 		return sqlSession.selectOne("question.getTotal");
 	}
 	
-	public int getTotal2() {
-		return sqlSession.selectOne("question.getTotal2");
-	}
 	
 	public void insert(QuestionDTO questionDTO) {
 		sqlSession.insert("question.insert", questionDTO);
