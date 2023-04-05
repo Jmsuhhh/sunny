@@ -92,6 +92,4 @@
 		group by u.user_number, g.grade_name, u.user_nickname, u.user_name,
 		u.user_email, u.user_date, q.question_count, qr.answer_count
 	</select>
-
-
 </mapper>
