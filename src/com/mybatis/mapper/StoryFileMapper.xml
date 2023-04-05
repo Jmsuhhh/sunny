@@ -7,12 +7,4 @@
 		values(#{fileSystemName},#{fileOriginalName},#{storyNumber})
 	</insert>
 	
-
-	<select id="selectList" parameterType="map" resultType="StoryFileDTO">
-		select file_number, story_number, file_system_name, file_original_name
-		from story_file
-		where story_number = #{storyNumber}
-		order by file_number ASC
-	</select>
-	
 </mapper>

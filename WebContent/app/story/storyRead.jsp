@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -21,9 +22,11 @@
       <article class="view-top">
         <div class="infomation">
           <div class="txt-area">
-            <a href="">
-              <div class="profile-img"></div>
-              <p class="profile">홍길동</p>
+            <a href="${pageContext.request.contextPath}">
+              <div class="profile-img">
+               <img alt="" src="${story.getUserProfileImage()}">
+              </div>
+              <p class="profile">${story.getUserNickname()}</p>
             </a>
             <button
               type="button"
@@ -38,20 +41,24 @@
 
         <div class="like">
           <span class="hit">조회수</span>
-          <span id="hits-count" class="hit-count">15</span>
+          <span id="hits-count" class="hit-count">${story.getStoryViewcnt()}</span>
         </div>
       </article>
 
       <!-- 임시 내용 -->
-
+	
+		<h1 class="ReadTitle">
+		<c:out value="${story.getStoryTitle()}"/>
+		</h1>
+	
       <!-- 임시 첨부 파일 -->
       <div class="story-read">
-        <div class="storyBox"></div>
+        <div class="storyBox"> <c:out value="${story.getStoryContent()}"></c:out> </div>
       </div>
 
       <div class="btn-groups">
         <!-- 각 버튼 처리 경로 js로 수정하기 -->
-        <a href="${pageContext.request.contextPath}/app/story/storyList.jsp">
+        <a href="${pageContext.request.contextPath}/story/storyListOk.st">
           <button type="button" class="list-btn">목록</button>
         </a>
 
@@ -62,7 +69,7 @@
       </div>
 
       <div class="story-date">
-        <p class="todate">2023-03-21</p>
+        <p class="todate"> <c:out value="${story.getStoryDate()}"/> </p>
       </div>
 
       <!-- 댓글 수정중 -->

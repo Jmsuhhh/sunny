@@ -37,8 +37,9 @@ public class StoryWriteOkController implements Execute {
 	storyDTO.setStoryTitle(multipartRequest.getParameter("storyTitle"));
 	storyDTO.setStoryContent(multipartRequest.getParameter("storyContent"));
 	storyDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));
-	
 	storyDAO.insert(storyDTO);
+	
+	
 	storyNumber = storyDAO.getSequence();
 	
 	System.out.println(storyNumber);
@@ -56,9 +57,12 @@ public class StoryWriteOkController implements Execute {
 		storyFileDTO.setFileSystemName(fileSystemName);
 		storyFileDTO.setFileOriginalName(fileOriginalName);
 		storyFileDTO.setStoryNumber(storyNumber);
-		
-		System.out.println(storyFileDTO);
 		storyFileDAO.insert(storyFileDTO);
+		
+		storyDTO.setStoryNumber(storyNumber);
+		storyDTO.setFileSystemName(fileSystemName);
+		storyDAO.updateCover(storyDTO);
+		
 	}
 	resp.sendRedirect("/story/storyListOk.st");
 	}
