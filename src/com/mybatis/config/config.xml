@@ -10,6 +10,7 @@
 	
 	<typeAliases>
 		<typeAlias type="com.sunny.app.user.dto.UserDTO" alias ="UserDTO"/>
+		<typeAlias type="com.sunny.app.user.vo.UserVO" alias ="UserVO"/>
 		<typeAlias type="com.sunny.app.grade.dto.GradeDTO" alias ="GradeDTO"/>
 		<typeAlias type="com.sunny.app.user.file.dto.UserFileDTO" alias ="UserFileDTO"/>
 		<typeAlias type="com.sunny.app.follow.dto.FollowDTO" alias ="FollowDTO"/>

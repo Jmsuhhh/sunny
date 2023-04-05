@@ -1,6 +1,7 @@
 package com.sunny.app.gosu.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -16,8 +17,14 @@ public class GosuDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public List<UserVO> selectAll() {
-		return sqlSession.selectList("gosu.selectAll");
+	public List<UserVO> selectAll(Map<String, Integer> pageMap) {
+		return sqlSession.selectList("gosu.selectAll", pageMap);
 	}
+	
+	public int getTotal() {
+		return sqlSession.selectOne("gosu.getTotal");
+	}
+	
+	
 
 }
