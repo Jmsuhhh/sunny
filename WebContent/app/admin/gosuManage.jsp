@@ -89,7 +89,7 @@
 								<c:forEach var="gosu" items="${gosuList }">
 									<tr>
 										<td class="gosu-num">${gosu.getGosuNumber() }</td>
-										<td class="gosu-nickname"><a href="gosuDetail.ad">${gosu.getUserNickname() }</td>
+										<td class="gosu-nickname"><a href="gosuDetail.ad?userNumber=${gosu.getUserNumber() }">${gosu.getUserNickname() }</td>
 										<td class="gosu-fieldnames">${gosu.getFieldNames() }</a></td>
 										<td class="gosu-question-count">${gosu.getQuestionCount() }</td>
 										<td class="gosu-answer-count">${gosu.getAnswerCount() }</td>

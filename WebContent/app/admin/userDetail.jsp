@@ -135,7 +135,7 @@
 					</table>
 				</div>
 				<div class="user-btn-groups">
-					<button class="ben-btn">제명</button>
+					<button class="ben-btn" data-userNumber="${userDetail.getUserNumber() }">제명</button>
 				</div>
 			</div>
 		</div>
@@ -148,5 +148,6 @@
 			$("#footers").load("../../assets/html/footer.html");
 		});
 	</script>
+	<script src="../../assets/js/userDetail.js"></script>
 </body>
 </html>

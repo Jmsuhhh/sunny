@@ -20,7 +20,7 @@
 		order by u.user_number desc
 	</select>
 
-	<select id="userDetail" resultType="UserDetailVO" parameterType="map">
+	<select id="userDetail" resultType="UserDetailVO" parameterType="_int">
 		SELECT 
  		 u.user_number, g.grade_name, u.user_nickname, u.user_name,
  		 u.user_email, u.user_date, u.user_phone,
@@ -34,7 +34,7 @@
  		 LEFT JOIN tbl_story_reply r ON u.user_number = r.user_number
  		 LEFT JOIN tbl_follow f1 ON u.user_number = f1.user_to
   		LEFT JOIN tbl_follow f2 ON u.user_number = f2.user_from
-		WHERE u.user_number = 1
+		WHERE u.user_number = #{userNumber}
 		GROUP BY u.user_number
 	</select>
 	
@@ -53,7 +53,7 @@
 		group by g.gosu_number;
 	</select>
 	
-	<select id="gosuDetail" resultType="GosuDetailVO" parameterType="map">
+	<select id="gosuDetail" resultType="GosuDetailVO" parameterType="_int">
 		select
 		u.user_number, g.grade_name, u.user_nickname, u.user_name,
 		u.user_email, u.user_date, u.user_phone,
@@ -88,10 +88,13 @@
 			join tbl_user u on g.user_number = u.user_number
 			group by g.gosu_number
 		) as gfn on u.user_number = gfn.gosu_number
-		where u.user_number = 1
+		where u.user_number = #{userNumber}
 		group by u.user_number, g.grade_name, u.user_nickname, u.user_name,
 		u.user_email, u.user_date, q.question_count, qr.answer_count
 	</select>
 
+	<select id="Kill" parameterType="_int">
+		delete from tbl_user where user_number = #{userNumber};
+	</select>
 
 </mapper>

@@ -20,4 +20,8 @@ public class AdminDAO {
 		System.out.println("select 탐");
 		return sqlSession.selectList("admin.select", adminDTO);
 	 }
+	
+	public void kill(int userNumber) {
+		sqlSession.delete("admin.kill", userNumber);
+	}
 }

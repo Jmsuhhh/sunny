@@ -43,6 +43,9 @@ public class AdminFrontController extends HttpServlet {
 		     case "/admin/userDetail.ad":
 		    	  new UserDetailController().execute(req, resp);
 		    	  break;
+		     case "/admin/userKill.ad":
+		    	  new UserKillOkController().execute(req, resp);
+		    	  break;
 		     case "/admin/gosuManage.ad":
 		    	  new GosuManageController().execute(req, resp);
 		    	  break;

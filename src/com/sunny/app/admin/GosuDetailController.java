@@ -15,7 +15,8 @@ public class GosuDetailController implements Execute{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		int userNumber = 1;
+		int userNumber = Integer.parseInt(req.getParameter("userNumber"));
+		
 		GosuDetailDAO gosuDetailDAO = new GosuDetailDAO();
 		GosuDetailVO gosuDetailVO = gosuDetailDAO.gosuDetail(userNumber);
 		

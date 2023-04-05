@@ -90,7 +90,7 @@
 									<tr>
 										<td class="user-num">${users.getUserNumber() }</td>
 										<td class="user-grade">${users.getGradeName() }</td>
-										<td><a href="userDetail.ad">${users.getUserNickname() }</a></td>
+										<td><a href="userDetail.ad?userNumber=${users.getUserNumber() }">${users.getUserNickname() }</a></td>
 										<td class="join-date">${users.getUserDate() }</td>
 									</tr>
 								</c:forEach>
