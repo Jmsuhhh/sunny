@@ -28,6 +28,9 @@ public class UserFileFrontController extends HttpServlet{
 				System.out.println("frontController들어옴!");
 				new UserFileOkController().execute(req, resp);
 				break;
+			case "/userFile/userFileDelete.uf" :
+				System.out.println("frontController들어옴");
+				new UserFileDeleteController().execute(req, resp);
 		}
 	}
 }
