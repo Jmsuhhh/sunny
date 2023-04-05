@@ -64,5 +64,7 @@
 		delete from tbl_user where
 		user_number=#{userNumber}
 	</delete>
+	
+	
 
 </mapper>
