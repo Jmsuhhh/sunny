@@ -30,4 +30,15 @@
 	select count(follow_number)  from tbl_follow tf where user_from=#{userNumber}
 	</select>
 	
+	<!-- 팔로우하기 -->
+	<insert id="insert" parameterType="FollowDTO">
+	insert into tbl_follow (user_from, user_to)
+	values(#{userFrom}, #{userTo})
+	</insert>
+	
+	<!-- 팔로우취소하기 -->
+	<delete id="delete" parameterType="FollowDTO">
+	delete from tbl_follow
+	where user_from=#{userFrom} and user_to=#{userTo}
+	</delete>
 </mapper>

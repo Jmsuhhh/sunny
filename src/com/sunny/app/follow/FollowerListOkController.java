@@ -22,20 +22,18 @@ public class FollowerListOkController implements Execute {
 //		다른 사람의 페이지에서 follow로 들어가는 경우 그 사람의 userNumber를 사용한다.
 		
 		HttpSession session = req.getSession();
-		Integer myNumber = (Integer)session.getAttribute("userNumber");
-		Integer userNumber = Integer.valueOf(req.getParameter("userNumber"));
+		Integer userNumber = 0;
 		
-		System.out.println(myNumber);
-		System.out.println(userNumber);
-		
-//		if(myNumber ==userNumber) {
-//		userNumber = myNumber;
-//		}
+		if(req.getParameter("userNumber")==null) {
+			userNumber = (Integer) session.getAttribute("userNumber");
+		}else {
+			userNumber = Integer.parseInt(req.getParameter("userNumber"));
+		}
 		
 		List<FollowVO> followList = followDAO.selectFollower(userNumber);
 		
 		req.setAttribute("followList", followList);
-		
+		req.setAttribute("userNumber", userNumber);
 		req.getRequestDispatcher("/app/follow/follow.jsp").forward(req, resp);
 		
 

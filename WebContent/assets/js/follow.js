@@ -1,53 +1,65 @@
 // 팔로워 팔로잉 리스트 top버튼
 
-/*let userNumber = $(".follow-list>a").data("usernumber");
-console.log(userNumber);*/
+//=============================
+//팔로잉페이지로 진입시 팔로잉버튼이 초록색 활성화
+let href = window.location.href;
 
-//리스트 띄운 회원의 userNumber확인
-$(".follow-list").on('click', function(){
-	console.log(this);
-	console.log($(this).find("a").data("usernumber"));
-	let userNumber = $(this).find("a").data("usernumber");
-});
+let url = new URL(href);
+let urlParams = url.searchParams;
+console.log(urlParams.get('tab'))
 
+if (urlParams.get('tab') == 'following') {
+	$(".top-btn").removeClass("active");
+	$(".following-btn").addClass("active");
+	$(".user-follow").addClass("following");
+	$(".user-follow").text("팔로잉");
+};
+//=============================
 
-$(".top-btn").on("click", function () {
-  // console.log(this);
+//====팔로우/팔로잉 top 버튼을 누를때 활성화전환이 필요한가..? 그냥 페이지 전환으로 바꿈
+/*$(".top-btn").on("click", function () {
+  console.log(this);
   $(".top-btn").removeClass("active");
   $(this).toggleClass("active");
-	
 	console.log($(this).text());
+});*/
 
-	// 팔로잉리스트 버튼을 누르는 경우 비동기로 리스트 가져오기
+// 팔로우하기 버튼 눌렀을 때 색 변환
+$(".follow-list").on("click",'.user-follow', function() {
+	/*내가 누른 사람의 userNumber*/
+	let userNumber = $(this).data('usernumber');
+	console.log(userNumber);
 
-	if($(this).text()=='팔로잉'){
-			$.ajax({
-			url: '/follow/followingList.fo',
-			type: 'get',
-			/*data: { userNumber : },//뭘 보내지?*/ 
+	$(this).toggleClass("following");
+	// console.log(this);
+	if ($(this).hasClass("following") === true) {
+		$(this).text("팔로잉");
+		// 비동기로 내 팔로잉테이블에 추가
+		$.ajax({
+			url: "/follow/followInsert.fo",
+			type: "get",
+			data: { userNumber: userNumber },
 			success: function() {
-				console.log("로딩성공"); // 받아온 리스트를 뿌려야함
+				console.log("팔로우성공");
+			},
+			error: function(a, b, c) {
+				console.log(c);
+			}
+		});
+	} else {
+		$(this).text("팔로우");
+		// 비동기로 내 팔로잉테이블에서 삭제
+		$.ajax({
+			url: "/follow/followDelete.fo",
+			type: "get",
+			data: { userNumber: userNumber },
+			success: function() {
+				console.log("팔로우취소");
 			},
 			error: function(a, b, c) {
 				console.log(c);
 			}
 		});
 	}
-	// 팔로워리스트 버튼을 누르는 경우 비동기로 리스트 가져오기
-	
-
-});
-
-// 팔로우하기 버튼
-$(".user-follow").on("click", function(){
-  $(this).toggleClass("following");
-  // console.log(this);
-  if($(this).hasClass("following")===true){
-    $(this).text("팔로잉");
-// 비동기로 내 팔로잉테이블에 추가
-  } else {
-    $(this).text("팔로우");
-// 비동기로 내 팔로잉테이블에서 삭제
-  }
 });
 

@@ -114,7 +114,7 @@
 						<!-- 팔로잉페이지로 이동 -->
 						<div>
 							<a
-								href="${pageContext.request.contextPath}/follow/followingList.fo?userNumber=${myPage.getUserNumber()}"><h2>
+								href="${pageContext.request.contextPath}/follow/followingList.fo?userNumber=${myPage.getUserNumber()}&tab=following"><h2>
 									<c:out value="${myPage.getFollowerCnt()}" />
 								</h2>
 								<p>팔로잉</p></a>

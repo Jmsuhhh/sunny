@@ -19,8 +19,12 @@
 			<div class="button">
 				<ul class="top-btn-ul">
 					<!-- active클래스를 줬다 뺐다 -->
-					<li class="top-btn active">팔로워</li>
-					<li class="top-btn">팔로잉</li>
+					<a
+						href="${pageContext.request.contextPath}/follow/followerList.fo?userNumber=${userNumber}"><li
+						class="top-btn  active">팔로워</li></a>
+					<a
+						href="${pageContext.request.contextPath}/follow/followingList.fo?userNumber=${userNumber}&tab=following"><li
+						class="top-btn following-btn">팔로잉</li></a>
 				</ul>
 			</div>
 		</section>
@@ -32,15 +36,24 @@
 						<c:when test="${not empty followList}">
 							<c:forEach var="follow" items="${followList}">
 								<li class="follow-list">
-									<!-- 이 회원의 마이페이지로 이동 --> <a href="${pageContext.request.contextPath}/user/myPageOk.us?userNumber=${follow.getUserNumber()}" >
+									<!-- 이 회원의 마이페이지로 이동 --> <a
+									href="${pageContext.request.contextPath}/user/myPageOk.us?userNumber=${follow.getUserNumber()}">
 										<div class="user-photo">
-											<img
-												src="${pageContext.request.contextPath}/upload/${follow.getFileSystemName()}"
-												alt="" />
+											<c:choose>
+												<c:when test="${empty follow.getFileSystemName()}">
+													<img
+														src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
+												</c:when>
+												<c:otherwise>
+													<img
+														src="${pageContext.request.contextPath}/upload/${follow.getFileSystemName()}"
+														alt="" />
+												</c:otherwise>
+											</c:choose>
 										</div>
 										<div class="user-name">${follow.getUserNickname()}</div>
 								</a> <!-- 버튼을 누르면 마이페이지에 저장됨 --> <!-- following 클래스를 줬다뺐다 -->
-									<button class="user-follow">팔로우</button>
+									<button class="user-follow" data-userNumber="${follow.getUserNumber()}">팔로우</button>
 								</li>
 							</c:forEach>
 						</c:when>

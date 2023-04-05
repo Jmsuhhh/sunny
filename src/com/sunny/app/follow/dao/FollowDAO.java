@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
+import com.sunny.app.follow.dto.FollowDTO;
 import com.sunny.app.follow.vo.FollowVO;
 
 public class FollowDAO {
@@ -34,4 +35,12 @@ public class FollowDAO {
 		return sqlSession.selectOne("follow.selectFollowingCnt", userNumber);
 	}
 	
+//	팔로우하기
+	public void insert(FollowDTO followDTO) {
+		sqlSession.insert("follow.insert", followDTO);
+	}
+//	팔로우취소하기
+	public void delete(FollowDTO followDTO) {
+		sqlSession.delete("follow.delete", followDTO);
+	}
 }

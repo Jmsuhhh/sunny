@@ -32,6 +32,12 @@ public class FollowFrontController extends HttpServlet{
 			case "/follow/followingList.fo" :
 				new FollowingListOkController().execute(req, resp);
 				break;
+			case "/follow/followInsert.fo" :
+				new FollowInsertOkController().execute(req, resp);
+				break;
+			case "/follow/followDelete.fo" :
+				new FollowDeleteOkController().execute(req, resp);
+				break;
 		}
 	}
 }
