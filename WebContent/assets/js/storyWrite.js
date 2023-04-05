@@ -50,24 +50,6 @@ $('.cancel-btn').on('click',()=>{
 });
 
 
-// 이미지 삽입 버튼 클릭 시 이벤트 핸들러
-$('.note-toolbar .note-insert').click(function () {
-  // 이미지 갯수 제한 설정 (예: 5개)
-  var maxImages = 5;
-  
-  // 현재 이미지 갯수 계산
-  var numImages = $('.note-editable img').length;
-  
-  // 이미지 갯수가 제한보다 적을 경우 이미지 삽입 허용
-  if (numImages < maxImages) {
-    // 이미지 삽입 로직
-    // ...
-  }
-  // 이미지 갯수가 제한을 초과할 경우 경고 메시지 표시
-  else {
-    alert('이미지는 최대 ' + maxImages + '개까지 삽입할 수 있습니다.');
-  }
-});
 
 
 
