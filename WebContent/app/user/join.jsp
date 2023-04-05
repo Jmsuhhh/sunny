@@ -103,7 +103,7 @@
     <div class="nav">
       <div class="menu">
         <a href="">홈</a>
-        <a href="">회원가입</a>
+        <a href="/user/join.us">회원가입</a>
       </div>
     </div>
     <div class="main-container">

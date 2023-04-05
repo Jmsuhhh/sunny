@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
 import com.sunny.app.user.dto.UserDTO;
+import com.sunny.app.user.vo.UserVO;
 
 public class UserDAO {
 
@@ -28,6 +29,14 @@ public class UserDAO {
 	
 	public String getUserId(int userNumber) {
 		return sqlSession.selectOne("user.getUserId", userNumber);
+	}
+	
+	public UserVO getUserInfo(int userNumber) {
+		return sqlSession.selectOne("user.getUserInfo", userNumber);
+	}
+	
+	public void userModify(UserVO userVO) {
+		sqlSession.update("user.userModify", userVO);
 	}
 	
 	public void userComment(UserDTO userDTO) {

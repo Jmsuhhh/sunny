@@ -25,56 +25,62 @@
             <div class="title user-id">
               <p>아이디</p>
               <div class="content">
-                <p>aaa</p>
+                <p><c:out value="${userInfo.getUserId()}" /></p>
               </div>
             </div>
             <div class="title user-password">
               <p>현재 비밀번호</p>
               <div class="content">
-                <input type="password" />
+              	<input type="password" name="currentPassword"
+					id="password"  placeholder="비밀번호를 입력하세요"
+					required /> <span class="check-msg" id="check-pw-msg"></span>
               </div>
             </div>
             <div class="title user-password">
               <p>변경 비밀번호</p>
               <div class="content">
-                <input type="password" />
+                <input type="password"
+					id="password" name="userPassword" placeholder="비밀번호를 입력하세요"
+					required /> <span class="check-msg" id="check-pw-msg"></span>
               </div>
             </div>
             <div class="title user-password">
               <p>비밀번호 확인</p>
               <div class="content">
-                <input type="password" />
+                <input type="password"
+					id="password" name="checkUserPassword" placeholder="비밀번호를 입력하세요"
+					required /> <span class="check-msg" id="check-pw-msg"></span>
               </div>
             </div>
             <!-- 받아올 이름 수정불가 -->
             <div class="title user-name">
               <p>이름</p>
               <div class="content">
-                <p>홍길동</p>
+                <p><c:out value="${userInfo.getUserName()}" /></p>
               </div>
             </div>
             <div class="title user-nickname">
               <p>닉네임</p>
               <div class="content">
-                <input type="text" />
+                <input type="text" value="${userInfo.getUserNickname()}" name="userNickname"/>
               </div>
             </div>
             <div class="title user-phone-number">
               <p>연락처</p>
               <div class="content">
-                <input type="text" />
+                <input type="text" value="${userInfo.getUserPhone()}" name="userPhone"/>
               </div>
             </div>
             <div class="title user-email">
               <p>이메일</p>
               <div class="content">
-                <input type="email" />
+                <input type="email" value="${userInfo.getUserEmail()}" name="userEmail"/>
               </div>
             </div>
             <div class="title user-password-question">
               <p>비밀번호 찾기 질문</p>
               <div class="content">
-                <select name="question" id="">
+                <select name="findQuestionNumber" id="">
                   <option value="1">가장 좋아하는 색깔은?</option>
                   <option value="2">가장 좋아하는 계절은?</option>
                   <option value="3">가장 소중한 것은?</option>
@@ -84,7 +90,7 @@
             <div class="title user-password-answer">
               <p>비밀번호 찾기 답변</p>
               <div class="content">
-                <input type="text" />
+                <input type="text" value="${userInfo.getFindPasswordAnswer()}" name="findPasswordAnswer"/>
               </div>
             </div>
             <div class="btn">
@@ -96,6 +102,7 @@
         </div>
       </section>
     </div>
+    <jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="${pageContext.request.contextPath}/assets/js/userModify.js"></script>
   </body>

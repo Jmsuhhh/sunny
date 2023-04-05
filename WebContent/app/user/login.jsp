@@ -49,7 +49,7 @@
 
         <div class="menu">
           <a href="">홈</a>
-          <a href="">회원가입</a>
+          <a href="/user/join.us">회원가입</a>
         </div>
       </div>
     </div>
@@ -75,8 +75,8 @@
             <label for="id-save">아이디 저장</label>
           </div>
           <div class="button2">
-            <a href="">비밀번호 재설정</a>
-            <a href="">회원가입</a>
+            <a href="/find/findPw.fp">비밀번호 재설정</a>
+            <a href="/user/join.us">회원가입</a>
           </div>
         </div>
       </form>
