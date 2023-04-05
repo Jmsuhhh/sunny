@@ -40,10 +40,18 @@
 						<!-- 사진 등록 전에는 기본아이콘 들어가있게 -->
 						<div class="profile-photo-regist">
 							<div class="profile-photo">
-								<img
-									src="${pageContext.request.contextPath}/assets/img/myPage/logo.png"
-									alt="" />
+								<c:choose>
+									<c:when test="${empty myPage.getUserFile()}">
+										<img src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
+									</c:when>
+									<c:otherwise>
+										<img
+											src="${pageContext.request.contextPath}/uploadProfile/${myPage.getUserFile().getFileSystemName()}"
+											alt="" />
+									</c:otherwise>
+								</c:choose>
 							</div>
+							
 							<!-- 버튼누르면 모달창으로 사진등록-->
 							<c:if
 								test="${sessionScope.userNumber ==  myPage.getUserNumber()}">
@@ -57,6 +65,7 @@
 							<!-- 사진 등록 모달창 -->
 							<!-- 등록한 사진 경로처리 -->
 						</div>
+
 						<!-- 한줄소개글 -->
 						<div class="profile-introduce">
 							<div class="profile-content-wrap">
@@ -65,13 +74,16 @@
 										<c:out value="${myPage.getUserComment()}" />
 									</p>
 								</div>
-								<div class="profile-modify-btn">
-									<button type="button" class="modify-btn-ready">
-										<img
-											src="${pageContext.request.contextPath}/assets/img/myPage/icon_pen.png"
-											alt="" />
-									</button>
-								</div>
+								<c:if
+									test="${sessionScope.userNumber ==  myPage.getUserNumber()}">
+									<div class="profile-modify-btn">
+										<button type="button" class="modify-btn-ready">
+											<img
+												src="${pageContext.request.contextPath}/assets/img/myPage/icon_pen.png"
+												alt="" />
+										</button>
+									</div>
+								</c:if>
 							</div>
 							<div class="modify-box-wrap none">
 								<!-- 소개글 저장 경로처리 -->
@@ -94,7 +106,7 @@
 						<!-- 팔로워페이지로 이동 -->
 						<div>
 							<a
-								href="${pageContext.request.contextPath}/follow/followerList.fo"><h2>
+								href="${pageContext.request.contextPath}/follow/followerList.fo?userNumber=${myPage.getUserNumber()}"><h2>
 									<c:out value="${myPage.getFollowerCnt()}" />
 								</h2>
 								<p>팔로워</p></a>
@@ -102,7 +114,7 @@
 						<!-- 팔로잉페이지로 이동 -->
 						<div>
 							<a
-								href="${pageContext.request.contextPath}/follow/followingList.fo"><h2>
+								href="${pageContext.request.contextPath}/follow/followingList.fo?userNumber=${myPage.getUserNumber()}"><h2>
 									<c:out value="${myPage.getFollowerCnt()}" />
 								</h2>
 								<p>팔로잉</p></a>
@@ -134,13 +146,12 @@
 			<div class="main3--bottom">
 				<!-- <article class="empty"><p>등록한 스토리가 없습니다.</p></article> -->
 				<ul class="story-list-ul">
-					<li class="story-list"><a href="#"><img
+
+					<li class="story-list"><a href="#"> <img
 							src="https://www.shouse.garden/data/photo_list/s230315_01113510718.jpeg"
 							alt="" />
-							<p>
-								<c:out value="${myPage.getStroyFiles().getStoryTitle()}" />
-							</p></a></li>
-
+							<p>제목</p>
+					</a></li>
 
 				</ul>
 			</div>
@@ -174,12 +185,14 @@
 			</div>
 		</section>
 		<!-- 회원탈퇴 페이지로 이동 -->
-		<section class="main2">
-			<div class="withdraw">
-				<a href="${pageContext.request.contextPath}/user/userDrop.us">회원
-					탈퇴</a>
-			</div>
-		</section>
+		<c:if test="${sessionScope.userNumber ==  myPage.getUserNumber()}">
+			<section class="main2">
+				<div class="withdraw">
+					<a href="${pageContext.request.contextPath}/user/userDrop.us">회원
+						탈퇴</a>
+				</div>
+			</section>
+		</c:if>
 	</div>
 	<!-- 프로필사진모달창 -->
 	<article class="photo-modal-box none">

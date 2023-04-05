@@ -32,7 +32,7 @@
 						<c:when test="${not empty followList}">
 							<c:forEach var="follow" items="${followList}">
 								<li class="follow-list">
-									<!-- 이 회원의 마이페이지로 이동 --> <a href="#" data-userNumber="${follow.getUserNumber()}" >
+									<!-- 이 회원의 마이페이지로 이동 --> <a href="${pageContext.request.contextPath}/user/myPageOk.us?userNumber=${follow.getUserNumber()}" >
 										<div class="user-photo">
 											<img
 												src="${pageContext.request.contextPath}/upload/${follow.getFileSystemName()}"
