@@ -39,6 +39,8 @@ public class JoinOkController implements Execute {
 		
 		findPasswordDTO.setFindQuestionNumber(Integer.valueOf(req.getParameter("findQuestionNumber"))); 
 		findPasswordDTO.setFindPasswordAnswer(req.getParameter("findPasswordAnswer")); 
+		userVO.setFindQuestionNumber(Integer.valueOf(req.getParameter("findQuestionNumber")));
+		userVO.setFindPasswordAnswer(req.getParameter("findPasswordAnswer"));
 
 		userDAO.join(userDTO);
 		userDAO.insertFindPassword(userVO);
