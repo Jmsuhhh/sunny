@@ -18,7 +18,7 @@ public class SearchOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		System.out.println("들어왔다");
+		  System.out.println("들어왔다");
 		
 		  GosuDAO gosuDAO = new GosuDAO();
 	
@@ -63,17 +63,17 @@ public class SearchOkController implements Execute {
 	      pageMap.put("rowCount", rowCount);
 	      
 	      List<UserVO> gosus = gosuDAO.selectAll(pageMap);
+	      List<UserVO> gosusearch = gosuDAO.search();
 	      
-	      System.out.println();
-	      
+	      req.setAttribute("gosusearch", gosusearch);
 		  req.setAttribute("gosus", gosus);
 	      req.setAttribute("page", page);
 	      req.setAttribute("startPage", startPage);
 	      req.setAttribute("endPage", endPage);
 	      req.setAttribute("prev", prev);
 	      req.setAttribute("next", next);
-		
-		req.getRequestDispatcher("/app/gosu/search.jsp").forward(req, resp);
+
+	      req.getRequestDispatcher("/app/gosu/search.jsp").forward(req, resp);
 		
 		
 	}

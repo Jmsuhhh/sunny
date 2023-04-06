@@ -22,6 +22,10 @@ public class QuestionDAO {
 		return sqlSession.selectList("question.selectAll", pageMap);
 	}
 	
+	public List<QuestionDTO> selectList(){
+		return sqlSession.selectList("question.selectList");
+	}
+	
 	public int getTotal() {
 		return sqlSession.selectOne("question.getTotal");
 	}

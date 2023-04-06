@@ -22,4 +22,11 @@
 		values(#{questionTitle}, #{questionContent}, #{userNumber}, #{gosuNumber});
 	</insert>
 	
+	<select id="selectList" resultType="QuestionDTO">
+		SELECT question_number, tg.gosu_number, question_title, question_content, question_date, question_viewcnt, question_status, last_update
+		FROM tbl_question tq 
+		join tbl_gosu tg  
+		on tq.gosu_number = tg.gosu_number
+	</select>
+	
 </mapper>

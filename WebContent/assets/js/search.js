@@ -27,3 +27,4 @@ function questionList(e){
 function goQuestion(e) {
     window.location.href="question/questionWrite.qs";
 }
+

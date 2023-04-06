@@ -14,11 +14,6 @@ public class UserDAO {
 		
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
-	
-	public String getUserNickname(int userNumber) {
-		return sqlSession.selectOne("user.getUserNickname", userNumber);
-	}
-	
 	public void join(UserDTO userDTO) {
 		sqlSession.insert("user.join", userDTO);
 	}

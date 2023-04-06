@@ -16,7 +16,7 @@
 	<div class="ex-search">
     <h3>식고수 찾기</h3>
     <div class="headsearch">
-      <form action="/app/gosu/search2.jsp" class="expertsearch" method="post">
+      <form class="expertsearch" method="post">
         <input type="text" placeholder="분야를 입력해 식고수 찾기" name="word" id="word" class="searchtext"/>
         <button type="submit" class="s-btn" >
           검색
@@ -25,7 +25,7 @@
     </div>
   </div>
   
-  <c:forEach var="search" items="${gosus}">
+  <c:forEach var="search" items="${gosusearch}">
     <div class="search">
         <div class="mypage">
             <div class="profile">
@@ -97,7 +97,6 @@
             <c:if test="${next}">
                <li><a href="${pageContext.request.contextPath}/gosu/searchOk.gu?page=${endPage + 1}" class="next">&gt;</a></li>
             </c:if>
-           
             
             
             <!-- ========== /페이징 처리 예시 ============ -->

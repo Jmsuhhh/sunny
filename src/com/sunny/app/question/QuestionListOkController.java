@@ -22,15 +22,6 @@ public class QuestionListOkController implements Execute {
 
 		  QuestionDAO questionDAO = new QuestionDAO();
 		  UserDAO userDAO = new UserDAO();
-		  
-			HttpSession session = req.getSession();
-			Integer userNumber = (Integer)session.getAttribute("userNumber");
-			String path = null;
-				
-			if(userNumber != null) {
-				path = "/app/question/questionList.jsp";
-				req.setAttribute("UserNickname", userDAO.getUserNickname(userNumber));
-			}
 
 		  int total = questionDAO.getTotal();
 	      String temp = req.getParameter("page");
@@ -59,7 +50,9 @@ public class QuestionListOkController implements Execute {
 	      pageMap.put("rowCount", rowCount);
 	      
 	      List<QuestionDTO> questions = questionDAO.selectAll(pageMap);
+	      List<QuestionDTO> questions2 = questionDAO.selectList();
 	      
+	      req.setAttribute("questionK", questions2);
 	  	  req.setAttribute("questionList", questions);
 	      req.setAttribute("page", page);
 	      req.setAttribute("startPage", startPage);

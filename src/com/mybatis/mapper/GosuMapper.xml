@@ -22,5 +22,19 @@
 	<select id="getTotal" resultType="_int">
 		select count(user_number) from tbl_user
 	</select>
+	
+	<select id="search" resultType="UserVO">
+		select tu.user_number , tu.user_nickname, tu.user_comment , tu.user_date, g.gosu_fields
+		from tbl_user tu join tbl_gosu tg
+		on tu.user_number = tg.user_number 
+		join(
+		select g.gosu_number, group_concat(f.field_name separator ', ')as gosu_fields  from tbl_field f
+		join tbl_gosu_field gf on f.field_number = gf.field_number
+		join tbl_gosu g on gf.gosu_number = g.gosu_number
+		join tbl_user u on g.user_number = u.user_number
+		group by g.gosu_number
+		)as g on tg.gosu_number = g.gosu_number and g.gosu_fields like '%{searchtext}%'
+		where grade_number = "500"
+	</select>
 
 </mapper>

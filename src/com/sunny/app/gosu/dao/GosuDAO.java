@@ -22,13 +22,11 @@ public class GosuDAO {
 	}
 	
 	public List<UserVO> search(){
-		return sqlSession.selectList("gosu.selectAll");
+		return sqlSession.selectList("gosu.search");
 	}
 	
 	public int getTotal() {
 		return sqlSession.selectOne("gosu.getTotal");
 	}
 	
-	
-
 }

@@ -15,11 +15,6 @@
 	<jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
     <div class="pcontainer">
       <div class="info">
-        <h3> <strong>
-          <c:out value="${UserNickname}"/>
-          <!-- 회원닉네임 가져오기 -->
-        </strong> 
-        님의 질문목록</h3>
         <div class="infozone">
           <h3> <strong>글작성팁</strong>
             식물에게 문제가 생기면 고수님에게 직접 도움을 요청해보세요
@@ -40,7 +35,7 @@
                  
                  <c:choose>
                <c:when test="${not empty questionList}">
-                  <c:forEach var="question" items="${questionList}">
+                  <c:forEach var="question" items="${questionK}">
                   <c:if test="${question.getQuestionStatus() == '0'}">
                      <tr class="imti">
                      <td class="imgz">
@@ -178,6 +173,7 @@
       </div>
    </div>
    </div>
+
     <jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp"/>
     <script src="${pageContent.request.contextPath}/assets/js/questionList.js"></script>
 </body>

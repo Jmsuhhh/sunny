@@ -3,10 +3,6 @@
 
 <mapper namespace="user">
 
-	<select id="getUserNickName" parameterType="_int" resultType="string">
-		select user_nickname from tbl_user where user_number = #{userNumber}
-	</select>
-
 	<insert id="join" parameterType="UserDTO">
 		insert into tbl_user(user_id,
 		user_password, user_name, user_nickname,
