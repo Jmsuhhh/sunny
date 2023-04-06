@@ -18,10 +18,12 @@ public class UserDAO {
 	
 	public void join(UserDTO userDTO) {
 		sqlSession.insert("user.join", userDTO);
+		System.out.println("join메서드");
 	}
 	
-	public void insertFindPassword(UserVO userVO) {
-		sqlSession.insert("findPassword.insertFindPassword", userVO);
+	public void insertFindPassword(FindPasswordDTO findPasswordDTO) {
+		sqlSession.insert("findPassword.insertFindPassword", findPasswordDTO);
+		System.out.println("insertfindpassword메서드");
 	}
 	
 	public int login(UserDTO userDTO) {
