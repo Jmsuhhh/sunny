@@ -35,7 +35,7 @@
 				</div>
 			</div>
 		</article>
-		<h3 class="subtit">볕 들 스토리들!</h3>
+		<h3 class="subtit">볕 들 스토리들</h3>
 
 
 		<article class="holder2">
@@ -54,10 +54,10 @@
                             </a>
                             <button type="button" id="follow-button" onclick="toggleFollow(this)" class="p1 follow dir">팔로우</button>
                         </div>
-                        <a href="${pageContext.request.contextPath}/app/story/storyRead.jsp">
+                        <a href="${pageContext.request.contextPath}/story/storyReadOk.st?storyNumber=${story.getStoryNumber()}">
                             <div class="img-container">
                                 <div class="coverimg">
-                                    <img src="${storyUpload.getStoryCoverImage()}" alt="">
+                                    <img src="${pageContext.request.contextPath}/storyUpload/${story.getFileSystemName()}" alt="">
                                 </div>
                             </div>
                             <p class="imgtilte">${story.getStoryTitle()}</p>
@@ -107,7 +107,6 @@
 				</ul>
 			</div>
 		</article>
-
 		<script
 			src="${pageContext.request.contextPath}/assets/js/storyList.js"></script>
 		<jsp:include
