@@ -1,13 +1,18 @@
-// 식집사/식고수 grade확인해서 텍스트바꿈
-// 이름바꿈, 식고수카테고리 여부
 
-// 자신의 페이지인경우
-// 식고수에게 물어보기 버튼 숨김
+// 식집사/식고수 gradeNumber에 따라 텍스트 바꿔주기
+console.log(gradeNumber);
 
-// 내스토리 > 스토리
-// 나에게온질문 > 식고수에게 온 질문
-// 고수에게물어보기 버튼 활성화
-// 회원탈퇴버튼숨김
+function showGrade(gradeNumber){
+	let text ='';
+	if(gradeNumber==500){
+		text +='식고수'
+	}else{
+		text +='식집사'
+	}
+	$('.grade').text(text);
+	console.log(text);
+};
+showGrade();
 
 
 // 회원등급모달창
@@ -19,7 +24,6 @@ $(".grade-info").on("click", function() {
 $(".grade-x-box").on("click", function() {
 	$(".grade-modal-box").toggleClass("none");
 });
-
 
 // 프로필사진등록
 $(".profile-photo-btn").on("click", function() {
@@ -66,10 +70,6 @@ $fileInput.on('change', function() {
 
 });
 
-
-// 기본사진으로 변경->원래사진DB에서도지움
-// 이거 아직 안했음
-
 // 프로필을 기본사진으로 변경 
 
 $(".basic-photo").on("click", function() {
@@ -88,11 +88,7 @@ $(".basic-photo").on("click", function() {
 				console.log(c);
 			}
 	});
-	//실제 경로에서는 어떻게 지우져?
 });
-
-
-
 
 
 // 한줄소개편집 input박스띄우기
