@@ -23,7 +23,7 @@ public class StoryWriteController implements Execute {
 	      if(userNumber == null) {
 	         path = "/app/user/login.jsp";
 	      }else {
-	         path ="/app/story/storydWrite.jsp";
+	         path ="/app/story/storyWrite.jsp";
 	         req.setAttribute("userId", userDAO.getUserId(userNumber));
 	      }
 	      

@@ -13,11 +13,20 @@ public class StoryDTO {
 	private int storyNumber;
 	private String storyTitle;
 	private String storyContent;
-	private int stotyViewcnt;
+	private int storyViewcnt;
 	private String storyDate;
 	private String lastUpdate;
 	private int userNumber;
+	private String fileSystemName;
 	
+	public String getFileSystemName() {
+		return fileSystemName;
+	}
+
+	public void setFileSystemName(String fileSystemName) {
+		this.fileSystemName = fileSystemName;
+	}
+
 	public StoryDTO() {}
 
 	public int getStoryNumber() {
@@ -44,12 +53,12 @@ public class StoryDTO {
 		this.storyContent = storyContent;
 	}
 
-	public int getStotyViewcnt() {
-		return stotyViewcnt;
+	public int getStoryViewcnt() {
+		return storyViewcnt;
 	}
 
-	public void setStotyViewcnt(int stotyViewcnt) {
-		this.stotyViewcnt = stotyViewcnt;
+	public void setStoryViewcnt(int storyViewcnt) {
+		this.storyViewcnt = storyViewcnt;
 	}
 
 	public String getStoryDate() {
@@ -79,7 +88,7 @@ public class StoryDTO {
 	@Override
 	public String toString() {
 		return "StoryDTO [storyNumber=" + storyNumber + ", storyTitle=" + storyTitle + ", storyContent=" + storyContent
-				+ ", stotyViewcnt=" + stotyViewcnt + ", storyDate=" + storyDate + ", lastUpdate=" + lastUpdate
-				+ ", userNumber=" + userNumber + "]";
-	}	
+				+ ", storyViewcnt=" + storyViewcnt + ", storyDate=" + storyDate + ", lastUpdate=" + lastUpdate
+				+ ", userNumber=" + userNumber + ", fileSystemName=" + fileSystemName + "]";
+	}
 }

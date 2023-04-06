@@ -23,7 +23,7 @@ body {
   padding-top: 8px;
 }
 
-.profile-img {
+.profile-img > img{
   position: absolute;
   top: 0;
   left: 0;
@@ -31,8 +31,9 @@ body {
   height: 54px;
   border: 1px solid #d9d9d9;
   border-radius: 100%;
-  background-color: #333;
   display: inline-block;
+  background-position: center center;
+  background-size: cover;
 }
 
 .profile {
@@ -94,6 +95,11 @@ button {
 .hit-count {
   font-size: 15px;
   color: #b3b3b3;
+}
+
+.ReadTitle{
+	font-size: 20px;
+	margin-top: 15px;
 }
 
 .container {
@@ -179,7 +185,8 @@ button {
   margin: 10px;
   position: relative;
   height: 700px;
-  background-color: #808080;
+  font-size : 1rem;
+  white-space:pre-line;
 }
 
 /* 댓글 스타일 */

@@ -39,4 +39,16 @@ public class StoryDAO {
 	public int getSequence() {
 		return sqlSession.selectOne("story.getSequence");
 	}
+	
+	public StoryListVO select(int storyNumber) {
+	    return sqlSession.selectOne("story.select", storyNumber);
+	}
+	
+	public void updateReadCount(int storyNumber) {
+		sqlSession.update("story.updateReadCount", storyNumber);
+	}
+	
+	public void updateCover(StoryDTO storyDTO) {
+		sqlSession.update("story.cover", storyDTO);
+	}
 }
