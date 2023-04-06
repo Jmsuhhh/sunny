@@ -12,6 +12,7 @@ public class UserVO {
 	private int gradeNumber;
 	private String findPasswordAnswer;
 	private int findQuestionNumber;
+	private String gosuFields;
 	
 	public UserVO() {}
 
@@ -103,13 +104,24 @@ public class UserVO {
 		this.findQuestionNumber = findQuestionNumber;
 	}
 
+	public String getGosuFields() {
+		return gosuFields;
+	}
+
+	public void setGosuFields(String gosuFields) {
+		this.gosuFields = gosuFields;
+	}
+
 	@Override
 	public String toString() {
 		return "UserVO [userNumber=" + userNumber + ", userId=" + userId + ", userPassword=" + userPassword
 				+ ", userName=" + userName + ", userNickname=" + userNickname + ", userPhone=" + userPhone
 				+ ", userEmail=" + userEmail + ", userComment=" + userComment + ", gradeNumber=" + gradeNumber
-				+ ", findPasswordAnswer=" + findPasswordAnswer + ", findQuestionNumber=" + findQuestionNumber + "]";
+				+ ", findPasswordAnswer=" + findPasswordAnswer + ", findQuestionNumber=" + findQuestionNumber
+				+ ", gosuFields=" + gosuFields + "]";
 	}
+
+	
 	
 	
 }

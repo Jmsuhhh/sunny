@@ -8,10 +8,12 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sunny.app.Execute;
 import com.sunny.app.question.dao.QuestionDAO;
 import com.sunny.app.question.dto.QuestionDTO;
+import com.sunny.app.user.dao.UserDAO;
 
 public class QuestionListOkController implements Execute {
 
@@ -19,6 +21,16 @@ public class QuestionListOkController implements Execute {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		  QuestionDAO questionDAO = new QuestionDAO();
+		  UserDAO userDAO = new UserDAO();
+		  
+			HttpSession session = req.getSession();
+			Integer userNumber = (Integer)session.getAttribute("userNumber");
+			String path = null;
+				
+			if(userNumber != null) {
+				path = "/app/question/questionList.jsp";
+				req.setAttribute("UserNickname", userDAO.getUserNickname(userNumber));
+			}
 
 		  int total = questionDAO.getTotal();
 	      String temp = req.getParameter("page");

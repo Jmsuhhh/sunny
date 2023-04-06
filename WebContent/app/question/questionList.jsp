@@ -16,7 +16,7 @@
     <div class="pcontainer">
       <div class="info">
         <h3> <strong>
-          9지인
+          <c:out value="${UserNickname}"/>
           <!-- 회원닉네임 가져오기 -->
         </strong> 
         님의 질문목록</h3>
@@ -70,16 +70,16 @@
                     <!-- ========== 게시글 목록 =========== -->
                  
                   
-                   <!-- ========== 페이징 처리 ============ -->
-                   <div class="pagination">
-                    <ul id="pagingul">
-                      <c:if test="${prev}">
-               <li><a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${startPage+1}" class="prev">&lt;</a></li>
+                  <div class="pagination">
+         <ul>
+            <!-- ========== 페이징 처리 예시 ============ -->
+            <c:if test="${prev}">
+               <li><a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${startPage - 1}" class="prev">&lt;</a></li>
             </c:if>
             
             <c:forEach var="i" begin="${startPage}" end="${endPage}">
                <c:choose>
-                  <c:when test="${!(i == page)}">
+                  <c:when test="${!(i == page) }">
                      <li>
                         <a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${i}">
                            <c:out value="${i}"/>
@@ -97,13 +97,14 @@
             </c:forEach>
             
             <c:if test="${next}">
-               <li><a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${endPage}" class="next">&gt;</a></li>
+               <li><a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${endPage + 1}" class="next">&gt;</a></li>
             </c:if>
-                     </ul>
-                   </div>
-                
-                  
-                    </div>
+            
+            
+            <!-- ========== /페이징 처리 예시 ============ -->
+         </ul>
+      </div>
+   </div>
                   <div class="answercom">
                      <button type="button">답변완료</button>
    				<table class="answercom-table">
@@ -142,40 +143,41 @@
                     
                      <!-- ========== 페이징 처리 ============ -->
            <div class="pagination">
-                    <ul>
-            		<c:if test="${paging.page<=1}">
-	[이전]&nbsp;
-	</c:if>
-		<c:if test="${paging.page>1}">
-			<a
-				href="boardListPaging?page=${paging.page-1}&filters=${requestScope.filters}&search=${requestScope.search}&mnum=${requestScope.mnum}">[이전]</a>&nbsp;
-	</c:if>
-		<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="i"
-			step="1">
-			<c:choose>
-				<c:when test="${i eq paging.page}">
-			${i}
-		</c:when>
-				<c:otherwise>
-					<a
-						href="boardListPaging?page=${i}&filters=${requestScope.filters}&search=${requestScope.search}&mnum=${requestScope.mnum}">${i}</a>
-				</c:otherwise>
-			</c:choose>
-		</c:forEach>
-		<c:if test="${paging.page>=paging.maxPage}">
-[다음]
-</c:if>
-		<c:if test="${paging.page<paging.maxPage}">
-			<a
-				href="boardListPaging?page=${paging.page+1}&filters=${requestScope.filters}&search=${requestScope.search}&mnum=${requestScope.mnum}">[다음]</a>
-		</c:if>
-
-                     </ul>
-                   </div>
-                
-                  
-                    </div>
-        </div>
+         <ul>
+            <!-- ========== 페이징 처리 예시 ============ -->
+            <c:if test="${prev}">
+               <li><a href="${pageContext.request.contextPath}/board/boardListOk.bo?page=${startPage - 1}" class="prev">&lt;</a></li>
+            </c:if>
+            
+            <c:forEach var="i" begin="${startPage}" end="${endPage}">
+               <c:choose>
+                  <c:when test="${!(i == page) }">
+                     <li>
+                        <a href="${pageContext.request.contextPath}/board/boardListOk.bo?page=${i}">
+                           <c:out value="${i}"/>
+                        </a>
+                     </li>
+                  </c:when>
+                  <c:otherwise>
+                     <li>
+                        <a href="#" class="active">
+                           <c:out value="${i}"/>
+                        </a>
+                     </li>
+                  </c:otherwise>
+               </c:choose>
+            </c:forEach>
+            
+            <c:if test="${next}">
+               <li><a href="${pageContext.request.contextPath}/board/boardListOk.bo?page=${endPage + 1}" class="next">&gt;</a></li>
+            </c:if>
+            
+            
+            <!-- ========== /페이징 처리 예시 ============ -->
+         </ul>
+      </div>
+   </div>
+   </div>
     <jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp"/>
     <script src="${pageContent.request.contextPath}/assets/js/questionList.js"></script>
 </body>
