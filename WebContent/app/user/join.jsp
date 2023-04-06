@@ -191,7 +191,7 @@
               </div>
             </div>
             <br><br><br>
-            <button type="submit" class="submit-button">회원가입 완료</button>
+            <button type="submit" id="submit-button" class="submit-button">회원가입 완료</button>
           </div>
         </form>
       </div>
