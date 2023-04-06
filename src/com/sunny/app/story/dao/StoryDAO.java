@@ -35,7 +35,6 @@ public class StoryDAO {
 	    }
 	}
 
-
 	public int getSequence() {
 		return sqlSession.selectOne("story.getSequence");
 	}

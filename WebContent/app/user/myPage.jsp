@@ -20,7 +20,7 @@
 			<div class="main1--top">
 				<!-- 식집사/식고수 텍스트 바꿔서 넣어야함 , 이름 띄움-->
 				<h1>
-					<span class="grade">#</span>
+					<span class="grade"></span>
 					<span><c:out value="${myPage.getUserNickname()}" /></span> 입니다
 				</h1>
 			</div>
@@ -123,12 +123,12 @@
 				</div>
 			</div>
 		</section>
-		<c:if test="${sessionScope.userNumber ==  myPage.getUserNumber()}">
+		<c:if test="${sessionScope.userNumber ==  myPage.getUserNumber()}&&${myPage.getGradeNumber()}=100">
 			<section class="main2">
 				<div class="apply-expert">
 					<!-- 식고수 신청 페이지로 이동 -->
 					<!-- 식고수인 경우 버튼없앰 -->
-					<a href="#">식고수 신청하기</a>
+					<a href="${pageContext.request.contextPath}/gosuApply/gosuApply.ga?userNumber=${myPage.getUserNumber()}">식고수 신청하기</a>
 				</div>
 			</section>
 		</c:if>
@@ -160,6 +160,7 @@
 		</section>
 
 		<!-- 식고수인경우 질문포스팅리스트띄워야함 -->
+		<c:if test="${myPage.getGradeNumber()}==500">
 		<section class="main3">
 			<div class="main3--top">
 				<h1><c:out value="${myPage.getUserNickname()}" />님에게 온 질문들</h1>
@@ -189,6 +190,7 @@
 				</ul>
 			</div>
 		</section>
+		</c:if>
 		<!-- 회원탈퇴 페이지로 이동 -->
 		<c:if test="${sessionScope.userNumber ==  myPage.getUserNumber()}">
 			<section class="main2">
@@ -235,6 +237,7 @@
 	</article>
 	<jsp:include
 		page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
+	<script>let gradeNumber = "${myPage.getGradeNumber()}";</script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/myPage.js"></script>
 </body>

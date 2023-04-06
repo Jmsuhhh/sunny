@@ -1,16 +1,18 @@
 
-// 자신의 페이지인경우
-// 식고수에게 물어보기 버튼 숨김
+// 식집사/식고수 gradeNumber에 따라 텍스트 바꿔주기
+console.log(gradeNumber);
 
-// 내스토리 > 스토리
-// 나에게온질문 > 식고수에게 온 질문
-// 고수에게물어보기 버튼 활성화
-
-// 식집사/식고수 grade check해서 바꿔주기
-function showGrade(){
+function showGrade(gradeNumber){
 	let text ='';
-	
-}
+	if(gradeNumber==500){
+		text +='식고수'
+	}else{
+		text +='식집사'
+	}
+	$('.grade').text(text);
+	console.log(text);
+};
+showGrade();
 
 
 // 회원등급모달창
