@@ -51,4 +51,8 @@ public class UserDAO {
 	public void userDrop(int userNumber) {
 		sqlSession.delete("user.userDrop", userNumber);
 	}
+	
+	public String getMemberId(int userNumber) {
+		return sqlSession.selectOne("user.getMemberId", userNumber);
+	}
 }

@@ -32,7 +32,5 @@
 	<delete id="userDrop" parameterType="_int">
 		delete from tbl_user where user_number=#{userNumber}	
 	</delete>
-	
-	
 
 </mapper>
