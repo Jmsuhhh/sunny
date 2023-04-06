@@ -40,7 +40,7 @@
 				<div class="manage-manu">
 					<div class="user-manage">
 						<div class="user-manage-headline">
-							<img src="../../assets/img/admin/img/user.png" alt="" />
+							<img src="../../assets/img/admin/user.png" alt="" />
 							<h2>관리하기</h2>
 						</div>
 						<div class="hr">
@@ -135,7 +135,7 @@
 					</table>
 				</div>
 				<div class="user-btn-groups">
-					<button class="ben-btn" data-userNumber="${userDetail.getUserNumber() }">제명</button>
+					<button type="button" class="ben-btn" data-userNumber="${userDetail.getUserNumber() }">제명</button>
 				</div>
 			</div>
 		</div>

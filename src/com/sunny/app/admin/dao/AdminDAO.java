@@ -22,6 +22,12 @@ public class AdminDAO {
 	 }
 	
 	public void kill(int userNumber) {
+		System.out.println("kill 메서드");
 		sqlSession.delete("admin.kill", userNumber);
+	}
+	
+	public void down(int userNumber) {
+		System.out.println("down 메서드");
+		sqlSession.update("admin.down", userNumber);
 	}
 }

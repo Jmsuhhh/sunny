@@ -151,8 +151,8 @@
 					</table>
 				</div>
 				<div class="gosu-btn-groups">
-					<button class="demotion-btn">강등</button>
-					<button class="ben-btn">제명</button>
+					<button type="button" class="down-btn" data-userNumber="${gosuDetail.getUserNumber() }" >강등</button>
+					<button type="button" class="ben-btn" data-userNumber="${gosuDetail.getUserNumber() }">제명</button>
 				</div>
 			</div>
 		</div>
@@ -165,5 +165,6 @@
 			$("#footers").load("../../assets/html/footer.html");
 		});
 	</script>
+		<script src="../../assets/js/gosuDetail.js"></script>
 </body>
 </html>
