@@ -1,4 +1,4 @@
-package com.sunny.app.question.dto;
+package com.sunny.app.question.vo;
 
 import java.util.Date;
 
@@ -12,7 +12,7 @@ import java.util.Date;
 //question_status //tinyint(1) 0/1
 //last_update //datetime
 
-public class QuestionDTO {
+public class QuestionVO {
 	private int questionNumber;
 	private int gosuNumber;
 	private int userNumber;
@@ -22,8 +22,9 @@ public class QuestionDTO {
 	private int questionViewCnt;
 	private int questionStatus;
 	private Date lastUpdate;
+	private String coverImg;
 	
-	public QuestionDTO() {}
+	public QuestionVO() {}
 
 	public int getQuestionNumber() {
 		return questionNumber;
@@ -97,20 +98,27 @@ public class QuestionDTO {
 		this.lastUpdate = lastUpdate;
 	}
 
+	public String getCoverImg() {
+		return coverImg;
+	}
+
+	public void setCoverImg(String coverImg) {
+		this.coverImg = coverImg;
+	}
+
 	@Override
 	public String toString() {
-		return "QuestionDTO [questionNumber=" + questionNumber + ", gosuNumber=" + gosuNumber + ", userNumber="
+		return "QuestionVO [questionNumber=" + questionNumber + ", gosuNumber=" + gosuNumber + ", userNumber="
 				+ userNumber + ", questionTitle=" + questionTitle + ", questionContent=" + questionContent
 				+ ", questionDate=" + questionDate + ", questionViewCnt=" + questionViewCnt + ", questionStatus="
-				+ questionStatus + ", lastUpdate=" + lastUpdate + ", getQuestionNumber()=" + getQuestionNumber()
-				+ ", getGosuNumber()=" + getGosuNumber() + ", getUserNumber()=" + getUserNumber()
+				+ questionStatus + ", lastUpdate=" + lastUpdate + ", coverImg=" + coverImg + ", getQuestionNumber()="
+				+ getQuestionNumber() + ", getGosuNumber()=" + getGosuNumber() + ", getUserNumber()=" + getUserNumber()
 				+ ", getQuestionTitle()=" + getQuestionTitle() + ", getQuestionContent()=" + getQuestionContent()
 				+ ", getQuestionDate()=" + getQuestionDate() + ", getQuestionViewCnt()=" + getQuestionViewCnt()
 				+ ", getQuestionStatus()=" + getQuestionStatus() + ", getLastUpdate()=" + getLastUpdate()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
+				+ ", getCoverImg()=" + getCoverImg() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
 	}
-	
 	
 	
 	

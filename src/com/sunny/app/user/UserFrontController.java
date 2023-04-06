@@ -56,7 +56,7 @@ public class UserFrontController extends HttpServlet{
 			req.getRequestDispatcher("/app/user/join.jsp").forward(req, resp);
 			break;
 		case "/user/joinOk.us":
-			req.getRequestDispatcher("/app/user/joinOk.jsp").forward(req, resp);
+//			req.getRequestDispatcher("/app/user/joinOk.jsp").forward(req, resp);
 			new JoinOkController().execute(req, resp);
 			break;
 		case "/user/checkIdOk.us":
@@ -70,6 +70,9 @@ public class UserFrontController extends HttpServlet{
 			break;
 		case "/user/logoutOk.us":
 			new LogoutOkController().execute(req,resp);
+			break;
+		case "/user/result.us":
+			req.getRequestDispatcher("/app/user/joinOk.jsp").forward(req, resp);
 			break;
 		}
 	}
