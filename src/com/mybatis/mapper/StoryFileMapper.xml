@@ -3,18 +3,12 @@
 
 <mapper namespace="storyFile">
 	<insert id="insert" parameterType="StoryFileDTO">
-		insert into
-		tbl_story_file(file_system_name, file_original_name, story_number)
-		values(#{fileSystemName},#{fileOriginalName},#{storyNumber})
+		insert into tbl_story_file
+		(file_system_name1, file_original_name1, story_number, file_system_name2,
+		file_system_name3, file_original_name2, file_original_name3)
+		values(#{fileSystemName1},#{fileOriginalName1},#{storyNumber},#{fileSystemName2},#{fileSystemName3},#{fileOriginalName2},#{fileOriginalName3})
 	</insert>
 
-	<select id="selectList" parameterType="map"
-		resultType="StoryFileDTO">
-		select file_number, story_number, file_system_name,
-		file_original_name
-		from story_file
-		where story_number = #{storyNumber}
-		order by file_number ASC
-	</select>
+
 
 </mapper>
