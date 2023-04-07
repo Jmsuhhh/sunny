@@ -44,6 +44,7 @@
 		<typeAlias type="com.sunny.app.my.page.dto.MyPageDTO" alias="MyPageDTO"/>
 		<typeAlias type="com.sunny.app.admin.vo.GosuApplicationVO" alias ="GosuApplicationVO"/>
 		<typeAlias type="com.sunny.app.admin.vo.GosuApplicationReadVO" alias ="GosuApplicationReadVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.HeaderInfoVO" alias ="HeaderInfoVO"/>
 
 
 	</typeAliases>

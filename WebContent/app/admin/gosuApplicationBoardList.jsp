@@ -12,7 +12,7 @@
 	href="../../assets/css/gosuApplicationBoardList.css" />
 </head>
 <jsp:include
-	page="${pageContext.request.contextPath}/app/admin/adminHeader2.jsp" />
+	page="${pageContext.request.contextPath}/app/admin/adminHeader.jsp" />
 <body>
 	<div class="sidebar-read-all">
 		<div class="sidevar">

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
 import com.sunny.app.admin.dto.AdminDTO;
+import com.sunny.app.admin.vo.HeaderInfoVO;
 
 public class AdminDAO {
 
@@ -34,5 +35,14 @@ public class AdminDAO {
 	public void up(int userNumber) {
 		System.out.println("up 메서드");
 		sqlSession.update("admin.up", userNumber);
+	}
+	
+	public void nagative(int userNumber) {
+		System.out.println("nagative 메서드");
+		sqlSession.update("admin.nagative", userNumber);
+	}
+	
+	public HeaderInfoVO headerInfo() {
+		return sqlSession.selectOne("admin.headerInfo");
 	}
 }

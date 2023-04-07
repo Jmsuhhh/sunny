@@ -16,7 +16,7 @@ public class GosuApplicationBoardReadController implements Execute{
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		int applyNumber = Integer.parseInt(req.getParameter("applyNumber"));
-		System.out.println(applyNumber);
+		System.out.println("applyNumber = " + applyNumber);
 		
 		GosuApplicationReadDAO gosuApplicationReadDAO = new GosuApplicationReadDAO();
 		GosuApplicationReadVO gosuApplicationReadVO = gosuApplicationReadDAO.applyRead(applyNumber);

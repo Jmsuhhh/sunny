@@ -16,6 +16,11 @@ public class GosuApplyNoController implements Execute{
 		AdminDAO adminDAO = new AdminDAO();
 		
 		int userNumber = Integer.valueOf(req.getParameter("userNumber"));
+		
+		adminDAO.nagative(userNumber);
+		
+		resp.sendRedirect("/admin/gosuApplicationBoardList.ad");
+		
 	}
 
 }

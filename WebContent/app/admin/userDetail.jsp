@@ -12,7 +12,7 @@
 </head>
 <body>
 	<jsp:include
-		page="${pageContext.request.contextPath}/app/admin/adminHeader2.jsp" />
+		page="${pageContext.request.contextPath}/app/admin/adminHeader.jsp" />
 	<div class="sidebar-read-all">
 		<div class="sidevar">
 			<div class="admin-info-all">

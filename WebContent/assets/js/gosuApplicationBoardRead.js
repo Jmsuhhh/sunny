@@ -22,7 +22,7 @@ $noBtn.on('click', () => {
 });
 
 $backBtn.on('click', () => {	
-   window.location.href = '/admin/gosuApplicationBoardlist.ad';
+   window.location.href = '/admin/gosuApplicationBoardList.ad';
 });
 
 
