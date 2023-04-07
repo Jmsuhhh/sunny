@@ -38,7 +38,7 @@
       height: 57px;
     }
 
-    .searchtext {
+    .searchText {
       width: 164px;
       height: 27px;
       background-color: #f2f2f2;
@@ -50,7 +50,7 @@
       position: relative;
     }
     
-  .s-btn {
+  .headsearch>button {
     position: absolute;
     cursor : pointer;
  	color: #fff;
@@ -157,7 +157,7 @@
       color:#808080 ; 
     }
 
-    .container > button {
+    .s-btn {
         background-color: #009a3e;
         color: #fff;
         width: 65px;

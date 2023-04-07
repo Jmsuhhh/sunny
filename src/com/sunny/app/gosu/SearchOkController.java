@@ -20,6 +20,7 @@ public class SearchOkController implements Execute {
 		
 		  System.out.println("들어왔다");
 		
+		  
 		  GosuDAO gosuDAO = new GosuDAO();
 	
 	      int total = gosuDAO.getTotal();
@@ -63,9 +64,9 @@ public class SearchOkController implements Execute {
 	      pageMap.put("rowCount", rowCount);
 	      
 	      List<UserVO> gosus = gosuDAO.selectAll(pageMap);
-	      List<UserVO> gosusearch = gosuDAO.search();
+//	      List<UserVO> gosusearch = gosuDAO.search();
 	      
-	      req.setAttribute("gosusearch", gosusearch);
+//	      req.setAttribute("gosusearch", gosusearch);
 		  req.setAttribute("gosus", gosus);
 	      req.setAttribute("page", page);
 	      req.setAttribute("startPage", startPage);
@@ -74,8 +75,6 @@ public class SearchOkController implements Execute {
 	      req.setAttribute("next", next);
 
 	      req.getRequestDispatcher("/app/gosu/search.jsp").forward(req, resp);
-		
-		
 	}
 
 }

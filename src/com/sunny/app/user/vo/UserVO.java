@@ -14,6 +14,8 @@ public class UserVO {
 	private int findQuestionNumber;
 	private String gosuFields;
 	
+	private String searchText;
+	
 	public UserVO() {}
 
 	public int getUserNumber() {
@@ -112,13 +114,21 @@ public class UserVO {
 		this.gosuFields = gosuFields;
 	}
 
+	public String getSearchText() {
+		return searchText;
+	}
+
+	public void setSearchText(String searchText) {
+		this.searchText = searchText;
+	}
+
 	@Override
 	public String toString() {
 		return "UserVO [userNumber=" + userNumber + ", userId=" + userId + ", userPassword=" + userPassword
 				+ ", userName=" + userName + ", userNickname=" + userNickname + ", userPhone=" + userPhone
 				+ ", userEmail=" + userEmail + ", userComment=" + userComment + ", gradeNumber=" + gradeNumber
 				+ ", findPasswordAnswer=" + findPasswordAnswer + ", findQuestionNumber=" + findQuestionNumber
-				+ ", gosuFields=" + gosuFields + "]";
+				+ ", gosuFields=" + gosuFields + ", searchText=" + searchText + "]";
 	}
 
 	

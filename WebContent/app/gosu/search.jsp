@@ -16,12 +16,10 @@
 	<div class="ex-search">
     <h3>식고수 찾기</h3>
     <div class="headsearch">
-      <form action="/app/gosu/search2.jsp" class="expertsearch" method="post">
-        <input type="text" placeholder="분야를 입력해 식고수 찾기" name="word" id="word" class="searchtext"/>
-        <button type="submit" class="s-btn" >
-          검색
-        </button>
-      </form>
+      <form action="/gosu/searchOk.gu" name="SearchForm" method="post">
+      	<input type="text" placeholder="분야를 입력해 식고수 찾기" class="searchText" name="searchText"/>
+		<button type="submit" class="s-btn">검색</button>
+    </form>
     </div>
   </div>
   
@@ -58,7 +56,8 @@
                 <!-- 식고수 마이페이지로 이동 -->
                 <div class="write-btn-wrap">
                   <!-- 글쓰기 페이지 이동 처리 -->
-                  <a href="${pageContext.request.contextPath}/question/questionListOk.qs" class="plus-btn" onclick="questionList()">질문 목록</a>
+                  <a href="${pageContext.request.contextPath}/question/questionListOk.qs" class="plus-btn" onclick="questionList()">미답변</a>
+                  <a href="${pageContext.request.contextPath}/question/questionList2Ok.qs" class="plus-btn" onclick="questionList2()">답변완료</a>
                      <!-- 질문하기 페이지로 이동 -->
                       <a href="${pageContext.request.contextPath}/question/questionWrite.qs" class="question-btn" onclick="goQuestion()">질문하기</a>
                    </div>

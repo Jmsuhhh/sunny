@@ -64,7 +64,7 @@ strong {
 .noanswer > button {
     color: #fff;
     background-color: #009a3e;
-    width: 52px;
+    width: 80px;
     height: 33px;
     border-radius: 4px;
     border: none;
@@ -86,7 +86,7 @@ strong {
 	.answercom > button {
     background-color: #009a3e;
     color: #fff;
-    width: 65px;
+    width: 80px;
     height: 33px;
     border: none;
     border-radius: 4px;
@@ -126,6 +126,7 @@ p {
  
  .imti{
  	margin : 0 40px 0 0;
+ 	cursor : pointer;
  }
  
  tbody {

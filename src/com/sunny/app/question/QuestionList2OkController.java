@@ -15,10 +15,12 @@ import com.sunny.app.question.dao.QuestionDAO;
 import com.sunny.app.question.dto.QuestionDTO;
 import com.sunny.app.user.dao.UserDAO;
 
-public class QuestionListOkController implements Execute {
+public class QuestionList2OkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+//		 System.out.println("들어왔다");
 
 		  QuestionDAO questionDAO = new QuestionDAO();
 
@@ -48,18 +50,15 @@ public class QuestionListOkController implements Execute {
 	      pageMap.put("startRow", startRow);
 	      pageMap.put("rowCount", rowCount);
 	      
-	      List<QuestionDTO> questions = questionDAO.selectAll(pageMap);
-	      List<QuestionDTO> questions2 = questionDAO.selectList();
-	      
-	      req.setAttribute("questionK", questions2);
-	  	  req.setAttribute("questionList", questions);
+	      List<QuestionDTO> questions2 = questionDAO.selectAll2(pageMap);
+	  	  req.setAttribute("questionList2", questions2);
 	      req.setAttribute("page", page);
 	      req.setAttribute("startPage", startPage);
 	      req.setAttribute("endPage", endPage);
 	      req.setAttribute("prev", prev);
 	      req.setAttribute("next", next);
 	      
-	      req.getRequestDispatcher("/app/question/questionList.jsp").forward(req, resp);
+	      req.getRequestDispatcher("/app/question/questionList2.jsp").forward(req, resp);
 	   }
 
 	}

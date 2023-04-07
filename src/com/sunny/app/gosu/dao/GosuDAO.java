@@ -1,11 +1,13 @@
 package com.sunny.app.gosu.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
+import com.sunny.app.question.dto.QuestionDTO;
 import com.sunny.app.user.vo.UserVO;
 
 public class GosuDAO {
@@ -21,12 +23,15 @@ public class GosuDAO {
 		return sqlSession.selectList("gosu.selectAll", pageMap);
 	}
 	
-	public List<UserVO> search(){
-		return sqlSession.selectList("gosu.search");
-	}
+//	public List<UserVO> search(){
+//		return sqlSession.selectList("gosu.search");
+//	}
 	
 	public int getTotal() {
 		return sqlSession.selectOne("gosu.getTotal");
 	}
+	
+		
+	
 	
 }
