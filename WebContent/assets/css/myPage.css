@@ -360,3 +360,12 @@ li {
   display: none;
 }
 
+.empty{
+	height : 300px;
+	width : 100% ;
+	background-color : yellow;
+	border : 1px solid black;
+	text-align : center;
+	
+}
+
