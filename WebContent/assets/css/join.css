@@ -198,6 +198,7 @@
   border-radius: 5px;
   border: 0.5px solid #cfcccc;
   padding: 0 0 0 20px;
+  margin: -5px 0 0 0;
 }
 
 .input-tag{
