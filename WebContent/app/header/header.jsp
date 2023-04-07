@@ -9,11 +9,17 @@
       <section class="header1">
         <div class="header1--top">
           <div class="header1-btn-group">
-            <!-- 로그인경로처리 -->
-            <a href="${pageContext.request.contextPath}/user/login.us" class="header1-a header-login-btn">로그인</a>
-            <!-- 회원가입경로처리 -->
-            <a href="${pageContext.request.contextPath}/user/join.us" class="header1-a header-join-btn">회원가입</a>
-            <a href="${pageContext.request.contextPath}/user/logoutOk.us" class="header1-a header-logout-btn">로그아웃</a>
+          <c:choose>
+            <c:when test="${empty sessionScope.userNumber}">
+	            <!-- 로그인경로처리 -->
+            	<a href="${pageContext.request.contextPath}/user/login.us" class="header1-a header-login-btn">로그인</a>
+           		 <!-- 회원가입경로처리 -->
+            	<a href="${pageContext.request.contextPath}/user/join.us" class="header1-a header-join-btn">회원가입</a>
+            </c:when>
+            <c:otherwise>
+            	<a href="${pageContext.request.contextPath}/user/logoutOk.us" class="header1-a header-logout-btn">로그아웃</a>
+            </c:otherwise>
+          </c:choose>
           </div>
         </div>
         <div class="header1--bottom">

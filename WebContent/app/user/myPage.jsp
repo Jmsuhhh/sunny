@@ -20,11 +20,7 @@
 			<div class="main1--top">
 				<!-- 식집사/식고수 텍스트 바꿔서 넣어야함 , 이름 띄움-->
 				<h1>
-					<span class="grade">
-					<c:choose>
-					<c:when test="${myPage.getGradeNumber()}==500">식고수</c:when>
-					<c:otherwise>식집사</c:otherwise></c:choose>
-					</span>
+					<span class="grade"></span>
 					<span><c:out value="${myPage.getUserNickname()}" /></span> 입니다
 				</h1>
 			</div>
@@ -102,7 +98,7 @@
 					<div class="profile-right">
 						<!-- 스토리 구역으로 이동 -->
 						<div>
-							<a href="#"><h2>
+							<a href="#storySection"><h2>
 									<c:out value="${myPage.getStoryCnt()}" />
 								</h2>
 								<p>게시물</p></a>
@@ -127,7 +123,7 @@
 				</div>
 			</div>
 		</section>
-		<c:if test="${sessionScope.userNumber ==  myPage.getUserNumber()}&&${myPage.getGradeNumber()}=100">
+		<c:if test="${sessionScope.userNumber eq myPage.getUserNumber() && myPage.getGradeNumber()==100}">
 			<section class="main2">
 				<div class="apply-expert">
 					<!-- 식고수 신청 페이지로 이동 -->
@@ -138,8 +134,8 @@
 		</c:if>
 		<!-- 마이스토리 목록 -->
 		<section class="main3">
-			<div class="main3--top">
-				<h1>내 스토리</h1>
+			<div class="main3--top" id="storySection">
+				<h1><c:out value="${myPage.getUserNickname()}"/>님의 스토리</h1>
 				<div class="write-story">
 					<!-- 스토리쓰기 페이지로 이동 -->
 					<c:if test="${sessionScope.userNumber ==  myPage.getUserNumber()}">
@@ -156,15 +152,24 @@
 							<c:forEach var="myStory" items="${myPage.getStoryFiles()}">
 					<li class="story-list">
 						<a href="${pageContext.request.contextPath}/story/storyReadOk.st?storyNumber=${myStory.getStoryNumber()}"> 
+							<div class = "cover-div">
+						<c:choose>
+							<c:when test="${not empty myStory.getFileSystemName()}">
 							<img
 							src="${pageContext.request.contextPath}/storyUpload/${myStory.getFileSystemName()}"
 							alt="" />
-							<p>${myStory.getStoryTitle}</p>
+							</c:when>
+							<c:otherwise>
+									<img src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
+							</c:otherwise>
+						</c:choose>
+							</div>
+							<p>${myStory.getStoryTitle()}</p>
 					</a></li>
 					</c:forEach>
 					</c:when>
 					<c:otherwise>
-						<li><div class="empty">등록한 스토리가 없습니다.</div></li>
+						<div class="empty">등록한 스토리가 없습니다.</div>
 					</c:otherwise>
 					</c:choose>
 				</ul>
@@ -172,7 +177,7 @@
 		</section>
 
 		<!-- 식고수인경우 질문포스팅리스트띄워야함 -->
-		<c:if test="${myPage.getGradeNumber()}==500">
+		<c:if test="${myPage.getGradeNumber()==500}">
 		<section class="main3">
 			<div class="main3--top">
 				<h1><c:out value="${myPage.getUserNickname()}" />님에게 온 질문들</h1>
@@ -195,9 +200,13 @@
 			<div class="main3--bottom">
 				<!-- <article class="empty"><p>등록된 질문이 없습니다.</p></article> -->
 				<ul class="story-list-ul question-list-ul">
-					<li class="story-list question-list"><a href="#"><img
+					<li class="story-list question-list">
+						<a href="#">
+							<div class="cover-div">
+							<img
 							src="https://www.shouse.garden/data/photo/s230218_23125310615.jpeg"
 							alt="" />
+							</div>
 							<p>20230305</p></a></li>
 				</ul>
 			</div>
