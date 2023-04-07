@@ -20,7 +20,11 @@
 			<div class="main1--top">
 				<!-- 식집사/식고수 텍스트 바꿔서 넣어야함 , 이름 띄움-->
 				<h1>
-					<span class="grade"></span>
+					<span class="grade">
+					<c:choose>
+					<c:when test="${myPage.getGradeNumber()}==500">식고수</c:when>
+					<c:otherwise>식집사</c:otherwise></c:choose>
+					</span>
 					<span><c:out value="${myPage.getUserNickname()}" /></span> 입니다
 				</h1>
 			</div>
@@ -146,15 +150,23 @@
 			</div>
 			<!-- 스토리읽기 페이지로 이동 -->
 			<div class="main3--bottom">
-				<!-- <article class="empty"><p>등록한 스토리가 없습니다.</p></article> -->
 				<ul class="story-list-ul">
-
-					<li class="story-list"><a href="#"> <img
-							src="https://www.shouse.garden/data/photo_list/s230315_01113510718.jpeg"
+					<c:choose>
+						<c:when test="${not empty myPage.getStoryFiles()}">
+							<c:forEach var="myStory" items="${myPage.getStoryFiles()}">
+					<li class="story-list">
+						<a href="${pageContext.request.contextPath}/story/storyReadOk.st?storyNumber=${myStory.getStoryNumber()}"> 
+							<img
+							src="${pageContext.request.contextPath}/storyUpload/${myStory.getFileSystemName()}"
 							alt="" />
-							<p>제목</p>
+							<p>${myStory.getStoryTitle}</p>
 					</a></li>
-
+					</c:forEach>
+					</c:when>
+					<c:otherwise>
+						<li><div class="empty">등록한 스토리가 없습니다.</div></li>
+					</c:otherwise>
+					</c:choose>
 				</ul>
 			</div>
 		</section>

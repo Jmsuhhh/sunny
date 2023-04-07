@@ -21,4 +21,5 @@ public class StoryFileDAO {
 	public void insert(StoryFileDTO storyfileDTO) {
 		sqlSession.insert("storyFile.insert",storyfileDTO);
 	}
+	
 }
