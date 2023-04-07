@@ -17,7 +17,7 @@
     <div class="plus-top">
     	<p>
     		<strong>
-    			9지인
+    			<c:out value=" ${question.selectNickName()}"></c:out>
     		</strong>
     		님의 페이지에 오신 것을 환영합니다. 
     		 <a href="${pageContext.request.contextPath}/question/questionWrite.qs?gosuNumber=${search.getGosuNumber()}" class="plus-btn" onclick="questionList()">질문하기</a>

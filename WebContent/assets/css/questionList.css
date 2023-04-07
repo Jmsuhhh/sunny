@@ -222,14 +222,8 @@ p {
 .plus-btn {
 	color: #fff;
     background-color: #009a3e;
-    margin : 0 0 0 800px;
   	border-radius: 5px;
     text-decoration : none;
     line-height:52px;
-    position : absolute;
-}
-
-p {
-	position : relative;
 }
 

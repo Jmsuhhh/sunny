@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sunny.app.Execute;
 import com.sunny.app.gosu.dao.GosuDAO;
@@ -56,6 +57,10 @@ public class QuestionListOkController implements Execute {
 	      List<QuestionDTO> questions = questionDAO.selectAll(pageMap);
 	      List<UserVO> gosus = gosuDAO.selectAll(pageMap);
 	      
+	      HttpSession session = req.getSession();
+	      Integer gosuNumber = (Integer)session.getAttribute("gosuNumber");
+	      
+	      req.setAttribute("selectNickName", questionDAO.selectNickName(gosuNumber));
 	      req.setAttribute("gosus", gosus);
 	  	  req.setAttribute("questionList", questions);
 	      req.setAttribute("page", page);

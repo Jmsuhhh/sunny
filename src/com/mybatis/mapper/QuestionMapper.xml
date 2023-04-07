@@ -3,6 +3,7 @@
 
 <mapper namespace="question">
 
+<!-- 리스트 뽑을거 -->
 	<select id="selectAll" resultType="QuestionDTO" parameterType="map">
 		SELECT tg.gosu_number,question_number, tu.user_number, question_title, question_content, question_date, question_viewcnt, question_status, last_update
 		FROM tbl_question tq 
@@ -14,6 +15,7 @@
 		limit #{startRow}, #{rowCount} 
 	</select>
 	
+<!-- 답변완료..였던것 -->
 	<select id="selectAll2" resultType="QuestionDTO" parameterType="map">
 		SELECT tg.gosu_number,question_number, tu.user_number, question_title, question_content, question_date, question_viewcnt, question_status, last_update
 		FROM tbl_question tq 
@@ -24,12 +26,22 @@
 		order by question_date asc 
 		limit #{startRow}, #{rowCount} 
 	</select>
-
+	
+<!-- 페이징처리였던것 -->
 	<select id="getTotal" resultType="_int">
 		select count(question_number) from tbl_question
 	</select>
 	
-	<insert id="insert" parameterType="QuestionDTO">
+<!-- 닉네임 뽑을거 -->
+	<select id="selectNickName" resultType="string">
+		SELECT user_nickname 
+		FROM tbl_user tu join tbl_gosu tg 
+		ON tu.user_number = tg.user_number 
+		WHERE tg.gosu_number = #{gosuNumber}
+	</select>
+	
+<!-- 질문쓰기 -->
+	<insert id="insert" parameterType="QuestionDTO" >
 		insert into tbl_question
 		(question_title,question_content,user_number,gosu_number)
 		values(#{questionTitle}, #{questionContent}, #{userNumber}, #{gosuNumber});

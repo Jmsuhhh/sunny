@@ -19,6 +19,7 @@ public class QuestionDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
+//	리스트 뽑는거 
 	public List<QuestionDTO> selectAll (Map<String, Integer> pageMap) {
 		return sqlSession.selectList("question.selectAll", pageMap);
 	}
@@ -27,21 +28,19 @@ public class QuestionDAO {
 		return sqlSession.selectList("question.selectAll2", pageMap);
 	}
 	
-	public List<QuestionDTO> selectList(){
-		return sqlSession.selectList("question.selectList");
-	}
-	
+//  페이징처리..였던것
 	public int getTotal() {
 		return sqlSession.selectOne("question.getTotal");
 	}
 	
-	
+//	질문쓰기 
 	public void insert(QuestionDTO questionDTO) {
 		sqlSession.insert("question.insert", questionDTO);
 	}
 	
-	public int getSequence() {
-		return sqlSession.selectOne("quetion.getSequence");
+//  닉네임 뽑을거임
+	public void selectNickName (int gosuNumber) {
+		sqlSession.selectOne("question.selectNickName", gosuNumber);
 	}
 	
 }
