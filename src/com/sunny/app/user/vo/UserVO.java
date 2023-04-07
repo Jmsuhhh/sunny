@@ -13,8 +13,7 @@ public class UserVO {
 	private String findPasswordAnswer;
 	private int findQuestionNumber;
 	private String gosuFields;
-	
-	private String searchText;
+	private int gosuNumber;
 	
 	public UserVO() {}
 
@@ -114,12 +113,12 @@ public class UserVO {
 		this.gosuFields = gosuFields;
 	}
 
-	public String getSearchText() {
-		return searchText;
+	public int getGosuNumber() {
+		return gosuNumber;
 	}
 
-	public void setSearchText(String searchText) {
-		this.searchText = searchText;
+	public void setGosuNumber(int gosuNumber) {
+		this.gosuNumber = gosuNumber;
 	}
 
 	@Override
@@ -128,9 +127,17 @@ public class UserVO {
 				+ ", userName=" + userName + ", userNickname=" + userNickname + ", userPhone=" + userPhone
 				+ ", userEmail=" + userEmail + ", userComment=" + userComment + ", gradeNumber=" + gradeNumber
 				+ ", findPasswordAnswer=" + findPasswordAnswer + ", findQuestionNumber=" + findQuestionNumber
-				+ ", gosuFields=" + gosuFields + ", searchText=" + searchText + "]";
+				+ ", gosuFields=" + gosuFields + ", gosuNumber=" + gosuNumber + ", getUserNumber()=" + getUserNumber()
+				+ ", getUserId()=" + getUserId() + ", getUserPassword()=" + getUserPassword() + ", getUserName()="
+				+ getUserName() + ", getUserNickname()=" + getUserNickname() + ", getUserPhone()=" + getUserPhone()
+				+ ", getUserEmail()=" + getUserEmail() + ", getUserComment()=" + getUserComment()
+				+ ", getGradeNumber()=" + getGradeNumber() + ", getFindPasswordAnswer()=" + getFindPasswordAnswer()
+				+ ", getFindQuestionNumber()=" + getFindQuestionNumber() + ", getGosuFields()=" + getGosuFields()
+				+ ", getGosuNumber()=" + getGosuNumber() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
 	}
 
+	
 	
 	
 	

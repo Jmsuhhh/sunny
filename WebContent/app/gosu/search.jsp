@@ -56,10 +56,7 @@
                 <!-- 식고수 마이페이지로 이동 -->
                 <div class="write-btn-wrap">
                   <!-- 글쓰기 페이지 이동 처리 -->
-                  <a href="${pageContext.request.contextPath}/question/questionListOk.qs" class="plus-btn" onclick="questionList()">미답변</a>
-                  <a href="${pageContext.request.contextPath}/question/questionList2Ok.qs" class="plus-btn" onclick="questionList2()">답변완료</a>
-                     <!-- 질문하기 페이지로 이동 -->
-                      <a href="${pageContext.request.contextPath}/question/questionWrite.qs" class="question-btn" onclick="goQuestion()">질문하기</a>
+                  <a href="${pageContext.request.contextPath}/question/questionListOk.qs?gosuNumber=${search.getGosuNumber()}" class="plus-btn" onclick="questionList()">더보기</a>
                    </div>
                     </div>
 

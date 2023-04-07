@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
 import com.sunny.app.question.dto.QuestionDTO;
+import com.sunny.app.user.vo.UserVO;
 
 public class QuestionDAO {
 

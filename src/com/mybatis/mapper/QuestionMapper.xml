@@ -4,21 +4,23 @@
 <mapper namespace="question">
 
 	<select id="selectAll" resultType="QuestionDTO" parameterType="map">
-		SELECT question_number, tu.user_number, question_title, question_content, question_date, question_viewcnt, question_status, last_update
+		SELECT tg.gosu_number,question_number, tu.user_number, question_title, question_content, question_date, question_viewcnt, question_status, last_update
 		FROM tbl_question tq 
 		join tbl_user tu 
 		join tbl_gosu tg
 		on tq.user_number = tu.user_number 
-		where tg.gosu_number = tq.gosu_number
+		where tg.gosu_number = tq.gosu_number and tg.gosu_number=#{gosuNumber}
 		order by question_date asc 
 		limit #{startRow}, #{rowCount} 
 	</select>
 	
 	<select id="selectAll2" resultType="QuestionDTO" parameterType="map">
-		SELECT question_number, tu.user_number, question_title, question_content, question_date, question_viewcnt, question_status, last_update
+		SELECT tg.gosu_number,question_number, tu.user_number, question_title, question_content, question_date, question_viewcnt, question_status, last_update
 		FROM tbl_question tq 
 		join tbl_user tu 
-		on tq.user_number = tu.user_number
+		join tbl_gosu tg
+		on tq.user_number = tu.user_number 
+		where tg.gosu_number = tq.gosu_number and tg.gosu_number=#{gosuNumber}
 		order by question_date asc 
 		limit #{startRow}, #{rowCount} 
 	</select>
@@ -33,12 +35,5 @@
 		values(#{questionTitle}, #{questionContent}, #{userNumber}, #{gosuNumber});
 	</insert>
 	
-	<select id="selectList" resultType="QuestionDTO">
-		SELECT question_number, tg.gosu_number, question_title, question_content, question_date, question_viewcnt, question_status, last_update
-		FROM tbl_question tq 
-		join tbl_gosu tg  
-		on tq.gosu_number = tg.gosu_number
-		where tq.gosu_number = tg.gosu_number
-	</select>
 	
 </mapper>

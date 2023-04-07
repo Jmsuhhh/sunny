@@ -26,7 +26,6 @@
             </div>
           </div>
       
-            </button>
 
             <div class="title-wrap">
               <span class="hit">조회수</span>

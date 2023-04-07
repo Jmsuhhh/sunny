@@ -11,18 +11,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.sunny.app.Execute;
+import com.sunny.app.gosu.dao.GosuDAO;
 import com.sunny.app.question.dao.QuestionDAO;
 import com.sunny.app.question.dto.QuestionDTO;
 import com.sunny.app.user.dao.UserDAO;
+import com.sunny.app.user.vo.UserVO;
 
 public class QuestionList2OkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-//		 System.out.println("들어왔다");
+		 System.out.println("들어오니");
 
 		  QuestionDAO questionDAO = new QuestionDAO();
+		  GosuDAO gosuDAO = new GosuDAO();
 
 		  int total = questionDAO.getTotal();
 	      String temp = req.getParameter("page");
@@ -49,8 +52,12 @@ public class QuestionList2OkController implements Execute {
 	      Map<String, Integer> pageMap = new HashMap<>();
 	      pageMap.put("startRow", startRow);
 	      pageMap.put("rowCount", rowCount);
+	      pageMap.put("gosuNumber", Integer.parseInt(req.getParameter("gosuNumber")));
 	      
 	      List<QuestionDTO> questions2 = questionDAO.selectAll2(pageMap);
+	      List<UserVO> gosus = gosuDAO.selectAll(pageMap);
+	      
+	      req.setAttribute("gosus", gosus);
 	  	  req.setAttribute("questionList2", questions2);
 	      req.setAttribute("page", page);
 	      req.setAttribute("startPage", startPage);

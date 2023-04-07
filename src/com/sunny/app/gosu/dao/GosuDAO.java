@@ -23,10 +23,6 @@ public class GosuDAO {
 		return sqlSession.selectList("gosu.selectAll", pageMap);
 	}
 	
-//	public List<UserVO> search(){
-//		return sqlSession.selectList("gosu.search");
-//	}
-	
 	public int getTotal() {
 		return sqlSession.selectOne("gosu.getTotal");
 	}

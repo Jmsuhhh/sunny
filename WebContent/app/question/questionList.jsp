@@ -14,6 +14,15 @@
 <body>
 	<jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/>
     <div class="pcontainer">
+    <div class="plus-top">
+    	<p>
+    		<strong>
+    			9지인
+    		</strong>
+    		님의 페이지에 오신 것을 환영합니다. 
+    		 <a href="${pageContext.request.contextPath}/question/questionWrite.qs?gosuNumber=${search.getGosuNumber()}" class="plus-btn" onclick="questionList()">질문하기</a>
+    	</p>
+    </div>
       <div class="info">
         <div class="infozone">
           <h3> <strong>글작성팁</strong>
@@ -33,7 +42,7 @@
 
                   <!-- ========== 게시글 목록 =========== -->
                  
-                 <c:choose>
+              <c:choose>
                <c:when test="${not empty questionList}">
                   <c:forEach var="question" items="${questionList}">
                   <c:if test="${question.getQuestionStatus() == '0'}">
@@ -52,7 +61,7 @@
                </c:when>
             <c:otherwise>
                   <tr>
-                     <td colspan="5" align="center">질문이 없습니다.</td>
+                     <td colspan="3" align="center">질문이 없습니다.</td>
                   </tr>
                </c:otherwise>
             </c:choose>
@@ -62,48 +71,53 @@
       </table>
           </div>
           </div>
+          </div>
+     
+          
                     <!-- ========== 게시글 목록 =========== -->
                  
                   
-                  <div class="pagination">
-         <ul>
-            <!-- ========== 페이징 처리 예시 ============ -->
-            <c:if test="${prev}">
-               <li><a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${startPage - 1}" class="prev">&lt;</a></li>
-            </c:if>
-            
-            <c:forEach var="i" begin="${startPage}" end="${endPage}">
-               <c:choose>
-                  <c:when test="${!(i == page) }">
-                     <li>
-                        <a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${i}">
-                           <c:out value="${i}"/>
-                        </a>
-                     </li>
-                  </c:when>
-                  <c:otherwise>
-                     <li>
-                        <a href="#" class="active">
-                           <c:out value="${i}"/>
-                        </a>
-                     </li>
-                  </c:otherwise>
-               </c:choose>
-            </c:forEach>
-            
-            <c:if test="${next}">
-               <li><a href="${pageContext.request.contextPath}/question/questionListOk.qs?page=${endPage + 1}" class="next">&gt;</a></li>
-            </c:if>
-            
-            
-            <!-- ========== /페이징 처리 예시 ============ -->
-         </ul>
-      </div>
-   </div>
- </div>
+                   <div class="answercom">
+                   <button type="button">답변완료</button>
+                   <table class="noreply-table">
+        			 <tbody>
 
+                  <!-- ========== 게시글 목록 =========== -->
+                 
+                 <c:choose>
+               <c:when test="${not empty questionList}">
+                  <c:forEach var="question" items="${questionList}">
+                  <c:if test="${question.getQuestionStatus() == '1'}">
+                     <tr class="imti">
+                     <td class="imgz">
+                     	<a href="">
+ 							<%-- <img alt="" src="${question.getCoverImg()}">--%>
+                     	</a> 
+                     </td>
+                        <td class="title">
+                              ${question.getQuestionTitle()}
+                        </td>
+                     </tr>
+               </c:if>
+                  </c:forEach>
+               </c:when>
+            <c:otherwise>
+                  <tr>
+                     <td colspan="3" align="center">답변완료된 질문이 없습니다.</td>
+                  </tr>
+               </c:otherwise>
+            </c:choose>
+
+
+         </tbody>
+      </table>
+          </div>
+          </div>
+      
+      
     <jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp"/>
     <script src="${pageContent.request.contextPath}/assets/js/questionList.js"></script>
+    </div>
 </body>
 </html>
 

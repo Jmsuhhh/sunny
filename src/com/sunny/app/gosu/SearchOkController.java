@@ -64,9 +64,7 @@ public class SearchOkController implements Execute {
 	      pageMap.put("rowCount", rowCount);
 	      
 	      List<UserVO> gosus = gosuDAO.selectAll(pageMap);
-//	      List<UserVO> gosusearch = gosuDAO.search();
 	      
-//	      req.setAttribute("gosusearch", gosusearch);
 		  req.setAttribute("gosus", gosus);
 	      req.setAttribute("page", page);
 	      req.setAttribute("startPage", startPage);

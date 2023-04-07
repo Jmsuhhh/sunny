@@ -8,19 +8,22 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.sunny.app.Execute;
+import com.sunny.app.gosu.dao.GosuDAO;
 import com.sunny.app.question.dao.QuestionDAO;
 import com.sunny.app.question.dto.QuestionDTO;
-import com.sunny.app.user.dao.UserDAO;
+import com.sunny.app.user.vo.UserVO;
 
 public class QuestionListOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		System.out.println("들어완");
 
 		  QuestionDAO questionDAO = new QuestionDAO();
+		  GosuDAO gosuDAO = new GosuDAO();
 
 		  int total = questionDAO.getTotal();
 	      String temp = req.getParameter("page");
@@ -47,11 +50,13 @@ public class QuestionListOkController implements Execute {
 	      Map<String, Integer> pageMap = new HashMap<>();
 	      pageMap.put("startRow", startRow);
 	      pageMap.put("rowCount", rowCount);
+	      pageMap.put("gosuNumber", Integer.parseInt(req.getParameter("gosuNumber")));
+	      
 	      
 	      List<QuestionDTO> questions = questionDAO.selectAll(pageMap);
-	      List<QuestionDTO> questions2 = questionDAO.selectList();
+	      List<UserVO> gosus = gosuDAO.selectAll(pageMap);
 	      
-	      req.setAttribute("questionK", questions2);
+	      req.setAttribute("gosus", gosus);
 	  	  req.setAttribute("questionList", questions);
 	      req.setAttribute("page", page);
 	      req.setAttribute("startPage", startPage);
