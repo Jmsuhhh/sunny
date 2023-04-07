@@ -16,8 +16,7 @@ public class GosuManageDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	// gosumanageVO
-	public List<GosuManageVO> gosuInfo(Map<String, Integer> pageMap){
+	public List<GosuManageVO> gosuInfo(Map<String, Object> pageMap){
 		System.out.println("gosuInfo메서드");
 		return sqlSession.selectList("admin.gosuInfo", pageMap);
 	}

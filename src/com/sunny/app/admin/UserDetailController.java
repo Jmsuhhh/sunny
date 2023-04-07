@@ -16,7 +16,8 @@ public class UserDetailController implements Execute{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		int userNumber = 1;
+		int userNumber = Integer.parseInt(req.getParameter("userNumber"));
+		
 		UserDetailDAO userDetailDAO = new UserDetailDAO();
 		UserDetailVO userDetailVO = userDetailDAO.userDetail(userNumber);
 		

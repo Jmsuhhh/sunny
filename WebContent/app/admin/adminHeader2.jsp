@@ -34,23 +34,23 @@
     <div>
       <div class="count-box-all">
         <div class="user-count-box">
-          <span class="user-count-text">1010</span>
+          <span class="user-count-text">${headerInfo.getUserCount() }</span>
           <h4 class="user-count-text2">전체 회원</h4>
         </div>
         <div class="user-count-box">
-          <span class="user-count-text">14</span>
+          <span class="user-count-text">${headerInfo.getGosuCount() }</span>
           <h4 class="user-count-text2">식고수회원</h4>
         </div>
         <div class="user-count-box">
-          <span class="user-count-text">120</span>
+          <span class="user-count-text">${headerInfo.getStoryCount() }</span>
           <h4 class="user-count-text2">스토리</h4>
         </div>
         <div class="user-count-box">
-          <span class="user-count-text">53</span>
+          <span class="user-count-text">${headerInfo.getQuestionCount() }</span>
           <h4 class="user-count-text2">질문수</h4>
         </div>
         <div class="user-count-box">
-          <span class="user-count-text">50</span>
+          <span class="user-count-text">${headerInfo.getQuestionReplyCount() }</span>
           <h4 class="user-count-text2">답변수</h4>
         </div>
       </div>
