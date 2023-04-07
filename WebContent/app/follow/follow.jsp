@@ -19,12 +19,12 @@
 			<div class="button">
 				<ul class="top-btn-ul">
 					<!-- active클래스를 줬다 뺐다 -->
-					<a
-						href="${pageContext.request.contextPath}/follow/followerList.fo?userNumber=${userNumber}"><li
-						class="top-btn  active">팔로워</li></a>
-					<a
-						href="${pageContext.request.contextPath}/follow/followingList.fo?userNumber=${userNumber}&tab=following"><li
-						class="top-btn following-btn">팔로잉</li></a>
+					<a href="${pageContext.request.contextPath}/follow/followerList.fo?userNumber=${userNumber}">
+						<li class="top-btn  active">팔로워</li>
+					</a>
+					<a href="${pageContext.request.contextPath}/follow/followingList.fo?userNumber=${userNumber}&tab=following">
+						<li class="top-btn following-btn">팔로잉</li>
+					</a>
 				</ul>
 			</div>
 		</section>

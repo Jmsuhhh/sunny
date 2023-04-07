@@ -16,5 +16,6 @@
 		where story_number = #{storyNumber}
 		order by file_number ASC
 	</select>
-
+	
+	
 </mapper>

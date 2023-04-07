@@ -1,9 +1,12 @@
 package com.sunny.app.user.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
 import com.sunny.app.find.password.dto.FindPasswordDTO;
+import com.sunny.app.story.file.vo.StoryFileVO;
 import com.sunny.app.user.dto.UserDTO;
 import com.sunny.app.user.vo.UserVO;
 
@@ -12,7 +15,6 @@ public class UserDAO {
 	public SqlSession sqlSession;
 	
 	public UserDAO() {
-		
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
@@ -56,5 +58,13 @@ public class UserDAO {
 	
 	public String getMemberId(int userNumber) {
 		return sqlSession.selectOne("user.getMemberId", userNumber);
+	}
+	
+	public List<StoryFileVO> myStoryList(int userNumber){
+		return sqlSession.selectList("user.myStoryList", userNumber);
+	}
+	
+	public int myStoryCnt(int userNumber) {
+		return sqlSession.selectOne("user.myStoryCnt", userNumber);
 	}
 }
