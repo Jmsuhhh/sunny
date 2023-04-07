@@ -63,14 +63,16 @@ const closeModal = (e) => {
 };
 
 
-  const selectBox = document.getElementById('select');
+/*비밀번호 선택 질문 미선택시 폼제출 막고, 나머지 폼도 미작성시 제출 막음*/
+
+ /* const selectBox = document.getElementById('select');
   const submitBtn = document.querySelector('.submit-button');
   const form = document.querySelector('form');
   
   console.log('aaaaa');
   console.log(submitBtn);
   
-  submitBtn.addEventListener('click', (event) => {
+ submitBtn.addEventListener('click', (event) => {
       event.preventDefault(); // 이벤트의 기본 동작(즉, submit)을 막음
     if (selectBox.value === '-1') {
       alert('비밀번호 찾기 질문을 선택해주세요.');
@@ -79,11 +81,69 @@ const closeModal = (e) => {
     if (form.checkValidity()) {
       form.submit();
     } else {
-      alert('폼에 유효하지 않은 값이 있습니다.');
+      alert('필수항목이 완료되지 않았습니다.');
     }
   }
-  });
+  });*/
+  
+  
+  
+  /*비밀번호, 비밀번호 확인 일치 검사*/
+  
+ 	const password = document.getElementById("password");
+	const confirm_password = document.getElementById("confirm-password");
+	const password_error = document.getElementById("password-error");
 
+	function validatePassword() {
+  if (password.value !== confirm_password.value) {
+    confirm_password.setCustomValidity("두 비밀번호가 일치하지 않습니다.");
+    password_error.textContent = "두 비밀번호가 일치하지 않습니다.";
+  } else {
+    confirm_password.setCustomValidity("");
+    password_error.textContent = "";
+  }
+}
+
+password.addEventListener("change", validatePassword);
+confirm_password.addEventListener("keyup", validatePassword);
+confirm_password.addEventListener("blur", function () {
+  if (confirm_password.value === "") {
+    confirm_password.setCustomValidity("두 비밀번호가 일치하지 않습니다.");
+    password_error.textContent = "두 비밀번호가 일치하지 않습니다.";
+  }
+});
+
+	password.addEventListener("blur", validatePassword);
+	confirm_password.addEventListener("blur", validatePassword);
+
+/*이름 미입력 메세지*/
+	const name = document.querySelector('input[name="userName"]');
+	const name_error = document.getElementById("name-error");
+
+	function validateName() {
+  	if (name.value === "") {
+  	  name_error.textContent = "이름을 입력하세요";
+  	} else {
+   	 name_error.textContent = "";
+ 	 }
+	}
+
+	name.addEventListener("blur", validateName);
+
+
+/*닉네임 미입력시 메세지*/
+	const nickname = document.querySelector('input[name="userNickname"]');
+	const nickname_error = document.getElementById("nickname-error");
+
+	function validateNickname() {
+ 	 if (nickname.validity.valueMissing) {
+    nickname_error.textContent = "닉네임을 입력하세요";
+  } else {
+    nickname_error.textContent = "";
+  }
+}
+
+	nickname.addEventListener("blur", validateNickname);
 
 
 
@@ -132,6 +192,9 @@ $idInput.on('blur', function(){
       success : function(result) {
          $checkMsg.text(result);
          test = result;
+         if (result === "사용 가능한 아이디입니다.")  {
+         checkIdValidity();
+         }
       },
       error : function(a,b,c){
          console.log(c);
@@ -141,26 +204,24 @@ $idInput.on('blur', function(){
    
 });
 
+function checkIdValidity() {
+   const regex1 = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z0-9]{5,10}$/;
+   if(regex1.test( $idInput.val() )) {
+      $checkMsg.text("사용 가능한 아이디입니다.");
+   } else {
+      $checkMsg.html("사용 불가능한 아이디입니다. <br>영어, 숫자를 포함하여 5글자 이상 10글자 이하로 작성하세요!");
+   }
+}
+
 
 // 대소문자 상관 없이 영어가 포함, 숫자 포함, 특수문자 포함, 8글자 이상
-const regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[a-zA-Z\d!@#$%^&*()_+]{8,}$/;
+const regex2 = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[a-zA-Z\d!@#$%^&*()_+]{8,}$/;
 
 $pwInput.on('blur', function(){
-   if(regex.test(  $(this).val()   )){
+   if(regex2.test(  $(this).val()   )){
       $checkPwMsg.text("사용 가능한 비밀번호입니다.");
    }else{
       $checkPwMsg.html("사용 불가능한 비밀번호입니다. <br>영어, 숫자, 특수문자를 포함하여 8글자 이상 작성하세요!");
    }
 });
 
-$('form').on('submit', function(e){
-	e.preventDefault();	// 기본 이벤트를 막아주는 명령어
-	
-	console.log($('#agree').prop('checked'));
-	
-	if($('#agree').prop('checked')){
-		this.submit();	//서브밋 이벤트를 발생시키는 요소(폼 요소에 사용해야 함)
-	}else{
-		alert('약관에 동의해주세요!');
-	}
-});

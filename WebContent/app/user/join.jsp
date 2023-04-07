@@ -131,16 +131,19 @@
             <input type="password" id="password" name="userPassword" placeholder="비밀번호" minlength="8" maxlength="15" required>
             <span class="check-msg" id="check-pw-msg"></span>
             <br><br>
-            <input type="password" name="userPassword" placeholder="비밀번호 확인" minlength="8" maxlength="15" required>
+            <input type="password" id="confirm-password" name="userPassword" placeholder="비밀번호 확인" minlength="8" maxlength="15" required>
+            <span id="password-error"></span>
             <br><br><br>
             <div class="input-text">이름</div> <br>
             <input type="text" placeholder="이름" name="userName" maxlength="10" required>
+            <span id="name-error"></span>
             <br><br><br>
             <div class="input-text3">
               <div class="input-text">닉네임</div>
               <div class="input-text2">(변경 불가)</div>
             </div> <br>
             <input type="text" placeholder="닉네임(2~10자)" name="userNickname" minlength="2" maxlength="10" required>
+            <span id="nickname-error" class="error"></span>
             <br><br><br>
             <div class="input-text">
               연락처</div> <br>
@@ -154,8 +157,8 @@
               <label for="select">비밀번호 찾기 질문</label>
             </div> <br>
             <select name="findQuestionNumber" id="select" required>
-              <option value="-1" selected>--선택--</option>
-              <option value="1">가장 좋아하는 색깔은?</option>
+            <!-- <option value="-1" selected>--선택--</option> -->
+              <option value="1" selected>가장 좋아하는 색깔은?</option>
               <option value="2">가장 좋아하는 계절은?</option>
               <option value="3">가장 소중한 것은?</option>
             </select>
@@ -174,7 +177,7 @@
                   <label class="required1">이용약관</label>
                   <label for="agree" class="required2">(필수)</label>
                 </div>
-                <input type="checkbox" value="필수 약관" required>
+                <input type="checkbox" id="agree" value="필수 약관" required>
               </div>
               <br>
               <div class="label-box">
@@ -182,7 +185,7 @@
                   <label for="agree" class="required1">개인정보처리방침</label>
                   <label for="agree" class="required2">(필수)</label>
                 </div>
-                <input type="checkbox" vlaue="필수 약관" required>
+                <input type="checkbox" id="agree" vlaue="필수 약관" required>
               </div>
               <br>
               <div class="label-box">

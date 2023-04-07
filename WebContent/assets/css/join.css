@@ -278,7 +278,7 @@
   cursor: pointer;
 }
 
-#check-id-msg, #check-pw-msg{
+#check-id-msg, #check-pw-msg, #password-error, #nickname-error, #name-error{
 	display: block;
 	font-size: 12px;
 	margin-top: 5px;
