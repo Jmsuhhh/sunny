@@ -12,7 +12,7 @@
 </head>
 <body>
 	<jsp:include
-		page="${pageContext.request.contextPath}/app/admin/adminHeader2.jsp" />
+		page="${pageContext.request.contextPath}/app/admin/adminHeader.jsp" />
 	<div class="sidebar-read-all">
 		<div class="sidevar">
 			<div class="admin-info-all">
@@ -40,7 +40,7 @@
 				<div class="manage-manu">
 					<div class="user-manage">
 						<div class="user-manage-headline">
-							<img src="../../assets/img/admin/img/user.png" alt="" />
+							<img src="../../assets/img/admin/user.png" alt="" />
 							<h2>관리하기</h2>
 						</div>
 						<div class="hr">
@@ -54,7 +54,7 @@
 								<a href="gosuManage.ad">식고수회원관리</a>
 							</div>
 							<div class="gosu-application-user-manage">
-								<a href="">식고수신청관리</a>
+								<a href="gosuApplicationBoardList.ad">식고수신청관리</a>
 							</div>
 						</div>
 					</div>
@@ -135,19 +135,14 @@
 					</table>
 				</div>
 				<div class="user-btn-groups">
-					<button class="ben-btn" data-userNumber="${userDetail.getUserNumber() }">제명</button>
+					<button type="button" class="ben-btn" data-userNumber="${userDetail.getUserNumber() }">제명</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<footer id="footers"></footer>
+	    <jsp:include
+		page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#headers").load("../../assets/html/adminHeader.html");
-			$("#footers").load("../../assets/html/footer.html");
-		});
-	</script>
 	<script src="../../assets/js/userDetail.js"></script>
 </body>
 </html>

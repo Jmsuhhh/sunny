@@ -43,7 +43,7 @@ public class AdminFrontController extends HttpServlet {
 		     case "/admin/userDetail.ad":
 		    	  new UserDetailController().execute(req, resp);
 		    	  break;
-		     case "/admin/userKill.ad":
+		     case "/admin/userKillOk.ad":
 		    	  new UserKillOkController().execute(req, resp);
 		    	  break;
 		     case "/admin/gosuManage.ad":
@@ -52,11 +52,23 @@ public class AdminFrontController extends HttpServlet {
 		     case "/admin/gosuDetail.ad":
 		    	  new GosuDetailController().execute(req, resp);
 		    	  break;
-		     case "/admin/gosuApplicaitionBoardList.ad":
+		     case "/admin/gosuDownOk.ad":
+		    	  new GosuDownOkController().execute(req, resp);
+		    	  break;
+		     case "/admin/gosuKillOk.ad":
+		    	  new GosuKillOkController().execute(req, resp);
+		    	  break;
+		     case "/admin/gosuApplicationBoardList.ad":
 		    	  new GosuApplicationBoardListController().execute(req, resp);
 		    	  break;
 		     case "/admin/gosuApplicationBoardRead.ad":
 		    	  new GosuApplicationBoardReadController().execute(req, resp);
+		    	  break;
+		     case "/admin/gosuApplyOk.ad":
+		    	  new GosuApplyOkController().execute(req, resp);
+		    	  break;
+		     case "/admin/gosuApplyNo.ad":
+		    	  new GosuApplyNoController().execute(req, resp);
 		    	  break;
 		      }
 		
