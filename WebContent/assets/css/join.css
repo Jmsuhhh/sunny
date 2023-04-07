@@ -276,3 +276,11 @@
 .agree > label{
   cursor: pointer;
 }
+
+#check-id-msg, #check-pw-msg{
+	display: block;
+	font-size: 12px;
+	margin-top: 5px;
+	color: red;
+}
+

@@ -63,7 +63,6 @@ const closeModal = (e) => {
 };
 
 
-
   const selectBox = document.getElementById('select');
   const submitBtn = document.querySelector('.submit-button');
   const form = document.querySelector('form');
@@ -76,7 +75,12 @@ const closeModal = (e) => {
     if (selectBox.value === '-1') {
       alert('비밀번호 찾기 질문을 선택해주세요.');
     } else {
-    form.submit();
+    const form = document.querySelector('form');
+    if (form.checkValidity()) {
+      form.submit();
+    } else {
+      alert('폼에 유효하지 않은 값이 있습니다.');
+    }
   }
   });
 
@@ -84,6 +88,8 @@ const closeModal = (e) => {
 
 
 /**/
+
+
 
 let $checkMsg = $("#check-id-msg");
 let $checkPwMsg = $("#check-pw-msg");
@@ -116,13 +122,13 @@ $idInput.on('blur', function(){
 });
 
 //중복 검사를 위한 ajax
-/*$idInput.on('change', function() {
+	$idInput.on('change', function() {
    let id = $idInput.val();
    
    $.ajax({
-      url : '/member/checkIdOk.me',
+      url : '/user/checkIdOk.us',
       type : 'get',
-      data : {memberId : id},
+      data : {userId : id},
       success : function(result) {
          $checkMsg.text(result);
          test = result;
@@ -133,7 +139,7 @@ $idInput.on('blur', function(){
       
    });
    
-});*/
+});
 
 
 // 대소문자 상관 없이 영어가 포함, 숫자 포함, 특수문자 포함, 8글자 이상

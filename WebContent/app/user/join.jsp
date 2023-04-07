@@ -123,11 +123,13 @@
           <div class="input-tag">
             <div class="input-text">아이디</div>
             <br>
-            <input type="text" name="userId" placeholder="아이디" minlength="5" maxlength="10" required>
+            <input type="text" id="id" name="userId" placeholder="아이디" minlength="5" maxlength="10" required>
+            <span class="check-msg" id="check-id-msg"></span>
             <br><br><br>
             <div class="input-text">비밀번호</div>
             <br>
-            <input type="password" name="userPassword" placeholder="비밀번호" minlength="8" maxlength="15" required>
+            <input type="password" id="password" name="userPassword" placeholder="비밀번호" minlength="8" maxlength="15" required>
+            <span class="check-msg" id="check-pw-msg"></span>
             <br><br>
             <input type="password" name="userPassword" placeholder="비밀번호 확인" minlength="8" maxlength="15" required>
             <br><br><br>
@@ -146,6 +148,7 @@
             <br><br><br>
             <div class="input-text">이메일</div> <br>
             <input type="email" name="userEmail" placeholder="aa123@naver.com" required>
+            <span class="check-msg" id="check-email-msg"></span>
             <br><br><br>
             <div class="input-text">
               <label for="select">비밀번호 찾기 질문</label>
@@ -169,15 +172,15 @@
               <div class="label-box">
                 <div class="required-box">
                   <label class="required1">이용약관</label>
-                  <label for="" class="required2">(필수)</label>
+                  <label for="agree" class="required2">(필수)</label>
                 </div>
                 <input type="checkbox" value="필수 약관" required>
               </div>
               <br>
               <div class="label-box">
                 <div class="required-box2">
-                  <label for="" class="required1">개인정보처리방침</label>
-                  <label for="" class="required2">(필수)</label>
+                  <label for="agree" class="required1">개인정보처리방침</label>
+                  <label for="agree" class="required2">(필수)</label>
                 </div>
                 <input type="checkbox" vlaue="필수 약관" required>
               </div>
