@@ -59,7 +59,7 @@
 								<a href="gosuManage.ad">식고수회원관리</a>
 							</div>
 							<div class="gosu-application-user-manage">
-								<a href="">식고수신청관리</a>
+								<a href="gosuApplicationBoardList.ad">식고수신청관리</a>
 							</div>
 						</div>
 					</div>
@@ -90,7 +90,7 @@
 									<tr>
 										<td class="user-num">${users.getUserNumber() }</td>
 										<td class="user-grade">${users.getGradeName() }</td>
-										<td><a href="userDetail.ad">${users.getUserNickname() }</a></td>
+										<td><a href="userDetail.ad?userNumber=${users.getUserNumber() }">${users.getUserNickname() }</a></td>
 										<td class="join-date">${users.getUserDate() }</td>
 									</tr>
 								</c:forEach>
@@ -146,8 +146,8 @@
 						<!-- ========== /페이징 처리 예시 ============ -->
 					</ul>
 				</div> --%>
-				<div class="search">
-					<input type="text" class="input" placeholder="Search..." />
+				<div class="search" id="search">
+					<input type="text" class="input" placeholder="Search name..." value="" id="searchPram" onkeyup="if(window.event.keyCode==13){searchAction()}"/>
 					<button class="btn">
 						<i class="fas fa-search"></i>
 					</button>
@@ -155,13 +155,9 @@
 			</div>
 		</div>
 	</div>
-	<footer id="footers"></footer>
+	<jsp:include
+	page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#footers").load("../../assets/html/footer.html");
-		});
-	</script>
 	<script src="../../assets/js/userManage.js"></script>
 </body>
 </html>

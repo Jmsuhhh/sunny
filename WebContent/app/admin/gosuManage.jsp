@@ -58,7 +58,7 @@
 								<a href="gosuManage.ad">식고수회원관리</a>
 							</div>
 							<div class="gosu-application-user-manage">
-								<a href="">식고수신청관리</a>
+								<a href="gosuApplicationBoardList.ad">식고수신청관리</a>
 							</div>
 						</div>
 					</div>
@@ -89,7 +89,7 @@
 								<c:forEach var="gosu" items="${gosuList }">
 									<tr>
 										<td class="gosu-num">${gosu.getGosuNumber() }</td>
-										<td class="gosu-nickname"><a href="gosuDetail.ad">${gosu.getUserNickname() }</td>
+										<td class="gosu-nickname"><a href="gosuDetail.ad?userNumber=${gosu.getUserNumber() }">${gosu.getUserNickname() }</td>
 										<td class="gosu-fieldnames">${gosu.getFieldNames() }</a></td>
 										<td class="gosu-question-count">${gosu.getQuestionCount() }</td>
 										<td class="gosu-answer-count">${gosu.getAnswerCount() }</td>
@@ -113,8 +113,8 @@
 						
 					</tbody>
 				</table>
-				<div class="search">
-					<input type="text" class="input" placeholder="Search name..." />
+				<div class="search" id="search">
+					<input type="text" class="input" placeholder="Search name..." value="" id="searchPram" onkeyup="if(window.event.keyCode==13){searchAction()}"/>
 					<button class="btn">
 						<i class="fas fa-search"></i>
 					</button>
@@ -122,14 +122,9 @@
 			</div>
 		</div>
 	</div>
-	<footer id="footers"></footer>
+	<jsp:include
+	page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#headers").load("../../assets/html/adminHeader2.html");
-			$("#footers").load("../../assets/html/footer.html");
-		});
-	</script>
 	<script src="../../assets/js/gosuManage.js"></script>
 </body>
 </html>

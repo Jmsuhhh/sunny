@@ -18,7 +18,10 @@ public class GosuManageController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
+		String searchWord = req.getParameter("searchWord");
+		System.out.println("=====================");
+		System.out.println(searchWord);
+		System.out.println("=====================");
 		GosuManageDAO gosuManageDAO = new GosuManageDAO();
 
 		// 세션체크
@@ -27,12 +30,12 @@ public class GosuManageController implements Execute {
 		}
 
 		// 고수 회원 정보 불러오기
-		Map<String, Integer> pageMap = new HashMap<>();
-//				
+		Map<String, Object> pageMap = new HashMap<>();
+				
+		pageMap.put("searchWord", searchWord == null ? "" : searchWord); 
 		List<GosuManageVO> gosu = gosuManageDAO.gosuInfo(pageMap);
-//		
+
 		req.setAttribute("gosuList", gosu);
-		
 		req.getRequestDispatcher("/app/admin/gosuManage.jsp").forward(req, resp);
 		
 //		// 전체 회원 정보 가져오기
