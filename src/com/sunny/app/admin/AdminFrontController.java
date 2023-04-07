@@ -58,11 +58,17 @@ public class AdminFrontController extends HttpServlet {
 		     case "/admin/gosuKillOk.ad":
 		    	  new GosuKillOkController().execute(req, resp);
 		    	  break;
-		     case "/admin/gosuApplicaitionBoardList.ad":
+		     case "/admin/gosuApplicationBoardList.ad":
 		    	  new GosuApplicationBoardListController().execute(req, resp);
 		    	  break;
 		     case "/admin/gosuApplicationBoardRead.ad":
 		    	  new GosuApplicationBoardReadController().execute(req, resp);
+		    	  break;
+		     case "/admin/gosuApplyOk.ad":
+		    	  new GosuApplyOkController().execute(req, resp);
+		    	  break;
+		     case "/admin/gosuApplyNo.ad":
+		    	  new GosuApplyNoController().execute(req, resp);
 		    	  break;
 		      }
 		

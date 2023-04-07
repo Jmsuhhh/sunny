@@ -9,18 +9,17 @@ import javax.servlet.http.HttpServletResponse;
 import com.sunny.app.Execute;
 import com.sunny.app.admin.dao.AdminDAO;
 
-public class GosuKillOkController implements Execute {
-
+public class GosuApplyOkController implements Execute{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		
 		AdminDAO adminDAO = new AdminDAO();
 		
 		int userNumber = Integer.valueOf(req.getParameter("userNumber"));
 		
-		adminDAO.kill(userNumber);
+		adminDAO.up(userNumber);
 		
-		resp.sendRedirect("/admin/gosuManage.ad");
+		resp.sendRedirect("/admin/gosuApplicationBoardList.ad");
 	}
 
 }

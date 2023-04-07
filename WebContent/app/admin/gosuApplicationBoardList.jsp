@@ -55,7 +55,7 @@
 								<a href="gosuManage.ad">식고수회원관리</a>
 							</div>
 							<div class="gosu-application-user-manage">
-								<a href="">식고수신청관리</a>
+								<a href="gosuApplicationBoardList.ad">식고수신청관리</a>
 							</div>
 						</div>
 					</div>
@@ -82,106 +82,43 @@
 							<!--  예시  -->
 
 							<c:choose>
-								<c:when test="${not empty userNumber }">
-									<c:forEach var="user" items="${userNumber }">
+								<c:when test="${not empty applicationList }">
+									<c:forEach var="applicationList" items="${applicationList }">
 										<div>
-											<div class="num">${user.getUserNumber() }</div>
+											<div class="num">${applicationList.getApplyNumber() }</div>
 											<div class="title">
-												<a href="#">${user.getUserNickname }</a>
+												<a
+													href="gosuApplicationBoardRead.ad?applyNumber=${applicationList.getApplyNumber() }">${applicationList.getApplyTitle() }</a>
 											</div>
-											<div class="writer">소금</div>
-											<div class="date">2222.2.22</div>
+											<div class="writer">${applicationList.getUserNickname() }</div>
+											<div class="date">${applicationList.getApplyDate() }</div>
 										</div>
 									</c:forEach>
 								</c:when>
-
+								<c:otherwise>
+									<tr>
+										<td colspan="5" align="center">고수 신청한 회원이 없습니당.</td>
+									</tr>
+								</c:otherwise>
 							</c:choose>
-
-
-
-							<div>
-								<div class="num">7</div>
-								<div class="title">
-									<a href="#">글 제목-1</a>
+							<!-- 
+								<div>
+									<div class="num">1</div>
+									<div class="title">
+										<a href="#">글 제목5</a>
+									</div>
+									<div class="writer">치킨</div>
+									<div class="date">1993.2.12</div>
 								</div>
-								<div class="writer">소금</div>
-								<div class="date">2222.2.22</div>
-							</div>
-
-							<div>
-								<div class="num">6</div>
-								<div class="title">
-									<a href="#">글 제목0</a>
-								</div>
-								<div class="writer">소금</div>
-								<div class="date">2222.2.22</div>
-							</div>
-
-							<div>
-								<div class="num">5</div>
-								<div class="title">
-									<a href="#">글 제목1</a>
-								</div>
-								<div class="writer">소금</div>
-								<div class="date">2222.2.22</div>
-							</div>
-
-							<div>
-								<div class="num">4</div>
-								<div class="title">
-									<a href="#">글 제목2</a>
-								</div>
-								<div class="writer">후추</div>
-								<div class="date">2021.1.15</div>
-							</div>
-
-							<div>
-								<div class="num">3</div>
-								<div class="title">
-									<a href="#">글 제목3</a>
-								</div>
-								<div class="writer">설탕</div>
-								<div class="date">9999.9.99</div>
-							</div>
-
-							<div>
-								<div class="num">2</div>
-								<div class="title">
-									<a href="#">글 제목4</a>
-								</div>
-								<div class="writer">간장</div>
-								<div class="date">2053.2.12</div>
-							</div>
-
-							<div>
-								<div class="num">1</div>
-								<div class="title">
-									<a href="#">글 제목5</a>
-								</div>
-								<div class="writer">치킨</div>
-								<div class="date">1993.2.12</div>
-							</div>
-							<!--  -->
-						</div>
-						<div class="board-page">
-							<a href="#" class="bt first"><<</a> <a href="#" class="bt prev"><</a>
-							<a href="#" class="num on">1</a> <a href="#" class="num">2</a> <a
-								href="#" class="num">3</a> <a href="#" class="num">4</a> <a
-								href="#" class="num">5</a> <a href="#" class="bt next">></a> <a
-								href="#" class="bt last">>></a>
+								 -->
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<footer id="footers"></footer>
+	<jsp:include
+		page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#headers").load("../../assets/html/adminHeader.html");
-			$("#footers").load("../../assets/html/footer.html");
-		});
-	</script>
 </body>
 </html>

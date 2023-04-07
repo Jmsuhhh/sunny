@@ -42,6 +42,8 @@
 		<typeAlias type="com.sunny.app.user.file.vo.UserFileVO" alias="UserFileVO"/>
 		<typeAlias type="com.sunny.app.follow.vo.FollowVO" alias="FollowVO"/>
 		<typeAlias type="com.sunny.app.my.page.dto.MyPageDTO" alias="MyPageDTO"/>
+		<typeAlias type="com.sunny.app.admin.vo.GosuApplicationVO" alias ="GosuApplicationVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.GosuApplicationReadVO" alias ="GosuApplicationReadVO"/>
 
 
 	</typeAliases>

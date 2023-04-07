@@ -30,4 +30,9 @@ public class AdminDAO {
 		System.out.println("down 메서드");
 		sqlSession.update("admin.down", userNumber);
 	}
+	
+	public void up(int userNumber) {
+		System.out.println("up 메서드");
+		sqlSession.update("admin.up", userNumber);
+	}
 }

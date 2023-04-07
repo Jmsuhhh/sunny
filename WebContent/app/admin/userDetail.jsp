@@ -54,7 +54,7 @@
 								<a href="gosuManage.ad">식고수회원관리</a>
 							</div>
 							<div class="gosu-application-user-manage">
-								<a href="">식고수신청관리</a>
+								<a href="gosuApplicationBoardList.ad">식고수신청관리</a>
 							</div>
 						</div>
 					</div>
@@ -140,14 +140,9 @@
 			</div>
 		</div>
 	</div>
-	<footer id="footers"></footer>
+	    <jsp:include
+		page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#headers").load("../../assets/html/adminHeader.html");
-			$("#footers").load("../../assets/html/footer.html");
-		});
-	</script>
 	<script src="../../assets/js/userDetail.js"></script>
 </body>
 </html>
