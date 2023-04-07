@@ -60,7 +60,6 @@ public class QuestionListOkController implements Execute {
 	      HttpSession session = req.getSession();
 	      Integer gosuNumber = (Integer)session.getAttribute("gosuNumber");
 	      
-	      req.setAttribute("selectNickName", questionDAO.selectNickName(gosuNumber));
 	      req.setAttribute("gosus", gosus);
 	  	  req.setAttribute("questionList", questions);
 	      req.setAttribute("page", page);
