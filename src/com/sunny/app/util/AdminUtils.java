@@ -33,7 +33,6 @@ public class AdminUtils {
 	
 //	세션체크
 	public static boolean sessionCheck(HttpServletRequest req) {
-		
 		return req.getSession().getAttribute("adminNumber") == null ? false : true;
 	}
 }

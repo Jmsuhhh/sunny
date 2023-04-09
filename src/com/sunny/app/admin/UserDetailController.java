@@ -24,6 +24,7 @@ public class UserDetailController implements Execute{
 		// 세션체크
 		if (!AdminUtils.sessionCheck(req)) {
 			resp.sendRedirect("/admin/login.ad?login=noInfo");
+			return;
 		}
 		
 		// 회원정보

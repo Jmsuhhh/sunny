@@ -17,6 +17,7 @@ import com.sunny.app.admin.vo.UserManageVO;
 import com.sunny.app.util.AdminUtils;
 
 public class UserManageController implements Execute {
+	
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -31,11 +32,11 @@ public class UserManageController implements Execute {
 		// 세션체크
 		if (!AdminUtils.sessionCheck(req)) {
 			resp.sendRedirect("/admin/login.ad?login=noInfo");
+			return;
 		}
-
 		
 		Map<String, Object> pageMap = new HashMap<>();
-		pageMap.put("searchWord", searchWord == null ? "" : searchWord); 
+		pageMap.put("searchWord", searchWord); 
 		List<UserManageVO> users = userManageDAO.userInfo(pageMap);
 		
 		req.setAttribute("headerInfo", headerinfoVO);

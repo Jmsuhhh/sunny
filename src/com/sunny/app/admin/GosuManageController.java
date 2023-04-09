@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sunny.app.Execute;
+import com.sunny.app.admin.dao.AdminDAO;
 import com.sunny.app.admin.dao.GosuManageDAO;
 import com.sunny.app.admin.vo.GosuManageVO;
+import com.sunny.app.admin.vo.HeaderInfoVO;
 import com.sunny.app.util.AdminUtils;
 
 public class GosuManageController implements Execute {
@@ -22,8 +24,11 @@ public class GosuManageController implements Execute {
 		System.out.println("=====================");
 		System.out.println(searchWord);
 		System.out.println("=====================");
+		
+		AdminDAO adminDAO = new AdminDAO();
 		GosuManageDAO gosuManageDAO = new GosuManageDAO();
-
+		HeaderInfoVO headerinfoVO = adminDAO.headerInfo();
+		
 		// 세션체크
 		if (!AdminUtils.sessionCheck(req)) {
 			resp.sendRedirect("app/admin/login.ad?login=noInfo");
@@ -32,9 +37,10 @@ public class GosuManageController implements Execute {
 		// 고수 회원 정보 불러오기
 		Map<String, Object> pageMap = new HashMap<>();
 				
-		pageMap.put("searchWord", searchWord == null ? "" : searchWord); 
+		pageMap.put("searchWord", searchWord); 
 		List<GosuManageVO> gosu = gosuManageDAO.gosuInfo(pageMap);
 
+		req.setAttribute("headerInfo", headerinfoVO);
 		req.setAttribute("gosuList", gosu);
 		req.getRequestDispatcher("/app/admin/gosuManage.jsp").forward(req, resp);
 		

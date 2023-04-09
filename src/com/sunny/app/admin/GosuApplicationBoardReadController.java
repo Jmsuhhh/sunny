@@ -24,6 +24,7 @@ public class GosuApplicationBoardReadController implements Execute{
 		// 세션체크
 		if (!AdminUtils.sessionCheck(req)) {
 			resp.sendRedirect("/admin/login.ad?login=noInfo");
+			return;
 		}
 		
 		// apply 정보 가져오기

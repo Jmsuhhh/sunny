@@ -12,8 +12,10 @@ public class LogoutOkController implements Execute{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("adminLogoutController탐.");
+		
+		// 세션의 모든 값 삭제
 		req.getSession().invalidate();
-		//세션의 모든 값 삭제
+		// 페이지 이동처리
 		resp.sendRedirect("/admin/login.ad?login=logout");
 	}
 
