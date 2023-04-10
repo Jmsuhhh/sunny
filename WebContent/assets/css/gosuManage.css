@@ -192,6 +192,10 @@ a:visited {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
 }
 
+.gosu-nickname{
+	width : 20%;
+}
+
 .view-title h1 {
   font-size: 2rem;
   font-weight: bold;

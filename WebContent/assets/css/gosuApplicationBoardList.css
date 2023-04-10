@@ -255,7 +255,7 @@ a:visited {
   display: inline-block;
   padding: 15px 0;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 16px;
 }
 
 .board_list > div.top > div {
@@ -263,12 +263,13 @@ a:visited {
 }
 
 .board_list .num {
-  width: 10%;
+  width: 15%;
 }
 
 .board_list .title {
-  width: 60%;
+  width: 45%;
   text-align: left;
+  margin-left: 10px;
 }
 
 .board_list .top .title {
@@ -280,7 +281,7 @@ a:visited {
 }
 
 .board_list .date {
-  width: 15%;
+  width: 20%;
 }
 
 .board-page {
@@ -333,4 +334,9 @@ a:visited {
   width: 100%;
   min-width: 320px;
   box-sizing: border-box;
+}
+
+.board_list .title a:hover{
+  color: #009a3e;
+  text-decoration-line: underline;
 }

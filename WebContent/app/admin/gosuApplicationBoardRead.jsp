@@ -39,7 +39,7 @@
           <div class="manage-manu">
             <div class="user-manage">
               <div class="user-manage-headline">
-                <img src="../../assets/img/admin/img/user.png" alt="" />
+                <img src="../../assets/img/admin/user.png" alt="" />
                 <h2>관리하기</h2>
               </div>
               <div class="hr"><hr /></div>
@@ -49,7 +49,7 @@
                   <a href="gosuManage.ad">식고수회원관리</a>
                 </div>
                 <div class="gosu-application-user-manage">
-                  <a href="">식고수신청관리</a>
+                  <a href="gosuApplicationBoardList.ad">식고수신청관리</a>
                 </div>
               </div>
             </div>
@@ -60,62 +60,39 @@
         <div class="read-container">
           <div class="view-wrap">
             <div class="view-title">
-              <h1>식고수 신청할게요.</h1>
+              <h1>${applydata.getApplyTitle() }</h1>
             </div>
             <div class="gosu-applicant">
               <div class="applicant-info">
-                <div class="applicant-img-box">
-                  <a href="">
-                    <img src="../img/sogum2.jpg" alt="" />
-                  </a>
-                </div>
-                <div class="applicant-user-name"><a href="">소금</a></div>
+                <div class="applicant-user-name"><a href="">닉네임 : ${applydata.getUserNickname() }</a></div>
               </div>
               <div class="application-date">
-                <p>신청일 : 2023-03-22</p>
+                <p>신청일 : ${applydata.getApplyDate() }</p>
               </div>
             </div>
             <!-- check box -->
             <div class="gosu-department-box">
-              check-box 신청목록 출력
               <div class="gosu-department">
                 <div class="gosu-department-text">전문분야 :</div>
-                <div class="department">나무</div>
-                <div class="department">꽃</div>
-                <div class="department">풀</div>
-                <div class="department">잡초</div>
-                <div class="department">감자</div>
+                <div class="gosu-department-text">${applydata.getGosuFieldNames() }</div>
               </div>
             </div>
-
             <!-- 임시 내용 -->
-            <div class="view-content">
-              내용입니다 아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ아ㅏ 시;ㄱ고수
-              시켜줘ㅓㅓㅓㅓㅓ 시켜줘ㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓ
-              빨리이ㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣ
-              얼르니ㅣㅣㅣㅣㅣㅣㅣdddddddddddddㅣㅣㅣㅣㅣㅣㅣㅣㅣ
-              시켜줘엉ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇs ㅋ ㅋ ㅋ ㅋ ㅋ ㅋ ㅋ ㅋ
-              ㅋㅋㅋㅋㅋㅋㅋㅋㅋdㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ ㅋ ㅋ ㅋ ㅋ ㅋ ㅋ ㅋㅋ
-              ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋssssssssssssssssssssss
-              sssssssssssssssssssssssssssssssssssss
-              sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+            <div class="view-content" >
+			${applydata.getApplyContent() }
             </div>
           </div>
           <div class="btn-group">
-            <button class="ok-btn">수락</button>
-            <button class="no-btn">거절</button>
-            <button class="back-btn">목록</button>
+            <button type="button" class="ok-btn" data-userNumber="${applydata.getUserNumber() }">수락</button>
+            <button type="button" class="no-btn" data-userNumber="${applydata.getUserNumber() }">거절</button>
+            <button type="button" class="back-btn">목록</button>
           </div>
         </div>
       </div>
     </div>
-    <footer id="footers"></footer>
+    <jsp:include
+		page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $("#headers").load("../../assets/html/adminHeader.html");
-        $("#footers").load("../../assets/html/footer.html");
-      });
-    </script>
+    <script src="../../assets/js/gosuApplicationBoardRead.js"></script>
   </body>
 </html>
