@@ -46,7 +46,7 @@
 												</c:when>
 												<c:otherwise>
 													<img
-														src="${pageContext.request.contextPath}/upload/${follow.getFileSystemName()}"
+														src="${pageContext.request.contextPath}/uploadProfile/${follow.getFileSystemName()}"
 														alt="" />
 												</c:otherwise>
 											</c:choose>

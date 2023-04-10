@@ -49,18 +49,19 @@ public class MyPageOkController implements Execute {
 		myPageDTO.setUserComment(userVO.getUserComment());
 		myPageDTO.setGradeNumber(userVO.getGradeNumber());
 		myPageDTO.setUserNickname(userVO.getUserNickname());
-
+		
+		System.out.println(userVO.getGradeNumber());
 //		프로필사진이 없으면 userFile에 기본로고를 넣어준다. > c:choose로 처리
 		myPageDTO.setUserFile(userFileDAO.selectFile(userNumber));
 		myPageDTO.setFollowerCnt(followDAO.selectFollowerCnt(userNumber));
 		myPageDTO.setFollowingCnt(followDAO.selectFollowingCnt(userNumber));
 //		내가 쓴 스토리 리스트 받아오기
+		System.out.println(userDAO.myStoryList(userNumber));
 		
 		try {
 			myPageDTO.setStoryCnt(userDAO.myStoryCnt(userNumber));
 			myPageDTO.setStoryFiles(userDAO.myStoryList(userNumber));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
