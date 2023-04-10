@@ -3,7 +3,19 @@
 
 <mapper namespace="storyFile">
 	<insert id="insert" parameterType="StoryFileDTO">
-		insert into tbl_story_file(file_system_name, file_original_name, story_number)
+		insert into
+		tbl_story_file(file_system_name, file_original_name, story_number)
 		values(#{fileSystemName},#{fileOriginalName},#{storyNumber})
 	</insert>
+
+	<select id="selectList" parameterType="map"
+		resultType="StoryFileDTO">
+		select file_number, story_number, file_system_name,
+		file_original_name
+		from story_file
+		where story_number = #{storyNumber}
+		order by file_number ASC
+	</select>
+	
+	
 </mapper>

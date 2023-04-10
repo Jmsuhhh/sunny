@@ -1,8 +1,12 @@
 package com.sunny.app.user.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
+import com.sunny.app.find.password.dto.FindPasswordDTO;
+import com.sunny.app.story.file.vo.StoryFileVO;
 import com.sunny.app.user.dto.UserDTO;
 import com.sunny.app.user.vo.UserVO;
 
@@ -11,12 +15,17 @@ public class UserDAO {
 	public SqlSession sqlSession;
 	
 	public UserDAO() {
-		
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
 	public void join(UserDTO userDTO) {
 		sqlSession.insert("user.join", userDTO);
+		System.out.println("join메서드");
+	}
+	
+	public void insertFindPassword(FindPasswordDTO findPasswordDTO) {
+		sqlSession.insert("findPassword.insertFindPassword", findPasswordDTO);
+		System.out.println("insertfindpassword메서드");
 	}
 	
 	public int login(UserDTO userDTO) {
@@ -45,5 +54,17 @@ public class UserDAO {
 	
 	public void userDrop(int userNumber) {
 		sqlSession.delete("user.userDrop", userNumber);
+	}
+	
+	public String getMemberId(int userNumber) {
+		return sqlSession.selectOne("user.getMemberId", userNumber);
+	}
+	
+	public List<StoryFileVO> myStoryList(int userNumber){
+		return sqlSession.selectList("user.myStoryList", userNumber);
+	}
+	
+	public int myStoryCnt(int userNumber) {
+		return sqlSession.selectOne("user.myStoryCnt", userNumber);
 	}
 }

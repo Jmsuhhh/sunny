@@ -1,4 +1,4 @@
-package com.sunny.app.question.dao;
+package com.sunny.app.story.file;
 
 import java.io.IOException;
 
@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sunny.app.Execute;
 
-public class QuestionListOkController implements Execute {
+public class UploadController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
+		
 	}
+
 }

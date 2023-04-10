@@ -10,10 +10,10 @@
         <div class="header1--top">
           <div class="header1-btn-group">
             <!-- 로그인경로처리 -->
-            <a href="${pageContext.request.contextPath}/app/user/login.jsp" class="header1-a header-login-btn">로그인</a>
+            <a href="${pageContext.request.contextPath}/user/login.us" class="header1-a header-login-btn">로그인</a>
             <!-- 회원가입경로처리 -->
-            <a href="${pageContext.request.contextPath}/app/user/join.jsp" class="header1-a header-join-btn">회원가입</a>
-            <a href="#" class="header1-a header-logout-btn">로그아웃</a>
+            <a href="${pageContext.request.contextPath}/user/join.us" class="header1-a header-join-btn">회원가입</a>
+            <a href="${pageContext.request.contextPath}/user/logoutOk.us" class="header1-a header-logout-btn">로그아웃</a>
           </div>
         </div>
         <div class="header1--bottom">

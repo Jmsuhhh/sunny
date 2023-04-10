@@ -16,15 +16,14 @@ public class QuestionDTO {
 	private int questionNumber;
 	private int gosuNumber;
 	private int userNumber;
-	private String qustionTitle;
+	private String questionTitle;
 	private String questionContent;
 	private Date questionDate;
 	private int questionViewCnt;
 	private int questionStatus;
 	private Date lastUpdate;
 	
-	public QuestionDTO() {
-	}
+	public QuestionDTO() {}
 
 	public int getQuestionNumber() {
 		return questionNumber;
@@ -50,12 +49,12 @@ public class QuestionDTO {
 		this.userNumber = userNumber;
 	}
 
-	public String getQustionTitle() {
-		return qustionTitle;
+	public String getQuestionTitle() {
+		return questionTitle;
 	}
 
-	public void setQustionTitle(String qustionTitle) {
-		this.qustionTitle = qustionTitle;
+	public void setQuestionTitle(String questionTitle) {
+		this.questionTitle = questionTitle;
 	}
 
 	public String getQuestionContent() {
@@ -101,10 +100,18 @@ public class QuestionDTO {
 	@Override
 	public String toString() {
 		return "QuestionDTO [questionNumber=" + questionNumber + ", gosuNumber=" + gosuNumber + ", userNumber="
-				+ userNumber + ", qustionTitle=" + qustionTitle + ", questionContent=" + questionContent
+				+ userNumber + ", questionTitle=" + questionTitle + ", questionContent=" + questionContent
 				+ ", questionDate=" + questionDate + ", questionViewCnt=" + questionViewCnt + ", questionStatus="
-				+ questionStatus + ", lastUpdate=" + lastUpdate + "]";
+				+ questionStatus + ", lastUpdate=" + lastUpdate + ", getQuestionNumber()=" + getQuestionNumber()
+				+ ", getGosuNumber()=" + getGosuNumber() + ", getUserNumber()=" + getUserNumber()
+				+ ", getQuestionTitle()=" + getQuestionTitle() + ", getQuestionContent()=" + getQuestionContent()
+				+ ", getQuestionDate()=" + getQuestionDate() + ", getQuestionViewCnt()=" + getQuestionViewCnt()
+				+ ", getQuestionStatus()=" + getQuestionStatus() + ", getLastUpdate()=" + getLastUpdate()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
+	
+	
 	
 	
 }
