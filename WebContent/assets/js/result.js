@@ -2,7 +2,7 @@
     // 3초 후에 result.jsp로 이동하는 함수
     function moveToResult() {
         setTimeout(function () {
-            location.href = "/algorithmTest/result.ag";
+            location.href = "/algorithm/result.ag";
         }, 1000); // 3초 후에 result.jsp로 이동
     }
 

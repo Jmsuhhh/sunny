@@ -12,11 +12,14 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/algorithm/result.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/result.css">
 </head>
 <body>
     <div>
       <section id="result">
+      
+     <div>
+     </div> 
         <div>
           <img
              src="https://findmyplant.netlify.app/assets/img/19.jpg" class="img1">  
@@ -39,9 +42,11 @@
           빛이 부족해서 그럴 수 있어요! 밝은 곳으로 옮겨 주세요</li>
         </ul>
       </h6>
-      <button type="btn" class="btn1"onclick="location.href= 'http://127.0.0.1:5500/html/FindMyPlant/main/index.html';">다시하기</button>
+      <button type="btn" class="btn1"onclick="location.href= 'http://localhost:8085/algorithm/index.ag';">다시하기</button>
     </div>
     </div>
   </section>
+  <script type="text/javascript"></script>
+  <script src="../../assets/js/plant.js"></script> 
 </body>
 </html>

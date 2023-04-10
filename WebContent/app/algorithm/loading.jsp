@@ -13,12 +13,15 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/algorithm/loading.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/loading.css" />
 </head>
 <body>
+<form action="${pageContext.request.contextPath}/algorithm/result.ag" method="get">
     <div class="loading">
       <span class="span1">결과 분석 중..</span
       >
     </div>
+    </form>
+    <script src="../../../assets/js/result.js"></script> 
 </body>
 </html>

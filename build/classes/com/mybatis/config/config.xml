@@ -28,9 +28,17 @@
 		<typeAlias type="com.sunny.app.question.file.dto.QuestionFileDTO" alias ="QuestionFileDTO"/>
 		<typeAlias type="com.sunny.app.question.reply.dto.QuestionReplyDTO" alias ="QuestionReplyDTO"/>
 		<typeAlias type="com.sunny.app.algorithm.dto.AlgorithmDTO" alias ="AlgorithmDTO"/>
+		<typeAlias type="com.sunny.app.algorithm.vo.AlgorithmVO" alias ="AlgorithmVO"/>
 		<typeAlias type="com.sunny.app.plant.dto.PlantDTO" alias ="PlantDTO"/>
 		<typeAlias type="com.sunny.app.plant.file.dto.PlantFileDTO" alias ="PlantFileDTO"/>
 		<typeAlias type="com.sunny.app.admin.dto.AdminDTO" alias ="AdminDTO"/>
+		<typeAlias type="com.sunny.app.user.vo.UserVO" alias="UserVO"/>
+		<typeAlias type="com.sunny.app.admin.dto.UserManageDTO" alias ="UserManageDTO"/>
+		<typeAlias type="com.sunny.app.admin.vo.UserManageVO" alias ="UserManageVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.UserDetailVO" alias ="UserDetailVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.GosuManageVO" alias ="GosuManageVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.GosuDetailVO" alias ="GosuDetailVO"/>
+
 
 
 

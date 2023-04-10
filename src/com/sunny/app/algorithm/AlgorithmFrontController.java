@@ -2,7 +2,6 @@ package com.sunny.app.algorithm;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,31 +23,30 @@ public class AlgorithmFrontController extends HttpServlet {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 		System.out.println(target);
 		switch (target) {
-		case "/algorithmTest/index.ag":
-			req.getRequestDispatcher("/app/algorithm/algorithmTest/index.jsp").forward(req, resp);
+		case "/algorithm/index.ag":
+			req.getRequestDispatcher("/app/algorithm/index.jsp").forward(req, resp);
 			break;
-		case "/algorithmTest/testOne.ag":
-			req.getRequestDispatcher("/app/algorithm/algorithmTest/testOne.jsp").forward(req, resp);
+		case "/algorithm/testOne.ag":
+			new TestOneOkController().execute(req, resp);
+		    break;
+		case "/algorithm/testTwo.ag":
+			new TestTwoOkController().execute(req, resp);
 			break;
-		case "/algorithmTest/testTwo.ag":
-			req.getRequestDispatcher("/app/algorithm/algorithmTest/testTwo.jsp").forward(req, resp);
+		case "/algorithm/testThree.ag":
+			new TestThreeOkController().execute(req, resp);
 			break;
-		case "/algorithmTest/testThree.ag":
-			req.getRequestDispatcher("/app/algorithm/algorithmTest/testThree.jsp").forward(req, resp);
+		case "/algorithm/testFour.ag":
+			 new TestFourOkController().execute(req, resp);
 			break;
-		case "/algorithmTest/testFour.ag":
-			req.getRequestDispatcher("/app/algorithm/algorithmTest/testFour.jsp").forward(req, resp);
+		case "/algorithm/testFive.ag":
+			new TestFiveOkController().execute(req, resp);
 			break;
-		case "/algorithmTest/testFive.ag":
-			req.getRequestDispatcher("/app/algorithm/algorithmTest/testFive.jsp").forward(req, resp);
+		case "/algorithm/loading.ag":
+			new LoadingOkController().execute(req,resp);
 			break;
-		case "/algorithmTest/loading.ag":
-			req.getRequestDispatcher("/app/algorithm/algorithmTest/loading.jsp").forward(req, resp);
-			break;
-		case "/algorithmTest/result.ag":
-			req.getRequestDispatcher("/app/algorithm/algorithmTest/result.jsp").forward(req, resp);
-			new AlgorithmController().execute(req, resp); 
+		case "/algorithm/result.ag":
+			new ResultOkController().execute(req, resp);
 			break;
 		}
-	}
+	} 
 }
