@@ -18,6 +18,10 @@ public class UserDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
+	public String getUserId1(int userNumber) {
+		return sqlSession.selectOne("user.getUserId1", userNumber);
+	}
+
 	public void join(UserDTO userDTO) {
 		sqlSession.insert("user.join", userDTO);
 		System.out.println("join메서드");
