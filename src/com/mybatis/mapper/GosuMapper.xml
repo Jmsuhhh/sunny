@@ -4,8 +4,9 @@
 
 <mapper namespace="gosu">
 
-	<select id="selectAll" resultType="UserVO" parameterType="map">
-		select tu.user_number , tu.user_nickname, tu.user_comment , tu.user_date, g.gosu_fields
+<!-- 식고수 뽑기  -->
+	<select id="selectAll" resultType="GosuVO" parameterType="map">
+		select tu.user_number , tu.user_nickname, tu.user_comment , tu.user_date, g.gosu_fields, g.gosu_number
 		from tbl_user tu join tbl_gosu tg
 		on tu.user_number = tg.user_number 
 		join(
@@ -19,8 +20,10 @@
 		limit #{startRow}, #{rowCount}
 	</select>
 	
+<!-- 페이징처리 -->
 	<select id="getTotal" resultType="_int">
 		select count(user_number) from tbl_user
 	</select>
+	
 
 </mapper>

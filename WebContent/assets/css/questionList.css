@@ -3,137 +3,34 @@
 *{
     margin: 0;
     padding: 0;
+	@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+	@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
-
-header {
-  font-family: "Noto Sans KR", sans-serif;
-  width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-end;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
-}
-a:visited {
-  color: black;
-}
-
-ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-li {
-  list-style: none;
-}
-
-/* 헤더1 로그인,회원가입 / 로고 */
-.header1 {
-  display: flex;
-  flex-direction: column;
-}
-/* 로그인, 회원가입 */
-.header1--top {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  background-color: #f2f2f2;
-  line-height: 30px;
-}
-.header1--top a {
-  color: #808080;
-  font-size: 14px;
-  margin-right: 18px;
-}
-/* 로고 */
-.header1--bottom {
-  height: 87px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header1--bottom a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header1--bottom h1 {
-  color: #009a3e;
-  font-weight: 700;
-  font-family: "Dongle", sans-serif;
-  font-size: 35px;
-}
-.logo {
-  width: 35px;
-  height: 35px;
-}
-.logo svg {
-  height: 35px;
-  fill: #009a3e;
-}
-
-/* 헤더2 메뉴바, 버튼2개 */
-.header2 {
-  height: 28px;
-  padding: 9px 0;
-  border-bottom: 1px solid #d9d9d9;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* 헤더2 메뉴바 */
-.menu-list-ul {
-  display: flex;
-}
-
-.menu-list {
-  height: 28px;
-  line-height: 28px;
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0 18px;
-  list-style-type: none;
-  flex: none;
-}
-
-/* 헤더2 오른쪽 버튼2개 */
-.btn-list-ul {
-  display: flex;
-}
-
-.btn-list a {
-  height: 28px;
-  margin-right: 18px;
-  line-height: 28px;
-  font-size: 14px;
-  flex: none;
-}
-
-.btn-list a > img {
-  height: 15px;
-  width: 15px;
-}
-
-
+/* 리스트전체 */
  .pcontainer {
     width: 1200px;
     height: 1300px;
 }
 
-/* ======================================================================================= */
+/* 00님 환영합니다 */
+
+.plus-top{
+	margin : 28px 0 28px 170px;
+	height : 52px;
+}
+
+.plus-btn {
+	color: #fff;
+    background-color: #009a3e;
+  	border-radius: 5px;
+    text-decoration : none;
+    line-height:52px;
+}
+
+.plust-top > p{
+	font-size : 15px;
+}
 
 /* 소개 */
 .info {
@@ -186,7 +83,7 @@ strong {
 .noanswer > button {
     color: #fff;
     background-color: #009a3e;
-    width: 52px;
+    width: 80px;
     height: 33px;
     border-radius: 4px;
     border: none;
@@ -208,7 +105,7 @@ strong {
 	.answercom > button {
     background-color: #009a3e;
     color: #fff;
-    width: 65px;
+    width: 80px;
     height: 33px;
     border: none;
     border-radius: 4px;
@@ -237,17 +134,18 @@ p {
  
  .noreply-table,
  .answercom-table{
- 	width:1200px;
- 	height : 350px;
+ 	width:1300px;
+ 	height : auto;
  	display: flex;
+ 	flex-flow : row wrap;
  }
- 
  .answercom {
  	margin : 0 0 0 160px;
  }
  
  .imti{
- 	margin : 0 40px 0 0;
+ 	margin : 10px 20px 35px 0;
+ 	cursor : pointer;
  }
  
  tbody {
@@ -256,115 +154,54 @@ p {
  	align-items: center;
  	white-space: nowrap;
  	padding : 0;
+ 	flex-flow : row wrap;
  }
  
  .title {
  	color : #808080;
  	position : absolute;
  }
- 
- 
 
-/* 123 이동 */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px 0 50px 0;
-  }
-  
-  .pagination > ul {
-    display: flex;
-    list-style: none;
-  }
-  
-  .pagination a {
-    color: #b3b3b3;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
-    margin: 0 5px;
-    border-radius: 5px;
-    border: none;
-  }
-  
-  .pagination a:hover {
-    color: #b3b3b3;
-  }
-  
-  .pagination .active {
-    color: #009a3e;
-  }
-  
-/* 질문리스트 */
-.question-table {
+
+/* 모달창 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
   width: 100%;
-  margin-top: 20px;
-  border-collapse: collapse;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  text-align : center;
+}
+ 
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  border-radius: 5px;
 }
 
-.question-table th,
-.question-table td {
-  padding: 10px;
-  border-bottom: 1px solid #e0e0e0;
+.modal-content > p {
+  color:#009a3e;
+  font-size : 15px;
 }
-
-.question-table th {
-  text-align: left;
+ 
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
   font-weight: bold;
-  background-color: #f0f0f0;
+}
+ 
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.question-table td {
-  vertical-align: middle;
-}
-
-.question-table tr:last-child td {
-  border-bottom: none;
-}
-
-.question-table tr:hover {
-  background-color: #f9f9f9;
-}
-
-.question-table .no {
-  width: 5%;
-}
-
-.question-table .title {
-  width: 50%;
-}
-
-
-/*  */
-ul {
-    text-align: center;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-right: 0;
-	padding-left :0;
-}
-ul li {
-    text-align: center;
-    float: left;
-	list-style:none;
-
-}
-
-ul li a {
-    display: block;
-    font-size: 14px;
-	color: black;
-    padding: 9px 12px;
-    border-right: solid 1px #ccc;
-    box-sizing: border-box;
-	text-decoration-line:none;
-}
-
-ul li.on {
-    background: #eda712;
-}
-
-ul li.on a {
-    color: #fff;
-}

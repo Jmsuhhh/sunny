@@ -23,6 +23,12 @@ public class QuestionReplyFrontController extends HttpServlet{
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 	
 			switch(target) {
+			case "/questionreply/questionreplyListOk.qr":
+		         new QuestionReplyListOkController().execute(req, resp);
+		         break;
+			case "/questionreply/questionreplyWriteOk.qr":
+				new QuestionReplyWriteOkController().execute(req, resp);
+				break;
 		}
 	}
 }

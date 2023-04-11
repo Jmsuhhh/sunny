@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.sunny.app.Execute;
-import com.sunny.app.question.dao.QuestionDAO;
 import com.sunny.app.user.dao.UserDAO;
 
 public class QuestionWriteController implements Execute {
@@ -22,13 +21,19 @@ public class QuestionWriteController implements Execute {
 		Integer userNumber = (Integer)session.getAttribute("userNumber");
 		String path = null;
 		
+		Integer gosuNumber = (Integer)session.getAttribute("gosuNumber");
+		int gosuNumber1 = 1;
+
+		if(gosuNumber != null) {
+		    gosuNumber1 = gosuNumber.intValue();
+		}
+		
 		if(userNumber == null) {
 			path = "/app/user/login.jsp";
 		} else {
 			path = "/app/question/questionWrite.jsp";
-			req.setAttribute("userId", userDAO.getUserId(userNumber));
+			req.setAttribute("userId", userDAO.getUserId1(userNumber));
 		}
-		
 		req.getRequestDispatcher(path).forward(req,resp);
 	}
 
