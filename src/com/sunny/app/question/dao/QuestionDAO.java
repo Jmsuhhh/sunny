@@ -7,7 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
 import com.sunny.app.question.dto.QuestionDTO;
-import com.sunny.app.user.vo.UserVO;
+import com.sunny.app.question.vo.QuestionVO;
 
 public class QuestionDAO {
 
@@ -24,11 +24,7 @@ public class QuestionDAO {
 		return sqlSession.selectList("question.selectAll", pageMap);
 	}
 	
-	public List<QuestionDTO> selectAll2 (Map<String, Integer> pageMap) {
-		return sqlSession.selectList("question.selectAll2", pageMap);
-	}
-	
-//  페이징처리..였던것
+//  페이징처리
 	public int getTotal() {
 		return sqlSession.selectOne("question.getTotal");
 	}
@@ -38,9 +34,43 @@ public class QuestionDAO {
 		sqlSession.insert("question.insert", questionDTO);
 	}
 	
-//  닉네임 뽑을거임
-	public void selectNickName (int gosuNumber) {
-		sqlSession.selectOne("question.selectNickName", gosuNumber);
+	public int getSequence() {
+		return sqlSession.selectOne("question.getSequence");
+	}
+	
+//  고수 닉네임 뽑기
+	public String getNickName(int gosuNumber2) {
+		return sqlSession.selectOne("question.getNickName", gosuNumber2);
+	}
+	
+//	질문 읽기 
+	public QuestionVO select(int questionNumber) {
+		return sqlSession.selectOne("question.select", questionNumber);
+	}
+	
+//	질문 조회수
+	public void updateReadCount (int questionNumber) {
+		sqlSession.update("question.updateReadCount", questionNumber);
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

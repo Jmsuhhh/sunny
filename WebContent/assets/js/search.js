@@ -1,6 +1,8 @@
 /**
  * 
  */
+
+
  
  let questionBtn = document.querySelector(".question-btn");
 
@@ -31,4 +33,9 @@ function goQuestion(e) {
 function goQuestion2(e){
 	window.location.href="question/questionList2.qs"
 }
+
+
+
+
+
 

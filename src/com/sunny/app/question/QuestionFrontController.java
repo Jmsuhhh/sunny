@@ -27,11 +27,8 @@ public class QuestionFrontController extends HttpServlet{
 			 case "/question/questionListOk.qs":
 		         new QuestionListOkController().execute(req, resp);
 		         break;
-			 case "/question/questionList2Ok.qs":
-				 new QuestionList2OkController().execute(req, resp);
-				 break;
 		      case "/question/questionReadOk.qs":
-		    	  new QuestionReadOkController().execute(req, resp);
+		    	 new QuestionReadOkController().execute(req, resp);
 		         break;
 		      case "/question/questionWrite.qs":
 		    	 new QuestionWriteController().execute(req, resp);
