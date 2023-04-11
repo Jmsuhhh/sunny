@@ -3,23 +3,79 @@
 
 <mapper namespace="question">
 
+<!-- 리스트 뽑을거 -->
 	<select id="selectAll" resultType="QuestionDTO" parameterType="map">
-		SELECT question_number, tu.user_number, question_title, question_content, question_date, question_viewcnt, question_status, last_update
+		SELECT tg.gosu_number,question_number, tu.user_number, question_title, question_content, question_date, question_viewcnt, question_status, last_update
 		FROM tbl_question tq 
 		join tbl_user tu 
-		on tq.user_number = tu.user_number
+		join tbl_gosu tg
+		on tq.user_number = tu.user_number 
+		where tg.gosu_number = tq.gosu_number and tg.gosu_number=#{gosuNumber}
 		order by question_date asc 
-		limit #{startRow}, #{rowCount} 
 	</select>
-
+	
+<!-- 페이징처리-->
 	<select id="getTotal" resultType="_int">
 		select count(question_number) from tbl_question
 	</select>
 	
-	<insert id="insert" parameterType="QuestionDTO">
-		insert into tbl_question
-		(question_title,question_content,user_number,gosu_number)
-		values(#{questionTitle}, #{questionContent}, #{userNumber}, #{gosuNumber});
+<!-- 질문쓰기 -->
+	<insert id="insert" parameterType="QuestionDTO" >
+		insert into tbl_question(question_title, question_content, gosu_number, user_number)
+		values(#{questionTitle},#{questionContent}, #{gosuNumber}, #{userNumber})
 	</insert>
 	
+	<select id="getSequence" resultType="_int">
+		select last_insert_id()
+	</select>
+		
+<!-- 고수 닉네임 뽑기 -->
+	<select id="getNickName" resultType="string" parameterType="_int">
+		SELECT user_nickname 
+		FROM tbl_user tu join tbl_gosu tg 
+		ON tu.user_number = tg.user_number 
+		WHERE tg.gosu_number = #{gosuNumber}
+	</select>
+	
+<!-- 질문읽기 -->
+	<select id="select" parameterType="_int" resultType="QuestionVO">
+		select question_number, question_title, question_content, question_date, tu.user_nickname, tq.question_viewcnt 
+		from tbl_user tu join tbl_question tq 
+		on question_number=#{questionNumber} and tu.user_number = tq.user_number
+	</select>
+	
+<!-- 조회수 -->
+	<update id="updateReadCount" parameterType="_int">
+		update tbl_question
+		set question_viewcnt = question_viewcnt + 1
+		where question_number=#{questionNumber}
+	</update>
+
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -6,132 +6,13 @@
     padding: 0;
 }
 
-header {
-  font-family: "Noto Sans KR", sans-serif;
-  width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-end;
+.view-title{
+	font-size : 14px;
+	display:flex;
+	position : absolute;
+	margin : 100px;
+	left : -80px;
 }
-
-a {
-  text-decoration: none;
-  color: black;
-  cursor: pointer;
-}
-a:visited {
-  color: black;
-}
-
-ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-li {
-  list-style: none;
-}
-
-/* 헤더1 로그인,회원가입 / 로고 */
-.header1 {
-  display: flex;
-  flex-direction: column;
-}
-/* 로그인, 회원가입 */
-.header1--top {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  background-color: #f2f2f2;
-  line-height: 30px;
-}
-.header1--top a {
-  color: #808080;
-  font-size: 14px;
-  margin-right: 18px;
-}
-/* 로고 */
-.header1--bottom {
-  height: 87px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header1--bottom a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header1--bottom h1 {
-  color: #009a3e;
-  font-weight: 700;
-  font-family: "Dongle", sans-serif;
-  font-size: 35px;
-}
-.logo {
-  width: 35px;
-  height: 35px;
-}
-.logo svg {
-  height: 35px;
-  fill: #009a3e;
-}
-
-/* 헤더2 메뉴바, 버튼2개 */
-.header2 {
-  height: 28px;
-  padding: 9px 0;
-  border-bottom: 1px solid #d9d9d9;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* 헤더2 메뉴바 */
-.menu-list-ul {
-  display: flex;
-}
-
-.menu-list {
-  height: 28px;
-  line-height: 28px;
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0 18px;
-  list-style-type: none;
-  flex: none;
-}
-
-/* 헤더2 오른쪽 버튼2개 */
-.btn-list-ul {
-  display: flex;
-}
-
-.btn-list a {
-  height: 28px;
-  margin-right: 18px;
-  line-height: 28px;
-  font-size: 14px;
-  flex: none;
-}
-
-.btn-list a > img {
-  height: 15px;
-  width: 15px;
-}
-
-
- .pcontainer {
-    width: 1200px;
-    height: 1300px;
-}
-
-/* =================================================================================== */
 
 .view-top {
     position: relative;
@@ -147,7 +28,7 @@ li {
   
   .profile-img {
     position: absolute;
-    top: 0;
+    top: 15px;
     left: 0;
     width: 54px;
     height: 54px;
@@ -204,12 +85,6 @@ li {
     padding: 20px;
   }
   
-  /* h1 {
-    margin-bottom: 30px;
-    font-size: 2rem;
-    font-weight: bold;
-  } */
-  
   /* 게시글 정보 스타일 */
   .view-info {
     margin-bottom: 20px;
@@ -219,6 +94,7 @@ li {
     margin-right: 20px;
     font-size: 0.8rem;
     color: #999;
+    position : relative;
   }
   
   .info-title {
@@ -236,7 +112,14 @@ li {
   .date .hit {
     position: absolute;
     text-align: right;
+  	position : absolute;
   }
+  
+  .content-hit {
+  	display:flex;
+  	color :  #009a3e;
+  }
+  
   
   /* 게시글 내용 스타일 */
   .view-content {
@@ -268,13 +151,15 @@ li {
   .list-btn:hover,
   .modify-btn:hover,
   .delete-btn:hover {
-    background-color: rgb(213, 45, 45);
+    background-color:black;
     color: #fff;
   }
   
   .view-attach {
     margin-bottom: 20px;
     margin-top: 20px;
+    width:200px;
+    height : 200px;
   }
   
   .view-attach > a {
@@ -299,11 +184,13 @@ li {
     margin: 10px;
     position: relative;
     height: 700px;
+    background-color : black;
   }
   
   .img-box > img {
     width: 100%;
     height: 100%;
+    background-color : black;
   }
   
   /* 댓글 스타일 */
@@ -355,7 +242,7 @@ li {
   }
   
   .comment-form button:hover {
-    background-color: rgb(255, 87, 87);
+    background-color:black;
   }
   
   .story-date {
@@ -434,7 +321,7 @@ li {
   }
   
   .comment-btn-group button:hover {
-    background-color: rgb(213, 45, 45);
+    background-color: black;
   }
   
   .none {
