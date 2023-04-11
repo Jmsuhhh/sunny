@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sunny.app.Execute;
+import com.sunny.app.gosu.dao.GosuDAO;
+import com.sunny.app.gosu.vo.GosuVO;
 import com.sunny.app.question.dao.QuestionDAO;
 import com.sunny.app.question.dto.QuestionDTO;
 
@@ -17,8 +19,11 @@ public class QuestionListOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		System.out.println("들어완");
 
 		  QuestionDAO questionDAO = new QuestionDAO();
+		  GosuDAO gosuDAO = new GosuDAO();
 
 		  int total = questionDAO.getTotal();
 	      String temp = req.getParameter("page");
@@ -45,9 +50,15 @@ public class QuestionListOkController implements Execute {
 	      Map<String, Integer> pageMap = new HashMap<>();
 	      pageMap.put("startRow", startRow);
 	      pageMap.put("rowCount", rowCount);
+	      pageMap.put("gosuNumber", Integer.parseInt(req.getParameter("gosuNumber")));
 	      
 	      List<QuestionDTO> questions = questionDAO.selectAll(pageMap);
+	      List<GosuVO> gosus = gosuDAO.selectAll(pageMap);
 	      
+	      int gosuNumber2 = Integer.parseInt(req.getParameter("gosuNumber"));
+	      req.setAttribute("gosuNickName", questionDAO.getNickName(gosuNumber2));
+	      
+	      req.setAttribute("gosus", gosus);
 	  	  req.setAttribute("questionList", questions);
 	      req.setAttribute("page", page);
 	      req.setAttribute("startPage", startPage);
@@ -55,8 +66,6 @@ public class QuestionListOkController implements Execute {
 	      req.setAttribute("prev", prev);
 	      req.setAttribute("next", next);
 	      
-//	      ===================================
-	     
 	      req.getRequestDispatcher("/app/question/questionList.jsp").forward(req, resp);
 	   }
 

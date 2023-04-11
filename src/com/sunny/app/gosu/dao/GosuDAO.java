@@ -6,7 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
-import com.sunny.app.user.vo.UserVO;
+import com.sunny.app.gosu.vo.GosuVO;
 
 public class GosuDAO {
 
@@ -17,18 +17,13 @@ public class GosuDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public List<UserVO> selectAll(Map<String, Integer> pageMap) {
+//	고수목록
+	public List<GosuVO> selectAll(Map<String, Integer> pageMap) {
 		return sqlSession.selectList("gosu.selectAll", pageMap);
 	}
-	
-	public List<UserVO> search(){
-		return sqlSession.selectList("gosu.selectAll");
-	}
-	
+//	페이징처리
 	public int getTotal() {
 		return sqlSession.selectOne("gosu.getTotal");
 	}
-	
-	
 
 }
