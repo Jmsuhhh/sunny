@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sunny.app.admin.AdminLoginController;
+
 public class GosuApplyFrontController extends HttpServlet{
 
 	@Override
@@ -21,8 +23,13 @@ public class GosuApplyFrontController extends HttpServlet{
 
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
+		System.out.println(target);
 	
 			switch(target) {
+			
+			 case "/gosuApply/gosuApply.ga":
+		         new gosuApplyWriteController().execute(req, resp);
+				 break;
 		}
 	}
 }

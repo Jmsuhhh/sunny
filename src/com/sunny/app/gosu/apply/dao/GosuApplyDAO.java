@@ -11,4 +11,6 @@ public class GosuApplyDAO {
 	public GosuApplyDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
+	
+	
 }
