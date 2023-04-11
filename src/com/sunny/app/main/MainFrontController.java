@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sunny.app.story.StoryListOkController;
+import com.sunny.app.user.MyPageController;
 
 public class MainFrontController extends HttpServlet {
 
@@ -27,8 +28,8 @@ public class MainFrontController extends HttpServlet {
 		
 		switch (target) {
 		case "/main/mainOk.ma":
-//			mainOkController로 변경해야함
-			req.getRequestDispatcher("/app/main/main2.jsp").forward(req, resp);
+//			MainOkController로 변경해야함
+			new MainOkController().execute(req, resp);
 			break;
 		}
 	}

@@ -20,8 +20,8 @@
 			<div class="main1--top">
 				<!-- 식집사/식고수 텍스트 바꿔서 넣어야함 , 이름 띄움-->
 				<h1>
-					<span class="grade"></span>
-					<span><c:out value="${myPage.getUserNickname()}" /></span> 입니다
+					<span class="grade"></span> <span><c:out
+							value="${myPage.getUserNickname()}" /></span> 입니다
 				</h1>
 			</div>
 			<div class="main1--bottom">
@@ -42,7 +42,8 @@
 							<div class="profile-photo">
 								<c:choose>
 									<c:when test="${empty myPage.getUserFile()}">
-										<img src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
+										<img
+											src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
 									</c:when>
 									<c:otherwise>
 										<img
@@ -51,7 +52,7 @@
 									</c:otherwise>
 								</c:choose>
 							</div>
-							
+
 							<!-- 버튼누르면 모달창으로 사진등록-->
 							<c:if
 								test="${sessionScope.userNumber ==  myPage.getUserNumber()}">
@@ -123,24 +124,30 @@
 				</div>
 			</div>
 		</section>
-		<c:if test="${sessionScope.userNumber eq myPage.getUserNumber() && myPage.getGradeNumber()==100}">
+		<c:if
+			test="${sessionScope.userNumber eq myPage.getUserNumber() && myPage.getGradeNumber()==100}">
 			<section class="main2">
 				<div class="apply-expert">
 					<!-- 식고수 신청 페이지로 이동 -->
 					<!-- 식고수인 경우 버튼없앰 -->
-					<a href="${pageContext.request.contextPath}/gosuApply/gosuApply.ga?userNumber=${myPage.getUserNumber()}">식고수 신청하기</a>
+					<a
+						href="${pageContext.request.contextPath}/gosuApply/gosuApply.ga?userNumber=${myPage.getUserNumber()}">식고수
+						신청하기</a>
 				</div>
 			</section>
 		</c:if>
 		<!-- 마이스토리 목록 -->
 		<section class="main3">
 			<div class="main3--top" id="storySection">
-				<h1><c:out value="${myPage.getUserNickname()}"/>님의 스토리</h1>
+				<h1>
+					<c:out value="${myPage.getUserNickname()}" />
+					님의 스토리
+				</h1>
 				<div class="write-story">
 					<!-- 스토리쓰기 페이지로 이동 -->
 					<c:if test="${sessionScope.userNumber ==  myPage.getUserNumber()}">
-					<a
-						href="${pageContext.request.contextPath}/app/story/storyWrite.jsp">글쓰기</a>
+						<a
+							href="${pageContext.request.contextPath}/app/story/storyWrite.jsp">글쓰기</a>
 					</c:if>
 				</div>
 			</div>
@@ -150,27 +157,28 @@
 					<c:choose>
 						<c:when test="${not empty myPage.getStoryFiles()}">
 							<c:forEach var="myStory" items="${myPage.getStoryFiles()}">
-					<li class="story-list">
-						<a href="${pageContext.request.contextPath}/story/storyReadOk.st?storyNumber=${myStory.getStoryNumber()}"> 
-							<div class = "cover-div">
-						<c:choose>
-							<c:when test="${not empty myStory.getFileSystemName()}">
-							<img
-							src="${pageContext.request.contextPath}/storyUpload/${myStory.getFileSystemName()}"
-							alt="" />
-							</c:when>
-							<c:otherwise>
-									<img src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
-							</c:otherwise>
-						</c:choose>
-							</div>
-							<p>${myStory.getStoryTitle()}</p>
-					</a></li>
-					</c:forEach>
-					</c:when>
-					<c:otherwise>
-						<div class="empty">등록한 스토리가 없습니다.</div>
-					</c:otherwise>
+								<li class="story-list"><a
+									href="${pageContext.request.contextPath}/story/storyReadOk.st?storyNumber=${myStory.getStoryNumber()}">
+										<div class="cover-div">
+											<c:choose>
+												<c:when test="${not empty myStory.getFileSystemName()}">
+													<img
+														src="${pageContext.request.contextPath}/storyUpload/${myStory.getFileSystemName()}"
+														alt="" />
+												</c:when>
+												<c:otherwise>
+													<img
+														src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
+												</c:otherwise>
+											</c:choose>
+										</div>
+										<p>${myStory.getStoryTitle()}</p>
+								</a></li>
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<div class="empty">등록한 스토리가 없습니다.</div>
+						</c:otherwise>
 					</c:choose>
 				</ul>
 			</div>
@@ -178,39 +186,53 @@
 
 		<!-- 식고수인경우 질문포스팅리스트띄워야함 -->
 		<c:if test="${myPage.getGradeNumber()==500}">
-		<section class="main3">
-			<div class="main3--top">
-				<h1><c:out value="${myPage.getUserNickname()}" />님에게 온 질문들</h1>
-			</div>
-			<!-- 비동기로 답변완료/답변대기  -->
-			<div class="answer-btn-group">
-				<ul class="answer-btn-ul">
-					<li class="answer-btn active">답변대기</li>
-					<li class="answer-btn">답변완료</li>
-				</ul>
-				<ul>
-					<!-- 식고수질문게시판으로 이동 -->
-					<c:if test="${sessionScope.userNumber !=  myPage.getUserNumber()}">
-					<!--  -->
-					<li class="question-btn"><a href="/question/questionWrite.qs?userNumber=${myPage.getUserNumber()}">식고수에게 물어보기</a></li>
-					</c:if>
-				</ul>
-			</div>
-			<!-- 질문읽기 페이지로 이동 -->
-			<div class="main3--bottom">
-				<!-- <article class="empty"><p>등록된 질문이 없습니다.</p></article> -->
-				<ul class="story-list-ul question-list-ul">
-					<li class="story-list question-list">
-						<a href="#">
-							<div class="cover-div">
-							<img
-							src="https://www.shouse.garden/data/photo/s230218_23125310615.jpeg"
-							alt="" />
-							</div>
-							<p>20230305</p></a></li>
-				</ul>
-			</div>
-		</section>
+			<section class="main3">
+				<div class="main3--top">
+					<h1>
+						<c:out value="${myPage.getUserNickname()}" />
+						님에게 온 질문들
+					</h1>
+				</div>
+				<!-- 비동기로 답변완료/답변대기  -->
+				<div class="answer-btn-group">
+					<ul class="answer-btn-ul">
+						<li class="answer-btn active">답변대기</li>
+						<li class="answer-btn">답변완료</li>
+					</ul>
+					<ul>
+						<!-- 식고수질문게시판으로 이동 -->
+						<c:if test="${sessionScope.userNumber !=  myPage.getUserNumber()}">
+							<!--  -->
+							<li class="question-btn"><a
+								href="${pageContext.request.contextPath}/question/questionWrite.qs?gosuNumber=${myPage.getGosuNumber()}">식고수에게
+									물어보기</a></li>
+						</c:if>
+					</ul>
+				</div>
+				<!-- 질문읽기 페이지로 이동 -->
+				<div class="main3--bottom">
+					<ul class="story-list-ul question-list-ul">
+						<c:choose>
+							<c:when test="${not empty myPage.getQuestions()}">
+								<c:forEach var="questions" items="${myPage.getQuestions()}">
+									<li class="story-list question-list">
+									<a href="${pageContext.request.contextPath}/question/questionReadOk.qs?questionNumber=${questions.getQuestionNumber()}">
+											<div class="cover-div">
+												<img
+													src="${pageContext.request.contextPath}/questionUpload/${questions.getFileSystemName()}"
+													alt="" />
+											</div>
+											<p>${questions.getQuestionTitle()}</p>
+									</a></li>
+								</c:forEach>
+							</c:when>
+							<c:otherwise>
+								<div class="empty">등록된 질문이 없습니다.</div>
+							</c:otherwise>
+						</c:choose>
+					</ul>
+				</div>
+			</section>
 		</c:if>
 		<!-- 회원탈퇴 페이지로 이동 -->
 		<c:if test="${sessionScope.userNumber ==  myPage.getUserNumber()}">
@@ -258,7 +280,9 @@
 	</article>
 	<jsp:include
 		page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
-	<script>let gradeNumber = "${myPage.getGradeNumber()}";</script>
+	<script>
+		let gradeNumber = "${myPage.getGradeNumber()}";
+	</script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/myPage.js"></script>
 </body>

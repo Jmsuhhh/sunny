@@ -2,6 +2,7 @@ package com.sunny.app.my.page.dto;
 
 import java.util.List;
 
+import com.sunny.app.question.vo.QuestionVO;
 import com.sunny.app.story.file.vo.StoryFileVO;
 import com.sunny.app.user.file.dto.UserFileDTO;
 import com.sunny.app.user.file.vo.UserFileVO;
@@ -15,7 +16,10 @@ public class MyPageDTO {
 	private int followerCnt;
 	private int followingCnt;
 	private int storyCnt;
+	private int gosuNumber;
 	private List<StoryFileVO> storyFiles;
+	private List<QuestionVO> questions;
+//	questionList를 받아와야하지않을까?
 
 	public MyPageDTO() {}
 
@@ -92,6 +96,34 @@ public class MyPageDTO {
 		this.storyFiles = storyFiles;
 	}
 
+	public List<QuestionVO> getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(List<QuestionVO> questions) {
+		this.questions = questions;
+	}
+
+	
+	public int getGosuNumber() {
+		return gosuNumber;
+	}
+
+	public void setGosuNumber(int gosuNumber) {
+		this.gosuNumber = gosuNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "MyPageDTO [userNumber=" + userNumber + ", userNickname=" + userNickname + ", userComment=" + userComment
+				+ ", gradeNumber=" + gradeNumber + ", userFile=" + userFile + ", followerCnt=" + followerCnt
+				+ ", followingCnt=" + followingCnt + ", storyCnt=" + storyCnt + ", gosuNumber=" + gosuNumber
+				+ ", storyFiles=" + storyFiles + ", questions=" + questions + "]";
+	}
+
+
+	
+	
 
 	
 }

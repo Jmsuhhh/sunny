@@ -9,7 +9,9 @@ import javax.servlet.http.HttpSession;
 
 import com.sunny.app.Execute;
 import com.sunny.app.follow.dao.FollowDAO;
+import com.sunny.app.gosu.dao.GosuDAO;
 import com.sunny.app.my.page.dto.MyPageDTO;
+import com.sunny.app.question.dao.QuestionDAO;
 import com.sunny.app.story.file.vo.StoryFileVO;
 import com.sunny.app.user.dao.UserDAO;
 import com.sunny.app.user.file.dao.UserFileDAO;
@@ -26,6 +28,8 @@ public class MyPageOkController implements Execute {
 		FollowDAO followDAO = new FollowDAO();
 		UserFileDAO userFileDAO = new UserFileDAO();
 		StoryFileVO storyFileVO = new StoryFileVO();
+		GosuDAO gosuDAO = new GosuDAO();
+		QuestionDAO questionDAO = new QuestionDAO();
 		
 		HttpSession session = req.getSession();
 		MyPageDTO myPageDTO = new MyPageDTO();
@@ -67,9 +71,9 @@ public class MyPageOkController implements Execute {
 
 //		만약 gradeNumber가 500이면 GosuNumber로 questionList를 받아온다
 		if(userVO.getGradeNumber()==500) {
-//			questionNumber, fileSystemName(커버사진), questionTitle, questionStatus 받아와야함
-//			maPageDTO에 List<Question> questions 를 추가해야함?
-//			jsp로 보내면 questionStatus에 따라 비동기로 띄워줌
+			int gosuNumber = gosuDAO.getGosuNumber(userNumber);
+			myPageDTO.setGosuNumber(gosuNumber);
+			myPageDTO.setQuestions(questionDAO.getMypageList(gosuNumber));
 		}
 		
 		req.setAttribute("myPage", myPageDTO);
