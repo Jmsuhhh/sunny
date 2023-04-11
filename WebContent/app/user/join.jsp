@@ -148,9 +148,10 @@
             <div class="input-text">
               연락처</div> <br>
             <input type="tel" placeholder="010-1234-5678" name="userPhone" maxlength="13" required>
+            <span class="check-msg" id="phone-msg"></span>
             <br><br><br>
             <div class="input-text">이메일</div> <br>
-            <input type="email" name="userEmail" placeholder="aa123@naver.com" required>
+            <input type="email" name="userEmail" placeholder="aa123@naver.com" required onblur="validateEmail()">
             <span class="check-msg" id="check-email-msg"></span>
             <br><br><br>
             <div class="input-text">
