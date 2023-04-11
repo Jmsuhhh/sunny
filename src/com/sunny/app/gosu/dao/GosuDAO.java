@@ -28,7 +28,5 @@ public class GosuDAO {
 	public int getTotal() {
 		return sqlSession.selectOne("gosu.getTotal");
 	}
-	
-	
 
 }

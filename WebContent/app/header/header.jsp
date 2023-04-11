@@ -28,7 +28,7 @@
 			</div>
 			<div class="header1--bottom">
 				<!-- 로고 누르면 홈으로 경로처리 -->
-				<a href="#">
+				<a href="${pageContext.request.contextPath}/app/main/main2.jsp">
 					<div class="header1-logo">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                 			<path
@@ -46,11 +46,11 @@
 					<ul class="header2-menu-list-ul">
 						<!-- 메뉴바 경로처리 -->
 						<li class="header2-menu-list">
-							<a href="${pageContext.request.contextPath}/app/main/main.jsp" class="header-active">홈</a></li>
+							<a href="${pageContext.request.contextPath}/app/main/main2.jsp" class="header-active">홈</a></li>
 						<li class="header2-menu-list">
-							<a href="${pageContext.request.contextPath}/app/story/storyList.jsp">스토리</a></li>
+							<a href="${pageContext.request.contextPath}/story/storyListOk.st">스토리</a></li>
 						<li class="header2-menu-list">
-							<a href="${pageContext.request.contextPath}/app/question/questionList.jsp">식고수에게 물어보기</a></li>
+							<a href="${pageContext.request.contextPath}/gosu/searchOk.gu">식고수에게 물어보기</a></li>
 						<li class="header2-menu-list">
 							<a href="${pageContext.request.contextPath}/app/algorithm/index.jsp">반려식물 찾기</a></li>
 						<li class="header2-menu-list">
@@ -76,7 +76,5 @@
 			</div>
 		</section>
 	</header>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/js/header.js"></script>
 </body>
 </html>

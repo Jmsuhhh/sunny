@@ -65,6 +65,13 @@ public class MyPageOkController implements Execute {
 			e.printStackTrace();
 		}
 
+//		만약 gradeNumber가 500이면 GosuNumber로 questionList를 받아온다
+		if(userVO.getGradeNumber()==500) {
+//			questionNumber, fileSystemName(커버사진), questionTitle, questionStatus 받아와야함
+//			maPageDTO에 List<Question> questions 를 추가해야함?
+//			jsp로 보내면 questionStatus에 따라 비동기로 띄워줌
+		}
+		
 		req.setAttribute("myPage", myPageDTO);
 		
 		req.getRequestDispatcher("/app/user/myPage.jsp").forward(req, resp);
