@@ -50,12 +50,19 @@
 		where s.story_number = #{storyNumber};
 	</select>
 
-
-
 	<update id="updateReadCount" parameterType="_int">
 		update tbl_story
 		set
 		story_viewcnt = story_viewcnt + 1
 		where story_number = #{storyNumber}
 	</update>
+	
+	
+	<!-- 메인페이지 최신순 6개만 조회 -->
+	<select id="selectMainList" resultType="StoryFileVO" >
+		select story_number, story_title, user_number, file_system_name 
+		from tbl_story ts 
+		order by last_update desc limit 0, 6
+	</select>
+	
 </mapper>

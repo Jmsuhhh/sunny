@@ -24,6 +24,21 @@
 	<select id="getTotal" resultType="_int">
 		select count(user_number) from tbl_user
 	</select>
-	
+
+	<!-- 고수 질문많은순으로 1명 받아오기 -->
+	<!-- <select id="selectGosuMain" resultType="GosuVO">
+		select count(tq.question_number), tgf.gosu_number, tf.field_name, tu.user_nickname, tu.user_number, tuf.file_system_name
+		from tbl_gosu_field tgf 
+		join tbl_gosu tg on tgf.gosu_number = tg.gosu_number 
+		join tbl_field tf on tgf.field_number = tf.field_number 
+		left join tbl_question tq on tg.gosu_number = tq.gosu_number 
+		join tbl_user tu on tg.user_number = tu.user_number 
+		left join tbl_user_file tuf on tu.user_number = tuf.user_number 
+		where tu.grade_number = 500
+		group by tgf.gosu_number, tf.field_name, tu.user_nickname, tu.user_number, tuf.file_system_name
+		order by count(tq.question_number) desc
+		limit 1
+</select> -->
+
 
 </mapper>

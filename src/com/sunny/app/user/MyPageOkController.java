@@ -49,21 +49,29 @@ public class MyPageOkController implements Execute {
 		myPageDTO.setUserComment(userVO.getUserComment());
 		myPageDTO.setGradeNumber(userVO.getGradeNumber());
 		myPageDTO.setUserNickname(userVO.getUserNickname());
-
+		
+		System.out.println(userVO.getGradeNumber());
 //		프로필사진이 없으면 userFile에 기본로고를 넣어준다. > c:choose로 처리
 		myPageDTO.setUserFile(userFileDAO.selectFile(userNumber));
 		myPageDTO.setFollowerCnt(followDAO.selectFollowerCnt(userNumber));
 		myPageDTO.setFollowingCnt(followDAO.selectFollowingCnt(userNumber));
 //		내가 쓴 스토리 리스트 받아오기
+		System.out.println(userDAO.myStoryList(userNumber));
 		
 		try {
 			myPageDTO.setStoryCnt(userDAO.myStoryCnt(userNumber));
 			myPageDTO.setStoryFiles(userDAO.myStoryList(userNumber));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
+//		만약 gradeNumber가 500이면 GosuNumber로 questionList를 받아온다
+		if(userVO.getGradeNumber()==500) {
+//			questionNumber, fileSystemName(커버사진), questionTitle, questionStatus 받아와야함
+//			maPageDTO에 List<Question> questions 를 추가해야함?
+//			jsp로 보내면 questionStatus에 따라 비동기로 띄워줌
+		}
+		
 		req.setAttribute("myPage", myPageDTO);
 		
 		req.getRequestDispatcher("/app/user/myPage.jsp").forward(req, resp);
