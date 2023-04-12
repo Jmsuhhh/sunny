@@ -26,7 +26,7 @@
   <div class="container">
     <div class="nav">
       <div class="menu">
-        <a href="">홈</a>
+        <a href="/main/mainOk.ma">홈</a>
         <a href="/user/join.us">회원가입</a>
       </div>
     </div>
@@ -45,7 +45,7 @@
         </div>
       </div>
 
-      <form action="${pageContext.request.contextPath}/find/findPw.fp" method="POST">
+      <form action="${pageContext.request.contextPath}/find/findPwOk.fp" method="POST">
       <div class="whole-container">
         <div class="question-container">
           <h2>비밀번호 찾기</h2>
