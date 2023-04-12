@@ -21,8 +21,21 @@ public class StoryReplyFrontController extends HttpServlet{
 
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
+		System.out.println(target);
 	
 			switch(target) {
+			case "/storyReply/storyReplyListOk.sr":
+				new StoryReplyListOkController().execute(req, resp);
+				break;
+			case "/storyReply/storyReplyWriteOk.sr":
+				new StoryReplyWriteOkController().execute(req, resp);
+				break;
+			case "/storyReply/storyReplyDeleteOk.sr":
+				new StoryReplyDeleteOkController().execute(req, resp);
+				break;
+			case "/storyReply/storyReplyUpdateOk.sr":
+				new StoryReplyUpdateOkController().execute(req, resp);
+				break;
 		}
 	}
 }
