@@ -26,7 +26,7 @@
   <div class="container">
     <div class="nav">
       <div class="menu">
-        <a href="">홈</a>
+        <a href="/main/mainOk.ma">홈</a>
         <a href="/user/join.us">회원가입</a>
       </div>
     </div>
@@ -49,7 +49,7 @@
         <h2>볕 들 무렵에 오신것을 환영합니다.</h2>
         <div class="subtitle">새로운 아이디는 ${param.userId}입니다.</div>
         <form action="${pageContext.request.contextPath}/user/joinOk.us">
-          <button type="submit" class="main-button">메인으로 가기</button>
+          <button type="button" class="main-button" onclick="location.href='/main/mainOk.ma'">메인으로 가기</button>
           <button type="button" class="login-button" onclick="location.href='/user/login.us'">로그인하러 가기</button>
         </form>
 
