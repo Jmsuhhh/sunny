@@ -9,7 +9,9 @@ import javax.servlet.http.HttpSession;
 
 import com.sunny.app.Execute;
 import com.sunny.app.follow.dao.FollowDAO;
+import com.sunny.app.gosu.dao.GosuDAO;
 import com.sunny.app.my.page.dto.MyPageDTO;
+import com.sunny.app.question.dao.QuestionDAO;
 import com.sunny.app.story.file.vo.StoryFileVO;
 import com.sunny.app.user.dao.UserDAO;
 import com.sunny.app.user.file.dao.UserFileDAO;
@@ -26,6 +28,8 @@ public class MyPageOkController implements Execute {
 		FollowDAO followDAO = new FollowDAO();
 		UserFileDAO userFileDAO = new UserFileDAO();
 		StoryFileVO storyFileVO = new StoryFileVO();
+		GosuDAO gosuDAO = new GosuDAO();
+		QuestionDAO questionDAO = new QuestionDAO();
 		
 		HttpSession session = req.getSession();
 		MyPageDTO myPageDTO = new MyPageDTO();
@@ -49,21 +53,29 @@ public class MyPageOkController implements Execute {
 		myPageDTO.setUserComment(userVO.getUserComment());
 		myPageDTO.setGradeNumber(userVO.getGradeNumber());
 		myPageDTO.setUserNickname(userVO.getUserNickname());
-
+		
+		System.out.println(userVO.getGradeNumber());
 //		프로필사진이 없으면 userFile에 기본로고를 넣어준다. > c:choose로 처리
 		myPageDTO.setUserFile(userFileDAO.selectFile(userNumber));
 		myPageDTO.setFollowerCnt(followDAO.selectFollowerCnt(userNumber));
 		myPageDTO.setFollowingCnt(followDAO.selectFollowingCnt(userNumber));
 //		내가 쓴 스토리 리스트 받아오기
+		System.out.println(userDAO.myStoryList(userNumber));
 		
 		try {
 			myPageDTO.setStoryCnt(userDAO.myStoryCnt(userNumber));
 			myPageDTO.setStoryFiles(userDAO.myStoryList(userNumber));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
+//		만약 gradeNumber가 500이면 GosuNumber로 questionList를 받아온다
+		if(userVO.getGradeNumber()==500) {
+			int gosuNumber = gosuDAO.getGosuNumber(userNumber);
+			myPageDTO.setGosuNumber(gosuNumber);
+			myPageDTO.setQuestions(questionDAO.getMypageList(gosuNumber));
+		}
+		
 		req.setAttribute("myPage", myPageDTO);
 		
 		req.getRequestDispatcher("/app/user/myPage.jsp").forward(req, resp);

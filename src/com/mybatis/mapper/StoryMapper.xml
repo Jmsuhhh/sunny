@@ -50,12 +50,22 @@
 		where s.story_number = #{storyNumber};
 	</select>
 
-
-
 	<update id="updateReadCount" parameterType="_int">
 		update tbl_story
 		set
 		story_viewcnt = story_viewcnt + 1
 		where story_number = #{storyNumber}
 	</update>
+	
+	
+	<!-- 메인페이지 최신순 6개만 조회 -->
+	<select id="selectMainList" resultType="StoryListVO" >
+		select ts.story_number, ts.story_title, ts.file_system_name,ts.user_number, tu.user_nickname, tuf.file_system_name as user_profile_Image
+		from tbl_story ts 
+		left join tbl_user_file tuf on ts.user_number = tuf.user_number 
+		left join tbl_user tu on ts.user_number = tu.user_number 
+		order by last_update desc
+		limit 0,6
+	</select>
+	
 </mapper>

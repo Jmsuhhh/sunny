@@ -38,7 +38,7 @@
       height: 57px;
     }
 
-    .searchtext {
+    .searchText {
       width: 164px;
       height: 27px;
       background-color: #f2f2f2;
@@ -50,7 +50,7 @@
       position: relative;
     }
     
-  .s-btn {
+  .headsearch>button {
     position: absolute;
     cursor : pointer;
  	color: #fff;
@@ -157,10 +157,10 @@
       color:#808080 ; 
     }
 
-    .container > button {
+    .s-btn {
         background-color: #009a3e;
         color: #fff;
-        width: 65px;
+        width: 45px;
         height: 23px;
         border-radius: 4px;
         border: none;
@@ -193,38 +193,4 @@
   border-radius: 4px;
   border: none;
 }
-
-/* 123 이동 */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px 0 50px 0;
-  }
-  
-  .pagination > ul {
-    display: flex;
-    list-style: none;
-  }
-  
-  .pagination a {
-    color: #b3b3b3;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
-    margin: 0 5px;
-    border-radius: 5px;
-    border: none;
-  }
-  
-  .pagination a:hover {
-    color: #b3b3b3;
-  }
-  
-  .pagination .active {
-    color: #009a3e;
-  }
-  
-
-
 
