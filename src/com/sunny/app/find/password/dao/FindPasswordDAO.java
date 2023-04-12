@@ -22,6 +22,7 @@ public class FindPasswordDAO {
 	
 	public void updatePassword(UserDTO userDTO) {
 		sqlSession.insert("findPassword.updatePassword", userDTO);
+		System.out.println("updatePassword메서드");
 	}
 	
 	
