@@ -26,4 +26,8 @@ public class GosuDAO {
 		return sqlSession.selectOne("gosu.getTotal");
 	}
 
+//	마이페이지에서 필요한 고수Number뽑아오기
+	public int getGosuNumber(int userNumber) {
+		return sqlSession.selectOne("gosu.getGosuNumber", userNumber);
+	}
 }

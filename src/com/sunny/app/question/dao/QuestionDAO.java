@@ -53,6 +53,10 @@ public class QuestionDAO {
 		sqlSession.update("question.updateReadCount", questionNumber);
 	}
 	
+//	나에게온 질문리스트 뽑기
+	public List<QuestionVO> getMypageList(int gosuNumber) {
+		return sqlSession.selectList("question.getMypageList", gosuNumber);
+	}
 }
 
 
