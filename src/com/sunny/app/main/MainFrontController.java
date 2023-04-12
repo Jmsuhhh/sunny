@@ -1,4 +1,4 @@
-package com.sunny.app.question.reply;
+package com.sunny.app.main;
 
 import java.io.IOException;
 
@@ -7,7 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class QuestionReplyFrontController extends HttpServlet{
+import com.sunny.app.story.StoryListOkController;
+import com.sunny.app.user.MyPageController;
+
+public class MainFrontController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -21,14 +24,13 @@ public class QuestionReplyFrontController extends HttpServlet{
 
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
-	
-			switch(target) {
-			case "/questionreply/questionreplyListOk.qr":
-		         new QuestionReplyListOkController().execute(req, resp);
-		         break;
-			case "/questionreply/questionreplyWriteOk.qr":
-				new QuestionReplyWriteOkController().execute(req, resp);
-				break;
+		System.out.println(target);
+		
+		switch (target) {
+		case "/main/mainOk.ma":
+//			MainOkController로 변경해야함
+			new MainOkController().execute(req, resp);
+			break;
 		}
 	}
 }

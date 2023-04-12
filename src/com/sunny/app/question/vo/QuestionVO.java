@@ -1,6 +1,9 @@
 package com.sunny.app.question.vo;
 
 import java.util.Date;
+import java.util.List;
+
+import com.sunny.app.question.file.dto.QuestionFileDTO;
 
 //question_number //int unsigned auto_increment 
 //gosu_number (fk) //int
@@ -22,7 +25,8 @@ public class QuestionVO {
 	private int questionViewCnt;
 	private int questionStatus;
 	private Date lastUpdate;
-	private String coverImg;
+	private String userNickName;
+	private String fileSystemName;
 	
 	public QuestionVO() {}
 
@@ -98,12 +102,20 @@ public class QuestionVO {
 		this.lastUpdate = lastUpdate;
 	}
 
-	public String getCoverImg() {
-		return coverImg;
+	public String getUserNickName() {
+		return userNickName;
 	}
 
-	public void setCoverImg(String coverImg) {
-		this.coverImg = coverImg;
+	public void setUserNickName(String userNickName) {
+		this.userNickName = userNickName;
+	}
+
+	public String getFileSystemName() {
+		return fileSystemName;
+	}
+
+	public void setFileSystemName(String fileSystemName) {
+		this.fileSystemName = fileSystemName;
 	}
 
 	@Override
@@ -111,17 +123,10 @@ public class QuestionVO {
 		return "QuestionVO [questionNumber=" + questionNumber + ", gosuNumber=" + gosuNumber + ", userNumber="
 				+ userNumber + ", questionTitle=" + questionTitle + ", questionContent=" + questionContent
 				+ ", questionDate=" + questionDate + ", questionViewCnt=" + questionViewCnt + ", questionStatus="
-				+ questionStatus + ", lastUpdate=" + lastUpdate + ", coverImg=" + coverImg + ", getQuestionNumber()="
-				+ getQuestionNumber() + ", getGosuNumber()=" + getGosuNumber() + ", getUserNumber()=" + getUserNumber()
-				+ ", getQuestionTitle()=" + getQuestionTitle() + ", getQuestionContent()=" + getQuestionContent()
-				+ ", getQuestionDate()=" + getQuestionDate() + ", getQuestionViewCnt()=" + getQuestionViewCnt()
-				+ ", getQuestionStatus()=" + getQuestionStatus() + ", getLastUpdate()=" + getLastUpdate()
-				+ ", getCoverImg()=" + getCoverImg() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+				+ questionStatus + ", lastUpdate=" + lastUpdate + ", userNickName=" + userNickName + ", fileSystemName="
+				+ fileSystemName + "]";
 	}
-	
-	
-	
+
 }
 
 

@@ -29,6 +29,7 @@
 		<typeAlias type="com.sunny.app.question.dto.QuestionDTO" alias ="QuestionDTO"/>
 		<typeAlias type="com.sunny.app.question.file.dto.QuestionFileDTO" alias ="QuestionFileDTO"/>
 		<typeAlias type="com.sunny.app.question.reply.dto.QuestionReplyDTO" alias ="QuestionReplyDTO"/>
+		<typeAlias type="com.sunny.app.question.reply.vo.QuestionReplyVO" alias ="QuestionReplyVO"/>
 		<typeAlias type="com.sunny.app.algorithm.dto.AlgorithmDTO" alias ="AlgorithmDTO"/>
 		<typeAlias type="com.sunny.app.plant.dto.PlantDTO" alias ="PlantDTO"/>
 		<typeAlias type="com.sunny.app.plant.file.dto.PlantFileDTO" alias ="PlantFileDTO"/>
@@ -46,6 +47,9 @@
 		<typeAlias type="com.sunny.app.admin.vo.GosuApplicationVO" alias ="GosuApplicationVO"/>
 		<typeAlias type="com.sunny.app.admin.vo.GosuApplicationReadVO" alias ="GosuApplicationReadVO"/>
 		<typeAlias type="com.sunny.app.admin.vo.HeaderInfoVO" alias ="HeaderInfoVO"/>
+		<typeAlias type="com.sunny.app.gosu.vo.GosuVO" alias ="GosuVO"/>
+		<typeAlias type="com.sunny.app.question.vo.QuestionVO" alias ="QuestionVO"/>
+		<typeAlias type="com.sunny.app.gosu.vo.GosuVO" alias ="GosuVO"/>
 
 
 	</typeAliases>
