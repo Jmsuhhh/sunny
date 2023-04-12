@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
+import com.sunny.app.gosu.dto.GosuDTO;
 import com.sunny.app.user.vo.UserVO;
 
 public class GosuDAO {
@@ -29,6 +30,9 @@ public class GosuDAO {
 		return sqlSession.selectOne("gosu.getTotal");
 	}
 	
+	public void insert(GosuDTO gosuDTO) {
+		sqlSession.insert("gosu.insert", gosuDTO);
+	}
 	
 
 }

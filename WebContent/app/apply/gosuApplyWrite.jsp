@@ -23,14 +23,14 @@
     <div class="gosu-apply">
       <div class="apply-container">
         <!-- form action 작성 -->
-        <form action="#" id="write-form" method="post" enctype="multipart/form-data">
+        <form action="${pageContext.request.contextPath }/gosuApply/gosuApplyWriteOk.ga" id="write-form" method="post" enctype="multipart/form-data">
           <h1 class="title">
             <span class="story-icon"></span> 식고수 신청
             <span class="story-txt">고수가 된다면 인기를 얻을 수 있습니다!</span>
           </h1>
           <!-- 제목입력 -->
           <div class="apply-title">
-            <input type="text" id="title" name="storyTitle" placeholder="* 식고수 신청 제목을 입력하세요. " required />
+            <input type="text" id="title" name="applyTitle" placeholder="* 식고수 신청 제목을 입력하세요. " required />
           </div>
           <!-- 고수분야 선택 -->
           <div class="gosu-field"><h1 class="mini-title">고수 분야 선택</h1>
@@ -54,12 +54,12 @@
           <div class="Content-box">
             <!-- 서머노트 -->
             <div class="summernote-box">
-              <div id="summernote" name="storyContent"></div>
+              <textarea id="summernote" name="applyContent"></textarea>
             </div>
             <!-- 첨부파일 -->
             <div class="upload-file-container">
               <div class="upload-file">
-                <input type="file" id="file" name="boardFile" accept=".jpg, .jpeg, .png" multiple/>
+                <input type="file" id="file" name="applyFile" accept=".jpg, .jpeg, .png" multiple/>
                 <div class="upload-box">
                   <div class="upload-text">
                     <div class="upload-icon">
@@ -86,7 +86,6 @@
       </div>
     </div>
     <jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
-   <!--  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
     <script src="../../assets/js/gosuApplyWrite.js"></script>
   </body>
 </html>

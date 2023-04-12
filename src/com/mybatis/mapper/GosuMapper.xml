@@ -22,5 +22,10 @@
 	<select id="getTotal" resultType="_int">
 		select count(user_number) from tbl_user
 	</select>
+	
+	<insert id="insert" parameterType="GosuDTO">
+		insert into tbl_gosu(gosu_plan, user_number)
+		values(#(gosuPlan), #(userNumber));
+	</insert>
 
 </mapper>

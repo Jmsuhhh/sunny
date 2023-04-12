@@ -2,5 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="gosuApply">
+	<insert id="insert" parameterType="gosuApplyDTO">
+		insert into tbl_gosu_apply(apply_content, apply_date, user_number, apply_title)
+		values(#{applyContent}, now(), #{userNumber}, #{applyTitle});
+	</insert>
 
+	<select id="getSequence" resultType="_int">
+		select last_insert_id()
+	</select>
 </mapper>

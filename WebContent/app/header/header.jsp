@@ -58,7 +58,7 @@
         </div>
       </section>
     </header>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="${pageContext.request.contextPath}/assets/js/header.js"></script>
+<%--     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/js/header.js"></script> --%>
   </body>
 </html>
