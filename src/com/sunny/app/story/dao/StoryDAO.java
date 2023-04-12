@@ -27,12 +27,7 @@ public class StoryDAO {
 	}
 	
 	public void insert(StoryDTO storyDTO) {
-	    int result = sqlSession.insert("story.insert", storyDTO);
-	    if (result > 0) {
-	        sqlSession.commit();
-	    } else {
-	        System.out.println("Insert failed");
-	    }
+	    sqlSession.insert("story.insert", storyDTO);
 	}
 
 	public int getSequence() {

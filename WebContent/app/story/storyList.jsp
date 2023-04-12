@@ -46,7 +46,7 @@
                 <c:forEach var="story" items="${storyList}">
                     <li class="listLi">
                         <div class="top tBox">
-                            <a href="${pageContext.request.contextPath}/app/user/myPage.jsp">
+                            <a href="${pageContext.request.contextPath}/app/user/myPage.jsp  <%-- /user/myPageOk.us?=userNumber=${story.getUserNumber()} --%>">
                                 <div class="p1 proimg">
                                     <img src="${story.getUserProfileImage()}" alt="">
                                 </div>
