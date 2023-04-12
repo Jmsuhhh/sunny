@@ -45,7 +45,7 @@
         </div>
       </div>
 
-      <form action="${pageContext.request.contextPath}/find/findPwOk.fp" method="POST">
+      <form action="${pageContext.request.contextPath}/find/findPw.fp" method="POST">
       <div class="whole-container">
         <div class="question-container">
           <h2>비밀번호 찾기</h2>
@@ -78,12 +78,14 @@
             <div class="title-container1">
               <div class="title2">
                 새로운 비밀번호</div>
-              <input type="password" name="newPassword" required>
+              <input type="password" id="newPassword" name="newPassword" required>
               <div class="alert">※ 공백 없는 영문숫자 포함 8-15자</div>
+              <span class="check-msg" id="check-pw-msg"></span>
             </div>
             <div class="title-container2">
               <div class="title3">비밀번호 확인</div>
-              <input type="password" name="newPassword" class="inputPw" required>
+              <input type="password" name="confirmPassword" class="inputPw" required>
+              <span class="password-error"></span>
             </div>
           </div>
 
