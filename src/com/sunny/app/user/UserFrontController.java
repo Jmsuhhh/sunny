@@ -35,6 +35,10 @@ public class UserFrontController extends HttpServlet{
 			System.out.println("!!!");
 			new MyPageOkController().execute(req, resp);
 			break;
+		case "/user/myPageQuestionList.us" :
+			System.out.println("고수인사람");
+			new myPageQuestionListController().execute(req, resp);
+			break;
 		case "/user/userCommentOk.us":
 			new UserCommentController().execute(req, resp);
 			break;

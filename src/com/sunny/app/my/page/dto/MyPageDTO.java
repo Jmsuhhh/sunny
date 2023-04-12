@@ -18,6 +18,7 @@ public class MyPageDTO {
 	private int storyCnt;
 	private int gosuNumber;
 	private List<StoryFileVO> storyFiles;
+//	지운다
 	private List<QuestionVO> questions;
 //	questionList를 받아와야하지않을까?
 

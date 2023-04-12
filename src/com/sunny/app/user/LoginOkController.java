@@ -30,7 +30,8 @@ public class LoginOkController implements Execute {
 		try {
 			userNumber = userDAO.login(userDTO);
 			System.out.println(userNumber);
-			path = "/app/header/header.jsp";
+			path = "/main/mainOk.ma";
+//			로그인을 했을 때 그 이전페이지로 ... 이동하는 path...
 			session.setAttribute("userNumber", userNumber);
 		} catch (NullPointerException e) {
 			System.out.println("null!!");

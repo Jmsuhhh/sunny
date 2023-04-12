@@ -28,6 +28,7 @@ public class MyPageOkController implements Execute {
 		FollowDAO followDAO = new FollowDAO();
 		UserFileDAO userFileDAO = new UserFileDAO();
 		StoryFileVO storyFileVO = new StoryFileVO();
+		
 		GosuDAO gosuDAO = new GosuDAO();
 		QuestionDAO questionDAO = new QuestionDAO();
 		
@@ -68,7 +69,7 @@ public class MyPageOkController implements Execute {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+//		이 밑으로는 myPageQuestionListController 에서 처리하는걸로 한다.
 //		만약 gradeNumber가 500이면 GosuNumber로 questionList를 받아온다
 		if(userVO.getGradeNumber()==500) {
 			int gosuNumber = gosuDAO.getGosuNumber(userNumber);

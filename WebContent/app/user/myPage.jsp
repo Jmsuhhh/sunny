@@ -196,8 +196,8 @@
 				<!-- 비동기로 답변완료/답변대기  -->
 				<div class="answer-btn-group">
 					<ul class="answer-btn-ul">
-						<li class="answer-btn active">답변대기</li>
-						<li class="answer-btn">답변완료</li>
+						<li class="answer-btn active" data-questionStatus=0>답변대기</li>
+						<li class="answer-btn" data-questionStatus=1>답변완료</li>
 					</ul>
 					<ul>
 						<!-- 식고수질문게시판으로 이동 -->
