@@ -26,7 +26,7 @@
   <div class="container">
     <div class="nav">
       <div class="menu">
-        <a href="">홈</a>
+        <a href="/main/mainOk.ma">홈</a>
         <a href="/user/join.us">회원가입</a>
       </div>
     </div>
@@ -45,17 +45,17 @@
         </div>
       </div>
 
-      <form action="${pageContext.request.contextPath}/find/findPw.fp" method="POST">
+      <form action="${pageContext.request.contextPath}/find/findPwOk.fp" method="POST">
       <div class="whole-container">
         <div class="question-container">
           <h2>비밀번호 찾기</h2>
           <div class="question">
           <div class="id-input">
           	<div class="title1">아이디</div><br>
-          	<input type="text" required>
+          	<input type="text" id="userId" name="userId" required>
           	</div>
             <div class="title1">비밀번호 찾기 질문</div> <br>
-            <select name="" id="select" required>
+            <select name="findQuestionNumber" id="select" required>
               <!-- <option value="-1" selected>--선택--</option> -->
               <option value="1">가장 좋아하는 색깔은?</option>
               <option value="2">가장 좋아하는 계절은?</option>
@@ -64,7 +64,7 @@
           </div>
           <div class="answer">
             <div class="title1">비밀번호 찾기 답변</div> <br>
-            <input type="text" required>
+            <input type="text" name="findPasswordAnswer" required>
           </div>
           <div class="alert">※회원가입 시 선택한 '비밀번호 찾기 질문'에 대한 답변을 입력하세요</div>
 
@@ -78,12 +78,12 @@
             <div class="title-container1">
               <div class="title2">
                 새로운 비밀번호</div>
-              <input type="password" required>
+              <input type="password" name="newPassword" required>
               <div class="alert">※ 공백 없는 영문숫자 포함 8-15자</div>
             </div>
             <div class="title-container2">
               <div class="title3">비밀번호 확인</div>
-              <input type="password" class="inputPw" required>
+              <input type="password" name="newPassword" class="inputPw" required>
             </div>
           </div>
 

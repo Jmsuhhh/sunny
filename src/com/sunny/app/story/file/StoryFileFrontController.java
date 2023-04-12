@@ -24,7 +24,6 @@ public class StoryFileFrontController extends HttpServlet{
 	
 			switch(target) {
 			case "/storyFile/upload/sf":
-				new UploadController().execute(req,resp);
 				break;
 		}
 	}
