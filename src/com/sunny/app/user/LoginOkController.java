@@ -30,7 +30,7 @@ public class LoginOkController implements Execute {
 		try {
 			userNumber = userDAO.login(userDTO);
 			System.out.println(userNumber);
-			path = "/app/header/header.jsp";
+			path = "/main/mainOk.ma";
 			session.setAttribute("userNumber", userNumber);
 		} catch (NullPointerException e) {
 			System.out.println("null!!");
@@ -41,9 +41,9 @@ public class LoginOkController implements Execute {
 			e.printStackTrace();
 		}
 		
-		if(remember != null) {
+		if(remember != null && remember.equals("check")) {
 			Cookie cookie = new Cookie("userId", userId);
-			cookie.setMaxAge(60 * 60 * 24);
+			cookie.setMaxAge(60 * 60 * 24);	//쿠키 유효시간 1일(60초 * 60분 * 24시간)
 			resp.addCookie(cookie);
 		}
 		
