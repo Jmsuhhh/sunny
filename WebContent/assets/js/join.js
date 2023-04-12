@@ -225,3 +225,71 @@ $pwInput.on('blur', function(){
    }
 });
 
+
+/*약관동의 전체 체크,전체 해제*/
+
+$(document).ready(function() {
+  // 전체 동의 체크박스 클릭 시 약관 3개 모두 체크
+  $("input[value='전체 동의']").click(function() {
+    if($(this).prop("checked")) {
+      $("input[type='checkbox']").prop("checked", true);
+    } else {
+      $("input[type='checkbox']").prop("checked", false);
+    }
+  });
+  
+  // 개별 약관 동의 체크박스 클릭 시 전체 동의 체크박스 체크 여부 결정
+  $("input[type='checkbox']").click(function() {
+    var requiredChecked = $("input[type='checkbox'][required]:checked").length;
+    var optionalChecked = $("input[type='checkbox']:not([required]):checked").length;
+    
+    if(requiredChecked == 2 && optionalChecked == 1) {
+      $("input[value='전체 동의']").prop("checked", true);
+    } else if(requiredChecked < 2 || optionalChecked < 1) {
+      $("input[value='전체 동의']").prop("checked", false);
+    } 
+    
+    if($(this).attr("id") !== "allagree" && !$(this).prop("checked")) {
+      $("input[value='전체 동의']").prop("checked", false);
+    }
+  });
+});
+
+
+
+/*연락처 정규표현식*/
+
+const phoneInput = document.querySelector('input[name="userPhone"]');
+const phoneMsg = document.querySelector('#phone-msg');
+
+phoneInput.addEventListener('input', function() {
+  const regPhone = /^01([0|1|6|7|8|9])-([0-9]{3,4})-([0-9]{4})$/;
+  if (regPhone.test(phoneInput.value)) {
+    phoneMsg.classList.remove('error');
+    phoneMsg.textContent = '';
+  } else {
+    phoneMsg.classList.add('error');
+    phoneMsg.innerHTML = " -를 포함한 올바른 형식의 '휴대폰번호'를 입력해주세요.<br> ex.  010-1234-5678";
+  }
+});
+
+
+/*이메일 정규표현식*/
+
+function validateEmail() {
+  var emailInput = document.getElementsByName('userEmail')[0];
+  var emailMsg = document.getElementById('check-email-msg');
+  var regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+  if (!regEmail.test(emailInput.value)) {
+    emailMsg.style.display = 'block';
+    emailMsg.textContent = '올바른 이메일을 입력해주세요.';
+  } else {
+    emailMsg.style.display = 'none';
+  }
+}
+
+
+
+
+
