@@ -29,16 +29,13 @@ public class TestOneOkController implements Execute {
 		List<AlgorithmDTO> result = algorithmDAO.algorithmResult(algorithmDTO);
 
 		
+		
 		algorithmDTO.setSelectOne(req.getParameter("selectOne"));
 
 		String selectOne = req.getParameter("selectOne");
 
 
 		
-		
-		
-		// 처리 결과를 session에 저장합니다.
-		session.setAttribute("selectOne", selectOne);
 
 		// testOne.jsp로 selectOne 값을 전달합니다.
 		req.getRequestDispatcher("/app/algorithm/testOne.jsp").forward(req, resp);

@@ -22,15 +22,19 @@ public class TestFourOkController implements Execute {
 		HttpSession session = req.getSession();
 		List<AlgorithmDTO> result = algorithmDAO.algorithmResult(algorithmDTO);
 
-		algorithmDTO.setSelectFour(req.getParameter("selectFour"));
+		//request.getParameter로 selectTwo의 값 얻어오기
+		algorithmDTO.setSelectFour(req.getParameter("selectThree"));
+		
+		
+		System.out.println(req.getParameter("selectThree"));
+		
+		
+		//selectOne String타입으로 저장
+		String selectThree = req.getParameter("selectThree");
 
-		String selectFour = req.getParameter("selectFour");
-		System.out.println(req.getParameter("selectFour"));
 
-		// 받아온 값을 적절히 처리합니다.
-
-		// 처리 결과를 session에 저장합니다.
-		session.setAttribute("selectFour", selectFour);
+		// 처리 결과 selectOne 값을 session에 저장합니다.
+		session.setAttribute("selectThree", selectThree);
 
 		// testOne.jsp로 selectOne 값을 전달합니다.
 		req.getRequestDispatcher("/app/algorithm/testFour.jsp").forward(req, resp);

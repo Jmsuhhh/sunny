@@ -17,20 +17,24 @@ public class TestFiveOkController implements Execute{
 	 @Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		 
-		 AlgorithmDTO algorithmDTO = new AlgorithmDTO();
+		 	AlgorithmDTO algorithmDTO = new AlgorithmDTO();
 			AlgorithmDAO algorithmDAO = new AlgorithmDAO();
 			HttpSession session = req.getSession();
 			List<AlgorithmDTO> result = algorithmDAO.algorithmResult(algorithmDTO);
 
-			algorithmDTO.setSelectFive(req.getParameter("selectFive"));
+			//request.getParameter로 selectTwo의 값 얻어오기
+			algorithmDTO.setSelectFive(req.getParameter("selectFour"));
+			
+			
+			System.out.println(req.getParameter("selectFour"));
+			
+			
+			//selectOne String타입으로 저장
+			String selectFour = req.getParameter("selectFour");
 
-			String selectFive = req.getParameter("selectFive");
-			System.out.println(req.getParameter("selectFive"));
 
-			// 받아온 값을 적절히 처리합니다.
-
-			// 처리 결과를 session에 저장합니다.
-			session.setAttribute("selectFive", selectFive);
+			// 처리 결과 selectOne 값을 session에 저장합니다.
+			session.setAttribute("selectFour", selectFour);
 
 			// testOne.jsp로 selectOne 값을 전달합니다.
 			req.getRequestDispatcher("/app/algorithm/testFive.jsp").forward(req, resp);

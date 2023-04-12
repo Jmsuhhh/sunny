@@ -15,5 +15,10 @@
 		and a.select_five = #{selectFive}
 	</select>
 	
+<select id="selectPlant" parameterType="AlgorithmDTO" resultType="AlgorithmDTO">
+  select plant_name, plant_content, plant_img
+  from tbl_plant
+  where algorithm_result = #{algorithmResult}
+</select>
 
 </mapper>

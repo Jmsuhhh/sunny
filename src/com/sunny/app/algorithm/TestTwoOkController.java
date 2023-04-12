@@ -24,16 +24,19 @@ public class TestTwoOkController implements Execute{
 		HttpSession session = req.getSession();
 		List<AlgorithmDTO> result = algorithmDAO.algorithmResult(algorithmDTO);
 
+		
+		
+		//request.getParameter로 selectOne의 값 얻어오기
 		algorithmDTO.setSelectTwo(req.getParameter("selectOne"));
 
+		//selectOne String타입으로 저장
 		String selectOne = req.getParameter("selectOne");
 		System.out.println(req.getParameter("selectOne"));
 
-		// 받아온 값을 적절히 처리합니다.
 
-		// 처리 결과를 session에 저장합니다.
+		// 처리 결과 selectOne 값을 session에 저장합니다.
 		session.setAttribute("selectOne", selectOne);
-
+		
 		// testOne.jsp로 selectOne 값을 전달합니다.
 		req.getRequestDispatcher("/app/algorithm/testTwo.jsp").forward(req, resp);
 
