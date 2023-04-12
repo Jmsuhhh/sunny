@@ -283,6 +283,7 @@
 	<script>
 		let gradeNumber = "${myPage.getGradeNumber()}";
 		let contextPath = '${pageContext.request.contextPath}';
+		let userNumber = "${myPage.getUserNumber()}";
 	</script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/myPage.js"></script>

@@ -29,11 +29,22 @@ public class myPageQuestionListController implements Execute {
 		HttpSession session = req.getSession();
 		QuestionDAO questionDAO = new QuestionDAO();
 		GosuDAO gosuDAO = new GosuDAO();
+		int userNumber = 0;
+		int gosuNumber =0;
+		System.out.println("=======================");
+		System.out.println(req.getParameter("userNumber"));
+		System.out.println("=======================");
 		
-		int userNumber =(Integer) session.getAttribute("userNumber");
+		if(req.getParameter("userNumber") == null) {
+			userNumber = (Integer) session.getAttribute("userNumber");
+		}else {
+			userNumber = Integer.parseInt(req.getParameter("userNumber"));
+		}
+		
 		System.out.println(userNumber);
 
-		int gosuNumber = gosuDAO.getGosuNumber(userNumber);
+		gosuNumber = gosuDAO.getGosuNumber(userNumber);
+		
 		System.out.println(gosuNumber);
 		
 		int questionStatus = 0;

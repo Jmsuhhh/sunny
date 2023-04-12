@@ -140,26 +140,25 @@ $(".profile-introduce").on("click", ".modify-btn-done", function() {
 
 console.log(contextPath);
 
-$(".answer-btn").on("click", function() {
-	// console.log(this);
-	$(".answer-btn").removeClass("active");
-	$(this).toggleClass("active");
-});
 
 let $answerBtn = $('.answer-btn');
 let questionStatus = $answerBtn.data("questionstatus");
 
 
-if(gradeNumber=500){
-	questionAjax();
+
+if(gradeNumber==500){
+	questionAjax(questionStatus);
 	console.log("고수다!")
 }
 
-function questionAjax(){
+function questionAjax(status){
 	$.ajax({
 		url : '/user/myPageQuestionList.us',
 		type : 'get',
-		data : {questionStatus : questionStatus},
+		data : {
+			questionStatus : status,
+			userNumber : userNumber
+		},
 		dataType : 'json',
 		success : showQuestionList
 	});
@@ -190,5 +189,5 @@ $answerBtn.on("click", function() {
 	$answerBtn.removeClass("active");
 	$(this).toggleClass("active");
 	questionStatus = $(this).data("questionstatus");
-	questionAjax();
+	questionAjax(questionStatus);
 });
