@@ -237,4 +237,15 @@
     <url-pattern>*.ad</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>Main</servlet-name>
+  	<servlet-class>com.sunny.app.main.MainFrontController</servlet-class>
+  </servlet>
+  
+  	<servlet-mapping>
+	<servlet-name>Main</servlet-name>  	
+	<url-pattern>*.ma</url-pattern>
+  
+  	</servlet-mapping>
+  	
 </web-app>

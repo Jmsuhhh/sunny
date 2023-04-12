@@ -16,7 +16,7 @@ public class UserManageDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public List<UserManageVO> userInfo(Map<String, Integer> pageMap){
+	public List<UserManageVO> userInfo(Map<String, Object> pageMap){
 		System.out.println("userInfo메서드");
 		return sqlSession.selectList("admin.userInfo", pageMap);	
 	}
