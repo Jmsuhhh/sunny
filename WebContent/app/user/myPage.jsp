@@ -185,7 +185,7 @@
 		</section>
 
 		<!-- 식고수인경우 질문포스팅리스트띄워야함 -->
-		<c:if test="${myPage.getGradeNumber()==500}">
+	<c:if test="${myPage.getGradeNumber()==500}">
 			<section class="main3">
 				<div class="main3--top">
 					<h1>
@@ -212,7 +212,7 @@
 				<!-- 질문읽기 페이지로 이동 -->
 				<div class="main3--bottom">
 					<ul class="story-list-ul question-list-ul">
-						<c:choose>
+						<%-- <c:choose>
 							<c:when test="${not empty myPage.getQuestions()}">
 								<c:forEach var="questions" items="${myPage.getQuestions()}">
 									<li class="story-list question-list">
@@ -229,7 +229,7 @@
 							<c:otherwise>
 								<div class="empty">등록된 질문이 없습니다.</div>
 							</c:otherwise>
-						</c:choose>
+						</c:choose> --%>
 					</ul>
 				</div>
 			</section>
@@ -282,6 +282,7 @@
 		page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
 	<script>
 		let gradeNumber = "${myPage.getGradeNumber()}";
+		let contextPath = '${pageContext.request.contextPath}';
 	</script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/myPage.js"></script>

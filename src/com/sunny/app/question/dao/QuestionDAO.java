@@ -54,8 +54,8 @@ public class QuestionDAO {
 	}
 	
 //	나에게온 질문리스트 뽑기
-	public List<QuestionVO> getMypageList(int gosuNumber) {
-		return sqlSession.selectList("question.getMypageList", gosuNumber);
+	public List<QuestionVO> getMypageList(Map<String, Integer>gosuQ) {
+		return sqlSession.selectList("question.getMypageList", gosuQ);
 	}
 }
 

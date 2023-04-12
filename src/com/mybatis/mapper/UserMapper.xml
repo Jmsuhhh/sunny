@@ -54,7 +54,6 @@
 	order by last_update desc
 	</select>
 	
-	
 	<select id="myStoryCnt" parameterType="_int" resultType="_int">
 	select count(story_number) from tbl_story where user_number =#{userNumber}
 	</select>

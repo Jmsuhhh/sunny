@@ -56,10 +56,12 @@ public class MyPageOkController implements Execute {
 		myPageDTO.setUserNickname(userVO.getUserNickname());
 		
 		System.out.println(userVO.getGradeNumber());
+		
 //		프로필사진이 없으면 userFile에 기본로고를 넣어준다. > c:choose로 처리
 		myPageDTO.setUserFile(userFileDAO.selectFile(userNumber));
 		myPageDTO.setFollowerCnt(followDAO.selectFollowerCnt(userNumber));
 		myPageDTO.setFollowingCnt(followDAO.selectFollowingCnt(userNumber));
+		
 //		내가 쓴 스토리 리스트 받아오기
 		System.out.println(userDAO.myStoryList(userNumber));
 		
@@ -69,12 +71,11 @@ public class MyPageOkController implements Execute {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 //		이 밑으로는 myPageQuestionListController 에서 처리하는걸로 한다.
-//		만약 gradeNumber가 500이면 GosuNumber로 questionList를 받아온다
 		if(userVO.getGradeNumber()==500) {
 			int gosuNumber = gosuDAO.getGosuNumber(userNumber);
 			myPageDTO.setGosuNumber(gosuNumber);
-			myPageDTO.setQuestions(questionDAO.getMypageList(gosuNumber));
 		}
 		
 		req.setAttribute("myPage", myPageDTO);

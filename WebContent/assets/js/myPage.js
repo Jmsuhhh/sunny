@@ -136,9 +136,59 @@ $(".profile-introduce").on("click", ".modify-btn-done", function() {
 // ***식고수의마이페이지
 // 답변대기/답변완료 버튼 눌렀을 때
 // 리스트 비동기로 띄우기
+// gradeNumber = 500이면 실행해
+
+console.log(contextPath);
 
 $(".answer-btn").on("click", function() {
 	// console.log(this);
 	$(".answer-btn").removeClass("active");
 	$(this).toggleClass("active");
+});
+
+let $answerBtn = $('.answer-btn');
+let questionStatus = $answerBtn.data("questionstatus");
+
+
+if(gradeNumber=500){
+	questionAjax();
+	console.log("고수다!")
+}
+
+function questionAjax(){
+	$.ajax({
+		url : '/user/myPageQuestionList.us',
+		type : 'get',
+		data : {questionStatus : questionStatus},
+		dataType : 'json',
+		success : showQuestionList
+	});
+	console.log('ajax실행!');
+}
+
+function showQuestionList(questions){
+	let text = '';
+	questions.forEach(question =>{
+		text +=`
+									<li class="story-list question-list">
+										<a href="contextPath/question/questionReadOk.qs?questionNumber=${question.questionNumber}">
+											<div class="cover-div">
+												<img
+													src="contextPath/questionUpload/${question.fileSystemName}"
+													alt="" />
+											</div>
+											<p>${question.questionTitle}</p>
+										</a>
+									</li>
+		`
+	});
+	$('.question-list-ul').html(text);
+}
+
+$answerBtn.on("click", function() {
+	// console.log(this);
+	$answerBtn.removeClass("active");
+	$(this).toggleClass("active");
+	questionStatus = $(this).data("questionstatus");
+	questionAjax();
 });
