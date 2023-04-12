@@ -2,7 +2,7 @@
 // 식집사/식고수 gradeNumber에 따라 텍스트 바꿔주기
 console.log(gradeNumber);
 
-/*function showGrade(gradeNumber){
+function showGrade(){
 	let text ='';
 	if(gradeNumber==500 ){
 		text ='식고수';
@@ -12,7 +12,7 @@ console.log(gradeNumber);
 	$('.grade').text(text);
 	console.log(text);
 };
-showGrade();*/
+showGrade();
 
 // 회원등급모달창
 $(".grade-info").on("click", function() {

@@ -9,9 +9,7 @@ public class GosuVO {
 	private int gosuNumber;
 	private String fileSystemName;
 	
-	public GosuVO() {
-		// TODO Auto-generated constructor stub
-	}
+	public GosuVO() {	}
 
 	public int getUserNumber() {
 		return userNumber;

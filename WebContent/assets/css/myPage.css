@@ -187,6 +187,9 @@ li {
   justify-content: space-between;
   align-items: center;
 }
+.main3--bottom{
+	margin-top : 20px;
+}
 .write-story a {
   background-color: #009a3e;
   color: #f2f2f2;
@@ -206,12 +209,23 @@ li {
   height: 280px;
   margin-bottom: 20px;
   margin-right: 8px;
+  overflow : hidden;
+  border-radius : 5px;
+}
+.cover-div{
+	overflow : hidden;
+	height : 250px;
+	border-radius : 5px;
 }
 .story-list img {
   width: 380px;
   height: 250px;
   object-fit: cover;
   border-radius: 5px;
+}
+.cover-div>img:hover{
+  transform: scale(1.1,1.1);
+  transition : 0.5s ease-in-out;
 }
 .story-list p {
   color: #4d4d4d;
@@ -361,10 +375,10 @@ li {
 }
 
 .empty{
+	display : inline-block;
 	height : 300px;
 	width : 100% ;
-	background-color : yellow;
-	border : 1px solid black;
+	line-height : 300px;
 	text-align : center;
 	
 }
