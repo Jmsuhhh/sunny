@@ -71,4 +71,5 @@ public class UserDAO {
 	public int myStoryCnt(int userNumber) {
 		return sqlSession.selectOne("user.myStoryCnt", userNumber);
 	}
+	
 }
