@@ -45,4 +45,12 @@ public class StoryDAO {
 	public void updateCover(StoryDTO storyDTO) {
 		sqlSession.update("story.cover", storyDTO);
 	}
+	
+	public void delete(int storyNumber) {
+		sqlSession.delete("story.delete", storyNumber);
+	}
+	
+	public void update(StoryDTO storyDTO) {
+		sqlSession.update("story.update", storyDTO);
+	}
 }
