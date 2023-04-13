@@ -21,10 +21,12 @@ public class FindPasswordFrontController extends HttpServlet{
 
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
+		System.out.println("findpasswordFrontController = " + target);
 	
 			switch(target) {
 			case "/find/findPw.fp" :
 				req.getRequestDispatcher("/app/user/RePw.jsp").forward(req, resp);
+//				new FindPasswordController().execute(req, resp);
 				break;
 			case "/find/findPwOk.fp" :
 				new FindPasswordOkController().execute(req, resp);
