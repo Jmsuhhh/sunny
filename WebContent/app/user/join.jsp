@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
   <meta charset="UTF-8">
@@ -102,7 +102,7 @@
   <div class="container">
     <div class="nav">
       <div class="menu">
-        <a href="">홈</a>
+        <a href="/main/mainOk.ma">홈</a>
         <a href="/user/join.us">회원가입</a>
       </div>
     </div>
@@ -119,40 +119,47 @@
           </div>
           <div class="join-logo"> 회원가입</div>
         </div>
-        <form action="${pageContext.request.contextPath}/user/joinOk.us" method="POST">
+        <form action="${pageContext.request.contextPath}/user/joinOk.us" method="post">
           <div class="input-tag">
             <div class="input-text">아이디</div>
             <br>
-            <input type="text" name="userId" placeholder="아이디" minlength="5" maxlength="10" required>
+            <input type="text" id="id" name="userId" placeholder="아이디" minlength="5" maxlength="10" required>
+            <span class="check-msg" id="check-id-msg"></span>
             <br><br><br>
             <div class="input-text">비밀번호</div>
             <br>
-            <input type="password" name="userPassword" placeholder="비밀번호" minlength="8" maxlength="15" required>
+            <input type="password" id="password" name="userPassword" placeholder="비밀번호" minlength="8" maxlength="15" required>
+            <span class="check-msg" id="check-pw-msg"></span>
             <br><br>
-            <input type="password" name="userPassword" placeholder="비밀번호 확인" minlength="8" maxlength="15" required>
+            <input type="password" id="confirm-password" name="userPassword" placeholder="비밀번호 확인" minlength="8" maxlength="15" required>
+            <span id="password-error"></span>
             <br><br><br>
             <div class="input-text">이름</div> <br>
             <input type="text" placeholder="이름" name="userName" maxlength="10" required>
+            <span id="name-error"></span>
             <br><br><br>
             <div class="input-text3">
               <div class="input-text">닉네임</div>
               <div class="input-text2">(변경 불가)</div>
             </div> <br>
             <input type="text" placeholder="닉네임(2~10자)" name="userNickname" minlength="2" maxlength="10" required>
+            <span id="nickname-error" class="error"></span>
             <br><br><br>
             <div class="input-text">
               연락처</div> <br>
             <input type="tel" placeholder="010-1234-5678" name="userPhone" maxlength="13" required>
+            <span class="check-msg" id="phone-msg"></span>
             <br><br><br>
             <div class="input-text">이메일</div> <br>
-            <input type="email" name="userEmail" placeholder="aa123@naver.com" required>
+            <input type="email" name="userEmail" placeholder="aa123@naver.com" required onblur="validateEmail()">
+            <span class="check-msg" id="check-email-msg"></span>
             <br><br><br>
             <div class="input-text">
               <label for="select">비밀번호 찾기 질문</label>
             </div> <br>
-            <select name="" id="select" required>
-              <option value="-1" selected>--선택--</option>
-              <option value="1">가장 좋아하는 색깔은?</option>
+            <select name="findQuestionNumber" id="select" required>
+            <!-- <option value="-1" selected>--선택--</option> -->
+              <option value="1" selected>가장 좋아하는 색깔은?</option>
               <option value="2">가장 좋아하는 계절은?</option>
               <option value="3">가장 소중한 것은?</option>
             </select>
@@ -169,17 +176,17 @@
               <div class="label-box">
                 <div class="required-box">
                   <label class="required1">이용약관</label>
-                  <label for="" class="required2">(필수)</label>
+                  <label for="agree" class="required2">(필수)</label>
                 </div>
-                <input type="checkbox" value="필수 약관" required>
+                <input type="checkbox" id="agree" value="필수 약관" required>
               </div>
               <br>
               <div class="label-box">
                 <div class="required-box2">
-                  <label for="" class="required1">개인정보처리방침</label>
-                  <label for="" class="required2">(필수)</label>
+                  <label for="agree" class="required1">개인정보처리방침</label>
+                  <label for="agree" class="required2">(필수)</label>
                 </div>
-                <input type="checkbox" vlaue="필수 약관" required>
+                <input type="checkbox" id="agree" vlaue="필수 약관" required>
               </div>
               <br>
               <div class="label-box">
@@ -191,7 +198,7 @@
               </div>
             </div>
             <br><br><br>
-            <button type="submit" class="submit-button">회원가입 완료</button>
+            <button type="submit" id="submit-button" class="submit-button">회원가입 완료</button>
           </div>
         </form>
       </div>

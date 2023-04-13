@@ -9,7 +9,7 @@
  width: 1200px;
  height: 1100px;
   position: relative;
-  left: 150px;
+  margin: 0 auto;
 }
 
 .nav{
@@ -69,17 +69,19 @@
 }
 
 #select{
-  width: 398px;
+  width: 411px;
   height: 45px;
   border: 1px solid #cfcccc;
   border-radius: 5px;
 }
 
+.id-input > input,
 .answer > input{
   width: 398px;
   height: 45px;
   border: 1px solid #cfcccc;
   border-radius: 5px;
+  padding: 0 0 0 10px;
 }
 
 .title-container2 > input,
@@ -88,7 +90,9 @@
   height: 45px;
   border: 1px solid #cfcccc;
   border-radius: 5px;
+  padding: 0 0 0 10px;
 }
+
 
 .check-button{
   width: 135px;

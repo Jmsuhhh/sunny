@@ -6,7 +6,7 @@
 		parameterType="map">
 		select s.story_number, s.story_title, u.user_nickname,
 		uf.file_system_name
-		AS user_profile_image, s.file_system_name
+		AS user_profile_image, s.file_system_name, s.file_original_name
 		from tbl_story s
 		join tbl_user u ON s.user_number =
 		u.user_number
@@ -34,6 +34,10 @@
 
 	<update id="cover" parameterType="StoryDTO">
 		update tbl_story set file_system_name =#{fileSystemName} where story_number =#{storyNumber}
+		(story_title, story_content, story_content2, story_content3, story_date, last_update ,
+		story_viewcnt,file_system_name,file_original_name,
+		user_number)
+		values (#{storyTitle},#{storyContent},#{storyContent2},#{storyContent3},now(),now(),0,#{fileSystemName},#{fileOriginalName},#{userNumber})
 	</update>
 
 	<select id="getSequence" resultType="_int">
@@ -41,7 +45,7 @@
 	</select>
 
 	<select id="select" parameterType="_int" resultType="StoryListVO">
-		select s.story_number, s.story_title, s.story_content, s.story_viewcnt,
+		select s.story_number, s.story_title, s.story_content, s.story_content2, s.story_content3,s.story_viewcnt,
 		s.story_date, last_update,
 		u.user_nickname, uf.file_system_name as user_profile_image
 		from tbl_story s

@@ -8,7 +8,6 @@
 
 header {
   font-family: "Noto Sans KR", sans-serif;
-  width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -28,24 +27,35 @@ header a {
 }
 
 
-/* 헤더1 로그인,회원가입/ 로고 */
+/* 헤더1 회색배경*/
 .header1 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 /* 로그인, 회원가입, 로그아웃*/
 .header1--top {
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.header1-btn-group{
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: right;
-  background-color: #f2f2f2;
   line-height: 30px;
+  width: 1200px;
+  text-align: center;
 }
+
 .header1-a {
   color:#808080;
   font-size: 14px;
-  margin-right: 18px;
+  margin-left: 18px;
 }
 
 .header1-a:visited {
@@ -83,9 +93,15 @@ header a {
 
 /* 헤더2 메뉴바, 버튼2개 */
 .header2 {
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header2-wrap{
+  width: 1200px;
   height: 28px;
   padding: 9px 0;
-  border-bottom: 1px solid #d9d9d9;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -102,7 +118,7 @@ header a {
   line-height: 28px;
   font-size: 14px;
   font-weight: 500;
-  margin: 0 18px;
+  margin: 0 36px 0 0;
   list-style-type: none;
   flex: none;
   list-style: none;
@@ -124,7 +140,7 @@ header a {
 }
 .header2-btn-list > a {
   height: 28px;
-  margin-right: 18px;
+  margin-left: 18px;
   line-height: 28px;
   font-size: 14px;
   flex: none;

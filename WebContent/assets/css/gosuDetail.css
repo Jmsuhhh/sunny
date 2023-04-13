@@ -253,7 +253,7 @@ table.gosu-detail-explain td {
   margin-top: 20px;
 }
 
-.demotion-btn,
+.down-btn,
 .ben-btn {
   color: #fff;
   font-size: 20px;
@@ -266,7 +266,7 @@ table.gosu-detail-explain td {
   margin-left: 5px;
 }
 
-.demotion-btn:hover,
+.down-btn:hover,
 .ben-btn:hover {
   background-color: rgb(213, 45, 45);
   color: #fff;

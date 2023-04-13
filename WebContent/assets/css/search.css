@@ -9,126 +9,6 @@
   @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
   
-  header {
-    font-family: "Noto Sans KR", sans-serif;
-    width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-content: flex-end;
-  }
-  
-  a {
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-  }
-  a:visited {
-    color: black;
-  }
-  
-  ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  li {
-    list-style: none;
-  }
-  
-  /* 헤더1 로그인,회원가입 / 로고 */
-  .header1 {
-    display: flex;
-    flex-direction: column;
-  }
-  /* 로그인, 회원가입 */
-  .header1--top {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    background-color: #f2f2f2;
-    line-height: 30px;
-  }
-  .header1--top a {
-    color: #808080;
-    font-size: 14px;
-    margin-right: 18px;
-  }
-  /* 로고 */
-  .header1--bottom {
-    height: 87px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .header1--bottom a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .header1--bottom h1 {
-    color: #009a3e;
-    font-weight: 700;
-    font-family: "Dongle", sans-serif;
-    font-size: 35px;
-  }
-  .logo {
-    width: 35px;
-    height: 35px;
-  }
-  .logo svg {
-    height: 35px;
-    fill: #009a3e;
-  }
-  
-  /* 헤더2 메뉴바, 버튼2개 */
-  .header2 {
-    height: 28px;
-    padding: 9px 0;
-    border-bottom: 1px solid #d9d9d9;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  /* 헤더2 메뉴바 */
-  .menu-list-ul {
-    display: flex;
-  }
-  
-  .menu-list {
-    height: 28px;
-    line-height: 28px;
-    font-size: 14px;
-    font-weight: 500;
-    margin: 0 18px;
-    list-style-type: none;
-    flex: none;
-  }
-  
-  /* 헤더2 오른쪽 버튼2개 */
-  .btn-list-ul {
-    display: flex;
-  }
-  
-  .btn-list a {
-    height: 28px;
-    margin-right: 18px;
-    line-height: 28px;
-    font-size: 14px;
-    flex: none;
-  }
-  
-  .btn-list a > img {
-    height: 15px;
-    width: 15px;
-  }
-  
-  
    .pcontainer {
       width: 1200px;
       height: 1300px;
@@ -149,7 +29,7 @@
       font-size: 25px;
       font-weight: 700;
       color: #222624;
-      margin: 28px 380px 0 380px;
+      margin: 28px 320px 0 380px;
     }
 
     .ex-search {
@@ -158,7 +38,7 @@
       height: 57px;
     }
 
-    .searchtext {
+    .searchText {
       width: 164px;
       height: 27px;
       background-color: #f2f2f2;
@@ -170,25 +50,26 @@
       position: relative;
     }
     
+  .headsearch>button {
+    position: absolute;
+    cursor : pointer;
+ 	color: #fff;
+    background-color: #009a3e;
+    border-radius: 4px;
+   	top : 28px;
+   	width : 50px;
+   	line-height : 27px;
+  }
+	
+    
     .expertsearch > input {
       color:#4d4d4d;
-    }
-
-    .expertsearch > button {
-      position: absolute;
-      right: -80px;
-      top: 13px;
     }
     
     .headsearch {
       position: relative;
     }
     
-    .headsearch > img {
-      cursor: pointer;
-      position: absolute;
-    }
-
     /* 프로필 */
     .mypage {
         position: relative;
@@ -276,10 +157,10 @@
       color:#808080 ; 
     }
 
-    .container > button {
+    .s-btn {
         background-color: #009a3e;
         color: #fff;
-        width: 65px;
+        width: 45px;
         height: 23px;
         border-radius: 4px;
         border: none;
@@ -312,3 +193,4 @@
   border-radius: 4px;
   border: none;
 }
+

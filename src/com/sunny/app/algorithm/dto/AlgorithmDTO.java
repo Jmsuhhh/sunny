@@ -1,11 +1,5 @@
 package com.sunny.app.algorithm.dto;
 
-//algorithm_result varchar(300) primary key,
-//select_one tinyint(1) not null default 0,
-//select_two tinyint(1) not null default 0,
-//select_three tinyint(1) not null default 0,
-//select_four tinyint(1) not null default 0,
-//select_five tinyint(1) not null default 0
 
 public class AlgorithmDTO {
 	private String algorithmResult;

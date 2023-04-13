@@ -24,7 +24,7 @@ public class AdminFrontController extends HttpServlet {
 		System.out.println(target);
 	
 		switch(target) {
-		
+					
 		 case "/admin/login.ad":
 	         req.getRequestDispatcher("/app/admin/adminLogin.jsp").forward(req, resp);
 			 break;

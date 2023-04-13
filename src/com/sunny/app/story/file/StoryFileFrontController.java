@@ -23,6 +23,8 @@ public class StoryFileFrontController extends HttpServlet{
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 	
 			switch(target) {
+			case "/storyFile/upload/sf":
+				break;
 		}
 	}
 }

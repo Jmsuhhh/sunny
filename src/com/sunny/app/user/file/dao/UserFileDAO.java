@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
 import com.sunny.app.user.file.dto.UserFileDTO;
+import com.sunny.app.user.file.vo.UserFileVO;
 
 public class UserFileDAO {
 
@@ -21,11 +22,15 @@ public class UserFileDAO {
 		return sqlSession.selectOne("userFile.select", userNumber);
 	}
 	
+	public UserFileVO selectFile(int userNumber) {
+		return sqlSession.selectOne("userFile.selectFile", userNumber);
+	}
+	
 	public void update(UserFileDTO userFileDTO){
 		sqlSession.update("userFile.update", userFileDTO);
 	}
 	
 	public void delete(int userNumber) {
-		sqlSession.delete("usrFile.delete", userNumber);
+		sqlSession.delete("userFile.delete", userNumber);
 	}
 }

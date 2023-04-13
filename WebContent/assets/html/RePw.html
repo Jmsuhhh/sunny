@@ -24,7 +24,7 @@
   <div class="container">
     <div class="nav">
       <div class="menu">
-        <a href="">홈</a>
+        <a href="/main/mainOk.ma">홈</a>
         <a href="/user/join.us">회원가입</a>
       </div>
     </div>
@@ -43,14 +43,18 @@
         </div>
       </div>
 
-      <form action="${pageContext.request.contextPath}/find/findPw.fp">
+      <form action="${pageContext.request.contextPath}/find/findPwOk.fp">
       <div class="whole-container">
         <div class="question-container">
           <h2>비밀번호 찾기</h2>
           <div class="question">
+          <div class="id-input">
+          <div class="title1">아이디</div><br>
+          	<input type="text" required>
+          	</div>
             <div class="title1">비밀번호 찾기 질문</div> <br>
             <select name="" id="select" required>
-              <option value="-1" selected>--선택--</option>
+              <!-- <option value="-1" selected>--선택--</option> -->
               <option value="1">가장 좋아하는 색깔은?</option>
               <option value="2">가장 좋아하는 계절은?</option>
               <option value="3">가장 소중한 것은?</option>

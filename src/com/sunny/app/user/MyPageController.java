@@ -22,7 +22,9 @@ public class MyPageController implements Execute {
 	      }else {
 	         path ="/user/myPageOk.us";
 	      }
-	      req.getRequestDispatcher(path).forward(req, resp);
+	      
+	      resp.sendRedirect(path);
+
 	     
 	}
 

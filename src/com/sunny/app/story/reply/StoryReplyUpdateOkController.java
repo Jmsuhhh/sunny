@@ -1,4 +1,4 @@
-package com.sunny.app.user;
+package com.sunny.app.story.reply;
 
 import java.io.IOException;
 
@@ -8,11 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sunny.app.Execute;
 
-public class LogoutOkController implements Execute {
+public class StoryReplyUpdateOkController implements Execute {
+
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getSession().invalidate();
-		resp.sendRedirect("/main/mainOk.ma");
-		
+		// TODO Auto-generated method stub
+
 	}
+
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
 
 *{
@@ -9,7 +10,7 @@
   width: 1200px;
   height: 1900px;
   position: relative;
-  left: 150px;
+  margin: 0 auto;
 }
 
 .nav{
@@ -197,6 +198,7 @@
   border-radius: 5px;
   border: 0.5px solid #cfcccc;
   padding: 0 0 0 20px;
+  margin: -5px 0 0 0;
 }
 
 .input-tag{
@@ -275,3 +277,11 @@
 .agree > label{
   cursor: pointer;
 }
+
+#check-id-msg, #check-pw-msg, #password-error, #nickname-error, #name-error, #phone-msg, #check-email-msg{
+	display: block;
+	font-size: 12px;
+	margin-top: 5px;
+	color: red;
+}
+
