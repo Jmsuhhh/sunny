@@ -1,11 +1,11 @@
 let slides = document.querySelector('.main1-slide-ul');
 let slideImg = document.querySelectorAll('.main1-slide-ul li');
-currentIdx = 0;
-slideCount = slideImg.length;
-prev = document.querySelector('.prev'); //이전 버튼
-next = document.querySelector('.next'); //다음 버튼
-slideWidth = 1200; //슬라이드이미지 넓이
-slideMargin = 0; //슬라이드 끼리의 마진값
+let currentIdx = 0;
+let slideCount = slideImg.length;
+let prev = document.querySelector('.prev'); //이전 버튼
+let next = document.querySelector('.next'); //다음 버튼
+let slideWidth = 1200; //슬라이드이미지 넓이
+let slideMargin = 0; //슬라이드 끼리의 마진값
 
 makeClone(); // 처음이미지와 마지막 이미지 복사 함수
 initfunction(); //슬라이드 넓이와 위치값 초기화 함수
@@ -21,7 +21,11 @@ function initfunction() {
   slides.style.left = -(slideWidth + slideMargin) + 'px';
 }
 
-next.addEventListener('click', function () {
+next.addEventListener('click', nextProcess);
+
+setInterval(nextProcess, 3000);
+
+function nextProcess(){
   //다음 버튼 눌렀을때
   if (currentIdx <= slideCount - 1) {
     //슬라이드이동
@@ -38,7 +42,7 @@ next.addEventListener('click', function () {
     currentIdx = -1;
   }
   currentIdx += 1;
-});
+}
 prev.addEventListener('click', function () {
   //이전 버튼 눌렀을때
   console.log(currentIdx);

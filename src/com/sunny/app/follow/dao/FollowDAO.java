@@ -1,6 +1,7 @@
 package com.sunny.app.follow.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -18,13 +19,13 @@ public class FollowDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 //	나를 팔로우하는 사람 리스트
-	public List<FollowVO> selectFollower(int userNumber) {
-		return sqlSession.selectList("follow.selectFollower", userNumber);
+	public List<FollowVO> selectFollower(Map<String, Integer>number) {
+		return sqlSession.selectList("follow.selectFollower", number);
 	}
 	
 //	내가 팔로우하는 사람 리스트
-	public List<FollowVO> selectFollowing(int userNumber) {
-		return sqlSession.selectList("follow.selectFollowing", userNumber);
+	public List<FollowVO> selectFollowing(Map<String, Integer>number) {
+		return sqlSession.selectList("follow.selectFollowing", number);
 	}
 	
 //	팔로워, 팔로잉 수 > 마이페이지 로딩할때 사용
@@ -42,5 +43,10 @@ public class FollowDAO {
 //	팔로우취소하기
 	public void delete(FollowDTO followDTO) {
 		sqlSession.delete("follow.delete", followDTO);
+	}
+	
+//	내가 팔로우하고 있는지 확인
+	public int checkFollow(FollowDTO followDTO) {
+		return sqlSession.selectOne("follow.checkFollow", followDTO);
 	}
 }

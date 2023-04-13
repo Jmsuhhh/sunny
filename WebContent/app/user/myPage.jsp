@@ -23,6 +23,10 @@
 					<span class="grade"></span> <span><c:out
 							value="${myPage.getUserNickname()}" /></span> 입니다
 				</h1>
+				<c:if test="${sessionScope.userNumber !=  myPage.getUserNumber()}">
+				<!-- 버튼을 누르면 마이페이지에 저장됨 --> <!-- following 클래스를 줬다뺐다 -->
+				<button class="user-follow" data-userNumber="${myPage.getUserNumber()}"></button>
+				</c:if>
 			</div>
 			<div class="main1--bottom">
 				<div class="main1--modify">
@@ -284,6 +288,7 @@
 		let gradeNumber = "${myPage.getGradeNumber()}";
 		let contextPath = '${pageContext.request.contextPath}';
 		let userNumber = "${myPage.getUserNumber()}";
+		let checkFollow = "${checkFollow}";
 	</script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/myPage.js"></script>
