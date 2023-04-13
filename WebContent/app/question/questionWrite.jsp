@@ -29,6 +29,39 @@
 
 </head>
 <body>
+<<<<<<< HEAD
+	<%-- <jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/> --%>
+    <div class="container">
+    <form id="write-form" action="${PageContext.request.contextPath}/question/questionWriteOk.qs" method="post" enctype="multipart/form-data">
+      <h1 class="sub-title">
+        <span class="story-ico"></span>
+        질문하기
+        <span class="story-txt">나만의 볕 들 스토리</span>
+      </h1>
+      <form action="">
+      <div class="form-group">
+        <input type="text" id="title" name="boardTitle" required placeholder="* 스토리 제목을 입력해주세요!" required/>
+      </div>
+
+        <!-- 첨부 파일 -->
+
+        <div class="form-group">
+          <div class="image-upload-wrap">
+            <input type="file" id="file" name="boardFile"
+              accept=".jpg, .jpeg, .png" multiple />
+            <div class="image-upload-box">
+              <div class="upload-text">
+                <div class="upload-icon">
+                 <img src="https://www.shouse.garden/images/ico/photo_g.png" class="upload-icon">
+                </div>
+                <div class="upload-count">
+                  커버사진 업로드
+                </div>
+              </div>
+              <div class="upload-text">커버사진 1개만 업로드 가능(<span class="cnt">0</span>/1)</div>
+              <div class="upload-text">파일 형식 : jpg, png</div>
+              <div class="upload-text">※ 이미지를 등록하면 즉시 반영됩니다.</div>
+=======
  <%--   <jsp:include
    page="${pageContext.request.contextPath}/app/header/header.jsp"/>  --%>
    <div class="container">
@@ -64,6 +97,7 @@
                <div class="img-controller-box">
                   <ul class="file-list"></ul>
                </div>
+>>>>>>> 89923749a59cdf432a0b7c35b44029d1daacb300
             </div>
          </div>
 
