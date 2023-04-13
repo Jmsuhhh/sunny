@@ -64,7 +64,6 @@
         </div>
         <form action="${pageContext.request.contextPath}/user/loginOk.us" method="POST">
         <div class="input">
-          <input type="text" id="id" name="userId" value="${requestScope.userId}" placeholder="아이디" minlength="5" maxlength="10" required/>
           <input type="text" id="id" name="userId" placeholder="아이디" minlength="3" maxlength="10" required/>
           <br>
           <input type="password" id="pw" name="userPassword" placeholder="비밀번호" minlength="4" maxlength="15" required>
