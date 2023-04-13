@@ -1,5 +1,5 @@
 // 팔로워 팔로잉 리스트 top버튼
-
+console.log("=================")
 //=============================
 //팔로잉페이지로 진입시 팔로잉버튼이 초록색 활성화
 let href = window.location.href;
@@ -11,18 +11,8 @@ console.log(urlParams.get('tab'))
 if (urlParams.get('tab') == 'following') {
 	$(".top-btn").removeClass("active");
 	$(".following-btn").addClass("active");
-	$(".user-follow").addClass("following");
-	$(".user-follow").text("팔로잉");
 };
 //=============================
-
-//====팔로우/팔로잉 top 버튼을 누를때 활성화전환이 필요한가..? 그냥 페이지 전환으로 바꿈
-/*$(".top-btn").on("click", function () {
-  console.log(this);
-  $(".top-btn").removeClass("active");
-  $(this).toggleClass("active");
-	console.log($(this).text());
-});*/
 
 // 팔로우하기 버튼 눌렀을 때 색 변환
 $(".follow-list").on("click",'.user-follow', function() {

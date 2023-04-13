@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.sunny.app.Execute;
+import com.sunny.app.user.dao.UserDAO;
 
 public class MyPageController implements Execute {
 
@@ -16,11 +17,12 @@ public class MyPageController implements Execute {
 		HttpSession session = req.getSession();
 	      Integer userNumber = (Integer)session.getAttribute("userNumber");
 	      String path = null;
+	      UserDAO userDAO = new UserDAO();
 	      
 	      if(userNumber == null) {
 	         path = "/user/login.us";
 	      }else {
-	         path ="/user/myPageOk.us";
+	    	  path ="/user/myPageOk.us";
 	      }
 	      
 	      resp.sendRedirect(path);

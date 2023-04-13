@@ -53,7 +53,12 @@
 										</div>
 										<div class="user-name">${follow.getUserNickname()}</div>
 								</a> <!-- 버튼을 누르면 마이페이지에 저장됨 --> <!-- following 클래스를 줬다뺐다 -->
+									<c:if test="${follow.getFollowingStatus() == 0 }">
 									<button class="user-follow" data-userNumber="${follow.getUserNumber()}">팔로우</button>
+									</c:if>
+									<c:if test="${follow.getFollowingStatus() == 1}">
+									<button class="user-follow following" data-userNumber="${follow.getUserNumber()}">팔로잉</button>
+									</c:if>
 								</li>
 							</c:forEach>
 						</c:when>
@@ -62,6 +67,7 @@
 			</div>
 		</section>
 	</div>
+	<script></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/follow.js"></script>
 </body>
