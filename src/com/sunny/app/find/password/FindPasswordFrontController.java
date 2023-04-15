@@ -25,12 +25,16 @@ public class FindPasswordFrontController extends HttpServlet{
 	
 			switch(target) {
 			case "/find/findPw.fp" :
-				req.getRequestDispatcher("/app/user/RePw.jsp").forward(req, resp);
+				req.getRequestDispatcher("/app/user/rePw.jsp").forward(req, resp);
 //				new FindPasswordController().execute(req, resp);
 				break;
 			case "/find/findPwOk.fp" :
 				new FindPasswordOkController().execute(req, resp);
 				break;
+			case "/find/resetPw.fp" :
+				req.getRequestDispatcher("/app/user/rePwOk.jsp").forward(req, resp);
+//				new ResetPasswordController().execute(req, resp);
+				break;			
 			case "/find/resetPwOk.fp" :
 				new ResetPasswordOkController().execute(req, resp);
 				break;

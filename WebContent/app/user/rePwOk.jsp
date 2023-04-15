@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>비밀번호 재설정 | 볕 들 무렵</title>
-  <link rel="stylesheet" href="/assets/css/RePw.css">
+  <link rel="stylesheet" href="/assets/css/rePwOk.css">
   <style>
     @font-face {
       font-family: SpoqaHanSans-Regular;
@@ -43,33 +45,8 @@
         </div>
       </div>
 
-      <form action="${pageContext.request.contextPath}/find/findPw.fp">
+      <form action="${pageContext.request.contextPath}/find/resetPw.fp">
       <div class="whole-container">
-        <div class="question-container">
-          <h2>비밀번호 찾기</h2>
-          <div class="question">
-          <div class="id-input">
-          <div class="title1">아이디</div><br>
-          	<input type="text" required>
-          	</div>
-            <div class="title1">비밀번호 찾기 질문</div> <br>
-            <select name="" id="select" required>
-              <!-- <option value="-1" selected>--선택--</option> -->
-              <option value="1">가장 좋아하는 색깔은?</option>
-              <option value="2">가장 좋아하는 계절은?</option>
-              <option value="3">가장 소중한 것은?</option>
-            </select>
-          </div>
-          <div class="answer">
-            <div class="title1">비밀번호 찾기 답변</div> <br>
-            <input type="text" required>
-          </div>
-          <div class="alert">※회원가입 시 선택한 '비밀번호 찾기 질문'에 대한 답변을 입력하세요</div>
-
-          <button type="submit" value="확인" class="check-button">확인</button>
-        </div>
-
-
         <div class="change-container">
           <h2>비밀번호 변경</h2>
           <div class="newPw">
@@ -96,7 +73,9 @@
   </div>
 
   </div>
-
+	<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  	<script src="${pageContext.request.contextPath}/assets/js/rePwOk.js"></script>
 </body>
 
 </html>
+    
