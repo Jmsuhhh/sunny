@@ -39,8 +39,6 @@
 				</a>
 			</div>
 		</section>
-
-<<<<<<< HEAD
 		<section class="header2">
 			<div class="header2-wrap">
 				<div class="header2--left">
@@ -78,36 +76,4 @@
 		</section>
 	</header>
 </body>
-=======
-      <section class="header2">
-        <div class="header2--left">
-          <ul class="header2-menu-list-ul">
-            <!-- 메뉴바 경로처리 -->
-            <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/app/main/main.jsp" class="header-active">홈</a></li>
-            <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/app/story/storyList.jsp"> 스토리</a></li>
-            <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/app/question/questionList.jsp"> 식고수에게 물어보기</a></li>
-            <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/app/algorithm/index.jsp"> 반려식물 찾기</a></li>
-            <li class="header2-menu-list"><a href="${pageContext.request.contextPath}/user/myPage.us"> 마이페이지</a></li>
-          </ul>
-        </div>
-        <!-- 아이콘경로처리 -->
-        <!-- 둘다 로그인되어있지 않으면 로그인페이지로 -->
-        <div class="header2--right">
-          <ul class="header2-btn-list-ul">
-            <!-- 마이페이지로 -->
-            <li class="header2-btn-list">
-              <a href="${pageContext.request.contextPath}/user/myPage.us"><img src="${pageContext.request.contextPath}/assets/img/header/icon_user.png" alt="" /></a>
-            </li>
-            <!-- 스토리 글쓰기 페이지로 -->
-            <li class="header2-btn-list">
-              <a href="${pageContext.request.contextPath}/app/story/storyWrite.jsp"><img src="${pageContext.request.contextPath}/assets/img/header/icon_pen.png" alt="" /></a>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </header>
-<%--     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="${pageContext.request.contextPath}/assets/js/header.js"></script> --%>
-  </body>
->>>>>>> work/admin2
 </html>
