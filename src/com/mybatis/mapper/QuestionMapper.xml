@@ -52,13 +52,14 @@
 	</update>
 	
 	<!-- 마이페이지에서 나에게 온 질문리스트뽑기 -->
-	<select id="getMypageList" parameterType="int" resultType="QuestionVO">
-		select tg.gosu_number, tq.question_number, tq.question_title, tq.question_status, tqf.file_system_name
+	<select id="getMypageList" parameterType="map" resultType="QuestionVO">
+		select tq.question_number, tq.question_title, tqf.file_system_name
 		from tbl_gosu tg 
 		left join tbl_question tq on tg.gosu_number = tq.gosu_number
 		left join tbl_question_file tqf 
 		on tq.question_number =tqf.question_number 
 		where tg.gosu_number = #{gosuNumber}
+		and tq.question_status=#{questionStatus}
 		order by tq.last_update
 	</select>
 </mapper>

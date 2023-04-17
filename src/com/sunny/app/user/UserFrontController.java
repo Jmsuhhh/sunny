@@ -35,6 +35,10 @@ public class UserFrontController extends HttpServlet{
 			System.out.println("!!!");
 			new MyPageOkController().execute(req, resp);
 			break;
+		case "/user/myPageQuestionList.us" :
+			System.out.println("고수인사람");
+			new myPageQuestionListController().execute(req, resp);
+			break;
 		case "/user/userCommentOk.us":
 			new UserCommentController().execute(req, resp);
 			break;
@@ -50,7 +54,7 @@ public class UserFrontController extends HttpServlet{
 			break;
 		case "/user/userModifyOk.us" :
 			new UserModifyOkController().execute(req, resp);
-			req.getRequestDispatcher("/app/user/myPage.jsp").forward(req, resp);
+			resp.sendRedirect("/user/myPageOk.us");
 			break;
 		case "/user/join.us":
 			req.getRequestDispatcher("/app/user/join.jsp").forward(req, resp);

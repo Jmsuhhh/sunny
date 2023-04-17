@@ -48,6 +48,10 @@
 					<span class="grade"></span> <span><c:out
 							value="${myPage.getUserNickname()}" /></span> 입니다
 				</h1>
+				<c:if test="${sessionScope.userNumber !=  myPage.getUserNumber()}">
+				<!-- 버튼을 누르면 마이페이지에 저장됨 --> <!-- following 클래스를 줬다뺐다 -->
+				<button class="user-follow" data-userNumber="${myPage.getUserNumber()}"></button>
+				</c:if>
 			</div>
 			<div class="main1--bottom">
 				<div class="main1--modify">
@@ -211,7 +215,7 @@
 		</section>
 
 		<!-- 식고수인경우 질문포스팅리스트띄워야함 -->
-		<c:if test="${myPage.getGradeNumber()==500}">
+	<c:if test="${myPage.getGradeNumber()==500}">
 			<section class="main3">
 				<div class="main3--top">
 					<h1>
@@ -222,8 +226,8 @@
 				<!-- 비동기로 답변완료/답변대기  -->
 				<div class="answer-btn-group">
 					<ul class="answer-btn-ul">
-						<li class="answer-btn active">답변대기</li>
-						<li class="answer-btn">답변완료</li>
+						<li class="answer-btn active" data-questionStatus=0>답변대기</li>
+						<li class="answer-btn" data-questionStatus=1>답변완료</li>
 					</ul>
 					<ul>
 						<!-- 식고수질문게시판으로 이동 -->
@@ -238,7 +242,7 @@
 				<!-- 질문읽기 페이지로 이동 -->
 				<div class="main3--bottom">
 					<ul class="story-list-ul question-list-ul">
-						<c:choose>
+						<%-- <c:choose>
 							<c:when test="${not empty myPage.getQuestions()}">
 								<c:forEach var="questions" items="${myPage.getQuestions()}">
 									<li class="story-list question-list">
@@ -255,7 +259,7 @@
 							<c:otherwise>
 								<div class="empty">등록된 질문이 없습니다.</div>
 							</c:otherwise>
-						</c:choose>
+						</c:choose> --%>
 					</ul>
 				</div>
 			</section>
@@ -308,6 +312,9 @@
 		page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
 	<script>
 		let gradeNumber = "${myPage.getGradeNumber()}";
+		let contextPath = '${pageContext.request.contextPath}';
+		let userNumber = "${myPage.getUserNumber()}";
+		let checkFollow = "${checkFollow}";
 	</script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/myPage.js"></script>

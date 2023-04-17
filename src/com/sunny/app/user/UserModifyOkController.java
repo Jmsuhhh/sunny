@@ -30,6 +30,8 @@ public class UserModifyOkController implements Execute {
 		userVO.setFindPasswordAnswer(req.getParameter("findPasswordAnswer"));
 		
 		userDAO.userModify(userVO);
+		
+		
 
 	}
 

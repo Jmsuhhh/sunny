@@ -28,7 +28,7 @@
 			</div>
 			<div class="header1--bottom">
 				<!-- 로고 누르면 홈으로 경로처리 -->
-				<a href="${pageContext.request.contextPath}/app/main/main2.jsp">
+				<a href="${pageContext.request.contextPath}/main/mainOk.ma">
 					<div class="header1-logo">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                 			<path
@@ -46,7 +46,7 @@
 					<ul class="header2-menu-list-ul">
 						<!-- 메뉴바 경로처리 -->
 						<li class="header2-menu-list">
-							<a href="${pageContext.request.contextPath}/app/main/main2.jsp" class="header-active">홈</a></li>
+							<a href="${pageContext.request.contextPath}/main/mainOk.ma" class="header-active">홈</a></li>
 						<li class="header2-menu-list">
 							<a href="${pageContext.request.contextPath}/story/storyListOk.st">스토리</a></li>
 						<li class="header2-menu-list">

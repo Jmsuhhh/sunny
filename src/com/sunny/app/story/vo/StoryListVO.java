@@ -1,5 +1,9 @@
 package com.sunny.app.story.vo;
 
+import java.util.List;
+
+import com.sunny.app.story.file.dto.StoryFileDTO;
+
 public class StoryListVO {
 
 	private int storyNumber;
@@ -14,6 +18,7 @@ public class StoryListVO {
 	private String userNickname;
 	private String userProfileImage;
 	private String fileSystemName;
+	private List<StoryFileDTO> storyFiles;
 	
 	
 	public StoryListVO() {}
@@ -139,13 +144,23 @@ public class StoryListVO {
 	}
 
 
+	public List<StoryFileDTO> getStoryFiles() {
+		return storyFiles;
+	}
+
+
+	public void setStoryFiles(List<StoryFileDTO> storyFiles) {
+		this.storyFiles = storyFiles;
+	}
+
+
 	@Override
 	public String toString() {
 		return "StoryListVO [storyNumber=" + storyNumber + ", storyTitle=" + storyTitle + ", storyContent="
 				+ storyContent + ", storyContent2=" + storyContent2 + ", storyContent3=" + storyContent3
 				+ ", storyViewcnt=" + storyViewcnt + ", storyDate=" + storyDate + ", lastUpdate=" + lastUpdate
 				+ ", userNumber=" + userNumber + ", userNickname=" + userNickname + ", userProfileImage="
-				+ userProfileImage + ", fileSystemName=" + fileSystemName + "]";
+				+ userProfileImage + ", fileSystemName=" + fileSystemName + ", storyFiles=" + storyFiles + "]";
 	}
 
 
