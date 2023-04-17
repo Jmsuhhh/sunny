@@ -48,7 +48,7 @@
         </div> -->
 
         <div class="menu">
-          <a href="">홈</a>
+          <a href="/main/mainOk.ma">홈</a>
           <a href="/user/join.us">회원가입</a>
         </div>
       </div>
@@ -64,15 +64,15 @@
         </div>
         <form action="${pageContext.request.contextPath}/user/loginOk.us" method="POST">
         <div class="input">
-          <input type="text" id="id" name="userId" placeholder="아이디" minlength="3" maxlength="10" required/>
+          <input type="text" id="id" name="userId" placeholder="아이디" minlength="5" maxlength="10" required/>
           <br>
-          <input type="password" id="pw" name="userPassword" placeholder="비밀번호" minlength="4" maxlength="15" required>
+          <input type="password" id="pw" name="userPassword" placeholder="비밀번호" minlength="8" maxlength="15" required>
         </div>
         <button type="submit" value="로그인" class="login1">로그인</button>
         <div class="menu2">
           <div class="check">
-            <input type="checkbox" name="아이디 저장">
-            <label for="id-save">아이디 저장</label>
+            <input type="checkbox" id="remember" name="remember" value="check">
+            <label for="remember">아이디 저장</label>
           </div>
           <div class="button2">
             <a href="/find/findPw.fp">비밀번호 재설정</a>
