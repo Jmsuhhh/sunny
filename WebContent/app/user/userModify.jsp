@@ -33,24 +33,27 @@
               <p>현재 비밀번호</p>
               <div class="content">
               	<input type="password" name="currentPassword"
-					id="password"  placeholder="비밀번호를 입력하세요"
-					required /> <span class="check-msg" id="check-pw-msg"></span>
+					id="current-password"  placeholder="비밀번호를 입력하세요"
+					required />
+					<p class="check-msg" id="check-cupw-msg"></p>
               </div>
             </div>
             <div class="title user-password">
               <p>변경 비밀번호</p>
               <div class="content">
                 <input type="password"
-					id="password" name="userPassword" placeholder="비밀번호를 입력하세요"
-					required /> <span class="check-msg" id="check-pw-msg"></span>
+					id="user-password" name="userPassword" placeholder="비밀번호를 입력하세요"
+					required /> 
+					<p class="check-msg" id="check-pw-msg"></p>
               </div>
             </div>
             <div class="title user-password">
               <p>비밀번호 확인</p>
               <div class="content">
                 <input type="password"
-					id="password" name="checkUserPassword" placeholder="비밀번호를 입력하세요"
-					required /> <span class="check-msg" id="check-pw-msg"></span>
+					id="check-user-password" name="checkUserPassword" placeholder="비밀번호를 입력하세요"
+					required /> 
+					<p class="check-msg" id="check-chpw-msg"></p>
               </div>
             </div>
             <!-- 받아올 이름 수정불가 -->
@@ -63,7 +66,8 @@
             <div class="title user-nickname">
               <p>닉네임</p>
               <div class="content">
-                <input type="text" value="${userInfo.getUserNickname()}" name="userNickname"/>
+                <input type="text" value="${userInfo.getUserNickname()}" name="userNickname" id="user-nickname"/>
+                <p class="check-msg" id="check-nickname-msg"></p>
               </div>
             </div>
             <div class="title user-phone-number">
@@ -97,13 +101,14 @@
             <div class="btn">
               <!-- 마이페이지로 이동 -->
               <button type="button" class="modify-cancel-btn">취소</button>
-              <button type="submit" class="modify-submit-btn">저장</button>
+              <button type="button" class="modify-submit-btn">저장</button>
             </div>
           </form>
         </div>
       </section>
     </div>
     <jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
+    <script>let userNumber = ${userInfo.getUserNumber()}</script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="${pageContext.request.contextPath}/assets/js/userModify.js"></script>
   </body>

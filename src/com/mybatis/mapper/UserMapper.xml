@@ -62,4 +62,16 @@
 		delete from tbl_user where user_number=#{userNumber}	
 	</delete>
 
+<!-- 회원정보수정시 현재 비밀번호 확인 -->
+	<select id="checkPw" parameterType="UserDTO" resultType="_int">
+		select count(user_number)  from tbl_user tu 
+		where user_number = #{userNumber} and user_password =#{userPassword}
+	</select>
+<!-- 닉네임 중복확인 -->
+	<select id="checkNick" parameterType="String" resultType="_int">
+		select count(user_number) from tbl_user tu 
+		where user_nickname = #{userNickname}
+	</select>
+	
+	
 </mapper>

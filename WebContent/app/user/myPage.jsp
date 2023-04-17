@@ -146,7 +146,7 @@
 						<div>
 							<a
 								href="${pageContext.request.contextPath}/follow/followingList.fo?userNumber=${myPage.getUserNumber()}&tab=following"><h2>
-									<c:out value="${myPage.getFollowerCnt()}" />
+									<c:out value="${myPage.getFollowingCnt()}" />
 								</h2>
 								<p>팔로잉</p></a>
 						</div>
