@@ -2,6 +2,7 @@ package com.sunny.app.admin;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,18 +14,22 @@ import com.sunny.app.admin.dto.AdminDTO;
 import com.sunny.app.util.AdminUtils;
 
 public class AdminLoginController implements Execute{
+	
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		req.setCharacterEncoding("utf-8");
+
 		AdminDTO adminDTO = new AdminDTO();
 		AdminDAO adminDAO = new AdminDAO();
 		final String path;
 		
-		req.setCharacterEncoding("utf-8");
 		
 		String adminId = (String)req.getParameter("adminId");
 		String adminPW = (String)req.getParameter("adminPassword");
 		
+		// sha256 비밀번호 암호화 처리 
 		adminPW = AdminUtils.pwSha256(adminPW);
 		
 		adminDTO.setAdminId(adminId);

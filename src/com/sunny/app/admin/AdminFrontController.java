@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sunny.app.util.AdminUtils;
+
 public class AdminFrontController extends HttpServlet {
 
 	@Override
@@ -35,6 +37,11 @@ public class AdminFrontController extends HttpServlet {
 				 new LogoutOkController().execute(req, resp);
 				 break;
 		     case "/admin/select.ad":
+			 		// 세션체크 
+			 		if (!AdminUtils.sessionCheck(req)) {
+			 			resp.sendRedirect("/admin/login.ad?login=noInfo");
+			 			return;
+			 		}
 		    	  req.getRequestDispatcher("/app/admin/select.jsp").forward(req, resp);
 		          break;
 		     case "/admin/userManage.ad":

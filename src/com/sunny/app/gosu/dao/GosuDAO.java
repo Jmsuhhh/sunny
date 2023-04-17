@@ -7,6 +7,9 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
 import com.sunny.app.gosu.vo.GosuVO;
+import com.sunny.app.gosu.dto.GosuDTO;
+import com.sunny.app.user.vo.UserVO;
+
 
 public class GosuDAO {
 
@@ -24,6 +27,14 @@ public class GosuDAO {
 //	페이징처리
 	public int getTotal() {
 		return sqlSession.selectOne("gosu.getTotal");
+	}
+	
+	public void insert(GosuDTO gosuDTO) {
+		sqlSession.insert("gosu.insert", gosuDTO);
+	}
+	
+	public int getSequence() {
+		return sqlSession.selectOne("gosu.getSequence");
 	}
 
 //	마이페이지에서 필요한 고수Number뽑아오기

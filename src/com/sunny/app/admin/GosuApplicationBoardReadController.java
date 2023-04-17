@@ -15,19 +15,20 @@ public class GosuApplicationBoardReadController implements Execute{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		int applyNumber = Integer.parseInt(req.getParameter("applyNumber"));
-		System.out.println("applyNumber = " + applyNumber);
-		
-		GosuApplicationReadDAO gosuApplicationReadDAO = new GosuApplicationReadDAO();
-		GosuApplicationReadVO gosuApplicationReadVO = gosuApplicationReadDAO.applyRead(applyNumber);
-		
 		// 세션체크
 		if (!AdminUtils.sessionCheck(req)) {
 			resp.sendRedirect("/admin/login.ad?login=noInfo");
+			return;
 		}
 		
-		// apply 정보 가져오기
+		int applyNumber = Integer.parseInt(req.getParameter("applyNumber"));
+		System.out.println("applyNumber = " + applyNumber);
 		
+		// apply 정보 가져오기
+		GosuApplicationReadDAO gosuApplicationReadDAO = new GosuApplicationReadDAO();
+		GosuApplicationReadVO gosuApplicationReadVO = gosuApplicationReadDAO.applyRead(applyNumber);
+
+		//	정보 담아서 보내기
 		req.setAttribute("applydata", gosuApplicationReadVO);
 		
 		req.getRequestDispatcher("/app/admin/gosuApplicationBoardRead.jsp").forward(req, resp);
