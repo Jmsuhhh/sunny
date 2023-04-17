@@ -23,43 +23,42 @@
     <div class="gosu-apply">
       <div class="apply-container">
         <!-- form action 작성 -->
-        <form action="#" id="write-form" method="post" enctype="multipart/form-data">
+        <form action="${pageContext.request.contextPath }/gosuApply/gosuApplyWriteOk.ga" id="write-form" method="post" enctype="multipart/form-data">
           <h1 class="title">
             <span class="story-icon"></span> 식고수 신청
             <span class="story-txt">고수가 된다면 인기를 얻을 수 있습니다!</span>
           </h1>
           <!-- 제목입력 -->
           <div class="apply-title">
-            <input type="text" id="title" name="storyTitle" placeholder="* 식고수 신청 제목을 입력하세요. " required />
+            <input type="text" id="title" name="applyTitle" placeholder="* 식고수 신청 제목을 입력하세요. " minlength="2" required />
           </div>
           <!-- 고수분야 선택 -->
           <div class="gosu-field"><h1 class="mini-title">고수 분야 선택</h1>
               <ul class="field-list" >
-                <li><input type="checkbox" id="checkboxOne" value="#"><label for="checkboxOne">꽃</label></li>
-                <li><input type="checkbox" id="checkboxTwo" value="#"><label for="checkboxTwo">나무</label></li>
-                <li><input type="checkbox" id="checkboxThree" value="#" checked><label for="checkboxThree">수경/행잉식물</label></li>
-                <li><input type="checkbox" id="checkboxFour" value="#"><label for="checkboxFour">식충식물</label></li>
-                <li><input type="checkbox" id="checkboxFive" value="#"><label for="checkboxFive">중,대형식물</label></li>
-                <li><input type="checkbox" id="checkboxSix" value="#" checked><label for="checkboxSix">선인장/다육식물</label></li>
-                <li><input type="checkbox" id="checkboxSeven" value="#"><label for="checkboxSeven">공기정화/관엽식물</label></li>
-                <li><input type="checkbox" id="checkboxEight" value="#"><label for="checkboxEight">열매식물</label></li>
-                <li><input type="checkbox" id="checkboxNine" value="#"><label for="checkboxNine">야생화/허브/씨앗</label></li>
-                <li><input type="checkbox" id="checkboxTen" value="#"><label for="checkboxTen">분재</label></li>
-                <li><input type="checkbox" id="checkboxEleven" value="#"><label for="checkboxEleven">채소/약초</label></li>
-                <li><input type="checkbox" id="checkboxTwelve" value="#"><label for="checkboxTwelve">해조/이끼</label></li>
-              </ul>
+         	 <c:choose>
+         	 	<c:when test="${not empty fieldList }">
+         	 		<c:forEach var="field" items="${fieldList }">
+                		<li><input type="checkbox" id="${field.getFieldName() }" name="fields" value="${field.getFieldNumber() }"><label for="${field.getFieldName() }">${field.getFieldName() }</label></li>
+              		</c:forEach>
+              	</c:when>
+              <c:otherwise>
+              	<li class="no-filed">
+              		선택할 수 있는 분야가 없습니다.
+              	</li>
+              </c:otherwise>
+          	</c:choose>
+            </ul>
           </div>
           <!-- 상세 내용 -->
           <h1 class="mini-title">상세 내용 입력</h1>
           <div class="Content-box">
             <!-- 서머노트 -->
             <div class="summernote-box">
-              <div id="summernote" name="storyContent"></div>
+              <textarea id="summernote" name="applyContent"></textarea>
             </div>
             <!-- 첨부파일 -->
             <div class="upload-file-container">
               <div class="upload-file">
-                <input type="file" id="file" name="boardFile" accept=".jpg, .jpeg, .png" multiple/>
                 <div class="upload-box">
                   <div class="upload-text">
                     <div class="upload-icon">
@@ -82,11 +81,16 @@
             <button type="submit" name="action" value="write" class="submit-btn">등록</button>
             <button type="button" class="cancel-btn">취소</button>
           </div>
+          <input type="file" name="applyFile1" id="input-one" class="input" /><br />
+          <input type="file" name="applyFile2" id="input-two" class="input" /><br />
+          <input type="file" name="applyFile3" id="input-three" class="input" /><br />
         </form>
+        <div class="upload-input-box">
+          <input type="file" name="file-input" id="file-input" multiple />
+        </div>
       </div>
     </div>
     <jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
-   <!--  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
     <script src="../../assets/js/gosuApplyWrite.js"></script>
   </body>
 </html>

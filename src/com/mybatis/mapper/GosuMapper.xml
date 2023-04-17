@@ -49,5 +49,13 @@
 		limit 1
 	</select>
 
+	<insert id="insert" parameterType="GosuDTO">
+		insert into tbl_gosu(gosu_plan, user_number)
+		values(#{gosuPlan}, #{userNumber});
+	</insert>
+	
+	<select id="getSequence" resultType="_int">
+		select last_insert_id()
+	</select>
 
 </mapper>

@@ -1,4 +1,4 @@
-let $fileInput = $('#file');
+let $fileInput = $('#file-input');
 let $fileList = $('.file-list');
 let $cnt = $('.cnt');
 
@@ -19,20 +19,20 @@ $(document).ready(function () {
   });
 });
 
-// 파일첨부부분
 
-$fileInput.on('change', function(){
-  let files = this.files;
-  console.log(files);
+// 파일 넣었을시 파일 담기 
+let $tmpInput = $('#file-input');
   
-  // 파일을 변경하면 원래 선택된 파일은 미리보기를 제거한다.
-  $fileList.html('');   
+$tmpInput.on('change', function () {
+  let files = this.files;
+  inputProce(this);
 
-  //5개를 넘기면 초기화 처리
+  $fileList.html('');
+
+  //3개를 넘기면 초기화 처리
   if(files.length > 3){
     let dt = new DataTransfer();
     files = dt.files;
-     //console.log(files);
     alert("파일은 최대 3개 까지만 첨부 가능합니다.")
     $cnt.text(files.length);
     return;
@@ -52,45 +52,62 @@ $fileInput.on('change', function(){
         </li>
     `);
   }
-  
   $cnt.text(files.length);
-  
-  
-  $('.img-cancel-btn').on('click', function() {
-    console.log("클릭!!!!");
-    
-     // 버튼의 부모의 부모를 삭제
-    $(this).parent().parent().remove();
-    
-    /*console.log($fileInput);
-    console.log("======")
-    console.log($fileInput[0].files);*/
-    
-    let fileName = $(this).data('name');
-    let dt = new DataTransfer();
-    
-    for(let i=0; i<files.length; i++){
-        if(files[i].name !== fileName)   {
-          dt.items.add(files[i]);
-        }
-    }
-    
-    files = dt.files;
-    
-    console.log(files);
-    $cnt.text(files.length);
-  });
 });
 
+function inputProce(target){
+  let files = target.files;
+  console.log('change!!!')
 
-// 등록버튼
-$(".submit-btn-btn").on("click", () => {
-  window.location.href = "#";
+  let $input = $('.input');
+
+  for (let i = 0; i < 3; i++) {
+    if (i >= files.length) {
+      let dt = new DataTransfer();
+
+      $input[i].files = dt.files;
+    } else {
+      let dt = new DataTransfer();
+      dt.items.add(files[i]);
+
+      $input[i].files = dt.files;
+    }
+    $cnt.text(files.length);
+  }};
+
+
+$('.img-controller-box').on('click','.img-cancel-btn', function() {
+  console.log($tmpInput[0].files)
+
+   // 버튼의 부모의 부모를 삭제
+  $(this).parent().parent().remove();
+  let files =  $tmpInput[0].files;
+  let fileName = $(this).data('name');
+  let dt = new DataTransfer();
+
+  for(let i=0; i<files.length; i++){
+      if(files[i].name !== fileName)   {
+        dt.items.add(files[i]);
+      }
+  }
+  
+  files = dt.files;
+  $tmpInput[0].files = files;
+
+  inputProce($tmpInput[0]);
+  $cnt.text(files.length);
+});
+
+let $uploadBox = $('.upload-box');
+
+$uploadBox.on('click', function () {
+  console.log(this);
+  $fileInput.trigger("click");
 });
 
 // 취소버튼 마이페이지로 이동처리 해야함.
 $(".cancel-btn").on("click", () => {
-  window.location.href = "#";
+  window.location.href = "/user/myPage.us";
 });
 
 

@@ -2,6 +2,7 @@ package com.sunny.app.util;
 
 import java.security.MessageDigest;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 public class AdminUtils {
@@ -33,7 +34,40 @@ public class AdminUtils {
 	
 //	세션체크
 	public static boolean sessionCheck(HttpServletRequest req) {
-		
 		return req.getSession().getAttribute("adminNumber") == null ? false : true;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

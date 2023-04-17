@@ -30,6 +30,9 @@ public class GosuApplyFrontController extends HttpServlet{
 			 case "/gosuApply/gosuApply.ga":
 		         new gosuApplyWriteController().execute(req, resp);
 				 break;
+			 case "/gosuApply/gosuApplyWriteOk.ga":
+		         new gosuApplyWriteOkController().execute(req, resp);
+				 break;
 		}
 	}
 }
