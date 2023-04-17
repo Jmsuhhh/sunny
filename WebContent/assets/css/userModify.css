@@ -86,3 +86,10 @@ select:focus {
   width: 195px;
   text-align: center;
 }
+
+.check-msg{
+	color: red;
+	font-size : 12px;
+	margin-left : 10px;
+	margin-top : 5px;
+}

@@ -72,6 +72,8 @@ public class MyPageOkController implements Execute {
 		myPageDTO.setFollowerCnt(followDAO.selectFollowerCnt(userNumber));
 		myPageDTO.setFollowingCnt(followDAO.selectFollowingCnt(userNumber));
 		
+		System.out.println(followDAO.selectFollowingCnt(userNumber));
+		
 //		내가 쓴 스토리 리스트 받아오기
 		System.out.println(userDAO.myStoryList(userNumber));
 		
