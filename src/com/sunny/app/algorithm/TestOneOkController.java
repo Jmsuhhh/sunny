@@ -1,6 +1,7 @@
 package com.sunny.app.algorithm;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -17,6 +18,7 @@ public class TestOneOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		
 		AlgorithmDTO algorithmDTO = new AlgorithmDTO();
 		AlgorithmDAO algorithmDAO = new AlgorithmDAO();
 		HttpSession session = req.getSession();
@@ -28,6 +30,8 @@ public class TestOneOkController implements Execute {
 
 		String selectOne = req.getParameter("selectOne");
 
+
+		
 
 		// testOne.jsp로 selectOne 값을 전달합니다.
 		req.getRequestDispatcher("/app/algorithm/testOne.jsp").forward(req, resp);
