@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 import com.sunny.app.Execute;
 import com.sunny.app.algorithm.dao.AlgorithmDAO;
 import com.sunny.app.algorithm.dto.AlgorithmDTO;
-import com.sunny.app.algorithm.vo.AlgorithmVO;
 
 public class TestThreeOkController implements Execute{
 

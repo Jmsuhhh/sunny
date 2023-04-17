@@ -22,7 +22,7 @@ public class LoadingOkController implements Execute {
 		HttpSession session = req.getSession();
 		List<AlgorithmDTO> result = algorithmDAO.algorithmResult(algorithmDTO);
     	
-		//request.getParameter로 selectTwo의 값 얻어오기
+		//request.getParameter로 selectFive의 값 얻어오기
 		algorithmDTO.setAlgorithmResult(req.getParameter("selectFive"));
 		
 		
