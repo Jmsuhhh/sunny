@@ -1,3 +1,11 @@
+//헤더부분에 초록동그라미띄우기
+let $headerList = $('.header2-menu-list>a');
+$headerList.removeClass('header-active');
+
+let $headerMypage = $('#header-mypage');
+$headerMypage.addClass('header-active');
+
+
 // 취소버튼을 눌렀을 때 다시 마이페이지로 돌아감
 
 $('.modify-cancel-btn').on('click',()=>{
@@ -86,10 +94,19 @@ $('.modify-submit-btn').on('click', function(){
 	
 	console.log(cuPwMsg.includes('않')); 
 	
-	if(!cuPwMsg.includes('않') && !chPwMsg.includes('않') && !nickMsg.includes('중복')){
-		$('form').submit();
+	if($currentPwInput.val()==''){
+		alert('현재 비밀번호를 입력해주세요');
+	}else if($userPwInput.val()==''){
+		alert('변경할 비밀번호를 입력해주세요');
+	}else if($checkPwInput.val()==''){
+		alert('변경할 비밀번호 확인을 입력해주세요')
 	}else{
-		alert('회원정보를 다시 확인해주세요');
+		if(!cuPwMsg.includes('않') && !chPwMsg.includes('않') && !nickMsg.includes('중복')){
+			console.log('저장할 수 있음');
+			$('form').submit();
+		}else{
+			alert('회원정보를 다시 확인해 주세요');
+		}
 	}
 });
 
