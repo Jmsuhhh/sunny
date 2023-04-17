@@ -19,6 +19,7 @@ public class GosuDownOkController implements Execute {
 		
 		int userNumber = Integer.valueOf(req.getParameter("userNumber"));
 		
+		//	유저 gradeNumber 100으로 down
 		adminDAO.down(userNumber);
 		
 		resp.sendRedirect("/admin/gosuManage.ad");

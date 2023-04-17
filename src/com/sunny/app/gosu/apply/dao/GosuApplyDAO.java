@@ -21,4 +21,9 @@ public class GosuApplyDAO {
 		return sqlSession.selectOne("gosuApply.getSequence");
 	}
 	
+	public void applying(int userNumber) {
+		System.out.println("gosuApply.applying 메서드");
+		sqlSession.update("gosuApply.applying", userNumber);
+	}
+	
 }

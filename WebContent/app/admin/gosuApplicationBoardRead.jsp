@@ -89,10 +89,10 @@
 					<div class="view-content">${applydata.getApplyContent() }</div>
 				</div>
 				<div class="btn-group">
-					<button type="button" class="ok-btn"
-						data-userNumber="${applydata.getUserNumber() }">수락</button>
+					<button type="button" class="ok-btn">수락</button>
 					<button type="button" class="no-btn"
-						data-userNumber="${applydata.getUserNumber() }">거절</button>
+					data-userNumber="${applydata.getUserNumber()}"
+					data-applyNumber="${applydata.getApplyNumber()}">거절</button>
 					<button type="button" class="back-btn">목록</button>
 				</div>
 			</div>

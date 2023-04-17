@@ -18,31 +18,42 @@ public class AdminDAO {
 	}
 	
 	public List<AdminDTO> select(AdminDTO adminDTO){
-		System.out.println("select 탐");
+		System.out.println("amdin.select 메서드");
 		return sqlSession.selectList("admin.select", adminDTO);
 	 }
 	
 	public void kill(int userNumber) {
-		System.out.println("kill 메서드");
+		System.out.println("amdin.kill 메서드");
 		sqlSession.delete("admin.kill", userNumber);
 	}
 	
 	public void down(int userNumber) {
-		System.out.println("down 메서드");
+		System.out.println("amdin.down 메서드");
 		sqlSession.update("admin.down", userNumber);
 	}
 	
 	public void up(int userNumber) {
-		System.out.println("up 메서드");
+		System.out.println("amdin.up 메서드");
 		sqlSession.update("admin.up", userNumber);
 	}
 	
-	public void nagative(int userNumber) {
-		System.out.println("nagative 메서드");
-		sqlSession.update("admin.nagative", userNumber);
+	public void negative(int userNumber) {
+		System.out.println("amdin.negative 메서드");
+		sqlSession.update("admin.negative", userNumber);
 	}
 	
 	public HeaderInfoVO headerInfo() {
+		System.out.println("amdin.headerInfo 메서드");
 		return sqlSession.selectOne("admin.headerInfo");
+	}
+	
+	public void deleteGosuNumber(int userNumber) {
+		System.out.println("amdin.deleteGosuNumber 메서드");
+		sqlSession.delete("admin.deleteGosuNumber", userNumber);
+	}
+	
+	public void deleteGosuApply(int applyNumber) {
+		System.out.println("amdin.deleteGosuApply 메서드");
+		sqlSession.delete("admin.deleteGosuApply", applyNumber);
 	}
 }

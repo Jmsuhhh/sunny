@@ -10,4 +10,10 @@
 	<select id="getSequence" resultType="_int">
 		select last_insert_id()
 	</select>
+	
+	<select id="applying" parameterType="_int">
+		update tbl_user set grade_number =
+		200
+		where user_number = #{userNumber}
+	</select>
 </mapper>

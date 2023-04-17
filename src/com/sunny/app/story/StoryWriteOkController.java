@@ -34,6 +34,8 @@ public class StoryWriteOkController implements Execute {
 	
 	MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize,"utf-8",new DefaultFileRenamePolicy());
 	
+
+	
 	storyDTO.setStoryTitle(multipartRequest.getParameter("storyTitle"));
 	storyDTO.setStoryContent(multipartRequest.getParameter("storyContent"));
 	storyDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));

@@ -17,6 +17,7 @@
 		select count(user_number) from
 		tbl_user
 	</select>
+	
 	<!-- userManage page -->
 	<select id="userInfo" resultType="UserManageVO"
 		parameterType="map">
@@ -170,16 +171,16 @@
 	</select>
 
 	<!-- 회원 제명 쿼리 식집사,식고수 둘 다 사용 -->
-	<select id="kill" parameterType="_int">
+	<delete id="kill" parameterType="_int">
 		delete from tbl_user where
 		user_number = #{userNumber}
-	</select>
+	</delete>
 
 	<!-- 식고수 회원 식집사로 강등 쿼리 -->
-	<select id="down" parameterType="_int">
+	<update id="down" parameterType="_int">
 		update tbl_user set grade_number
 		= 100 where user_number = #{userNumber}
-	</select>
+	</update>
 
 	<!-- applicationBoardList page -->
 	<select id="applicationList" resultType="GosuApplicationVO"
@@ -198,6 +199,7 @@
 		parameterType="_int">
 		with field_stats as(
 		select u.user_number ,
+		g.gosu_number,
 		u.user_nickname ,
 		group_concat(f.field_name separator ', ') as
 		gosu_field_names
@@ -225,6 +227,7 @@
 		select
 		apply_stats.user_number,
 		field_stats.user_nickname,
+		field_stats.gosu_number,
 		apply_stats.apply_number,
 		apply_stats.apply_title,
 		apply_stats.apply_date,
@@ -238,18 +241,30 @@
 	</select>
 
 	<!-- 식고수 신청 승인 쿼리 -->
-	<select id="up" parameterType="_int">
+	<update id="up" parameterType="_int">
 		update tbl_user set grade_number =
 		500
 		where user_number = #{userNumber}
-	</select>
+	</update>
 
 	<!-- 식고수 신청 거절 쿼리 -->
-	<select id="negative" parameterType="_int">
+	<update id="negative" parameterType="_int">
 		update tbl_user set
 		grade_number = 100
 		where user_number = #{userNumber}
-	</select>
+	</update>
+	
+	<delete id="deleteGosuNumber" parameterType="_int">
+		delete from tbl_gosu where user_number = #{userNumber};
+	</delete>
+	
+	<delete id="deleteGosuApply" parameterType="_int">
+		delete from tbl_gosu_apply where apply_number = #{applyNumber};
+	</delete>
+	
+	<delete id="delete"></delete>
+	
+	
 
 	<!-- header2 info  -->
 	<select id="headerInfo" resultType="HeaderInfoVO">

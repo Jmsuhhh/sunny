@@ -34,5 +34,9 @@ public class GosuDAO {
 		sqlSession.insert("gosu.insert", gosuDTO);
 	}
 	
+	public int getSequence() {
+		return sqlSession.selectOne("gosu.getSequence");
+	}
+	
 
 }

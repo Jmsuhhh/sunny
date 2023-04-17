@@ -4,6 +4,6 @@
 <mapper namespace="gosuField">
 	<insert id="insert" parameterType="gosuFieldDTO">
 		insert into tbl_gosu_field(field_number, gosu_number)
-		values(#(fiedlNumber), #(gosuNumber));
+		values(#{fieldNumber}, #{gosuNumber});
 	</insert>
 </mapper>

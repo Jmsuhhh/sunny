@@ -7,7 +7,8 @@ let $okBtn = $('.ok-btn');
 let $noBtn = $('.no-btn');
 let $backBtn = $('.back-btn');
 
-let userNumber = $okBtn.data("usernumber");
+let userNumber = $noBtn.data("usernumber");
+let applyNumber = $noBtn.data("applynumber");
 
 console.log(userNumber);
 
@@ -17,7 +18,7 @@ $okBtn.on('click', () => {
 });
 
 $noBtn.on('click', () => {	
-   window.location.href = '/admin/gosuApplyNo.ad?userNumber=' + userNumber;
+   window.location.href = '/admin/gosuApplyNo.ad?userNumber=' + userNumber + '&applyNumber=' + applyNumber;
    alert('신청을 거절하였습니다.');
 });
 

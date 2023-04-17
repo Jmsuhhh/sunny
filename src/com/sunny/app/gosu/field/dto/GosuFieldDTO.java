@@ -1,14 +1,9 @@
 package com.sunny.app.gosu.field.dto;
 
-//*tbl_gosu_field (식고수선택분야)
-//gosu_field_number (pk) // int unsigned auto_increment 
-//field_number (fk) // int
-//gosu_number (fk) // int
-
 public class GosuFieldDTO {
 	
 	private int gosuFieldNumber;
-	private int filedNumber;
+	private int fieldNumber;
 	private int gosuNumber;
 
 	public GosuFieldDTO() {
@@ -22,12 +17,12 @@ public class GosuFieldDTO {
 		this.gosuFieldNumber = gosuFieldNumber;
 	}
 
-	public int getFiledNumber() {
-		return filedNumber;
+	public int getFieldNumber() {
+		return fieldNumber;
 	}
 
-	public void setFiledNumber(int filedNumber) {
-		this.filedNumber = filedNumber;
+	public void setFieldNumber(int fieldNumber) {
+		this.fieldNumber = fieldNumber;
 	}
 
 	public int getGosuNumber() {
@@ -40,9 +35,11 @@ public class GosuFieldDTO {
 
 	@Override
 	public String toString() {
-		return "GosuFieldDTO [gosuFieldNumber=" + gosuFieldNumber + ", filedNumber=" + filedNumber + ", gosuNumber="
+		return "GosuFieldDTO [gosuFieldNumber=" + gosuFieldNumber + ", fieldNumber=" + fieldNumber + ", gosuNumber="
 				+ gosuNumber + "]";
 	}
+
+	
 	
 	
 }
