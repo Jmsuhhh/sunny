@@ -11,17 +11,10 @@ import com.sunny.app.Execute;
 public class FindPasswordController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String userId = req.getParameter("userId");
-        int findQuestionNumber = Integer.parseInt(req.getParameter("findQuestionNumber"));
-        String findPasswordAnswer = req.getParameter("findPasswordAnswer");
+		System.out.println("FindPasswordController 진입");
 
-        // FindPasswordOkController로 데이터 전송
-        req.setAttribute("userId", userId);
-        req.setAttribute("findQuestionNumber", findQuestionNumber);
-        req.setAttribute("findPasswordAnswer", findPasswordAnswer);
-        req.getRequestDispatcher("/find/findPwOk.fp").forward(req, resp);
+        req.getRequestDispatcher("/app/user/rePw.jsp").forward(req, resp);
 		
-        System.out.println("FindPasswordController 진입");
         
 	}
 }

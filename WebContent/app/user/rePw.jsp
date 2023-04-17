@@ -45,7 +45,7 @@
         </div>
       </div>
 
-      <form action="${pageContext.request.contextPath}/find/findPw.fp" method="POST">
+      <form action="${pageContext.request.contextPath}/find/findPwOk.fp" method="POST">
       <div class="whole-container">
         <div class="question-container">
           <h2>나의 회원 정보 입력</h2>
@@ -70,11 +70,14 @@
 
           <button type="submit" value="확인" class="check-button">확인</button>
         </div>
-
-
+        
+	
   </div>
-
+		</form>
+	
+	</div>
   </div>
+  
 	<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
   	<script src="${pageContext.request.contextPath}/assets/js/rePw.js"></script>
 </body>

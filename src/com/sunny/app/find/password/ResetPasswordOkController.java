@@ -13,7 +13,8 @@ import com.sunny.app.user.dto.UserDTO;
 public class ResetPasswordOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int userNumber = Integer.parseInt(req.getParameter("userId"));
+		req.setCharacterEncoding("utf-8");
+		int userNumber = Integer.valueOf(req.getParameter("userId"));
 	    String userPassword = req.getParameter("newPassword");
 
 	    UserDTO userDTO = new UserDTO();

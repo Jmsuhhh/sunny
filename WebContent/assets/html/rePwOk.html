@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>비밀번호 재설정 | 볕 들 무렵</title>
-  <link rel="stylesheet" href="assets/css/rePwOk.css">
+  <link rel="stylesheet" href="/assets/css/rePwOk.css">
   <style>
     @font-face {
       font-family: SpoqaHanSans-Regular;
-      src: url(assets/font/SpoqaHanSansRegular.woff2);
+      src: url(/assets/font/SpoqaHanSansRegular.woff2);
     }
 
     @font-face {
       font-family: SpoqaHanSans-Bold;
-      src: url(assets/font/SpoqaHanSansBold.woff2);
+      src: url(/assets/font/SpoqaHanSansBold.woff2);
     }
   </style>
 </head>
@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <form action="${pageContext.request.contextPath}/find/resetPw.fp">
+      <form action="${pageContext.request.contextPath}/find/resetPwOk.fp">
       <div class="whole-container">
         <div class="change-container">
           <h2>비밀번호 변경</h2>
@@ -70,8 +70,9 @@
 
   </div>
 
-  </div>
 
+	<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  	<script src="${pageContext.request.contextPath}/assets/js/rePwOk.js"></script>
 </body>
 
 </html>

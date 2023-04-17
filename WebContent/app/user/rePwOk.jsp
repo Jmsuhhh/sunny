@@ -45,7 +45,7 @@
         </div>
       </div>
 
-      <form action="${pageContext.request.contextPath}/find/resetPw.fp">
+      <form action="${pageContext.request.contextPath}/find/resetPwOk.fp">
       <div class="whole-container">
         <div class="change-container">
           <h2>비밀번호 변경</h2>
@@ -72,7 +72,7 @@
 
   </div>
 
-  </div>
+
 	<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
   	<script src="${pageContext.request.contextPath}/assets/js/rePwOk.js"></script>
 </body>
