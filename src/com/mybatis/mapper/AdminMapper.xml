@@ -3,7 +3,7 @@
 
 
 <mapper namespace="admin">
-
+	<!-- 로그인 처리 -->
 	<select id="select" resultType="AdminDTO"
 		parameterType="AdminDTO">
 		select admin_number , admin_id, admin_password,
@@ -17,7 +17,8 @@
 		select count(user_number) from
 		tbl_user
 	</select>
-
+	
+	<!-- userManage page -->
 	<select id="userInfo" resultType="UserManageVO"
 		parameterType="map">
 		select u.user_number , g.grade_name , u.user_nickname , u.user_date
@@ -29,7 +30,8 @@
 		</if>
 		order by u.user_number desc
 	</select>
-
+	
+	<!-- userDetail page -->
 	<select id="userDetail" resultType="UserDetailVO"
 		parameterType="_int">
 		SELECT
@@ -57,6 +59,7 @@
 		GROUP BY u.user_number
 	</select>
 
+	<!-- gosuManage page -->
 	<select id="gosuInfo" resultType="GosuManageVO"
 		parameterType="map">
 		select
@@ -92,6 +95,7 @@
 		group by g.gosu_number
 	</select>
 
+	<!-- gosuDetail page -->
 	<select id="gosuDetail" resultType="GosuDetailVO"
 		parameterType="_int">
 		WITH gosu_stats AS (
@@ -166,16 +170,19 @@
 		user_stats.user_number = #{userNumber}
 	</select>
 
-	<select id="kill" parameterType="_int">
+	<!-- 회원 제명 쿼리 식집사,식고수 둘 다 사용 -->
+	<delete id="kill" parameterType="_int">
 		delete from tbl_user where
 		user_number = #{userNumber}
-	</select>
+	</delete>
 
-	<select id="down" parameterType="_int">
+	<!-- 식고수 회원 식집사로 강등 쿼리 -->
+	<update id="down" parameterType="_int">
 		update tbl_user set grade_number
 		= 100 where user_number = #{userNumber}
-	</select>
+	</update>
 
+	<!-- applicationBoardList page -->
 	<select id="applicationList" resultType="GosuApplicationVO"
 		parameterType="map">
 		select apply_number, apply_date, tga.user_number,
@@ -187,10 +194,12 @@
 		where tu.grade_number = 200
 	</select>
 
+	<!-- applicationBoardRead page -->
 	<select id="applicationRead" resultType="GosuApplicationReadVo"
 		parameterType="_int">
 		with field_stats as(
 		select u.user_number ,
+		g.gosu_number,
 		u.user_nickname ,
 		group_concat(f.field_name separator ', ') as
 		gosu_field_names
@@ -218,6 +227,7 @@
 		select
 		apply_stats.user_number,
 		field_stats.user_nickname,
+		field_stats.gosu_number,
 		apply_stats.apply_number,
 		apply_stats.apply_title,
 		apply_stats.apply_date,
@@ -230,22 +240,37 @@
 		apply_stats.apply_number = #{applyNumber}
 	</select>
 
-	<select id="up" parameterType="_int">
+	<!-- 식고수 신청 승인 쿼리 -->
+	<update id="up" parameterType="_int">
 		update tbl_user set grade_number =
 		500
 		where user_number = #{userNumber}
-	</select>
+	</update>
 
-	<select id="negative" parameterType="_int">
+	<!-- 식고수 신청 거절 쿼리 -->
+	<update id="negative" parameterType="_int">
 		update tbl_user set
 		grade_number = 100
 		where user_number = #{userNumber}
-	</select>
+	</update>
+	
+	<delete id="deleteGosuNumber" parameterType="_int">
+		delete from tbl_gosu where user_number = #{userNumber};
+	</delete>
+	
+	<delete id="deleteGosuApply" parameterType="_int">
+		delete from tbl_gosu_apply where apply_number = #{applyNumber};
+	</delete>
+	
+	<delete id="delete"></delete>
+	
+	
 
+	<!-- header2 info  -->
 	<select id="headerInfo" resultType="HeaderInfoVO">
 		select
 		(select count(user_number) from tbl_user) as user_count,
-		(select count(gosu_number) from tbl_gosu) as gosu_count,
+		(select count(user_number) from tbl_user where grade_number = 500) as gosu_count,
 		(select count(story_number) from tbl_story) as story_count,
 		(select count(question_number) from tbl_question) as question_count,
 		(select count(reply_number) from tbl_question_reply) as question_reply_count
