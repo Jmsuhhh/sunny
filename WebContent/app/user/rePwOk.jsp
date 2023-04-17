@@ -63,6 +63,7 @@
               <span class="password-error"></span>
             </div>
           </div>
+           <input type="hidden" name="userNumber" value="<%= (int)request.getAttribute("userNumber") %>" />
 
           <button type="submit" value="비밀번호 변경" class="change-button">비밀번호 변경</button>
         </div>

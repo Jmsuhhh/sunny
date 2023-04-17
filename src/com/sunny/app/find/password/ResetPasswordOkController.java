@@ -14,13 +14,17 @@ public class ResetPasswordOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-		int userNumber = Integer.valueOf(req.getParameter("userId"));
+		
+        int userNumber = Integer.valueOf(req.getParameter("userNumber"));
 	    String userPassword = req.getParameter("newPassword");
 
 	    UserDTO userDTO = new UserDTO();
 	    userDTO.setUserNumber(userNumber);
 	    userDTO.setUserPassword(userPassword);
 
+//	    System.out.println("userId");
+//	    System.out.println("userNumber");
+//	    System.out.println("userPassword");
 	    System.out.println("ResetPasswordOkController 진입");
 
 	    // 비밀번호 업데이트

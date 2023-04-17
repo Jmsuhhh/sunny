@@ -38,7 +38,6 @@ public class FindPasswordOkController implements Execute {
             req.getRequestDispatcher("/find/resetPw.fp").forward(req, resp);
         } else {
         	// 불일치 시 alert 창 출력 후 현재 페이지에서 다시 입력할 수 있도록 함
-        	System.out.println("else처리");
             resp.setContentType("text/html;charset=UTF-8");
             resp.getWriter().write("<script>alert('일치하는 회원정보가 없습니다.');history.back();</script>");
         }

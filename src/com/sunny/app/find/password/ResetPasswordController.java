@@ -12,10 +12,9 @@ import com.sunny.app.Execute;
 public class ResetPasswordController  implements Execute{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		String userId = req.getParameter("userId");
+        int userNumber = (int) req.getAttribute("userNumber");
         
-        req.setAttribute("userId", userId);
+        req.setAttribute("userNumber", userNumber);
         
         req.getRequestDispatcher("/app/user/rePwOk.jsp").forward(req, resp);
 	}
