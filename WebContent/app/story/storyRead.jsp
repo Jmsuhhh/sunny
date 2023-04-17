@@ -46,14 +46,29 @@
 
 		<div class="story-read">
 			<div class="storyBox">
-				<c:out value="${story.getStoryContent()}"></c:out>
-				<c:out value="${story.getStoryContent2()}"></c:out>
-				<c:out value="${story.getStoryContent3()}"></c:out>
+				<c:out value="${story.getStoryContent()}" escapeXml="false"></c:out>
+				<c:forEach var="storyFile" items="${story.getStoryFiles()}">
+					<div class="story-imgBox1">
+						<img src="${pageContext.request.contextPath}/storyUpload/${storyFile.getFileSystemName1()}">
+					</div>
+				</c:forEach>
+				<c:out value="${story.getStoryContent2()}" escapeXml="false"></c:out>
+				<c:forEach var="storyFile" items="${story.getStoryFiles()}">
+					<div class="story-imgBox2" style="${empty storyFile.getFileSystemName2() ? 'display:none;' : ''}">
+						<img src="${pageContext.request.contextPath}/storyUpload/${storyFile.getFileSystemName2()}">
+					</div>
+				</c:forEach>
+				<c:out value="${story.getStoryContent3()}" escapeXml="false"></c:out>
+				<c:forEach var="storyFile" items="${story.getStoryFiles()}">
+					<div class="story-imgBox3" style="${empty storyFile.getFileSystemName3() ? 'display:none;' : ''}">
+						<img src="${pageContext.request.contextPath}/storyUpload/${storyFile.getFileSystemName3()}">
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 
 		<div class="btn-groups">
-				<button type="button" class="list-btn">목록</button>
+				<button type="button" class="list-btn" data-storyNumber="${story.getStoryNumber()}">목록</button>
 
 			<c:if test="${sessionScope.userNumber == story.getUserNumber()}">
 				<button type="button" class="modify-btn">수정</button>
@@ -72,7 +87,7 @@
 		<div class="comment-form">
 			<div class="holder">
 				<h3 class="subtit">
-					댓글 <span class="fc1" id="comment-count">12</span>
+					댓글 <span class="fc1" id="comment-count"></span>
 				</h3>
 			</div>
 			<form id="comment-form">

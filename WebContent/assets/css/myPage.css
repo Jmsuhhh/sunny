@@ -35,7 +35,22 @@ li {
 .main1--top {
   padding-top: 5px;
   padding-bottom: 5px;
+  display : flex
 }
+
+.user-follow {
+  color: #009a3e;
+  background-color: white;
+  margin-left : 10px;
+  position : relative;
+  top : 5px;
+}
+
+.following {
+  background-color: white;
+  color: #808080;
+}
+
 .grade {
   color: #009a3e;
 }

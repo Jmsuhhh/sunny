@@ -35,6 +35,15 @@ public class StoryFrontController extends HttpServlet {
 			case "/story/storyWriteOk.st" :
 				new StoryWriteOkController().execute(req, resp);
 				break;
+			case "/story/storyDeleteOk.st" :
+				new StoryDeleteOkController().execute(req, resp);
+				break;
+			case "/story/storyUpdate.st" :
+				new StoryUpdateController().execute(req, resp);
+				break;
+			case "/story/storyUpdateOk.st" :
+				new StoryUpdateOkController().execute(req, resp);
+				break;
 		}
 	}
 }

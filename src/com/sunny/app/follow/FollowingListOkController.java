@@ -1,7 +1,9 @@
 package com.sunny.app.follow;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +31,15 @@ public class FollowingListOkController implements Execute {
 			userNumber = Integer.parseInt(req.getParameter("userNumber"));
 		}
 		
-		List<FollowVO> followList = followDAO.selectFollowing(userNumber);
+		Map<String, Integer>number = new HashMap<String, Integer>();
+		int myNumber = 0;
+		if((Integer)session.getAttribute("userNumber")!=null) {
+			myNumber = (Integer)session.getAttribute("userNumber");
+		}
+		number.put("myNumber", myNumber);
+		number.put("userNumber", userNumber);
+
+		List<FollowVO> followList = followDAO.selectFollowing(number);
 		req.setAttribute("followList", followList);
 		req.setAttribute("userNumber", userNumber);
 		req.getRequestDispatcher("/app/follow/follow.jsp").forward(req, resp);
