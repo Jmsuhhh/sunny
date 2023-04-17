@@ -6,12 +6,10 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
-<<<<<<< HEAD
 import com.sunny.app.gosu.vo.GosuVO;
-=======
 import com.sunny.app.gosu.dto.GosuDTO;
 import com.sunny.app.user.vo.UserVO;
->>>>>>> work/admin2
+
 
 public class GosuDAO {
 
@@ -30,8 +28,6 @@ public class GosuDAO {
 	public int getTotal() {
 		return sqlSession.selectOne("gosu.getTotal");
 	}
-<<<<<<< HEAD
-=======
 	
 	public void insert(GosuDTO gosuDTO) {
 		sqlSession.insert("gosu.insert", gosuDTO);
@@ -40,8 +36,6 @@ public class GosuDAO {
 	public int getSequence() {
 		return sqlSession.selectOne("gosu.getSequence");
 	}
-	
->>>>>>> work/admin2
 
 //	마이페이지에서 필요한 고수Number뽑아오기
 	public int getGosuNumber(int userNumber) {
