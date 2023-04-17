@@ -1,5 +1,7 @@
 package com.sunny.app.plant.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
@@ -8,15 +10,11 @@ import com.sunny.app.plant.dto.PlantDTO;
 
 public class PlantDAO {
 
-	
-	public SqlSession sqlSession;
-	
-	
+	private SqlSession sqlSession;
+
 	public PlantDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public PlantDTO selectPlant(AlgorithmDTO algorithmDTO) {
-	    return sqlSession.selectOne("plant.selectPlant", algorithmDTO);
-	}
+	  
 }

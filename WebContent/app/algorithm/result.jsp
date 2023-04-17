@@ -185,4 +185,4 @@ if (algorithmResult.equals("00000")) {
   </section>
 <!--   <script type="text/javascript"></script> -->
 </body>
-</html>
+</html> 
