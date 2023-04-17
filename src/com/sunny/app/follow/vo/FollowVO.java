@@ -8,7 +8,16 @@ public class FollowVO {
 	private String userNickname;
 	private String fileSystemName;
 	private String fileOriginalName;
+	private int followingStatus;
 	
+	public int getFollowingStatus() {
+		return followingStatus;
+	}
+
+	public void setFollowingStatus(int followingStatus) {
+		this.followingStatus = followingStatus;
+	}
+
 	public FollowVO() {}
 	
 	public int getUserNumber() {
@@ -67,13 +76,14 @@ public class FollowVO {
 		this.fileOriginalName = fileOriginalName;
 	}
 
-
 	@Override
 	public String toString() {
 		return "FollowVO [followNumber=" + followNumber + ", userNumber=" + userNumber + ", userFrom=" + userFrom
 				+ ", userTo=" + userTo + ", userNickname=" + userNickname + ", fileSystemName=" + fileSystemName
-				+ ", fileOriginalName=" + fileOriginalName + "]";
+				+ ", fileOriginalName=" + fileOriginalName + ", followingStatus=" + followingStatus + "]";
 	}
+
+
 
 	
 	

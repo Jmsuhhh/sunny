@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
 import com.sunny.app.story.file.dto.StoryFileDTO;
-import com.sunny.app.story.file.vo.StoryFileVO;
 
 public class StoryFileDAO {
 
@@ -19,7 +18,19 @@ public class StoryFileDAO {
 	}
 	
 	public void insert(StoryFileDTO storyfileDTO) {
+		System.out.println("storyFileInsert메소드");
 		sqlSession.insert("storyFile.insert",storyfileDTO);
 	}
 	
+	public List<StoryFileDTO> select(int storyNumber) {
+		return sqlSession.selectList("storyFile.select",storyNumber);
+	}
+	
+	public void delete(int storyNumber) {
+		sqlSession.delete("storyFile.delete", storyNumber);
+	}
+	
+	public void update(StoryFileDTO storyFileDTO) {
+		sqlSession.update("storyFile.update",storyFileDTO);
+	}
 }

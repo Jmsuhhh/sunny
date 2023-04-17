@@ -71,4 +71,13 @@ public class UserDAO {
 	public int myStoryCnt(int userNumber) {
 		return sqlSession.selectOne("user.myStoryCnt", userNumber);
 	}
+	
+//	회원정보수정에서 비밀번호 확인
+	public boolean checkPw(UserDTO userDTO) {
+		return (Integer)sqlSession.selectOne("user.checkPw", userDTO) < 1;
+	}
+//	회원정보수정에서 닉네임 중복확인
+	public boolean checkNick(String userNickname) {
+		return (Integer)sqlSession.selectOne("user.checkNick", userNickname)<1;
+	}
 }

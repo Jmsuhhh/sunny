@@ -47,7 +47,6 @@ li {
   left: 0;
   top: 0;
   width: 3600px; 
-  transition: 0.5s ease-out; 
   display: flex;
 } 
 .main1-slide-ul>li{
