@@ -39,7 +39,6 @@
 				</a>
 			</div>
 		</section>
-
 		<section class="header2">
 			<div class="header2-wrap">
 				<div class="header2--left">

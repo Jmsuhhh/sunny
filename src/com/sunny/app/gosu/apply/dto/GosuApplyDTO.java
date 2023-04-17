@@ -14,6 +14,7 @@ public class GosuApplyDTO {
 	private int userNumber;
 	private String applyContent;
 	private Date applyDate;
+	private String applyTitle;
 	
 	public GosuApplyDTO() {
 	}
@@ -50,11 +51,20 @@ public class GosuApplyDTO {
 		this.applyDate = applyDate;
 	}
 
+	public String getApplyTitle() {
+		return applyTitle;
+	}
+
+	public void setApplyTitle(String applyTitle) {
+		this.applyTitle = applyTitle;
+	}
+
 	@Override
 	public String toString() {
 		return "GosuApplyDTO [applyNumber=" + applyNumber + ", userNumber=" + userNumber + ", applyContent="
-				+ applyContent + ", applyDate=" + applyDate + "]";
+				+ applyContent + ", applyDate=" + applyDate + ", applyTitle=" + applyTitle + "]";
 	}
+
 	
 	
 }
