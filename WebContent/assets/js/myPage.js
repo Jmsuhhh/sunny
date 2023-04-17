@@ -1,5 +1,10 @@
 console.log(gradeNumber);
 console.log(checkFollow);
+let $headerList = $('.header2-menu-list>a');
+$headerList.removeClass('header-active');
+
+let $headerMypage = $('#header-mypage');
+$headerMypage.addClass('header-active');
 
 // 식집사/식고수 gradeNumber에 따라 텍스트 바꿔주기
 function showGrade(){
