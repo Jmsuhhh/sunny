@@ -32,7 +32,7 @@ public class ResetPasswordOkController implements Execute {
 	    findPasswordDAO.updatePassword(userDTO);
 
 	    // 비밀번호 업데이트 성공 시 로그인 페이지로 이동
-	    resp.sendRedirect(req.getContextPath() + "/user/login.us");   
-		
+	    resp.sendRedirect(req.getContextPath() + "/user/login.us"); 
+
 	}
 }
