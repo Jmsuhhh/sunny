@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>식고수 질문 | 볕 들 무렵</title>
-    <link rel="stylesheet" href="../css/questionWrite.css" />
+    <link rel="stylesheet" href="../../assets/css/questionWrite.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"/>
     <!-- include libraries(jQuery, bootstrap) -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
@@ -20,8 +20,8 @@
   <body>
 <jsp:include
 	page="${pageContext.request.contextPath}/app/header/header.jsp" />
-    <div class="gosu-apply">
-      <div class="apply-container">
+    <div class="gosu-question">
+      <div class="question-container">
         <!-- form action 작성 -->
         <form action="${pageContext.request.contextPath }/gosuApply/gosuApplyWriteOk.ga" id="write-form" method="post" enctype="multipart/form-data">
           <h1 class="title">
@@ -29,7 +29,7 @@
             <span class="story-txt">식고수...그는 모든걸 다 알고 있어...</span>
           </h1>
           <!-- 제목입력 -->
-          <div class="apply-title">
+          <div class="question-title">
             <input type="text" id="title" name="applyTitle" placeholder="* 질문 제목을 입력하세요. " required />
           </div>
           <!-- 질문 내용 -->
@@ -72,6 +72,6 @@
       </div>
     </div>
     <jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
-    <script src="../js/questionWrite.js"></script>
+    <script src="../../assets/js/questionWrite.js"></script>
   </body>
 </html>
