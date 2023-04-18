@@ -14,6 +14,7 @@
 		where user_number = #{userNumber}
 	</select>
 	
+<<<<<<< HEAD
 	<!-- 프로필사진, 닉네임 같이 가져오기 -->
 	<select id="selectFile" parameterType="_int" resultType="UserFileVO">
 		select tu.user_number , file_system_name , file_original_name , tu.user_nickname 
@@ -22,6 +23,8 @@
 	</select>
 	
 	
+=======
+>>>>>>> working/algorithm2
 	<update id="update" parameterType="UserFileDTO">
 		update tbl_user_file set file_system_name = #{fileSystemName}, file_original_name = #{fileOriginalName}
 		where user_number = #{userNumber}

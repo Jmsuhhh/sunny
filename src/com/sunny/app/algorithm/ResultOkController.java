@@ -29,6 +29,12 @@ public class ResultOkController implements Execute {
 		String selectFive = (String) session.getAttribute("selectFive");
 		String algorithmResult = selectOne + selectTwo + selectThree + selectFour + selectFive;		 
 		
+		// 선택 값들을 DTO에 저장합니다.
+		algorithmDTO.setSelectOne(selectOne);
+		algorithmDTO.setSelectTwo(selectTwo);
+		algorithmDTO.setSelectThree(selectThree);
+		algorithmDTO.setSelectFour(selectFour);
+		algorithmDTO.setSelectFive(selectFive);
 		
 		// 출력
 		System.out.println("selectOne: " + selectOne);
@@ -47,6 +53,7 @@ public class ResultOkController implements Execute {
         req.setAttribute("selectFour", selectFour);
         req.setAttribute("selectFive", selectFive);
 		
+        
         
 		// 결과 페이지로 이동
 		req.getRequestDispatcher("/app/algorithm/result.jsp").forward(req, resp);

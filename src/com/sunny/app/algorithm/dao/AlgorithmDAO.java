@@ -3,7 +3,6 @@ package com.sunny.app.algorithm.dao;
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
-import com.sunny.app.admin.dto.AdminDTO;
 import com.sunny.app.algorithm.dto.AlgorithmDTO;
 
 import java.util.List;

@@ -10,19 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.sunny.app.Execute;
-import com.sunny.app.admin.dao.AdminDAO;
-import com.sunny.app.admin.dto.AdminDTO;
 import com.sunny.app.algorithm.dao.AlgorithmDAO;
 import com.sunny.app.algorithm.dto.AlgorithmDTO;
-import com.sunny.app.algorithm.vo.AlgorithmVO;
-import com.sunny.app.plant.dto.PlantDTO;
-import com.sunny.app.util.AdminUtils;
 
 public class TestOneOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		
 		AlgorithmDTO algorithmDTO = new AlgorithmDTO();
 		AlgorithmDAO algorithmDAO = new AlgorithmDAO();
 		HttpSession session = req.getSession();

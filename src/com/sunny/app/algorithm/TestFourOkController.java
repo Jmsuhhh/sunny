@@ -38,6 +38,6 @@ public class TestFourOkController implements Execute {
 
 		// testOne.jsp로 selectOne 값을 전달합니다.
 		req.getRequestDispatcher("/app/algorithm/testFour.jsp").forward(req, resp);
-
+                                                                                   
 	}
 }
