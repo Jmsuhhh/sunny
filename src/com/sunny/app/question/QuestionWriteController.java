@@ -23,6 +23,8 @@ public class QuestionWriteController implements Execute {
 		
 		Integer gosuNumber = (Integer)session.getAttribute("gosuNumber");
 		int gosuNumber1 = 1;
+		
+		System.out.println("userNumber = " + userNumber + " / gosuNumber = " + gosuNumber);
 
 		if(gosuNumber != null) {
 		    gosuNumber1 = gosuNumber.intValue();
