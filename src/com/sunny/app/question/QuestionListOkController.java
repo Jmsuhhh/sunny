@@ -57,6 +57,7 @@ public class QuestionListOkController implements Execute {
 	      
 	      List<QuestionDTO> questions = questionDAO.selectAll(pageMap);
 	      System.out.println("questions = " + questions);
+//	      String gosuNumber2 = questions.get(0).get("gosuNumber").toString();
 	      List<GosuVO> gosus = gosuDAO.selectAll(pageMap);
 	      System.out.println("gosus = " + gosus);
 	      req.setAttribute("gosuNickName", questionDAO.getNickName(gosuNumber));

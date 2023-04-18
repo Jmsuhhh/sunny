@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>식고수 질문 | 볕 들 무렵</title>
-    <link rel="stylesheet" href="../../assets/css/questionWrite.css" />
+    <link rel="stylesheet" href="../css/questionWrite.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"/>
     <!-- include libraries(jQuery, bootstrap) -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
@@ -18,10 +18,10 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
   </head>
   <body>
-  <jsp:include
+<jsp:include
 	page="${pageContext.request.contextPath}/app/header/header.jsp" />
-    <div class="gosu-question">
-      <div class="question-container">
+    <div class="gosu-apply">
+      <div class="apply-container">
         <!-- form action 작성 -->
         <form action="${pageContext.request.contextPath }/gosuApply/gosuApplyWriteOk.ga" id="write-form" method="post" enctype="multipart/form-data">
           <h1 class="title">
@@ -29,15 +29,15 @@
             <span class="story-txt">식고수...그는 모든걸 다 알고 있어...</span>
           </h1>
           <!-- 제목입력 -->
-          <div class="question-title">
-            <input type="text" id="title" name="questionTitle" placeholder="* 질문 제목을 입력하세요. " required />
+          <div class="apply-title">
+            <input type="text" id="title" name="applyTitle" placeholder="* 질문 제목을 입력하세요. " required />
           </div>
           <!-- 질문 내용 -->
           <h1 class="mini-title">질문 내용 입력</h1>
           <div class="Content-box">
             <!-- 서머노트 -->
             <div class="summernote-box">
-              <textarea id="summernote" name="questionContent"></textarea>
+              <textarea id="summernote" name="applyContent"></textarea>
             </div>
             <!-- 첨부파일 -->
             <div class="upload-file-container">
@@ -72,6 +72,6 @@
       </div>
     </div>
     <jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
-    <script src="../../assets/js/questionWrite.js"></script>
+    <script src="../js/questionWrite.js"></script>
   </body>
 </html>
