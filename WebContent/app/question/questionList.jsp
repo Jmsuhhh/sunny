@@ -49,7 +49,6 @@
 					alt="">
 			</div>
 		</div>
-
 		<div class="question">
 			<h3 class="qq">질문</h3>
 			<div class="q1">
@@ -109,8 +108,6 @@
 			</table>
 		</div>
 	</div>
-
-
 	<jsp:include
 		page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
 	<script

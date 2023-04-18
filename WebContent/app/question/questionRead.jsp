@@ -108,11 +108,9 @@
 		</ul>
 	</div>
 <!-- 댓글 끝 -->
-	
 	<script>let userNumber = "${sessionScope.userNumber}"</script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="${pageContent.request.contextPath}/assets/js/questionRead.js"></script>
 	<jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
-	
 </body>
 </html>
