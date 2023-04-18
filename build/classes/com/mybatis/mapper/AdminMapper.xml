@@ -59,7 +59,6 @@
 		GROUP BY u.user_number
 	</select>
 
-<<<<<<< HEAD
 	<!-- gosuManage page -->
 	<select id="gosuInfo" resultType="GosuManageVO"
 		parameterType="map">
@@ -97,8 +96,7 @@
 	</select>
 
 	<!-- gosuDetail page -->
-	<select id="gosuDetail" resultType="GosuDetailVO"
-		parameterType="_int">
+	<select id="gosuDetail" resultType="GosuDetailVO" parameterType="_int">
 		WITH gosu_stats AS (
 		SELECT
 		u.user_number,
@@ -169,7 +167,8 @@
 		gosu_stats.user_nickname = user_stats.user_nickname
 		where
 		user_stats.user_number = #{userNumber}
-=======
+	</select>
+		
 	<select id="getTotal" resultType="_int">
 		select count(user_number) from tbl_user
 	</select>
@@ -252,7 +251,6 @@
 		where u.user_number = 1
 		group by u.user_number, g.grade_name, u.user_nickname, u.user_name,
 		u.user_email, u.user_date, q.question_count, qr.answer_count
->>>>>>> working/algorithm2
 	</select>
 
 	<!-- 회원 제명 쿼리 식집사,식고수 둘 다 사용 -->

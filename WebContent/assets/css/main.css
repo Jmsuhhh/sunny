@@ -2,13 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
 
-<<<<<<< HEAD
-
 /* ------------------------------------------------------------Hedaer-----------------------------------------------------------------------*/
 
 
-=======
->>>>>>> 89923749a59cdf432a0b7c35b44029d1daacb300
 * {
   margin: 0;
   padding: 0;
@@ -24,10 +20,6 @@ body {
   padding: 0;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 89923749a59cdf432a0b7c35b44029d1daacb300
 header {
   font-family: "Noto Sans KR", sans-serif;
   width: 1200px;
@@ -64,7 +56,6 @@ li {
   list-style: none;
 }
 
-<<<<<<< HEAD
 /* 헤더1 로그인,회원가입 / 로고 */
 .header1 {
   display: flex;
@@ -163,8 +154,6 @@ li {
 /* ------------------------------------------------------------Main-------------------------------------------------------------------------- */
 
 
-=======
->>>>>>> 89923749a59cdf432a0b7c35b44029d1daacb300
 .container {
   margin: 0 auto;
   max-width: 1200px;
@@ -479,14 +468,8 @@ section > .question{
   border-radius: 50%;
 }
 .inner-area img{
-<<<<<<< HEAD
-=======
-
   background-image: url('../../assets/img/main/전문가 아이콘.png');
-
   background-image: url('../../assets/img/전문가 아이콘.png');
-
->>>>>>> 89923749a59cdf432a0b7c35b44029d1daacb300
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -758,7 +741,6 @@ label.right {
 
 .img4{
   width:285px; height:370px;
-<<<<<<< HEAD
 }
 
 /* --------------------------------------------------------------------Footer------------------------------------------------------------- */
@@ -846,7 +828,4 @@ footer a:hover {
   float: left;
   margin-left: 20px;
 }
-=======
 
-}
->>>>>>> 89923749a59cdf432a0b7c35b44029d1daacb300

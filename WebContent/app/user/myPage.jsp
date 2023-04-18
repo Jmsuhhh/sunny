@@ -3,31 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/myPage.css" />
-  </head>
-  <body>
-	<%-- <jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp"/> --%>
-    <div class="container">
-      <!-- 프로필구역 -->
-      <section class="main1">
-        <div class="main1--top">
-          <!-- 식집사/식고수 텍스트 바꿔서 넣어야함 , 이름 띄움-->
-          <h1><span class="grade">식고수 </span><span>홍길동</span> 입니다</h1>
-        </div>
-        <div class="main1--bottom">
-          <div class="main1--modify">
-            <!-- 회원정보수정페이지로 이동 -->
-            <a href="${pageContext.request.contextPath}/user/userModify.us">회원정보수정 ></a>
-            <!-- 모달창 필요함-->
-            <button class="grade-info">등급보기 ></button>
-          </div>
-=======
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -63,8 +38,6 @@
 					<!-- 모달창 필요함-->
 					<button class="grade-info">등급보기 ></button>
 				</div>
->>>>>>> 89923749a59cdf432a0b7c35b44029d1daacb300
-
 				<div class="main1--profile">
 					<div class="profile-left">
 						<!-- 사진 등록 전에는 기본아이콘 들어가있게 -->

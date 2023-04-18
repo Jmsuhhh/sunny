@@ -37,7 +37,6 @@
 	</select>
 
 	<update id="userComment" parameterType="UserDTO">
-<<<<<<< HEAD
 		update tbl_user set user_comment = #{userComment}
 		where user_number = #{userNumber}
 	</update>
@@ -52,7 +51,6 @@
 	<update id="userModify" parameterType="UserVO">
 		update tbl_user tu inner join tbl_find_password tfp
 		on tu.user_number = tfp.user_number 
-=======
 		update tbl_user set
 		user_comment = #{userComment}
 		where user_number = #{userNumber}
@@ -73,13 +71,11 @@
 	<update id="userModify" parameterType="UserVO">
 		update tbl_user tu inner join tbl_find_password tfp
 		on tu.user_number = tfp.user_number
->>>>>>> working/algorithm2
 		set user_password = #{userPassword}, user_nickname =#{userNickname},
 		user_phone =#{userPhone}, user_email = #{userEmail},
 		tfp.find_question_number=#{findQuestionNumber}, tfp.find_password_answer = #{findPasswordAnswer}
 		where tu.user_number =#{userNumber}
 	</update>
-<<<<<<< HEAD
 	
 	<select id="myStoryList" parameterType="_int" resultType="StoryFileVO">
 	select story_number, story_title, user_number, file_system_name
@@ -91,10 +87,7 @@
 	select count(story_number) from tbl_story where user_number =#{userNumber}
 	</select>
 	
-=======
 
-
->>>>>>> working/algorithm2
 	<delete id="userDrop" parameterType="_int">
 		delete from tbl_user where
 		user_number=#{userNumber}

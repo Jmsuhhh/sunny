@@ -20,7 +20,10 @@ public class QuestionListOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		System.out.println("들어완");
+		System.out.println("QuestionListOkController");
+		
+		int gosuNumber = Integer.parseInt(req.getParameter("gosuNumber"));
+		System.out.println("gosuNumber : " + gosuNumber);
 
 		  QuestionDAO questionDAO = new QuestionDAO();
 		  GosuDAO gosuDAO = new GosuDAO();
@@ -53,10 +56,11 @@ public class QuestionListOkController implements Execute {
 	      pageMap.put("gosuNumber", Integer.parseInt(req.getParameter("gosuNumber")));
 	      
 	      List<QuestionDTO> questions = questionDAO.selectAll(pageMap);
+	      System.out.println("questions = " + questions);
+//	      String gosuNumber2 = questions.get(0).get("gosuNumber").toString();
 	      List<GosuVO> gosus = gosuDAO.selectAll(pageMap);
-	      
-	      int gosuNumber2 = Integer.parseInt(req.getParameter("gosuNumber"));
-	      req.setAttribute("gosuNickName", questionDAO.getNickName(gosuNumber2));
+	      System.out.println("gosus = " + gosus);
+	      req.setAttribute("gosuNickName", questionDAO.getNickName(gosuNumber));
 	      
 	      req.setAttribute("gosus", gosus);
 	  	  req.setAttribute("questionList", questions);
